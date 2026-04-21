@@ -1,0 +1,9 @@
+pymupdf
+pymupdf4llm
+pdfplumber
+pdfminer.six
+pypdf
+pillow
+tabulate
+python-dateutil
+chardet

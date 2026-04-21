@@ -1,0 +1,10 @@
+docling
+docling-core
+huggingface_hub
+camelot-py
+opencv-python
+img2table
+rapidocr-onnxruntime
+pytesseract
+pdf2image
+pypdfium2

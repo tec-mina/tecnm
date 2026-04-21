@@ -1,0 +1,21 @@
+# PDF to Markdown Profesional - Dependencias
+
+# Core - Extracción especializada
+pdfplumber>=0.9.0          # Extracción de tablas (MEJOR DEL MERCADO)
+PyMuPDF>=1.23.0            # Imágenes y metadatos
+pdfminer.six>=20221105     # Texto preciso y estructura
+tabulate>=0.9.0            # Formateo de tablas a Markdown
+
+# Procesamiento
+Pillow>=10.0.0             # Procesamiento de imágenes
+langdetect>=1.0.9          # Detección automática de idioma
+
+# Utilidades
+python-dateutil>=2.8.2     # Manejo de fechas
+chardet>=5.0.0             # Detección de codificación
+
+# Desarrollo (opcional)
+pytest>=7.0.0              # Testing
+black>=23.0.0              # Code formatting
+flake8>=6.0.0              # Linting
+mypy>=1.0.0                # Type checking

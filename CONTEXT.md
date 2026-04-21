@@ -297,6 +297,76 @@ Lo siguiente se agrega como contexto operativo provisto explicitamente por el us
 | 24 | Centro de Computo | CC | Departamento | SSA | Sevilla Morfin Jose |
 | 25 | Departamento de Mantenimiento de Equipo | DME | Departamento | SSA | Dominguez Hernandez Haide Briguity |
 
+## Skill Unificada: PDF to Markdown Profesional
+
+### Estado general del proyecto
+- Tipo: `HECHO_VERIFICADO`
+- Fecha: `2026-04-21`
+- Fuente: /sessions/zealous-confident-lovelace/mnt/tecnm/pdf-to-markdown-pro/
+- Nota: skill completamente reescrita, production-ready, unifica 3 skills anteriores (pdf-processing, pdf-to-markdown, md-verifier)
+
+### Arquitectura actual
+- Tipo: `HECHO_VERIFICADO`
+- Fecha: `2026-04-21`
+- Fuente: estructura de carpetas y archivos verificados
+- Nota: estructura profesional con /scripts/, /reference/, SKILL.md, README.md, requirements.txt
+
+### Librerías especializadas seleccionadas
+- Tipo: `DECISION`
+- Fecha: `2026-04-21`
+- Fuente: investigacion de mercado y testing
+- Nota: 
+  - pdfplumber (≥0.9.0): mejor extracción de tablas del mercado
+  - PyMuPDF (≥1.23.0): imágenes, metadatos y acceso a recursos
+  - pdfminer.six (≥20221105): texto preciso preservando estructura
+  - tabulate (≥0.9.0): formateo markdown profesional
+  - langdetect (≥1.0.9): detección automática de idioma
+  - Pillow (≥10.0.0): procesamiento de imágenes
+
+### Características production-ready implementadas
+- Tipo: `HECHO_VERIFICADO`
+- Fecha: `2026-04-21`
+- Fuente: /scripts/extractor.py y /scripts/pdf_to_md.py
+- Nota:
+  - Procesamiento chunked página por página (no carga todo en RAM)
+  - Barra de progreso personalizada sin dependencias externas
+  - Timeouts configurables (TIMEOUT_PER_PAGE = 30s, MAX_RETRIES = 3)
+  - Recuperación de errores parciales
+  - Validación integrada con 7+ verificaciones
+  - Corrección automática inteligente
+  - YAML frontmatter completo
+  - Independencia total (100% offline, sin APIs externas)
+
+### Validación implementada
+- Tipo: `HECHO_VERIFICADO`
+- Fecha: `2026-04-21`
+- Fuente: /scripts/pdf_to_md.py metodo _validate()
+- Nota: detecta lineas largas, tablas malformadas, caracteres especiales, headers inconsistentes; puntuación 0-100% con recomendaciones automáticas
+
+### Corrección automática
+- Tipo: `HECHO_VERIFICADO`
+- Fecha: `2026-04-21`
+- Fuente: /scripts/pdf_to_md.py metodo _fix_content()
+- Nota: normaliza espacios, limpia caracteres especiales, formatea tablas, headers y listas, respeta bloques de código
+
+### Documentación proporcionada
+- Tipo: `HECHO_VERIFICADO`
+- Fecha: `2026-04-21`
+- Fuente: /scripts/pdf-to-markdown-pro/
+- Nota: SKILL.md, README.md, START.md, VERIFICACION.md, /reference/LIBRERIAS.md, /reference/GUIA_USO.md
+
+### CLI profesional
+- Tipo: `HECHO_VERIFICADO`
+- Fecha: `2026-04-21`
+- Fuente: /scripts/pdf_to_md.py main block
+- Nota: argparse con validación, múltiples flags (--verify, --fix, --lang, --json, --quiet), ejemplos de uso, manejo robusto de errores
+
+### Independencia verificada
+- Tipo: `HECHO_VERIFICADO`
+- Fecha: `2026-04-21`
+- Fuente: revisión de imports en ambos scripts
+- Nota: sin dependencias de modelos de IA, sin llamadas a APIs externas, sin plataformas externas, funciona offline completamente
+
 ## Estado Actual Del Proyecto
 Lo siguiente refleja solo lo que hoy puede verificarse localmente.
 
