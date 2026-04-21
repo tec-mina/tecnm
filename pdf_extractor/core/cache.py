@@ -1,0 +1,101 @@
+"""
+core/cache.py — SHA256-based extraction cache.
+
+Cache key = SHA256(file_content) + file_size + extraction_mode
+Location:   ~/.cache/pdf-extractor/<cache_key>/
+"""
+
+import hashlib
+import json
+import os
+import shutil
+from pathlib import Path
+from typing import Any
+
+
+_CACHE_ROOT = Path.home() / ".cache" / "pdf-extractor"
+_DOCKER_FLAG = _CACHE_ROOT / "docker_verified"
+
+
+# ---------------------------------------------------------------------------
+# Public API
+# ---------------------------------------------------------------------------
+
+def compute_key(pdf_path: str, mode: str) -> str:
+    """Compute cache key as SHA256(file_bytes) + file_size + mode."""
+    p = Path(pdf_path)
+    size = p.stat().st_size
+    h = hashlib.sha256()
+    with open(p, "rb") as f:
+        for chunk in iter(lambda: f.read(65536), b""):
+            h.update(chunk)
+    return f"{h.hexdigest()}_{size}_{mode}"
+
+
+def hit(key: str) -> bool:
+    """Return True if a valid cached result exists for this key."""
+    entry = _entry_dir(key)
+    return (entry / "full_output.md").exists() and (entry / "metadata.json").exists()
+
+
+def load(key: str) -> tuple[str, dict[str, Any]]:
+    """Load cached markdown and metadata. Raises if not found."""
+    entry = _entry_dir(key)
+    markdown = (entry / "full_output.md").read_text(encoding="utf-8")
+    metadata = json.loads((entry / "metadata.json").read_text(encoding="utf-8"))
+    return markdown, metadata
+
+
+def save(key: str, markdown: str, metadata: dict[str, Any],
+         images_dir: Path | None = None) -> None:
+    """Write extraction results to cache. Only called after validation PASS."""
+    entry = _entry_dir(key)
+    entry.mkdir(parents=True, exist_ok=True)
+    (entry / "full_output.md").write_text(markdown, encoding="utf-8")
+    (entry / "metadata.json").write_text(
+        json.dumps(metadata, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+    if images_dir and images_dir.exists():
+        dest_images = entry / "images"
+        if dest_images.exists():
+            shutil.rmtree(dest_images)
+        shutil.copytree(images_dir, dest_images)
+
+
+def load_images(key: str, dest_dir: Path) -> None:
+    """Copy cached images to dest_dir if present."""
+    src = _entry_dir(key) / "images"
+    if src.exists():
+        dest_dir.mkdir(parents=True, exist_ok=True)
+        for img in src.iterdir():
+            shutil.copy2(img, dest_dir / img.name)
+
+
+def invalidate(key: str) -> None:
+    """Delete a specific cache entry."""
+    entry = _entry_dir(key)
+    if entry.exists():
+        shutil.rmtree(entry)
+
+
+# ---------------------------------------------------------------------------
+# Docker install flag
+# ---------------------------------------------------------------------------
+
+def docker_verified_version() -> str | None:
+    if _DOCKER_FLAG.exists():
+        return _DOCKER_FLAG.read_text(encoding="utf-8").strip()
+    return None
+
+
+def set_docker_verified(version: str) -> None:
+    _CACHE_ROOT.mkdir(parents=True, exist_ok=True)
+    _DOCKER_FLAG.write_text(version, encoding="utf-8")
+
+
+# ---------------------------------------------------------------------------
+# Internal helpers
+# ---------------------------------------------------------------------------
+
+def _entry_dir(key: str) -> Path:
+    return _CACHE_ROOT / key

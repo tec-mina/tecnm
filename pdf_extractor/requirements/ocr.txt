@@ -1,0 +1,10 @@
+# OCR requirements (optional)
+-r base.txt
+easyocr>=1.7.0
+pytesseract>=0.3.10
+pdf2image>=1.16.0
+img2table>=1.2.0
+rapidocr-onnxruntime>=1.3.0
+# Preprocessing & spell correction
+opencv-python-headless>=4.8.0
+pyspellchecker>=0.7.0

@@ -1,0 +1,8 @@
+# Advanced requirements (heavy dependencies, optional)
+-r base.txt
+docling>=2.0.0
+markitdown[all]>=0.0.1
+camelot-py[cv]>=0.11.0
+tabula-py>=2.7.0
+weasyprint>=60.0
+tika>=1.24

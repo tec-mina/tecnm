@@ -1,0 +1,68 @@
+# docker/compose.yml — PDF Extractor
+#
+# Perfiles disponibles:
+#   (sin perfil)  — extracción estándar
+#   --profile gpu — habilita acceso a GPU para EasyOCR / Surya
+#
+# Ejemplos de uso:
+#
+#   # Extraer un PDF
+#   docker compose run --rm extractor extract /app/input/doc.pdf -o /app/output
+#
+#   # Ver herramientas disponibles
+#   docker compose run --rm extractor capabilities
+#
+#   # Listar estrategias
+#   docker compose run --rm extractor strategies list
+#
+#   # Perfilar un PDF
+#   docker compose run --rm extractor inspect /app/input/doc.pdf
+#
+#   # Salida JSON para agentes
+#   docker compose run --rm extractor extract /app/input/doc.pdf --json
+#
+#   # Shell interactivo
+#   docker compose run --rm --entrypoint bash extractor
+
+services:
+  extractor:
+    build:
+      context: ../..
+      dockerfile: pdf_extractor/docker/Dockerfile
+    image: pdf-extractor:latest
+    volumes:
+      # Monta la carpeta actual como /app/input
+      - type: bind
+        source: ${INPUT_DIR:-./input}
+        target: /app/input
+      # Salida de los archivos Markdown extraídos
+      - type: bind
+        source: ${OUTPUT_DIR:-./output}
+        target: /app/output
+      # Caché persistente entre ejecuciones (~/.cache/pdf-extractor)
+      - type: bind
+        source: ${CACHE_DIR:-~/.cache/pdf-extractor}
+        target: /root/.cache/pdf-extractor
+    environment:
+      - EXTRACTOR_WORKERS=${EXTRACTOR_WORKERS:-4}
+      - PYTHONUNBUFFERED=1
+    # Comando por defecto — sobreescribe con `docker compose run extractor <cmd>`
+    command: ["--help"]
+
+  # ── Perfil GPU (EasyOCR / Surya) ────────────────────────────────────────────
+  extractor-gpu:
+    extends:
+      service: extractor
+    image: pdf-extractor:latest
+    profiles: ["gpu"]
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    environment:
+      - EXTRACTOR_WORKERS=${EXTRACTOR_WORKERS:-4}
+      - PYTHONUNBUFFERED=1
+      - CUDA_VISIBLE_DEVICES=0

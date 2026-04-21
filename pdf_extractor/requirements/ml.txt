@@ -1,0 +1,6 @@
+# Heavy ML backends — require large model downloads (500 MB – 4 GB)
+# GPU is optional but strongly recommended for acceptable performance.
+# Install separately: pip install -r requirements/ml.txt
+-r base.txt
+surya-ocr>=0.4.0
+marker-pdf>=0.3.0

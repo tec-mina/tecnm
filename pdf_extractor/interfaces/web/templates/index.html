@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDF Extractor — TecNM</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f1117; --surface: #1a1d27; --surface2: #22263a;
+      --border: #2e3350; --accent: #5b6ef5; --accent2: #7c8cf8;
+      --green: #22c55e; --yellow: #f59e0b; --red: #ef4444; --dim: #6b7280;
+      --text: #e2e8f0; --text2: #94a3b8;
+      --radius: 10px; --font: 'Segoe UI', system-ui, sans-serif;
+    }
+
+    body { background: var(--bg); color: var(--text); font-family: var(--font);
+           min-height: 100vh; display: flex; flex-direction: column; }
+
+    header { background: var(--surface); border-bottom: 1px solid var(--border);
+             padding: 14px 24px; display: flex; align-items: center; gap: 12px; }
+    header h1 { font-size: 1.1rem; font-weight: 600; }
+    header span { color: var(--dim); font-size: .85rem; }
+
+    nav { display: flex; gap: 4px; margin-left: auto; }
+    nav button { background: none; border: none; color: var(--text2); cursor: pointer;
+                 padding: 6px 14px; border-radius: 6px; font-size: .85rem; transition: .15s; }
+    nav button.active, nav button:hover { background: var(--surface2); color: var(--text); }
+
+    main { flex: 1; display: grid; grid-template-columns: 1fr 1fr;
+           gap: 20px; padding: 20px; max-width: 1400px; width: 100%; margin: 0 auto; }
+
+    .panel { background: var(--surface); border: 1px solid var(--border);
+             border-radius: var(--radius); display: flex; flex-direction: column; overflow: hidden; }
+    .panel-header { padding: 12px 16px; border-bottom: 1px solid var(--border);
+                    font-weight: 600; font-size: .9rem; display: flex;
+                    align-items: center; justify-content: space-between; gap: 8px; }
+    .panel-body { padding: 16px; flex: 1; overflow-y: auto; }
+
+    /* Drop zone */
+    #drop-zone { border: 2px dashed var(--border); border-radius: var(--radius);
+                 padding: 40px 20px; text-align: center; cursor: pointer;
+                 transition: .2s; color: var(--text2); }
+    #drop-zone.over { border-color: var(--accent); background: rgba(91,110,245,.07); color: var(--text); }
+    #drop-zone svg { width: 40px; height: 40px; margin-bottom: 10px; opacity: .5; }
+    #drop-zone p { font-size: .9rem; }
+    #drop-zone small { font-size: .78rem; color: var(--dim); }
+
+    /* File info */
+    #file-info { display: none; margin-top: 12px; padding: 12px;
+                 background: var(--surface2); border-radius: 8px; font-size: .85rem; }
+    #file-info strong { color: var(--accent2); }
+
+    /* Inspect result */
+    #inspect-result { display: none; margin-top: 12px; }
+    .inspect-row { display: flex; justify-content: space-between; padding: 5px 0;
+                   border-bottom: 1px solid var(--border); font-size: .83rem; }
+    .inspect-row:last-child { border: none; }
+    .inspect-key { color: var(--dim); }
+    .inspect-val { color: var(--text); font-weight: 500; }
+
+    /* Strategies */
+    #strategy-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .strategy-chip { background: var(--surface2); border: 1px solid var(--border);
+                     border-radius: 20px; padding: 4px 12px; font-size: .78rem;
+                     cursor: pointer; transition: .15s; user-select: none; color: var(--text2); }
+    .strategy-chip:hover { border-color: var(--accent); color: var(--text); }
+    .strategy-chip.selected { background: var(--accent); border-color: var(--accent);
+                               color: #fff; }
+    .strategy-chip.recommended { border-color: var(--green); color: var(--green); }
+    .strategy-chip.recommended.selected { background: var(--green); border-color: var(--green); color: #fff; }
+    .tier-label { font-size: .72rem; color: var(--dim); margin-top: 10px; margin-bottom: 4px;
+                  text-transform: uppercase; letter-spacing: .06em; }
+
+    /* Options row */
+    .opts-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; align-items: center; }
+    .opt-toggle { display: flex; align-items: center; gap: 6px; cursor: pointer;
+                  font-size: .82rem; color: var(--text2); }
+    .opt-toggle input { accent-color: var(--accent); }
+    .pages-input { background: var(--surface2); border: 1px solid var(--border);
+                   border-radius: 6px; padding: 4px 8px; color: var(--text);
+                   font-size: .82rem; width: 90px; }
+    .pages-input::placeholder { color: var(--dim); }
+
+    /* Extract button */
+    #btn-extract { margin-top: 16px; width: 100%; padding: 11px;
+                   background: var(--accent); color: #fff; border: none;
+                   border-radius: 8px; font-size: .95rem; font-weight: 600;
+                   cursor: pointer; transition: .15s; }
+    #btn-extract:hover:not(:disabled) { background: var(--accent2); }
+    #btn-extract:disabled { opacity: .4; cursor: not-allowed; }
+
+    /* Log / events */
+    #log { font-family: 'Cascadia Code', 'Fira Mono', monospace; font-size: .78rem;
+           line-height: 1.6; height: 340px; overflow-y: auto;
+           background: #0a0c14; border-radius: 8px; padding: 12px; }
+    .log-line { display: flex; gap: 8px; }
+    .log-ts   { color: #374151; min-width: 68px; }
+    .log-evt  { min-width: 100px; font-weight: 600; }
+    .log-evt.preflight    { color: #60a5fa; }
+    .log-evt.profile      { color: #818cf8; }
+    .log-evt.strategy_plan{ color: #a78bfa; }
+    .log-evt.feature_start{ color: #6b7280; }
+    .log-evt.feature_done { color: #22c55e; }
+    .log-evt.feature_skip { color: #78716c; }
+    .log-evt.validate     { color: #60a5fa; }
+    .log-evt.fix          { color: #2dd4bf; }
+    .log-evt.done         { color: #4ade80; }
+    .log-evt.error        { color: #f87171; }
+    .log-evt.cache_hit    { color: #fbbf24; }
+    .log-msg { color: #9ca3af; flex: 1; }
+
+    /* Progress bar */
+    #progress-wrap { height: 3px; background: var(--surface2); border-radius: 2px;
+                     margin-top: 8px; overflow: hidden; display: none; }
+    #progress-bar  { height: 100%; background: var(--accent); width: 0;
+                     transition: width .4s; border-radius: 2px; }
+
+    /* Quality badge */
+    #quality-badge { display: none; margin-top: 12px; padding: 12px 16px;
+                     border-radius: 8px; background: var(--surface2); }
+    .q-score { font-size: 2rem; font-weight: 700; }
+    .q-label { font-size: .82rem; color: var(--dim); margin-top: 2px; }
+    .q-features { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 6px; }
+    .q-feat-chip { background: var(--surface); border: 1px solid var(--border);
+                   border-radius: 4px; padding: 2px 8px; font-size: .72rem; color: var(--text2); }
+
+    /* Download button */
+    #btn-download { display: none; margin-top: 10px; width: 100%; padding: 9px;
+                    background: var(--green); color: #fff; border: none;
+                    border-radius: 8px; font-size: .88rem; font-weight: 600;
+                    cursor: pointer; transition: .15s; text-decoration: none;
+                    text-align: center; }
+    #btn-download:hover { opacity: .85; }
+
+    /* Capabilities tab */
+    #caps-section { display: none; }
+    .caps-group { margin-bottom: 20px; }
+    .caps-title { font-size: .8rem; text-transform: uppercase; letter-spacing: .07em;
+                  color: var(--dim); margin-bottom: 8px; }
+    .caps-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+                 gap: 6px; }
+    .cap-item { background: var(--surface2); border-radius: 6px; padding: 8px 10px;
+                display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+    .cap-dot  { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .cap-dot.ok  { background: var(--green); }
+    .cap-dot.err { background: var(--red); }
+    .cap-name { font-weight: 500; }
+    .cap-ver  { color: var(--dim); font-size: .72rem; margin-left: auto; }
+
+    /* Strategies tab */
+    #strats-section { display: none; }
+    .strat-table { width: 100%; border-collapse: collapse; font-size: .8rem; }
+    .strat-table th { text-align: left; color: var(--dim); font-weight: 500;
+                      padding: 6px 10px; border-bottom: 1px solid var(--border); }
+    .strat-table td { padding: 7px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .strat-table tr:last-child td { border: none; }
+    .tier-badge { border-radius: 4px; padding: 2px 7px; font-size: .7rem; font-weight: 600; }
+    .tier-text    { background: #1e3a5f; color: #60a5fa; }
+    .tier-ocr     { background: #3b1f5e; color: #c084fc; }
+    .tier-tables  { background: #1a3a2e; color: #4ade80; }
+    .tier-images  { background: #3a2a1a; color: #fb923c; }
+    .tier-fonts   { background: #2a1a3a; color: #e879f9; }
+    .tier-layout  { background: #1a2a3a; color: #67e8f9; }
+
+    @media (max-width: 900px) {
+      main { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5b6ef5" stroke-width="2">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+    <polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/>
+    <line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+  </svg>
+  <h1>PDF Extractor</h1>
+  <span>TecNM / DPPP</span>
+  <nav>
+    <button class="active" onclick="showTab('extract')">Extraer</button>
+    <button onclick="showTab('capabilities')">Herramientas</button>
+    <button onclick="showTab('strategies')">Estrategias</button>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ── LEFT PANEL: Upload + Config ─────────────────────────────────────── -->
+  <div class="panel" id="left-panel">
+    <div class="panel-header">
+      <span>PDF</span>
+      <span id="status-badge" style="font-size:.75rem;color:var(--dim)">Sin archivo</span>
+    </div>
+    <div class="panel-body">
+
+      <!-- Drop zone -->
+      <div id="drop-zone" onclick="document.getElementById('file-input').click()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/>
+        </svg>
+        <p>Arrastra un PDF aquí</p>
+        <small>o haz clic para seleccionar · máx 200 MB</small>
+      </div>
+      <input type="file" id="file-input" accept=".pdf" style="display:none" />
+
+      <div id="file-info"></div>
+      <div id="inspect-result"></div>
+
+      <!-- Strategies -->
+      <div id="strat-picker" style="display:none; margin-top:16px;">
+        <div class="panel-header" style="padding:0 0 8px 0; border:none; font-size:.82rem;">
+          Estrategias
+          <span style="font-size:.72rem; color:var(--dim); font-weight:400;">
+            (verde = recomendadas · haz clic para activar/desactivar)
+          </span>
+        </div>
+        <div id="strategy-list"></div>
+      </div>
+
+      <!-- Options -->
+      <div class="opts-row" id="opts-row" style="display:none;">
+        <label class="opt-toggle">
+          <input type="checkbox" id="opt-images"> Imágenes
+        </label>
+        <label class="opt-toggle">
+          <input type="checkbox" id="opt-structure"> Estructura
+        </label>
+        <label class="opt-toggle">
+          <input type="checkbox" id="opt-nospell"> Sin corrección OCR
+        </label>
+        <input class="pages-input" id="opt-pages" placeholder="págs: 1-10" />
+      </div>
+
+      <button id="btn-extract" disabled onclick="startExtract()">
+        Extraer a Markdown
+      </button>
+      <a id="btn-download" href="#" target="_blank">⬇ Descargar Markdown</a>
+
+    </div>
+  </div>
+
+  <!-- ── RIGHT PANEL: Log + Result ────────────────────────────────────────── -->
+  <div class="panel" id="right-panel">
+    <div class="panel-header">
+      <span>Log en tiempo real</span>
+      <button onclick="clearLog()"
+        style="background:none;border:none;color:var(--dim);cursor:pointer;font-size:.78rem;">
+        limpiar
+      </button>
+    </div>
+    <div class="panel-body">
+      <div id="progress-wrap"><div id="progress-bar"></div></div>
+      <div id="log"><span style="color:var(--dim)">Esperando archivo…</span></div>
+      <div id="quality-badge"></div>
+    </div>
+  </div>
+
+  <!-- ── CAPABILITIES (hidden tab) ─────────────────────────────────────────── -->
+  <div id="caps-section" style="grid-column:1/-1;">
+    <div class="panel">
+      <div class="panel-header">Inventario de herramientas</div>
+      <div class="panel-body" id="caps-body">
+        <span style="color:var(--dim)">Cargando…</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── STRATEGIES TABLE (hidden tab) ─────────────────────────────────────── -->
+  <div id="strats-section" style="grid-column:1/-1;">
+    <div class="panel">
+      <div class="panel-header">Estrategias registradas</div>
+      <div class="panel-body" id="strats-body">
+        <span style="color:var(--dim)">Cargando…</span>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+// ── State ──────────────────────────────────────────────────────────────────
+let jobId = null;
+let allStrategies = [];
+let selectedStrategies = new Set();
+let recommendedStrategies = new Set();
+let eventSource = null;
+let progressSteps = 0;
+
+// ── Init ───────────────────────────────────────────────────────────────────
+(async () => {
+  allStrategies = await fetch('/api/strategies').then(r => r.json()).catch(() => []);
+})();
+
+// ── Tab switching ──────────────────────────────────────────────────────────
+function showTab(tab) {
+  document.querySelectorAll('nav button').forEach((b,i) => {
+    b.classList.toggle('active', ['extract','capabilities','strategies'][i] === tab);
+  });
+  document.getElementById('left-panel').style.display  = tab === 'extract' ? '' : 'none';
+  document.getElementById('right-panel').style.display = tab === 'extract' ? '' : 'none';
+  document.getElementById('caps-section').style.display   = tab === 'capabilities' ? '' : 'none';
+  document.getElementById('strats-section').style.display = tab === 'strategies' ? '' : 'none';
+  if (tab === 'capabilities') loadCapabilities();
+  if (tab === 'strategies')   loadStrategiesTable();
+}
+
+// ── Drag & drop ────────────────────────────────────────────────────────────
+const dz = document.getElementById('drop-zone');
+dz.addEventListener('dragover',  e => { e.preventDefault(); dz.classList.add('over'); });
+dz.addEventListener('dragleave', ()  => dz.classList.remove('over'));
+dz.addEventListener('drop', e => {
+  e.preventDefault(); dz.classList.remove('over');
+  const f = e.dataTransfer.files[0];
+  if (f) handleFile(f);
+});
+document.getElementById('file-input').addEventListener('change', e => {
+  if (e.target.files[0]) handleFile(e.target.files[0]);
+});
+
+async function handleFile(file) {
+  if (!file.name.endsWith('.pdf')) return alert('Solo se aceptan archivos PDF.');
+  document.getElementById('status-badge').textContent = 'Subiendo…';
+  document.getElementById('btn-extract').disabled = true;
+
+  const fd = new FormData();
+  fd.append('file', file);
+  const res = await fetch('/api/upload', { method: 'POST', body: fd });
+  if (!res.ok) { alert('Error al subir el archivo.'); return; }
+  const data = await res.json();
+  jobId = data.job_id;
+
+  document.getElementById('file-info').style.display = 'block';
+  document.getElementById('file-info').innerHTML =
+    `<strong>${file.name}</strong>  <span style="color:var(--dim)">${(file.size/1024/1024).toFixed(1)} MB</span>`;
+  document.getElementById('status-badge').textContent = 'Inspeccionando…';
+
+  // Auto-inspect
+  await inspectPDF();
+}
+
+async function inspectPDF() {
+  const res  = await fetch('/api/inspect', {
+    method:'POST', headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({ job_id: jobId })
+  });
+  if (!res.ok) {
+    document.getElementById('status-badge').textContent = 'Listo';
+    showStrategyPicker([]);
+    document.getElementById('btn-extract').disabled = false;
+    return;
+  }
+  const p = await res.json();
+  recommendedStrategies = new Set(p.suggested_strategies || []);
+  showInspectResult(p);
+  showStrategyPicker(p.suggested_strategies || []);
+  document.getElementById('status-badge').textContent = 'Listo';
+  document.getElementById('opts-row').style.display = 'flex';
+  document.getElementById('btn-extract').disabled = false;
+}
+
+function showInspectResult(p) {
+  const rows = [
+    ['Páginas', p.page_count],
+    ['Tamaño', `${p.file_size_mb} MB`],
+    ['Escaneado', p.is_scanned ? '⚠ Sí (OCR necesario)' : 'No'],
+    ['Págs escaneadas', p.scanned_pages],
+    ['Págs con texto', p.text_native_pages],
+    ['Págs con tablas', p.table_pages],
+    ['Imágenes', p.has_images ? 'Sí' : 'No'],
+    ['Idioma detectado', p.dominant_language || '—'],
+    ['Encriptado', p.is_encrypted ? 'Sí' : 'No'],
+  ];
+  if (p.metadata?.title) rows.push(['Título', p.metadata.title.slice(0,60)]);
+  if (p.metadata?.author) rows.push(['Autor', p.metadata.author.slice(0,40)]);
+
+  document.getElementById('inspect-result').style.display = 'block';
+  document.getElementById('inspect-result').innerHTML =
+    rows.map(([k,v]) =>
+      `<div class="inspect-row"><span class="inspect-key">${k}</span><span class="inspect-val">${v}</span></div>`
+    ).join('');
+}
+
+function showStrategyPicker(recommended) {
+  selectedStrategies = new Set(recommended);  // pre-select recommended
+  const container = document.getElementById('strategy-list');
+  container.innerHTML = '';
+
+  const tiers = [...new Set(allStrategies.map(s => s.tier))];
+  tiers.forEach(tier => {
+    const group = allStrategies.filter(s => s.tier === tier);
+    const lbl = document.createElement('div');
+    lbl.className = 'tier-label';
+    lbl.textContent = tier;
+    container.appendChild(lbl);
+    group.forEach(s => {
+      const chip = document.createElement('span');
+      chip.className = 'strategy-chip' +
+        (recommended.includes(s.name) ? ' recommended' : '') +
+        (selectedStrategies.has(s.name) ? ' selected' : '');
+      chip.textContent = s.name;
+      chip.title = s.description;
+      chip.addEventListener('click', () => {
+        if (selectedStrategies.has(s.name)) selectedStrategies.delete(s.name);
+        else selectedStrategies.add(s.name);
+        chip.classList.toggle('selected', selectedStrategies.has(s.name));
+      });
+      container.appendChild(chip);
+    });
+  });
+
+  document.getElementById('strat-picker').style.display = 'block';
+}
+
+// ── Extract ────────────────────────────────────────────────────────────────
+async function startExtract() {
+  if (!jobId) return;
+  if (eventSource) { eventSource.close(); eventSource = null; }
+
+  clearLog();
+  document.getElementById('quality-badge').style.display = 'none';
+  document.getElementById('btn-download').style.display = 'none';
+  document.getElementById('btn-extract').disabled = true;
+  document.getElementById('status-badge').textContent = 'Extrayendo…';
+  showProgress(true);
+
+  const strategies = selectedStrategies.size > 0 ? [...selectedStrategies] : null;
+  const pages = document.getElementById('opt-pages').value.trim() || null;
+
+  await fetch('/api/extract', {
+    method: 'POST', headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({
+      job_id: jobId,
+      strategies,
+      page_range: pages,
+      with_images: document.getElementById('opt-images').checked,
+      with_structure: document.getElementById('opt-structure').checked,
+      no_spell: document.getElementById('opt-nospell').checked,
+    })
+  });
+
+  // Open SSE stream
+  eventSource = new EventSource(`/api/stream/${jobId}`);
+  eventSource.onmessage = e => handleEvent(JSON.parse(e.data));
+  eventSource.addEventListener('end', e => {
+    eventSource.close();
+    const result = JSON.parse(e.data);
+    showResult(result);
+    showProgress(false);
+    document.getElementById('btn-extract').disabled = false;
+    document.getElementById('status-badge').textContent = 'Completado';
+  });
+  eventSource.onerror = () => {
+    appendLog({ event: 'error', msg: 'Conexión SSE interrumpida.' });
+    showProgress(false);
+    document.getElementById('btn-extract').disabled = false;
+  };
+}
+
+// ── Event log ──────────────────────────────────────────────────────────────
+function handleEvent(ev) {
+  progressSteps++;
+  const bar = document.getElementById('progress-bar');
+  bar.style.width = Math.min(90, progressSteps * 8) + '%';
+  appendLog(ev);
+}
+
+function appendLog(ev) {
+  const log = document.getElementById('log');
+  const ts = (ev.ts || '').slice(11,19);
+  const name = ev.event || 'event';
+  const msg = formatMsg(ev);
+
+  const line = document.createElement('div');
+  line.className = 'log-line';
+  line.innerHTML = `<span class="log-ts">${ts}</span>` +
+    `<span class="log-evt ${name}">${name}</span>` +
+    `<span class="log-msg">${msg}</span>`;
+  log.appendChild(line);
+  log.scrollTop = log.scrollHeight;
+}
+
+function formatMsg(ev) {
+  switch (ev.event) {
+    case 'preflight':
+      return `${ev.file}  ${ev.pages} págs  ${ev.size_mb} MB  ${ev.is_scanned ? '(escaneado)' : ''}`;
+    case 'profile':
+      return `text:${ev.text}  scanned:${ev.scanned}  tables:${ev.tables}  lang:${ev.lang||'?'}`;
+    case 'strategy_plan':
+      return (ev.strategies||[]).join(', ');
+    case 'feature_start':
+      return `→ ${ev.name}`;
+    case 'feature_done':
+      return `${ev.name}  conf=${ev.confidence?.toFixed(2)||'?'}`;
+    case 'feature_skip':
+      return `${ev.name}  (${ev.reason})`;
+    case 'validate':
+      return `${ev.status}  score=${ev.score?.toFixed(0)||'?'}/100  issues=${ev.issues||0}`;
+    case 'fix':
+      return Object.entries(ev.fixes||{}).map(([k,v])=>`${k}:${v}`).join('  ');
+    case 'done':
+      return `${ev.quality?.toFixed(0)||'?'}/100  ${ev.elapsed_sec?.toFixed(1)||'?'}s  → ${ev.output||''}`;
+    case 'error':
+      return `[${ev.phase}] ${ev.msg}`;
+    case 'cache_hit':
+      return 'desde caché';
+    default:
+      return JSON.stringify(ev).slice(0,120);
+  }
+}
+
+function clearLog() {
+  progressSteps = 0;
+  document.getElementById('log').innerHTML = '';
+  document.getElementById('progress-bar').style.width = '0';
+}
+
+function showProgress(on) {
+  document.getElementById('progress-wrap').style.display = on ? 'block' : 'none';
+  if (!on) document.getElementById('progress-bar').style.width = '100%';
+}
+
+function showResult(result) {
+  if (!result || result.error) return;
+  const score = result.quality_score || 0;
+  const color = score >= 80 ? 'var(--green)' : score >= 60 ? 'var(--yellow)' : 'var(--red)';
+  const label = score >= 90 ? 'Excelente' : score >= 80 ? 'Bueno' :
+                score >= 70 ? 'Aceptable' : 'Deficiente';
+  const features = (result.features_used || []).map(f =>
+    `<span class="q-feat-chip">${f}</span>`).join('');
+  const warnings = (result.warnings || []).map(w =>
+    `<div style="font-size:.75rem;color:var(--yellow);margin-top:4px;">⚠ ${w}</div>`).join('');
+
+  document.getElementById('quality-badge').style.display = 'block';
+  document.getElementById('quality-badge').innerHTML =
+    `<div style="display:flex;align-items:center;gap:16px;">
+       <div>
+         <div class="q-score" style="color:${color}">${score.toFixed(0)}<span style="font-size:1rem;color:var(--dim)">/100</span></div>
+         <div class="q-label">${label}</div>
+       </div>
+       <div>
+         <div style="font-size:.75rem;color:var(--dim)">Estrategias usadas</div>
+         <div class="q-features">${features}</div>
+       </div>
+     </div>
+     ${warnings}`;
+
+  // Download button
+  const dl = document.getElementById('btn-download');
+  dl.href = `/api/jobs/${jobId}/download`;
+  dl.style.display = 'block';
+}
+
+// ── Capabilities tab ───────────────────────────────────────────────────────
+async function loadCapabilities() {
+  const body = document.getElementById('caps-body');
+  body.innerHTML = '<span style="color:var(--dim)">Cargando…</span>';
+  const data = await fetch('/api/capabilities').then(r => r.json()).catch(() => null);
+  if (!data) { body.innerHTML = '<span style="color:var(--red)">Error al cargar.</span>'; return; }
+
+  function renderGroup(title, items) {
+    return `<div class="caps-group">
+      <div class="caps-title">${title}</div>
+      <div class="caps-grid">${items.map(t =>
+        `<div class="cap-item">
+           <span class="cap-dot ${t.available?'ok':'err'}"></span>
+           <span class="cap-name">${t.name}</span>
+           <span class="cap-ver">${t.version ? t.version.slice(0,20) : (t.available?'':'no instalado')}</span>
+         </div>`).join('')}
+      </div></div>`;
+  }
+
+  body.innerHTML =
+    renderGroup('Herramientas del sistema', data.system_tools) +
+    renderGroup('Paquetes Python', data.python_packages);
+}
+
+// ── Strategies tab ─────────────────────────────────────────────────────────
+async function loadStrategiesTable() {
+  const body = document.getElementById('strats-body');
+  body.innerHTML = '<span style="color:var(--dim)">Cargando…</span>';
+  const data = await fetch('/api/strategies').then(r => r.json()).catch(() => []);
+
+  const tierClass = t => ({ text:'tier-text', ocr:'tier-ocr', tables:'tier-tables',
+                             images:'tier-images', fonts:'tier-fonts', layout:'tier-layout' }[t] || '');
+  body.innerHTML = `
+    <table class="strat-table">
+      <thead><tr>
+        <th>Tier</th><th>Nombre</th><th>Descripción</th>
+        <th>Prioridad</th><th>Requiere</th>
+      </tr></thead>
+      <tbody>
+        ${data.map(s => `<tr>
+          <td><span class="tier-badge ${tierClass(s.tier)}">${s.tier}</span></td>
+          <td style="font-weight:500;white-space:nowrap">${s.name}</td>
+          <td style="color:var(--text2)">${s.description}</td>
+          <td style="text-align:right;color:var(--dim)">${s.priority}</td>
+          <td style="color:var(--dim);font-size:.72rem">
+            ${[...s.requires_python,...s.requires_system].join(', ')||'—'}
+          </td>
+        </tr>`).join('')}
+      </tbody>
+    </table>`;
+}
+</script>
+</body>
+</html>

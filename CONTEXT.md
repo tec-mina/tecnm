@@ -492,7 +492,58 @@ usar este orden de prioridad:
 - Fuente: verificación en lote procesado
 - Nota: Consideraciones POA 2022 (54-), 2023 (73-), 2024 (75-), 2025 (78-, 80-), 2026 (82-). Incluyen circulares de montos (72-Circular_M00-015-2023), indicadores (79-Indicadores2025_Responsables.pdf), módulos SISAD (81-77-Guía_Módulo_Otros_Ingresos_SISAD_V3.pdf).
 
-## Changelog De Memoria
+## Arquitectura pdf_extractor — Rediseño con Strategy Pattern (2026-04-21)
+
+### Strategy Pattern implementado
+- Tipo: `DECISION`
+- Fecha: `2026-04-21`
+- Fuente: refactoring explícito en esta sesión
+- Nota:
+  - `features/_protocol.py` — StrategyMeta dataclass (name, tier, description, module, config, priority, is_heavy, is_gpu_optional)
+  - `core/registry.py` — auto-discovery por módulo; indexa por strategy name ("ocr:tesseract-basic") Y por module short-name ("ocr_tesseract") para backward compat
+  - Tiers disponibles: text | ocr | tables | images | fonts | layout | correct
+  - Ejemplos de nombres: `text:fast`, `text:llm`, `ocr:tesseract-basic`, `ocr:tesseract-advanced`, `tables:pdfplumber`, `tables:camelot`, `tables:tabula`, `images:extract`, `fonts:analyze`, `ocr:easyocr`
+
+### Nuevas capacidades añadidas
+- Tipo: `HECHO_VERIFICADO`
+- Fecha: `2026-04-21`
+- Fuente: archivos creados en esta sesión
+- Nota:
+  - `features/images_extract.py` — extracción de imágenes embebidas (PyMuPDF), guarda en images/, referencia en Markdown
+  - `features/fonts_analysis.py` — análisis de fuentes por span (nombre, tamaño, bold/italic), promueve spans grandes a headings automáticamente
+  - `features/_ocr_utils.py` — preprocesamiento OCR: OpenCV (denoise+deskew+binarize), unpaper (sistema), PIL (fallback), auto-rotate via OSD
+  - `output/spell_corrector.py` — corrección de artefactos OCR: patrones (0→o, 1→l, rn→m, etc.) + pyspellchecker (es/en)
+  - `ocr:tesseract-advanced` — variante avanzada con preprocessing + OSD rotation + 400 DPI
+
+### Herramientas sistema en Dockerfile (ampliado)
+- Tipo: `DECISION`
+- Fecha: `2026-04-21`
+- Fuente: docker/Dockerfile actualizado
+- Nota: añadidos unpaper (deskew), imagemagick, tesseract-ocr-osd, qpdf, fonts-liberation, fonts-open-sans, libpango-1.0-0, libpangoft2-1.0-0, libpangocairo-1.0-0, libcairo2, libharfbuzz0b, curl
+
+### Dependencias Python ampliadas
+- Tipo: `DECISION`
+- Fecha: `2026-04-21`
+- Fuente: requirements/ actualizados
+- Nota:
+  - base.txt: añadidos pdfminer.six, python-docx, python-pptx
+  - ocr.txt: añadidos opencv-python-headless, pyspellchecker
+  - advanced.txt: añadido weasyprint
+  - ml.txt (nuevo): surya-ocr, marker-pdf (backends ML pesados, GPU opcional)
+
+### Mejoras en output/assembler.py
+- Tipo: `HECHO_VERIFICADO`
+- Fecha: `2026-04-21`
+- Fuente: output/assembler.py refactorizado
+- Nota: ToC automático (≥3 headings), manejo explícito de features de imágenes, routing de features desconocidos por content_type
+
+### OCR pipeline avanzado
+- Tipo: `DECISION`
+- Fecha: `2026-04-21`
+- Fuente: esta sesión
+- Nota: ocr:tesseract-advanced usa dpi=400, preprocessing OpenCV/unpaper/PIL, OSD auto-rotation; confidence sube de 0.80 a 0.88. OCR correction integrada en fixer.py como paso opcional (apply_ocr_correction=True).
+
+- `2026-04-21`: Ampliación 2 — librerías C de codecs (libopenjp2-7, libwebp7, liblcms2-2, libjpeg62-turbo, libtiff6, libleptonica6, libfreetype6, libfontconfig1, libxml2); herramientas: mupdf-tools (mutool), pdftk-java, exiftool. Nuevas estrategias: text:pdfminer, text:tika-java, layout:structure. Fix: páginas vacías suprimidas en assembler.py.
 - `2026-04-20`: inicializacion de la fuente unica de verdad y reglas de uso compartidas para Claude, Copilot y Codex.
 - `2026-04-20`: se agregaron reglas portables, formula operativa, contrato de revision, contexto institucional del ITM y estructura organizacional provista por el usuario.
 - `2026-04-21`: lote de 80 documentos procesados de PDF a Markdown. Estructura canónica establecida en `/docs/raw` y `/docs/processed`. Documentación de lote agregada (README.md, INDEX.md, STATS.json).

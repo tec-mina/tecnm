@@ -1,0 +1,4 @@
+# All requirements
+-r base.txt
+-r ocr.txt
+-r advanced.txt
