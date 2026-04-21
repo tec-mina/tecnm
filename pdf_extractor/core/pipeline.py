@@ -84,12 +84,16 @@ def run(
         )
         if fr is None:
             continue
-        asm.merge_feature(result.plan, fr)   # absorb into plan
-        result.features_used.append(name)
         result.warnings.extend(fr.warnings)
-        if name in ("ocr_tesseract", "ocr_easy", "ocr:tesseract-basic",
-                    "ocr:tesseract-advanced", "ocr:easyocr") and fr.confidence > 0:
-            result.used_ocr = True
+        # Only count a feature as "used" if it actually produced content.
+        # A zero-confidence result means the backend was unavailable, errored,
+        # or found nothing — agents downstream must not see it as contributing.
+        if fr.confidence > 0:
+            asm.merge_feature(result.plan, fr)
+            result.features_used.append(name)
+            if name in ("ocr_tesseract", "ocr_easy", "ocr:tesseract-basic",
+                        "ocr:tesseract-advanced", "ocr:easyocr"):
+                result.used_ocr = True
         del fr                               # free FeatureResult immediately
 
     result.extraction_time_sec = time.monotonic() - t0
@@ -245,13 +249,24 @@ def _run_feature(
         )
         return None
 
-    _emit_event(
-        on_event,
-        "feature_done",
-        name=name,
-        tier=meta.tier if meta else "",
-        confidence=fr.confidence,
-    )
+    if fr.confidence > 0:
+        _emit_event(
+            on_event,
+            "feature_done",
+            name=name,
+            tier=meta.tier if meta else "",
+            confidence=fr.confidence,
+        )
+    else:
+        # Backend available but produced no content (empty PDF section,
+        # no tables found, OCR dropped everything, etc.).
+        _emit_event(
+            on_event,
+            "feature_skip",
+            name=name,
+            tier=meta.tier if meta else "",
+            reason=(fr.warnings[0] if fr.warnings else "no content produced"),
+        )
     return fr
 
 

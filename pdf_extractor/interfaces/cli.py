@@ -267,6 +267,8 @@ def main() -> None:
 @click.option("--quality-threshold", "quality_threshold", type=float, default=None,
               metavar="0-100",
               help="Fail if quality score is below this value.")
+@click.option("--strict", is_flag=True, default=False,
+              help="Fail if any requested strategy was unavailable or produced no content.")
 @click.option("--dry-run", is_flag=True, default=False,
               help="Show extraction plan without writing files.")
 @click.option("--verbose", "-v", is_flag=True, default=False,
@@ -286,6 +288,7 @@ def extract(
     no_spell: bool,
     no_cache: bool,
     quality_threshold: float | None,
+    strict: bool,
     dry_run: bool,
     verbose: bool,
     json_output: bool,
@@ -302,6 +305,10 @@ def extract(
     parsed_range = _parse_page_range(page_range)
     strategy_list = list(strategies) if strategies else None
 
+    # Exit codes (stable contract for agents / CI):
+    #   0 = ok, 1 = generic error, 2 = quality gate failed,
+    #   3 = preflight failed, 4 = blocked (no content),
+    #   5 = strict mode violation (requested strategy not used)
     exit_code = 0
     for pdf in pdfs:
         req = ExtractionRequest(
@@ -320,15 +327,37 @@ def extract(
             with_structure=with_structure,
         )
         result = use_case.execute(req)
-        if result.status in ("error", "blocked"):
-            exit_code = 1
+
+        this_code = _classify_exit(result, strategy_list, strict)
+        if this_code and not exit_code:
+            exit_code = this_code
+
         if json_output:
-            # Final summary line
-            sys.stdout.write(json.dumps({"event": "result", **result.to_dict()},
-                                        ensure_ascii=False) + "\n")
+            sys.stdout.write(json.dumps(
+                {"event": "result", "exit_code": this_code, **result.to_dict()},
+                ensure_ascii=False) + "\n")
             sys.stdout.flush()
 
     sys.exit(exit_code)
+
+
+def _classify_exit(result, requested_strategies, strict: bool) -> int:
+    """Map a single ExtractionResult to a stable CLI exit code."""
+    if result.status == "blocked":
+        return 4
+    if result.status == "error":
+        msg = (result.error_message or "").lower()
+        if "quality" in msg:
+            return 2
+        if "preflight" in msg:
+            return 3
+        return 1
+    if strict and requested_strategies:
+        used = set(result.features_used)
+        missing = [s for s in requested_strategies if s not in used]
+        if missing:
+            return 5
+    return 0
 
 
 # ── inspect ───────────────────────────────────────────────────────────────────
@@ -632,8 +661,8 @@ def _print_capabilities(report: Any) -> None:
         for t in tools:
             mark = "[green]✓[/]" if t.available else "[red]✗[/]"
             note = t.version or t.note or ""
-            style = "" if t.available else "dim"
-            tbl.add_row(mark, f"[{style}]{t.name}[/]", f"[dim]{note}[/]")
+            name_cell = t.name if t.available else f"[dim]{t.name}[/]"
+            tbl.add_row(mark, name_cell, f"[dim]{note}[/]")
         return tbl
 
     con.print(_tool_table("System Tools", report.system_tools))
