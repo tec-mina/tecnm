@@ -18,9 +18,11 @@ Routes:
 
 from __future__ import annotations
 
+from datetime import datetime, timedelta, timezone
 import json
 import os
 import queue
+import shutil
 import threading
 import time
 import uuid
@@ -35,12 +37,16 @@ app.config["MAX_CONTENT_LENGTH"] = 200 * 1024 * 1024   # 200 MB upload limit
 # Temporary upload/output directories
 _UPLOAD_DIR = Path(os.environ.get("UPLOAD_DIR", "/tmp/pdf-extractor/uploads"))
 _OUTPUT_DIR = Path(os.environ.get("OUTPUT_DIR", "/tmp/pdf-extractor/output"))
+_JOB_STATE_DIR = Path(os.environ.get("JOB_STATE_DIR", str(_OUTPUT_DIR / ".jobs")))
+_JOB_TTL_SEC = max(3600, int(os.environ.get("JOB_TTL_SEC", str(24 * 3600))))
 _UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 _OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+_JOB_STATE_DIR.mkdir(parents=True, exist_ok=True)
 
-# In-memory job registry  {job_id: {"status": ..., "events": queue, "result": ...}}
-_JOBS: dict[str, dict] = {}
+# In-memory live event queues only; job metadata is persisted on disk.
+_LIVE_EVENTS: dict[str, queue.Queue] = {}
 _JOBS_LOCK = threading.Lock()
+_RERUNNABLE_STATUSES = {"uploaded", "ok", "error", "blocked", "cached"}
 
 
 # ── SSE emitter ───────────────────────────────────────────────────────────────
@@ -53,6 +59,111 @@ class _QueueEmitter:
 
     def __call__(self, event: dict[str, Any]) -> None:
         self._q.put(event)
+
+
+# ── Job store helpers ────────────────────────────────────────────────────────
+
+def _utc_now() -> datetime:
+    return datetime.now(timezone.utc)
+
+
+def _utc_iso(dt: datetime | None = None) -> str:
+    return (dt or _utc_now()).isoformat()
+
+
+def _job_state_path(job_id: str) -> Path:
+    return _JOB_STATE_DIR / f"{job_id}.json"
+
+
+def _job_output_dir(job_id: str) -> Path:
+    return _OUTPUT_DIR / job_id
+
+
+def _load_job_record(job_id: str) -> dict[str, Any] | None:
+    path = _job_state_path(job_id)
+    if not path.exists():
+        return None
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+
+
+def _write_job_record(record: dict[str, Any]) -> dict[str, Any]:
+    now = _utc_now()
+    path = _job_state_path(record["job_id"])
+    path.parent.mkdir(parents=True, exist_ok=True)
+
+    record = dict(record)
+    record.setdefault("created_at", _utc_iso(now))
+    record["updated_at"] = _utc_iso(now)
+    record["expires_at"] = _utc_iso(now + timedelta(seconds=_JOB_TTL_SEC))
+
+    tmp_path = path.with_suffix(".tmp")
+    tmp_path.write_text(json.dumps(record, ensure_ascii=False, indent=2), encoding="utf-8")
+    tmp_path.replace(path)
+    return record
+
+
+def _delete_job_artifacts(job_id: str, record: dict[str, Any] | None = None) -> None:
+    _LIVE_EVENTS.pop(job_id, None)
+
+    state_path = _job_state_path(job_id)
+    if state_path.exists():
+        state_path.unlink(missing_ok=True)
+
+    out_dir = _job_output_dir(job_id)
+    if out_dir.exists():
+        shutil.rmtree(out_dir, ignore_errors=True)
+
+    if record and record.get("pdf_path"):
+        Path(record["pdf_path"]).unlink(missing_ok=True)
+
+
+def _job_is_expired(record: dict[str, Any]) -> bool:
+    expires_at = record.get("expires_at")
+    if not expires_at:
+        return False
+    try:
+        return datetime.fromisoformat(expires_at) <= _utc_now()
+    except ValueError:
+        return False
+
+
+def _cleanup_expired_jobs() -> None:
+    with _JOBS_LOCK:
+        for state_path in _JOB_STATE_DIR.glob("*.json"):
+            try:
+                record = json.loads(state_path.read_text(encoding="utf-8"))
+            except (OSError, json.JSONDecodeError):
+                state_path.unlink(missing_ok=True)
+                continue
+
+            if _job_is_expired(record):
+                _delete_job_artifacts(record.get("job_id", state_path.stem), record)
+
+
+def _get_job(job_id: str) -> dict[str, Any] | None:
+    _cleanup_expired_jobs()
+    with _JOBS_LOCK:
+        return _load_job_record(job_id)
+
+
+def _upsert_job(job_id: str, **updates: Any) -> dict[str, Any]:
+    with _JOBS_LOCK:
+        record = _load_job_record(job_id) or {"job_id": job_id}
+        record.update(updates)
+        return _write_job_record(record)
+
+
+def _set_live_queue(job_id: str, event_queue: queue.Queue) -> None:
+    with _JOBS_LOCK:
+        _LIVE_EVENTS[job_id] = event_queue
+
+
+def _get_live_queue(job_id: str) -> queue.Queue | None:
+    with _JOBS_LOCK:
+        return _LIVE_EVENTS.get(job_id)
 
 
 # ── Routes ────────────────────────────────────────────────────────────────────
@@ -99,8 +210,7 @@ def inspect():
     if not job_id:
         return jsonify({"error": "job_id required"}), 400
 
-    with _JOBS_LOCK:
-        job = _JOBS.get(job_id)
+    job = _get_job(job_id)
     if not job:
         return jsonify({"error": "job not found"}), 404
 
@@ -120,6 +230,8 @@ def inspect():
 @app.route("/api/upload", methods=["POST"])
 def upload():
     """Upload a PDF and return a job_id. Does NOT start extraction yet."""
+    _cleanup_expired_jobs()
+
     if "file" not in request.files:
         return jsonify({"error": "No file uploaded"}), 400
     f = request.files["file"]
@@ -130,14 +242,14 @@ def upload():
     pdf_path = _UPLOAD_DIR / f"{job_id}.pdf"
     f.save(str(pdf_path))
 
-    with _JOBS_LOCK:
-        _JOBS[job_id] = {
-            "status": "uploaded",
-            "pdf_path": str(pdf_path),
-            "original_name": f.filename,
-            "events": queue.Queue(),
-            "result": None,
-        }
+    _upsert_job(
+        job_id,
+        status="uploaded",
+        pdf_path=str(pdf_path),
+        original_name=f.filename,
+        output_dir=str(_job_output_dir(job_id)),
+        result=None,
+    )
 
     return jsonify({"job_id": job_id, "filename": f.filename})
 
@@ -150,17 +262,14 @@ def extract():
     if not job_id:
         return jsonify({"error": "job_id required"}), 400
 
-    with _JOBS_LOCK:
-        job = _JOBS.get(job_id)
+    job = _get_job(job_id)
     if not job:
         return jsonify({"error": "job not found"}), 404
-    if job["status"] not in ("uploaded", "done", "error"):
+    if job["status"] not in _RERUNNABLE_STATUSES:
         return jsonify({"error": f"job is already {job['status']}"}), 409
 
-    # Reset queue and result for re-runs
-    job["events"] = queue.Queue()
-    job["result"] = None
-    job["status"] = "running"
+    event_queue: queue.Queue = queue.Queue()
+    _set_live_queue(job_id, event_queue)
 
     strategies = data.get("strategies") or None       # None = auto
     page_range_str = data.get("page_range")           # "1-10" or null
@@ -171,10 +280,11 @@ def extract():
     page_range = _parse_range(page_range_str)
     out_dir = _OUTPUT_DIR / job_id
     out_dir.mkdir(parents=True, exist_ok=True)
+    job = _upsert_job(job_id, status="running", result=None, output_dir=str(out_dir))
 
     def _run():
         from ...app.use_cases import ExtractUseCase, ExtractionRequest
-        emitter = _QueueEmitter(job["events"])
+        emitter = _QueueEmitter(event_queue)
         uc = ExtractUseCase(on_event=emitter)
         req = ExtractionRequest(
             pdf_path=job["pdf_path"],
@@ -188,13 +298,11 @@ def extract():
         )
         try:
             result = uc.execute(req)
-            job["result"] = result.to_dict()
-            job["status"] = result.status
+            _upsert_job(job_id, status=result.status, result=result.to_dict())
         except Exception as exc:
-            job["result"] = {"error": str(exc)}
-            job["status"] = "error"
+            _upsert_job(job_id, status="error", result={"error": str(exc)})
         finally:
-            job["events"].put(None)   # sentinel — stream ends
+            event_queue.put(None)   # sentinel — stream ends
 
     threading.Thread(target=_run, daemon=True).start()
     return jsonify({"job_id": job_id, "status": "running"})
@@ -203,13 +311,20 @@ def extract():
 @app.route("/api/stream/<job_id>")
 def stream(job_id: str):
     """SSE endpoint — streams events until the job finishes."""
-    with _JOBS_LOCK:
-        job = _JOBS.get(job_id)
+    job = _get_job(job_id)
     if not job:
         return jsonify({"error": "job not found"}), 404
 
+    live_queue = _get_live_queue(job_id)
+
     def _generate():
-        q: queue.Queue = job["events"]
+        if live_queue is None:
+            latest = _get_job(job_id) or job
+            payload = latest.get("result") or {"status": latest.get("status")}
+            yield f"event: end\ndata: {json.dumps(payload, ensure_ascii=False)}\n\n"
+            return
+
+        q: queue.Queue = live_queue
         while True:
             try:
                 event = q.get(timeout=30)
@@ -217,7 +332,8 @@ def stream(job_id: str):
                 yield "event: heartbeat\ndata: {}\n\n"
                 continue
             if event is None:
-                yield f"event: end\ndata: {json.dumps(job.get('result') or {})}\n\n"
+                latest = _get_job(job_id) or job
+                yield f"event: end\ndata: {json.dumps(latest.get('result') or {}, ensure_ascii=False)}\n\n"
                 break
             yield f"data: {json.dumps(event, ensure_ascii=False)}\n\n"
 
@@ -233,8 +349,7 @@ def stream(job_id: str):
 
 @app.route("/api/jobs/<job_id>")
 def job_result(job_id: str):
-    with _JOBS_LOCK:
-        job = _JOBS.get(job_id)
+    job = _get_job(job_id)
     if not job:
         return jsonify({"error": "job not found"}), 404
     return jsonify({
@@ -248,6 +363,11 @@ def job_result(job_id: str):
 @app.route("/api/jobs/<job_id>/download")
 def job_download(job_id: str):
     from flask import send_file
+
+    job = _get_job(job_id)
+    if not job:
+        return jsonify({"error": "job not found"}), 404
+
     out_dir = _OUTPUT_DIR / job_id
     md_files = list(out_dir.glob("*.md"))
     if not md_files:

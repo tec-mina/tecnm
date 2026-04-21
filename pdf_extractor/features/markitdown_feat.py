@@ -13,6 +13,17 @@ except ImportError:
     MarkItDown = None  # type: ignore
 
 from ._base import FeatureResult, PageResult
+from ._protocol import StrategyMeta
+
+
+STRATEGY = StrategyMeta(
+    name="text:markitdown",
+    tier="text",
+    description="Microsoft MarkItDown — broad format support, good Windows fallback",
+    module="pdf_extractor.features.markitdown_feat",
+    requires_python=["markitdown"],
+    priority=45,
+)
 
 
 def extract(pdf_path: str, page_range: tuple[int, int] | None = None) -> FeatureResult:

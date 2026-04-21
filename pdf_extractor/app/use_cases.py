@@ -35,6 +35,7 @@ Event contract (all events have at least {"event": str, "ts": str}):
 from __future__ import annotations
 
 import importlib.util
+import json
 import shutil
 import subprocess
 import time
@@ -84,6 +85,7 @@ class ExtractionResult:
     """Structured result of one extraction.  Serialisable to JSON."""
     status: str                           # "ok" | "error" | "blocked" | "cached" | "dry_run"
     output_path: str | None = None
+    artifacts: list[str] = field(default_factory=list)
     quality_score: float = 0.0
     quality_label: str = ""
     features_used: list[str] = field(default_factory=list)
@@ -100,6 +102,7 @@ class ExtractionResult:
         return {
             "status": self.status,
             "output_path": self.output_path,
+            "artifacts": self.artifacts,
             "quality_score": self.quality_score,
             "quality_label": self.quality_label,
             "features_used": self.features_used,
@@ -110,6 +113,63 @@ class ExtractionResult:
             "pages": self.pages,
             "file_size_mb": round(self.file_size_mb, 2),
         }
+
+
+def _cache_options(req: ExtractionRequest) -> dict[str, Any]:
+    return {
+        "page_range": list(req.page_range) if req.page_range else None,
+        "with_images": req.with_images,
+        "with_structure": req.with_structure,
+        "with_toc": req.with_toc,
+        "skip_fixes": req.no_fix,
+        "apply_spell": req.apply_spell,
+    }
+
+
+def _primary_output_path(output_format: str, md_path: Path, json_path: Path) -> Path:
+    return json_path if output_format == "json" else md_path
+
+
+def _artifact_paths(output_format: str, md_path: Path, json_path: Path, images_dir: Path) -> list[str]:
+    artifacts: list[str] = []
+    if output_format in ("md", "both"):
+        artifacts.append(str(md_path))
+    if output_format in ("json", "both"):
+        artifacts.append(str(json_path))
+    if images_dir.exists():
+        artifacts.append(str(images_dir))
+    return artifacts
+
+
+def _mark_cached_markdown(markdown: str) -> str:
+    return markdown.replace("\nfrom_cache: false\n", "\nfrom_cache: true\n", 1)
+
+
+def _json_output_payload(
+    *,
+    file_name: str,
+    output_path: str,
+    features_used: list[str],
+    quality_score: float,
+    quality_label: str,
+    pages: int,
+    warnings: list[str],
+    issues: list[dict[str, Any]],
+    from_cache: bool,
+    artifacts: list[str],
+) -> dict[str, Any]:
+    return {
+        "file": file_name,
+        "output": output_path,
+        "artifacts": artifacts,
+        "features_used": features_used,
+        "quality_score": quality_score,
+        "quality_label": quality_label,
+        "pages": pages,
+        "warnings": warnings,
+        "issues": issues,
+        "from_cache": from_cache,
+    }
 
 
 class ExtractUseCase:
@@ -128,6 +188,13 @@ class ExtractUseCase:
     def execute(self, req: ExtractionRequest) -> ExtractionResult:
         t0 = time.monotonic()
         result = ExtractionResult(status="error")
+        out_dir = Path(req.output_dir)
+        out_dir.mkdir(parents=True, exist_ok=True)
+        stem = Path(req.pdf_path).stem
+        md_out = out_dir / f"{stem}.md"
+        json_out = out_dir / f"{stem}.json"
+        images_dir = out_dir / "images"
+        primary_out = _primary_output_path(req.output_format, md_out, json_out)
 
         # ── 1. Preflight ──────────────────────────────────────────────────
         from ..core import preflight as _pf
@@ -152,19 +219,49 @@ class ExtractUseCase:
         # ── 2. Cache check ────────────────────────────────────────────────
         from ..core import cache as _cache
         mode = ",".join(req.strategies) if req.strategies else "auto"
-        cache_key = _cache.compute_key(req.pdf_path, mode) if not req.no_cache else None
+        cache_key = (
+            _cache.compute_key(req.pdf_path, mode, _cache_options(req))
+            if not req.no_cache else None
+        )
 
         if cache_key and _cache.hit(cache_key):
             md, meta = _cache.load(cache_key)
-            out = Path(req.output_dir) / (Path(req.pdf_path).stem + ".md")
+            cached_md = _mark_cached_markdown(md)
             if req.output_format in ("md", "both"):
-                out.write_text(md, encoding="utf-8")
-            _emit(self._emit, "cache_hit", key=cache_key, output=str(out))
-            result.status = "cached"
-            result.output_path = str(out)
-            result.from_cache = True
+                md_out.write_text(cached_md, encoding="utf-8")
+            if req.with_images:
+                _cache.load_images(cache_key, images_dir)
+
             result.features_used = meta.get("features_used", [])
             result.quality_score = meta.get("quality_score", 0)
+            result.quality_label = meta.get("quality_label", _quality_label(result.quality_score))
+            result.warnings = meta.get("warnings", [])
+            result.issues = meta.get("issues", [])
+            artifacts = _artifact_paths(req.output_format, md_out, json_out, images_dir)
+
+            if req.output_format in ("json", "both"):
+                json_result_dict = _json_output_payload(
+                    file_name=Path(req.pdf_path).name,
+                    output_path=str(primary_out),
+                    features_used=result.features_used,
+                    quality_score=result.quality_score,
+                    quality_label=result.quality_label,
+                    pages=meta.get("pages", pf.page_count),
+                    warnings=result.warnings,
+                    issues=result.issues,
+                    from_cache=True,
+                    artifacts=artifacts,
+                )
+                json_out.write_text(
+                    json.dumps(json_result_dict, ensure_ascii=False, indent=2),
+                    encoding="utf-8",
+                )
+
+            _emit(self._emit, "cache_hit", key=cache_key, output=str(primary_out))
+            result.status = "cached"
+            result.output_path = str(primary_out)
+            result.artifacts = artifacts
+            result.from_cache = True
             result.elapsed_sec = time.monotonic() - t0
             return result
 
@@ -201,12 +298,17 @@ class ExtractUseCase:
         _emit(self._emit, "strategy_plan", strategies=strategies)
 
         # ── 5. Extract ────────────────────────────────────────────────────
+        def _pipeline_emit(event: str, **data: Any) -> None:
+            _emit(self._emit, event, **data)
+
         pipeline_result = _pipe.run(
             req.pdf_path, pf, profile, platform,
             page_range=req.page_range,
             forced_features=strategies,
             with_images=req.with_images,
             table_appendix=True,
+            on_event=_pipeline_emit,
+            output_dir=str(out_dir) if req.with_images else None,
         )
         result.features_used = pipeline_result.features_used
 
@@ -271,41 +373,49 @@ class ExtractUseCase:
         result.warnings = val.warnings + pipeline_result.warnings
 
         # ── 10. Write output ──────────────────────────────────────────────
-        out_dir = Path(req.output_dir)
-        out_dir.mkdir(parents=True, exist_ok=True)
-        out_path = out_dir / (Path(req.pdf_path).stem + ".md")
-
         if req.output_format in ("md", "both"):
-            out_path.write_text(final_md, encoding="utf-8")
+            md_out.write_text(final_md, encoding="utf-8")
 
+        artifacts = _artifact_paths(req.output_format, md_out, json_out, images_dir)
         json_result_dict = None
         if req.output_format in ("json", "both"):
-            import json as _json
-            json_result_dict = {
-                "file": Path(req.pdf_path).name,
-                "output": str(out_path),
-                "features_used": pipeline_result.features_used,
-                "quality_score": val.quality_score,
-                "quality_label": result.quality_label,
-                "pages": pf.page_count,
-                "warnings": result.warnings,
-                "issues": result.issues,
-            }
-            json_out = out_dir / (Path(req.pdf_path).stem + ".json")
-            json_out.write_text(_json.dumps(json_result_dict, ensure_ascii=False, indent=2),
-                                encoding="utf-8")
+            json_result_dict = _json_output_payload(
+                file_name=Path(req.pdf_path).name,
+                output_path=str(primary_out),
+                features_used=pipeline_result.features_used,
+                quality_score=val.quality_score,
+                quality_label=result.quality_label,
+                pages=pf.page_count,
+                warnings=result.warnings,
+                issues=result.issues,
+                from_cache=False,
+                artifacts=artifacts,
+            )
+            json_out.write_text(
+                json.dumps(json_result_dict, ensure_ascii=False, indent=2),
+                encoding="utf-8",
+            )
 
         # ── 11. Cache write ───────────────────────────────────────────────
         if cache_key and val.status in ("PASS", "ISSUES_FOUND"):
-            _cache.save(cache_key, final_md, {
-                "features_used": pipeline_result.features_used,
-                "quality_score": val.quality_score,
-                "pages": pf.page_count,
-                "file_size_mb": pf.file_size_mb,
-            })
+            _cache.save(
+                cache_key,
+                final_md,
+                {
+                    "features_used": pipeline_result.features_used,
+                    "quality_score": val.quality_score,
+                    "quality_label": result.quality_label,
+                    "pages": pf.page_count,
+                    "file_size_mb": pf.file_size_mb,
+                    "warnings": result.warnings,
+                    "issues": result.issues,
+                },
+                images_dir=images_dir if images_dir.exists() else None,
+            )
 
         result.elapsed_sec = time.monotonic() - t0
-        result.output_path = str(out_path)
+        result.output_path = str(primary_out)
+        result.artifacts = artifacts
         result.status = "ok"
 
         # Quality gate
@@ -316,7 +426,7 @@ class ExtractUseCase:
             result.error_message = f"quality_score {val.quality_score:.0f} < threshold {req.quality_threshold:.0f}"
 
         _emit(self._emit, "done",
-              output=str(out_path),
+          output=str(primary_out),
               quality=val.quality_score,
               status=val.status,
               features=pipeline_result.features_used,
@@ -440,6 +550,7 @@ class CapabilityReport:
     system_tools: list[ToolStatus] = field(default_factory=list)
     python_packages: list[ToolStatus] = field(default_factory=list)
     strategies: list = field(default_factory=list)    # list[StrategyMeta]
+    strategy_discovery_failures: list[dict[str, str]] = field(default_factory=list)
 
     def to_dict(self) -> dict:
         return {
@@ -450,6 +561,7 @@ class CapabilityReport:
                  "is_heavy": s.is_heavy, "priority": s.priority}
                 for s in self.strategies
             ],
+            "strategy_discovery_failures": self.strategy_discovery_failures,
         }
 
 
@@ -517,6 +629,9 @@ class CapabilitiesUseCase:
                   available=status.available, version=status.version, note=note)
 
         report.strategies = registry.list_all()
+        report.strategy_discovery_failures = [
+            failure.to_dict() for failure in registry.discovery_failures()
+        ]
         return report
 
     @staticmethod

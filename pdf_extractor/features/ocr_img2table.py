@@ -27,6 +27,17 @@ except ImportError:
         fitz = None  # type: ignore
 
 from ._base import FeatureResult, PageResult
+from ._protocol import StrategyMeta
+
+
+STRATEGY = StrategyMeta(
+    name="tables:img2table",
+    tier="tables",
+    description="img2table + RapidOCR — table extraction from scanned/raster pages",
+    module="pdf_extractor.features.ocr_img2table",
+    requires_python=["img2table"],
+    priority=25,
+)
 
 
 def extract(pdf_path: str, page_range: tuple[int, int] | None = None) -> FeatureResult:

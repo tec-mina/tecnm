@@ -400,6 +400,7 @@ def strategies_list(tier: str | None, json_output: bool) -> None:
     from ..core.registry import registry
 
     all_meta = registry.list_all()
+    failures = registry.discovery_failures()
     if tier:
         all_meta = [m for m in all_meta if m.tier == tier]
 
@@ -441,6 +442,17 @@ def strategies_list(tier: str | None, json_output: bool) -> None:
             f"[dim]{reqs}[/]" if reqs else "",
         )
     con.print(tbl)
+    if failures:
+        con.print()
+        con.print(
+            f"[yellow]Discovery warnings:[/] {len(failures)} feature module(s) were skipped during registry scan."
+        )
+        for failure in failures[:5]:
+            con.print(
+                f"  [dim]- {failure.module} ({failure.error_type}): {failure.message}[/]"
+            )
+        if len(failures) > 5:
+            con.print(f"  [dim]- ... {len(failures) - 5} more[/]")
 
 
 @strategies.command("info")
@@ -599,6 +611,12 @@ def _print_capabilities(report: Any) -> None:
         for t in report.python_packages:
             mark = "✓" if t.available else "✗"
             print(f"  {mark} {t.name:20s}  {t.version or ''}")
+        if getattr(report, "strategy_discovery_failures", None):
+            print("\nStrategy discovery failures:")
+            for failure in report.strategy_discovery_failures:
+                print(
+                    f"  - {failure['module']} ({failure['error_type']}): {failure['message']}"
+                )
         return
 
     from rich.console import Console
@@ -631,3 +649,17 @@ def _print_capabilities(report: Any) -> None:
         for s in sorted(report.strategies, key=lambda x: (x.tier, x.priority)):
             stbl.add_row(s.tier, s.name, s.description)
         con.print(stbl)
+
+    if report.strategy_discovery_failures:
+        con.print()
+        con.print(
+            f"[yellow]Strategy discovery failures:[/] {len(report.strategy_discovery_failures)}"
+        )
+        for failure in report.strategy_discovery_failures[:5]:
+            con.print(
+                f"  [dim]- {failure['module']} ({failure['error_type']}): {failure['message']}[/]"
+            )
+        if len(report.strategy_discovery_failures) > 5:
+            con.print(
+                f"  [dim]- ... {len(report.strategy_discovery_failures) - 5} more[/]"
+            )

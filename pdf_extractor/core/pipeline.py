@@ -17,12 +17,11 @@ The registry resolves strategy names → module paths automatically.
 from __future__ import annotations
 
 import importlib
-import sys
 import time
+from collections.abc import Callable
 from dataclasses import dataclass, field
 from typing import Any
 
-from . import progress as prog
 from .detector import PDFProfile
 from .preflight import PreflightResult
 from .platform import PlatformInfo
@@ -53,6 +52,8 @@ def run(
     forced_features: list[str] | None = None,
     with_images: bool = False,
     table_appendix: bool = True,
+    on_event: Callable[..., None] | None = None,
+    output_dir: str | None = None,
 ) -> PipelineResult:
     """Select features/strategies, run them one by one, stream results into AssemblyPlan.
 
@@ -73,7 +74,14 @@ def run(
         feature_names = list(feature_names) + ["images_extract"]
 
     for name in feature_names:
-        fr = _run_feature(pdf_path, name, page_range, pdf_path)
+        fr = _run_feature(
+            pdf_path,
+            name,
+            page_range,
+            pdf_path,
+            on_event=on_event,
+            output_dir=output_dir,
+        )
         if fr is None:
             continue
         asm.merge_feature(result.plan, fr)   # absorb into plan
@@ -154,7 +162,23 @@ def _select_features(
 # Feature runner — resolves both strategy names and module short-names
 # ---------------------------------------------------------------------------
 
-def _run_feature(pdf_path: str, name: str, page_range, file_label: str):
+def _emit_event(
+    on_event: Callable[..., None] | None,
+    event: str,
+    **data: Any,
+) -> None:
+    if on_event is not None:
+        on_event(event, **data)
+
+
+def _run_feature(
+    pdf_path: str,
+    name: str,
+    page_range,
+    file_label: str,
+    on_event: Callable[..., None] | None = None,
+    output_dir: str | None = None,
+):
     """Import and run a single feature module. Returns FeatureResult or None.
 
     Accepts:
@@ -174,25 +198,60 @@ def _run_feature(pdf_path: str, name: str, page_range, file_label: str):
     try:
         mod = importlib.import_module(module_path)
     except ImportError as exc:
-        prog.feature_skipped(file_label, name, f"module import failed: {exc}")
+        _emit_event(
+            on_event,
+            "feature_skip",
+            name=name,
+            tier=meta.tier if meta else "",
+            reason=f"module import failed: {exc}",
+        )
         return None
 
-    prog.feature_running(file_label, name)
+    _emit_event(
+        on_event,
+        "feature_start",
+        name=name,
+        tier=meta.tier if meta else "",
+    )
+
+    call_kwargs = dict(extra_kwargs)
+    if output_dir and name in ("images_extract", "images:extract"):
+        call_kwargs["output_dir"] = output_dir
 
     try:
-        fr = mod.extract(pdf_path, page_range, **extra_kwargs)
+        fr = mod.extract(pdf_path, page_range, **call_kwargs)
     except TypeError:
         # Module's extract() doesn't accept extra kwargs — call without them
         try:
             fr = mod.extract(pdf_path, page_range)
         except Exception as exc:
-            prog.error(file_label, str(exc), feature=name)
+            _emit_event(
+                on_event,
+                "error",
+                phase="feature",
+                feature=name,
+                file=file_label,
+                msg=str(exc),
+            )
             return None
     except Exception as exc:
-        prog.error(file_label, str(exc), feature=name)
+        _emit_event(
+            on_event,
+            "error",
+            phase="feature",
+            feature=name,
+            file=file_label,
+            msg=str(exc),
+        )
         return None
 
-    prog.feature_done(file_label, name, fr.confidence)
+    _emit_event(
+        on_event,
+        "feature_done",
+        name=name,
+        tier=meta.tier if meta else "",
+        confidence=fr.confidence,
+    )
     return fr
 
 

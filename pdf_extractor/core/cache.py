@@ -1,7 +1,7 @@
 """
 core/cache.py — SHA256-based extraction cache.
 
-Cache key = SHA256(file_content) + file_size + extraction_mode
+Cache key = SHA256(file_content) + file_size + extraction_options_digest
 Location:   ~/.cache/pdf-extractor/<cache_key>/
 """
 
@@ -21,15 +21,26 @@ _DOCKER_FLAG = _CACHE_ROOT / "docker_verified"
 # Public API
 # ---------------------------------------------------------------------------
 
-def compute_key(pdf_path: str, mode: str) -> str:
-    """Compute cache key as SHA256(file_bytes) + file_size + mode."""
+def compute_key(
+    pdf_path: str,
+    mode: str,
+    options: dict[str, Any] | None = None,
+) -> str:
+    """Compute a cross-platform cache key for the PDF content and request options."""
     p = Path(pdf_path)
     size = p.stat().st_size
     h = hashlib.sha256()
     with open(p, "rb") as f:
         for chunk in iter(lambda: f.read(65536), b""):
             h.update(chunk)
-    return f"{h.hexdigest()}_{size}_{mode}"
+    options_sig = json.dumps(
+        {"mode": mode, "options": options or {}},
+        ensure_ascii=True,
+        sort_keys=True,
+        separators=(",", ":"),
+    )
+    options_hash = hashlib.sha256(options_sig.encode("utf-8")).hexdigest()[:16]
+    return f"{h.hexdigest()}_{size}_{options_hash}"
 
 
 def hit(key: str) -> bool:

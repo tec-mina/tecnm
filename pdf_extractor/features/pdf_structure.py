@@ -116,7 +116,9 @@ def extract(pdf_path: str, page_range: tuple[int, int] | None = None) -> Feature
                 if subject:
                     parts.append(f"— {subject}")
                 if content:
-                    parts.append(f": "{content[:120]}{"…" if len(content) > 120 else ""}"")
+                    snippet = content[:120]
+                    suffix = "…" if len(content) > 120 else ""
+                    parts.append(f': "{snippet}{suffix}"')
                 if author:
                     parts.append(f"*(autor: {author})*")
                 annot_lines.append("- " + " ".join(parts))

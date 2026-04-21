@@ -142,6 +142,7 @@ if [[ "$MODE" == "local" || "$MODE" == "all" ]]; then
   echo -e "${BOLD}Uso local:${RESET}"
   echo "  source $VENV/bin/activate"
   echo "  python -m pdf_extractor extract documento.pdf -o salida/"
+  echo "  python -m pdf_extractor web   # interfaz web en http://localhost:5000"
 fi
 
 echo ""

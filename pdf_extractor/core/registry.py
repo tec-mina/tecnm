@@ -31,9 +31,23 @@ from __future__ import annotations
 
 import importlib
 import pkgutil
-from typing import Sequence
+from dataclasses import dataclass
 
 from ..features._protocol import StrategyMeta
+
+
+@dataclass(frozen=True)
+class RegistryFailure:
+    module: str
+    error_type: str
+    message: str
+
+    def to_dict(self) -> dict[str, str]:
+        return {
+            "module": self.module,
+            "error_type": self.error_type,
+            "message": self.message,
+        }
 
 
 class _Registry:
@@ -41,6 +55,7 @@ class _Registry:
 
     def __init__(self) -> None:
         self._by_key: dict[str, StrategyMeta] = {}
+        self._failures: list[RegistryFailure] = []
         self._discovered = False
 
     # ------------------------------------------------------------------ #
@@ -100,6 +115,11 @@ class _Registry:
             )
         return "\n".join(lines)
 
+    def discovery_failures(self) -> list[RegistryFailure]:
+        """Return modules that failed during strategy discovery."""
+        self._ensure_discovered()
+        return list(self._failures)
+
     # ------------------------------------------------------------------ #
     # Auto-discovery
     # ------------------------------------------------------------------ #
@@ -116,15 +136,22 @@ class _Registry:
         except ImportError:
             return
 
+        self._failures.clear()
+
         for _finder, mod_name, _is_pkg in pkgutil.iter_modules(features_pkg.__path__):
             if mod_name.startswith("_"):
                 continue
             full_module = f"pdf_extractor.features.{mod_name}"
             try:
                 mod = importlib.import_module(full_module)
-            except ImportError:
+            except Exception as exc:
+                self._record_failure(full_module, exc)
                 continue
 
+            self._collect_module_strategies(full_module, mod)
+
+    def _collect_module_strategies(self, module_name: str, mod) -> None:
+        try:
             # Single strategy
             if hasattr(mod, "STRATEGY"):
                 meta = mod.STRATEGY
@@ -136,11 +163,22 @@ class _Registry:
                 for meta in mod.STRATEGIES:
                     if isinstance(meta, StrategyMeta):
                         self._index(meta)
+        except Exception as exc:
+            self._record_failure(module_name, exc)
 
     def _index(self, meta: StrategyMeta) -> None:
         self._by_key[meta.name] = meta
         # Backward-compat alias: "ocr_tesseract" → ocr:tesseract-basic, etc.
         self._by_key.setdefault(meta.short_name, meta)
+
+    def _record_failure(self, module_name: str, exc: Exception) -> None:
+        self._failures.append(
+            RegistryFailure(
+                module=module_name,
+                error_type=type(exc).__name__,
+                message=str(exc) or repr(exc),
+            )
+        )
 
 
 # Module-level singleton

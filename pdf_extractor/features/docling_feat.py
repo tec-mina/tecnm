@@ -17,6 +17,19 @@ except ImportError:
     PdfPipelineOptions = None  # type: ignore
 
 from ._base import FeatureResult, PageResult
+from ._protocol import StrategyMeta
+
+
+STRATEGY = StrategyMeta(
+    name="text:docling",
+    tier="text",
+    description="IBM Docling + TableFormer — AI layout analysis, ~93% table accuracy",
+    module="pdf_extractor.features.docling_feat",
+    requires_python=["docling"],
+    priority=50,
+    is_heavy=True,
+    is_gpu_optional=True,
+)
 
 
 def extract(pdf_path: str, page_range: tuple[int, int] | None = None) -> FeatureResult:

@@ -92,10 +92,6 @@ RUN pip install --no-cache-dir -r requirements/all.txt
 
 # ── Application source ────────────────────────────────────────────────────────
 COPY pdf_extractor/ pdf_extractor/
-COPY pdf_extractor/pyproject.toml pyproject.toml
-
-# Install the package so `pdf-extractor` CLI entry point is available
-RUN pip install --no-cache-dir --no-deps -e .
 
 # ── Runtime dirs ──────────────────────────────────────────────────────────────
 RUN mkdir -p /app/input /app/output /root/.cache/pdf-extractor
@@ -104,9 +100,9 @@ ENV EXTRACTOR_WORKERS=4
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONPATH=/app
 
-# ── Healthcheck — verifies the CLI and core Python imports are functional ─────
+# ── Healthcheck ───────────────────────────────────────────────────────────────
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=2 \
-    CMD pdf-extractor --help > /dev/null 2>&1 || exit 1
+    CMD python -m pdf_extractor --help > /dev/null 2>&1 || exit 1
 
-ENTRYPOINT ["pdf-extractor"]
+ENTRYPOINT ["python", "-m", "pdf_extractor"]
 CMD ["--help"]

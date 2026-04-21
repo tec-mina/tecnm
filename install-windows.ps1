@@ -165,6 +165,7 @@ if ($Mode -eq "local" -or $Mode -eq "all") {
     Write-Host "Uso local:" -ForegroundColor White
     Write-Host "  $venv\Scripts\Activate.ps1"
     Write-Host "  python -m pdf_extractor extract documento.pdf -o salida\"
+    Write-Host "  python -m pdf_extractor web   # interfaz web en http://localhost:5000"
 }
 
 Write-Host ""
