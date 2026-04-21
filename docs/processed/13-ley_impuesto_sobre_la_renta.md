@@ -2,19 +2,50 @@
 source: 13-ley_impuesto_sobre_la_renta.pdf
 pages: 345
 file_size_mb: 2.47
-extraction_date: "2026-04-21T16:31:58.938721+00:00"
-language: unknown
+extraction_date: "2026-04-21T21:44:49.159126+00:00"
+language: es
 tables_found: 28
 has_images: true
 has_scanned_pages: false
-features_used: ["text_fast", "tables", "tables_camelot", "tables_tabula"]
-extraction_time_sec: 28.0
+features_used: ["text_fast", "tables"]
+extraction_time_sec: 55.4
 quality_score: 74.0
 quality_label: "acceptable"
 is_valid: true
 from_cache: false
 warnings: ["camelot-py not installed; tables_camelot skipped", "tabula-py not installed; tables_tabula skipped"]
 ---
+## Contenido
+
+ - [Tabla — página 135 (vía pdfplumber)](#tabla-página-135-vía-pdfplumber)
+ - [Tabla — página 184 (vía pdfplumber)](#tabla-página-184-vía-pdfplumber)
+ - [Tabla — página 264 (vía pdfplumber)](#tabla-página-264-vía-pdfplumber)
+ - [Tabla — página 278 (vía pdfplumber)](#tabla-página-278-vía-pdfplumber)
+ - [Tabla — página 278 (vía pdfplumber)](#tabla-página-278-vía-pdfplumber)
+ - [Tabla — página 278 (vía pdfplumber)](#tabla-página-278-vía-pdfplumber)
+ - [Tabla — página 279 (vía pdfplumber)](#tabla-página-279-vía-pdfplumber)
+ - [Tabla — página 279 (vía pdfplumber)](#tabla-página-279-vía-pdfplumber)
+ - [Tabla — página 279 (vía pdfplumber)](#tabla-página-279-vía-pdfplumber)
+ - [Tabla — página 280 (vía pdfplumber)](#tabla-página-280-vía-pdfplumber)
+ - [Tabla — página 290 (vía pdfplumber)](#tabla-página-290-vía-pdfplumber)
+ - [Tabla — página 290 (vía pdfplumber)](#tabla-página-290-vía-pdfplumber)
+ - [Tabla — página 291 (vía pdfplumber)](#tabla-página-291-vía-pdfplumber)
+ - [Tabla — página 291 (vía pdfplumber)](#tabla-página-291-vía-pdfplumber)
+ - [Tabla — página 291 (vía pdfplumber)](#tabla-página-291-vía-pdfplumber)
+ - [Tabla — página 291 (vía pdfplumber)](#tabla-página-291-vía-pdfplumber)
+ - [Tabla — página 292 (vía pdfplumber)](#tabla-página-292-vía-pdfplumber)
+ - [Tabla — página 294 (vía pdfplumber)](#tabla-página-294-vía-pdfplumber)
+ - [Tabla — página 307 (vía pdfplumber)](#tabla-página-307-vía-pdfplumber)
+ - [Tabla — página 307 (vía pdfplumber)](#tabla-página-307-vía-pdfplumber)
+ - [Tabla — página 308 (vía pdfplumber)](#tabla-página-308-vía-pdfplumber)
+ - [Tabla — página 308 (vía pdfplumber)](#tabla-página-308-vía-pdfplumber)
+ - [Tabla — página 308 (vía pdfplumber)](#tabla-página-308-vía-pdfplumber)
+ - [Tabla — página 324 (vía pdfplumber)](#tabla-página-324-vía-pdfplumber)
+ - [Tabla — página 331 (vía pdfplumber)](#tabla-página-331-vía-pdfplumber)
+ - [Tabla — página 331 (vía pdfplumber)](#tabla-página-331-vía-pdfplumber)
+ - [Tabla — página 332 (vía pdfplumber)](#tabla-página-332-vía-pdfplumber)
+ - [Tabla — página 332 (vía pdfplumber)](#tabla-página-332-vía-pdfplumber)
+
 <!-- Page 1 -->
 
 LEY DEL IMPUESTO SOBRE LA RENTA

@@ -224,8 +224,9 @@ class ExtractUseCase:
             if not req.no_cache else None
         )
 
-        if cache_key and _cache.hit(cache_key):
-            md, meta = _cache.load(cache_key)
+        cached_entry = _cache.load_or_none(cache_key) if cache_key else None
+        if cached_entry is not None:
+            md, meta = cached_entry
             cached_md = _mark_cached_markdown(md)
             if req.output_format in ("md", "both"):
                 md_out.write_text(cached_md, encoding="utf-8")
@@ -324,14 +325,15 @@ class ExtractUseCase:
         # ── 7. Validate ───────────────────────────────────────────────────
         from ..output import validator as _val
         val = _val.run(raw_md)
-        _emit(self._emit, "validate",
-              status=val.status,
-              score=val.quality_score,
-              issues=len(val.issues))
         result.quality_score = val.quality_score
         result.quality_label = _quality_label(val.quality_score)
         result.issues = [{"code": i.code, "severity": i.severity,
                           "description": i.description} for i in val.issues]
+        _emit(self._emit, "validate",
+              status=val.status,
+              score=val.quality_score,
+              issues=len(val.issues),
+              issues_detail=result.issues)
 
         if val.status == "BLOCKED":
             _emit(self._emit, "error", phase="validate",

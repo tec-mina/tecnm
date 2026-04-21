@@ -74,7 +74,7 @@ preflight → profile → [cache_hit | strategy_plan → (feature_start → feat
 | `feature_start`  | `name`, `tier`                                                                           |
 | `feature_done`   | `name`, `tier`, `confidence` (0.0–1.0, always > 0)                                       |
 | `feature_skip`   | `name`, `tier`, `reason`                                                                 |
-| `validate`       | `status` ∈ {PASS, ISSUES_FOUND, BLOCKED}, `score` (0–100), `issues` (int)                |
+| `validate`       | `status` ∈ {PASS, ISSUES_FOUND, BLOCKED}, `score` (0–100), `issues` (int), `issues_detail` (array of `{code, severity, description}`) |
 | `fix`            | `fixes` (object: fix_name → count)                                                       |
 | `done`           | `output`, `quality`, `status`, `features[]`, `elapsed_sec`                               |
 | `error`          | `phase` ∈ {preflight, feature, validate, quality_gate}, `msg`                            |

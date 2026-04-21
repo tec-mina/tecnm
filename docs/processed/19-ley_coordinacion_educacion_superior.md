@@ -2,20 +2,88 @@
 source: 19-ley_coordinacion_educacion_superior.pdf
 pages: 4
 file_size_mb: 0.08
-extraction_date: "2026-04-21T16:13:21.058205+00:00"
-language: unknown
+extraction_date: "2026-04-21T21:45:50.321565+00:00"
+language: es
 tables_found: 0
 has_images: false
 has_scanned_pages: false
 features_used: ["markdown_llm", "text_fast"]
-extraction_time_sec: 0.8
-quality_score: 94.0
-quality_label: "excellent"
+extraction_time_sec: 1.16
+quality_score: 79.0
+quality_label: "acceptable"
 is_valid: true
 from_cache: false
 warnings: []
 ---
+## Contenido
+
+- [LEY PARA LA COORDINACIÓN DE LA EDUCACIÓN SUPERIOR](#ley-para-la-coordinación-de-la-educación-superior)
+ - [LEY PARA LA COORDINACION DE LA EDUCACION SUPERIOR](#ley-para-la-coordinacion-de-la-educacion-superior)
+ - [CAPITULO I Disposiciones Generales](#capitulo-i-disposiciones-generales)
+- [CAPITULO II Coordinación y Distribución](#capitulo-ii-coordinación-y-distribución)
+- [CAPITULO III Asignación de Recursos](#capitulo-iii-asignación-de-recursos)
+
 <!-- Page 1 -->
+
+LEY PARA LA COORDINACIÓN DE LA EDUCACIÓN SUPERIOR 
+ 
+TEXTO VIGENTE 
+Nueva Ley publicada en el Diario Oficial de la Federación el 29 de diciembre de 1978 
+ 
+ 
+ 
+Al margen un sello con el Escudo Nacional, que dice: Estados Unidos Mexicanos.- Presidencia de la 
+República. 
+ 
+JOSE LOPEZ PORTILLO, Presidente Constitucional de los Estados Unidos Mexicanos, a sus 
+habitantes, sabed: 
+ 
+Que el H. Congreso de la Unión se ha servido dirigirme el siguiente 
+ 
+DECRETO: 
+ 
+"El Congreso de los Estados Unidos Mexicanos, decreta: 
+ 
+LEY PARA LA COORDINACION DE LA EDUCACION SUPERIOR 
+ 
+CAPITULO I 
+Disposiciones Generales 
+ 
+ARTICULO 1o.- La presente ley es de observancia general en toda la República y tiene por objeto 
+establecer bases para la distribución de la función educativa de tipo superior entre la Federación, los 
+Estados y los Municipios, así como prever las aportaciones económicas correspondientes, a fin de 
+coadyuvar al desarrollo y coordinación de la educación superior. 
+ 
+ARTICULO 2o.- La aplicación de la presente ley corresponde a las autoridades de la Federación, de 
+los Estados y de los Municipios, en los términos que la misma establece. 
+ 
+A falta de disposición expresa de esta ley se aplicará supletoriamente la Ley Federal de Educación. 
+ 
+ARTICULO 3o.- El tipo educativo superior es el que se imparte después del bachillerato o de su 
+equivalente. Comprende la educación normal, la tecnológica y la universitaria e incluye carreras 
+profesionales cortas y estudios encaminados a obtener los grados de licenciatura, maestría y doctorado, 
+así como cursos de actualización y especialización. 
+ 
+ARTICULO 4o.- Las funciones de docencia, investigación y difusión de la cultura que realicen las 
+instituciones de educación superior guardarán entre sí una relación armónica y complementaria. 
+ 
+ARTICULO 5o.- El establecimiento, extensión y evolución de las instituciones de educación superior y 
+su coordinación se realizarán atendiendo a las prioridades nacionales, regionales y estatales y a los 
+programas institucionales de docencia, investigación y difusión de la cultura. 
+ 
+ARTICULO 6o.- La Federación, a través de la Secretaría de Educación Pública, celebrará convenios 
+con los gobiernos de los Estados a fin de asegurar que la expansión y el desarrollo de la educación 
+normal respondan a los objetivos de la política educativa nacional y a las necesidades estatales, 
+regionales y nacionales de maestros y de otros especialistas en materia educativa. 
+ 
+Para contribuir a los fines señalados, el Gobierno Federal, podrá asimismo, incluir en los convenios 
+mencionados el establecimiento de escuelas normales y universidades pedagógicas estatales cuyos 
+planes, programas de estudios y criterios académicos deberán ser similares a los de la institución 
+nacional correspondiente.
+
+1
+
+<!-- Page 2 -->
 
 # **LEY PARA LA COORDINACIÓN DE LA EDUCACIÓN SUPERIOR** 
 
@@ -51,11 +119,13 @@ A falta de disposición expresa de esta ley se aplicará supletoriamente la Ley 
 
 Para contribuir a los fines señalados, el Gobierno Federal, podrá asimismo, incluir en los convenios mencionados el establecimiento de escuelas normales y universidades pedagógicas estatales cuyos planes, programas de estudios y criterios académicos deberán ser similares a los de la institución nacional correspondiente. 
 
-1 
+1
+
+<!-- Page 3 -->
 
 **ARTICULO 7o.-** Compete a la Federación vigilar que las denominaciones de los establecimientos de educación superior correspondan a su naturaleza. 
 
-## **CAPITULO II Coordinación y Distribución** 
+# **CAPITULO II Coordinación y Distribución** 
 
 **ARTICULO 8o.-** La Federación, los Estados y los Municipios prestarán, en forma coordinada y dentro de sus respectivas jurisdicciones, el servicio público de educación superior, atendiendo a sus necesidades y posibilidades, conforme a lo dispuesto por este ordenamiento y la Ley Federal de Educación. 
 
@@ -83,7 +153,9 @@ Para contribuir a los fines señalados, el Gobierno Federal, podrá asimismo, in
 
 **ARTICULO 15.-** Habrá un Consejo del Sistema Nacional de Educación Tecnológica que será órgano de consulta de la Secretaría de Educación Pública, de las entidades federativas cuando éstas lo soliciten 
 
-2 
+2
+
+<!-- Page 4 -->
 
 y de las instituciones públicas de educación tecnológica de tipo superior, para coordinar las actividades de dicho sistema y contribuir a vincularlas con las necesidades y el desarrollo del país. 
 
@@ -107,7 +179,7 @@ El incumplimiento de esta disposición motivará la imposición de multa hasta d
 
 **ARTICULO 20.-** El funcionamiento de planteles en los que se imparta educación normal sin autorización previa, motivará la clausura inmediata del servicio, sin perjuicio de la aplicación de las sanciones penales correspondientes por los delitos oficiales en que incurran los funcionarios y empleados públicos que hayan tolerado su apertura o funcionamiento. 
 
-## **CAPITULO III Asignación de Recursos** 
+# **CAPITULO III Asignación de Recursos** 
 
 **ARTICULO 21.-** La Federación, dentro de sus posibilidades presupuestales y en vista de las necesidades de docencia, investigación y difusión de la cultura de las instituciones públicas de educación superior, les asignará recursos conforme a esta Ley para el cumplimiento de sus fines. 
 
@@ -115,40 +187,4 @@ Además, las instituciones podrán llevar a cabo programas para incrementar sus 
 
 **ARTICULO 22.-** Los ingresos de las instituciones públicas de educación superior y los bienes de su propiedad estarán exentos de todo tipo de impuestos federales. También estarán exentos de dichos 
 
-3 
-
-impuestos los actos y contratos en que intervengan dichas instituciones, si los impuestos, conforme a la ley respectiva, debiesen estar a cargo de las mismas. 
-
-**ARTICULO 23.-** Los recursos que conforme al Presupuesto de Egresos de la Federación se asignen a las instituciones de educación superior se determinarán atendiendo a las prioridades nacionales y a la participación de las instituciones en el desarrollo del sistema de educación superior y considerando la planeación institucional y los programas de superación académica y de mejoramiento administrativo, así como el conjunto de gastos de operación previstos. 
-
-Para decidir la asignación de los recursos a que se refiere el párrafo anterior, en ningún caso se tomarán en cuenta consideraciones ajenas a las educativas. 
-
-**ARTICULO 24.-** Para los fines de esta ley, los recursos que la Federación otorgue a las instituciones de educación superior serán ordinarios o específicos. 
-
-Para la satisfacción de necesidades extraordinarias las instituciones podrán solicitar recursos adicionales. 
-
-**ARTICULO 25.-** Las ministraciones de los recursos ordinarios se sujetarán al calendario aprobado, debiendo iniciarse durante el primer mes del ejercicio fiscal. 
-
-**ARTICULO 26.-** Cuando las instituciones requieran desarrollar proyectos adicionales de superación institucional y carezcan de fondos para ello, el Ejecutivo Federal podrá apoyarlas con recursos específicos, previa celebración del convenio respectivo y, en su caso, atendiendo al desarrollo de los convenios anteriormente celebrados. 
-
-**ARTICULO 27.-** Las instituciones de educación superior deberán aplicar los fondos proporcionados por la Federación, estrictamente a las actividades para las cuales hayan sido asignados y de conformidad con las leyes respectivas. 
-
-## **TRANSITORIOS** 
-
-**PRIMERO.-** Esta ley entrará en vigor el día siguiente al de su publicación en el "Diario Oficial" de la Federación. 
-
-**SEGUNDO.-** La Ley del Consejo del Sistema Nacional de Educación Técnica, publicada en el "Diario Oficial" de la Federación el 25 de noviembre de 1975, quedará abrogada a partir de la entrada en vigor de la disposición del Ejecutivo Federal que determine la integración y funciones del Consejo del Sistema Nacional de Educación Tecnológica a que se refiere el Artículo 15 de la presente Ley. 
-
-México, D.F., 26 de diciembre de 1978.- **Antonio Riva Palacio López** , D.P.- **Antonio Ocampo Ramírez** , S.P.- **Pedro Avila Hernández** , D.S.- **Roberto Corzo Gay** , S.S.- Rúbricas". 
-
-En cumplimiento de lo dispuesto por la fracción I del artículo 89 de la Constitución Política de los Estados Unidos Mexicanos y para su debida publicación y observancia, expido el presente Decreto en la residencia del Poder Ejecutivo Federal, en la ciudad de México, Distrito Federal, a los veintiséis días del mes de diciembre de mil novecientos setenta y ocho.- **José López Portillo** .- Rúbrica.- El Secretario de Educación Pública, **Fernando Solana Morales** .- Rúbrica.- El Secretario de Gobernación, **Jesús Reyes Heroles** .- Rúbrica.- El Secretario de Hacienda y Crédito Público, **David Ibarra Muñoz** .- Rúbrica.- El Secretario de Programación y Presupuesto, **Ricardo García Sáinz** .- Rúbrica. 
-
-4 
-
-
-
-<!-- Page 2 -->
-
-<!-- Page 3 -->
-
-<!-- Page 4 -->
+3

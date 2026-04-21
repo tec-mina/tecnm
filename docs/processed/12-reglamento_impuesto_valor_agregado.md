@@ -2,20 +2,110 @@
 source: 12-reglamento_impuesto_valor_agregado.pdf
 pages: 15
 file_size_mb: 0.16
-extraction_date: "2026-04-21T16:12:45.080160+00:00"
-language: unknown
+extraction_date: "2026-04-21T21:43:53.349365+00:00"
+language: es
 tables_found: 0
 has_images: false
 has_scanned_pages: false
 features_used: ["markdown_llm", "text_fast"]
-extraction_time_sec: 3.59
-quality_score: 86.0
-quality_label: "good"
+extraction_time_sec: 4.12
+quality_score: 71.0
+quality_label: "acceptable"
 is_valid: true
 from_cache: false
 warnings: []
 ---
+## Contenido
+
+- [Reglamento de la Ley del Impuesto al Valor Agregado](#reglamento-de-la-ley-del-impuesto-al-valor-agregado)
+- [Reglamento de la Ley del Impuesto al Valor Agregado](#reglamento-de-la-ley-del-impuesto-al-valor-agregado)
+ - [REGLAMENTO DE LA LEY DEL IMPUESTO AL VALOR AGREGADO](#reglamento-de-la-ley-del-impuesto-al-valor-agregado)
+ - [CAPITULO I Disposiciones generales](#capitulo-i-disposiciones-generales)
+- [_**Devoluciones, descuentos o bonificaciones**_](#_devoluciones-descuentos-o-bonificaciones_)
+ - [CAPITULO II De la enajenación](#capitulo-ii-de-la-enajenación)
+- [LIVA: 9-II.](#liva-9-ii)
+ - [_**Servicios de construcción destinados a casa habitación**_](#_servicios-de-construcción-destinados-a-casa-habitación_)
+ - [_**Dividendos exentos**_](#_dividendos-exentos_)
+ - [CAPITULO III De la prestación de servicios](#capitulo-iii-de-la-prestación-de-servicios)
+ - [LIVA: 14-IV; RMF-13: I.2.8.3.1.4.](#liva-14-iv-rmf-13-i28314)
+- [_**Concepto de bienes de inversión**_](#_concepto-de-bienes-de-inversión_)
+ - [CAPITULO IV](#capitulo-iv)
+ - [Del uso o goce temporal de bienes](#del-uso-o-goce-temporal-de-bienes)
+ - [CAPITULO V](#capitulo-v)
+ - [De la importación de bienes y servicios](#de-la-importación-de-bienes-y-servicios)
+- [LIVA: 24-I.](#liva-24-i)
+- [CAPITULO VI De la exportación de bienes y servicios](#capitulo-vi-de-la-exportación-de-bienes-y-servicios)
+ - [_**SECCION I De las disposiciones generales**_](#_seccion-i-de-las-disposiciones-generales_)
+ - [LIVA: 29-I, 30.](#liva-29-i-30)
+ - [LIVA: 29-IV; RIVA: 61.](#liva-29-iv-riva-61)
+ - [LIVA: 29-V; CSAT: 129/2012/IVA](#liva-29-v-csat-1292012iva)
+ - [_**SECCION II**_](#_seccion-ii_)
+ - [_**De los servicios de filmación o grabación**_](#_de-los-servicios-de-filmación-o-grabación_)
+- [_**SECCION III De los servicios de hotelería y conexos para congresos, convenciones, exposiciones o ferias**_](#_seccion-iii-de-los-servicios-de-hotelería-y-conexos-para-congresos-convenciones-exposiciones-o-ferias_)
+ - [_**Glosario de términos**_](#_glosario-de-términos_)
+ - [LIVA: 29-VII.](#liva-29-vii)
+- [_**Pago de los servicios de hotelería y conexos contratados con la intermediación de agencias de viajes**_](#_pago-de-los-servicios-de-hotelería-y-conexos-contratados-con-la-intermediación-de-agencias-de-viajes_)
+ - [_**Concepto de servicios complementarios**_](#_concepto-de-servicios-complementarios_)
+ - [CAPITULO VII](#capitulo-vii)
+ - [De las obligaciones de los contribuyentes](#de-las-obligaciones-de-los-contribuyentes)
+- [LIVA: 32-III; CFF: 16-I.](#liva-32-iii-cff-16-i)
+- [LIVA: 5, 5-D, 6.](#liva-5-5-d-6)
+ - [CAPITULO VIII De las facultades de las autoridades](#capitulo-viii-de-las-facultades-de-las-autoridades)
+ - [TRANSITORIOS 2007 (DOF 4-dic-06)](#transitorios-2007-dof-4-dic-06)
+
 <!-- Page 1 -->
+
+Reglamento de la
+
+Ley del Impuesto 
+al Valor Agregado
+
+Ultima reforma incluida: DOF 4 de diciembre de 2006 
+ 
+ 
+ 
+ 
+ 
+Artículos 
+Capítulo I 
+Disposiciones Generales ....................................................................................................................................... 1 a 24 
+Capítulo II 
+De la Enajenación ................................................................................................................................................. 25 a 31 
+Capítulo III 
+De la Prestación de Servicios ................................................................................................................................ 32 a 44 
+Capítulo IV 
+Del Uso o Goce Temporal de Bienes ..................................................................................................................... 
+45 
+Capítulo V 
+De la Importación de Bienes y Servicios ................................................................................................................ 46 a 56 
+Capítulo VI 
+De la Exportación de Bienes o Servicios 
+ 
+Sección I 
+ 
+De las Disposiciones Generales ...................................................................................................................... 57 a 61 
+ 
+Sección II 
+ 
+De los Servicios de Filmación o Grabación ...................................................................................................... 62 y 63 
+ 
+Sección III 
+ 
+De los Servicios de Hotelería y Conexos para Congresos, Convenciones, 
+ 
+Exposiciones o Ferias ...................................................................................................................................... 64 a 70 
+ 
+Capítulo VII 
+De las Obligaciones de los Contribuyentes ............................................................................................................ 71 a 78 
+Capítulo VIII 
+De las Facultades de las Autoridades .................................................................................................................... 
+79 
+ 
+Artículos Transitorios
+
+1
+
+<!-- Page 2 -->
 
 # **Reglamento de la Ley del Impuesto al Valor Agregado** 
 
@@ -51,9 +141,11 @@ _Ultima reforma incluida: DOF 4 de diciembre de 2006_
 
 
 
-1 
+1
 
-## **Reglamento de la Ley del Impuesto al Valor Agregado** 
+<!-- Page 3 -->
+
+# **Reglamento de la Ley del Impuesto al Valor Agregado** 
 
 _(Fecha de publicación: DOF 4-dic-06. Inicio de vigencia: 5-dic-06. Ultima reforma incluida: 4-dic-06.)_ 
 
@@ -103,7 +195,9 @@ _**Servicios personales independientes: comisión y arrendamiento**_
 
 - _**c)**_ Otorgamiento del uso o goce temporal de bienes. **LIVA: 1-A-** _**a),**_ **19.** 
 
-2 
+2
+
+<!-- Page 4 -->
 
 _**Retención en el caso de servicios de autotransporte**_ 
 
@@ -165,7 +259,9 @@ Asimismo, para los efectos del artículo 25, fracción III de la Ley, tratándos
 
 **LIVA: 25-III.** 
 
-3 
+3
+
+<!-- Page 5 -->
 
 _**Enajenación de maquinaria y equipo que se consideran para uso agrícola y pesca comercial de acuerdo a su función**_ 
 
@@ -219,7 +315,9 @@ _**Cálculo del factor de prorrateo en el caso de cargos de líneas aéreas dist
 
 **ART. 17.** Para calcular la proporción a que se refieren las disposiciones que establece la Ley en materia de acreditamiento, se consideran incluidas en el valor de las actividades por las que se deba pagar el impuesto, los cargos que las líneas aéreas realicen 
 
-4 
+4
+
+<!-- Page 6 -->
 
 por los servicios de transporte que presten amparados con boletos de avión expedidos por una línea aérea distinta. Dichos cargos no serán incluidos por quien los hubiera pagado, en el valor de las actividades por las que se deba pagar el impuesto ni en el valor total de sus actividades. 
 
@@ -273,7 +371,9 @@ _**Acreditamiento por gastos de empleados o profesionistas**_
 
 _**Enajenación de inmuebles, separación del valor del suelo y construcciones en la escritura pública**_ 
 
-5 
+5
+
+<!-- Page 7 -->
 
 **ART. 22.** Para los efectos del artículo 5o., fracción II de la Ley, cuando la enajenación de inmuebles se haga constar en escritura pública, en ella se señalará el valor del suelo, el de las construcciones por las que se esté obligado al pago del impuesto y, en su caso, el de aquellas por las que no se esté obligado a dicho pago. Asimismo, deberá señalarse el monto del impuesto trasladado expresamente y por separado del valor del bien. 
 
@@ -285,7 +385,7 @@ _**Opción de solicitud de devolución o compensación en declaraciones compleme
 
 **ART. 23.** Para los efectos del artículo 6o. de la Ley, cuando se presenten declaraciones complementarias substituyendo los datos de la original, en virtud de las cuales resulten saldos a favor o se incrementen los que habían sido declarados, el contribuyente podrá optar por solicitar su devolución, llevar a cabo su compensación conforme a lo dispuesto en dicho artículo o por continuar el acreditamiento en la siguiente declaración de pago al día en que se presente la declaración complementaria. **LIVA: 6, 7; CFF: 22, 23, 32.** 
 
-## _**Devoluciones, descuentos o bonificaciones**_ 
+# _**Devoluciones, descuentos o bonificaciones**_ 
 
 **ART. 24.** Para los efectos del artículo 7o., primer párrafo de la Ley, los contribuyentes que reciban la devolución de bienes enajenados u otorguen descuentos o bonificaciones, o devuelvan los anticipos o depósitos recibidos con motivo de la realización de actividades gravadas por la Ley, sólo podrán deducir el monto de dichos conceptos hasta por el valor de las actividades por las que se deba pagar el impuesto. En el caso de resultar remanentes se deducirán en las siguientes declaraciones de pagos mensuales hasta agotarlos. Sólo se podrá efectuar la deducción a que se refiere este párrafo hasta que la contraprestación, anticipo o depósito correspondiente, se haya restituido efectivamente al adquirente, o bien, cuando la obligación de hacerlo se extinga. 
 
@@ -331,9 +431,11 @@ Cuando se enajene una construcción que no estuviera destinada a casa habitació
 
 Igualmente se consideran como destinadas a casa habitación las instalaciones y áreas cuyos usos estén exclusivamente dedicados a sus moradores, siempre que sea con fines no lucrativos. 
 
-6 
+6
 
-## **LIVA: 9-II.** 
+<!-- Page 8 -->
+
+# **LIVA: 9-II.** 
 
 ## _**Servicios de construcción destinados a casa habitación**_ 
 
@@ -393,13 +495,15 @@ _**Intereses exentos en adquisición de casa habitación**_
 
 _**Concepto de operaciones de financiamiento**_ 
 
-7 
+7
+
+<!-- Page 9 -->
 
 **ART. 38.** Para los efectos del artículo 15, fracción X, inciso _b),_ primer párrafo de la Ley, se entenderá por operaciones de financiamiento las que tengan el carácter de activas o pasivas de crédito, entendiéndose como tales aquellas por las que reciban o paguen intereses las personas que de conformidad con lo dispuesto en dicho inciso realizan las operaciones mencionadas. **LIVA: 15-X-** _**b).**_ 
 
 También quedan comprendidas en las operaciones de financiamiento de carácter activo, los créditos otorgados por los fondos o fideicomisos que únicamente operen con recursos proporcionados por las personas señaladas en el párrafo anterior o por ellas conjuntamente con los gobiernos de las Entidades Federativas. 
 
-## _**Concepto de bienes de inversión**_ 
+# _**Concepto de bienes de inversión**_ 
 
 **ART. 39.** Para los efectos del artículo 15, fracción X, inciso _b),_ segundo párrafo de la Ley, se consideran bienes de inversión, aquellos que integran el activo fijo en los términos del segundo párrafo del artículo 38 de la Ley del Impuesto sobre la Renta. **LIVA: 15-X-** _**b);**_ **LISR: 38.** 
 
@@ -453,9 +557,11 @@ _**Actos que también se consideran importación de bienes**_
 
 **II.** La reincorporación al mercado nacional de mercancías que se extraigan del régimen del depósito fiscal o del régimen de recinto fiscalizado estratégico, en los términos de la legislación aduanera. 
 
-8 
+8
 
-## **LIVA: 24-I.** 
+<!-- Page 10 -->
+
+# **LIVA: 24-I.** 
 
 _**Impuesto por desperdicios importados definitivamente**_ 
 
@@ -513,9 +619,11 @@ _**Acreditamiento del IVA cuando el contribuyente realice depósitos en cuentas 
 
 **LIVA: 4, 5-III, 28.** 
 
-9 
+9
 
-## **CAPITULO VI De la exportación de bienes y servicios** 
+<!-- Page 11 -->
+
+# **CAPITULO VI De la exportación de bienes y servicios** 
 
 ## _**SECCION I De las disposiciones generales**_ 
 
@@ -573,7 +681,9 @@ Se considera que los servicios de filmación o grabación se exportan, cuando se
 
 _**Requisitos para exportar servicios de filmación o grabación**_ 
 
-10 
+10
+
+<!-- Page 12 -->
 
 **ART. 63.** Conforme a lo dispuesto por el artículo 29, fracción IV, inciso _g)_ de la Ley, los contribuyentes deberán cumplir con los requisitos siguientes: 
 
@@ -591,7 +701,7 @@ No tendrá efecto alguno la presentación extemporánea del aviso a que se refie
 
 **IV.** Recibir el pago de los servicios de filmación o grabación mediante cheque nominativo de quien reciba los servicios o mediante transferencia de fondos en cuentas de instituciones de crédito o casas de bolsa, hechos a nombre del contribuyente. 
 
-## _**SECCION III De los servicios de hotelería y conexos para congresos, convenciones, exposiciones o ferias**_ 
+# _**SECCION III De los servicios de hotelería y conexos para congresos, convenciones, exposiciones o ferias**_ 
 
 ## _**Glosario de términos**_ 
 
@@ -641,13 +751,15 @@ _**Cobro en servicios de hotelería y conexos**_
 
 **ART. 67.** Para los efectos de lo dispuesto por el artículo 29, fracción VII, último párrafo de la Ley, los contribuyentes podrán recibir el pago de los servicios de hotelería y conexos, mediante la transferencia de fondos a sus cuentas en instituciones de crédito o casas de bolsa, provenientes de cuentas de instituciones financieras ubicadas en el extranjero. Cuando el pago se efectúe 
 
-11 
+11
+
+<!-- Page 13 -->
 
 mediante transferencia de fondos, los contribuyentes deberán conservar el estado de cuenta que contenga el movimiento correspondiente. 
 
 **LIVA: 29-VII.** 
 
-## _**Pago de los servicios de hotelería y conexos contratados con la intermediación de agencias de viajes**_ 
+# _**Pago de los servicios de hotelería y conexos contratados con la intermediación de agencias de viajes**_ 
 
 **ART. 68.** Para los efectos de lo dispuesto por el artículo 29, fracción VII, último párrafo de la Ley, cuando los servicios de hotelería y conexos se contraten con la intermediación de agencias de viajes, dichos servicios deberán ser pagados por éstas a nombre de los turistas extranjeros, ya sea mediante cheque nominativo que contenga en su anverso la expresión “para abono en cuenta del beneficiario”, o mediante transferencia de fondos en cuentas de instituciones de crédito o casas de bolsa. En estos casos, los contribuyentes deberán conservar el estado de cuenta que contenga el movimiento correspondiente y cumplir con los requisitos establecidos en el artículo 66 de este Reglamento. 
 
@@ -693,11 +805,13 @@ _**Registro en la contabilidad del impuesto trasladado y el pagado en la importa
 
 _**Operaciones con público en general: actividades comerciales**_ 
 
-12 
+12
+
+<!-- Page 14 -->
 
 **ART. 72.** De conformidad a lo establecido en el artículo 32, fracción III, quinto párrafo de la Ley, se entenderá que se realizan actos o actividades con el público en general cuando se trate de operaciones efectuadas por contribuyentes dedicados a actividades comerciales, en los términos del artículo 16, fracción I del Código Fiscal de la Federación, excepto cuando se trate de mayoristas, medio mayoristas o envasadores. 
 
-## **LIVA: 32-III; CFF: 16-I.** 
+# **LIVA: 32-III; CFF: 16-I.** 
 
 _**Servicios**_ 
 
@@ -751,9 +865,11 @@ _**No acreditamiento, compensación o devolución de los contribuyentes en caso 
 
 Quienes se acojan a lo dispuesto en este artículo, en ningún caso podrán considerar como impuesto acreditable el impuesto que sea acreditado por la institución fiduciaria, el que le haya sido trasladado al fideicomiso ni el que éste haya pagado con motivo de la importación. Tampoco podrán compensar, acreditar o solicitar la devolución de los saldos a favor generados por las operaciones del fideicomiso. 
 
-13 
+13
 
-## **LIVA: 5, 5-D, 6.** 
+<!-- Page 15 -->
+
+# **LIVA: 5, 5-D, 6.** 
 
 _**Definición de retenciones de manera regular**_ 
 
@@ -809,40 +925,4 @@ _**Obligaciones de los fideicomisos inscritos antes de la entrada en vigor del r
 
 **ART. TERCERO.** Para el efecto de las obligaciones previstas en el artículo 74, fracción I, primer párrafo del presente Reglamento, tratándose de fideicomisos inscritos en el Registro Federal de Contribuyentes con anterioridad a la fecha de su entrada 
 
-14 
-
-en vigor, éstas se tendrán por cumplidas, cuando al momento de su inscripción en dicho Registro se hayan realizado las manifestaciones a que se refiere dicha fracción, de conformidad con lo dispuesto en las reglas de carácter general emitidas por el Servicio de Administración Tributaria. 
-
-**RLIVA: 74-I.** 
-
-15 
-
-
-
-<!-- Page 2 -->
-
-<!-- Page 3 -->
-
-<!-- Page 4 -->
-
-<!-- Page 5 -->
-
-<!-- Page 6 -->
-
-<!-- Page 7 -->
-
-<!-- Page 8 -->
-
-<!-- Page 9 -->
-
-<!-- Page 10 -->
-
-<!-- Page 11 -->
-
-<!-- Page 12 -->
-
-<!-- Page 13 -->
-
-<!-- Page 14 -->
-
-<!-- Page 15 -->
+14

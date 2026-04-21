@@ -2,19 +2,43 @@
 source: 1_Acuerdo_MAAGCI_Titulo_Tercero.pdf
 pages: 66
 file_size_mb: 1.63
-extraction_date: "2026-04-21T16:13:43.411244+00:00"
-language: unknown
+extraction_date: "2026-04-21T21:47:53.401007+00:00"
+language: es
 tables_found: 21
 has_images: true
 has_scanned_pages: false
-features_used: ["text_fast", "tables", "tables_camelot", "tables_tabula"]
-extraction_time_sec: 10.66
+features_used: ["text_fast", "tables"]
+extraction_time_sec: 11.84
 quality_score: 74.0
 quality_label: "acceptable"
 is_valid: true
 from_cache: false
 warnings: ["camelot-py not installed; tables_camelot skipped", "tabula-py not installed; tables_tabula skipped"]
 ---
+## Contenido
+
+ - [Tabla — página 7 (vía pdfplumber)](#tabla-página-7-vía-pdfplumber)
+ - [Tabla — página 29 (vía pdfplumber)](#tabla-página-29-vía-pdfplumber)
+ - [Tabla — página 29 (vía pdfplumber)](#tabla-página-29-vía-pdfplumber)
+ - [Tabla — página 29 (vía pdfplumber)](#tabla-página-29-vía-pdfplumber)
+ - [Tabla — página 36 (vía pdfplumber)](#tabla-página-36-vía-pdfplumber)
+ - [Tabla — página 37 (vía pdfplumber)](#tabla-página-37-vía-pdfplumber)
+ - [Tabla — página 37 (vía pdfplumber)](#tabla-página-37-vía-pdfplumber)
+ - [Tabla — página 54 (vía pdfplumber)](#tabla-página-54-vía-pdfplumber)
+ - [Tabla — página 54 (vía pdfplumber)](#tabla-página-54-vía-pdfplumber)
+ - [Tabla — página 55 (vía pdfplumber)](#tabla-página-55-vía-pdfplumber)
+ - [Tabla — página 55 (vía pdfplumber)](#tabla-página-55-vía-pdfplumber)
+ - [Tabla — página 59 (vía pdfplumber)](#tabla-página-59-vía-pdfplumber)
+ - [Tabla — página 59 (vía pdfplumber)](#tabla-página-59-vía-pdfplumber)
+ - [Tabla — página 60 (vía pdfplumber)](#tabla-página-60-vía-pdfplumber)
+ - [Tabla — página 60 (vía pdfplumber)](#tabla-página-60-vía-pdfplumber)
+ - [Tabla — página 61 (vía pdfplumber)](#tabla-página-61-vía-pdfplumber)
+ - [Tabla — página 61 (vía pdfplumber)](#tabla-página-61-vía-pdfplumber)
+ - [Tabla — página 63 (vía pdfplumber)](#tabla-página-63-vía-pdfplumber)
+ - [Tabla — página 63 (vía pdfplumber)](#tabla-página-63-vía-pdfplumber)
+ - [Tabla — página 64 (vía pdfplumber)](#tabla-página-64-vía-pdfplumber)
+ - [Tabla — página 64 (vía pdfplumber)](#tabla-página-64-vía-pdfplumber)
+
 <!-- Page 1 -->
 
 Acuerdo DOF 03-11-2016 

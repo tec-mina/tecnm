@@ -2,13 +2,13 @@
 source: 16-codigo_etica_servidores_publicos_apf.pdf
 pages: 4
 file_size_mb: 0.02
-extraction_date: "2026-04-21T16:12:57.938464+00:00"
-language: unknown
+extraction_date: "2026-04-21T21:45:27.444601+00:00"
+language: es
 tables_found: 0
 has_images: false
 has_scanned_pages: false
-features_used: ["text_fast", "tables", "tables_camelot", "tables_tabula"]
-extraction_time_sec: 0.28
+features_used: ["text_fast"]
+extraction_time_sec: 0.76
 quality_score: 92.0
 quality_label: "excellent"
 is_valid: true

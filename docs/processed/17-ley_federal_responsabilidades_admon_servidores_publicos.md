@@ -2,20 +2,121 @@
 source: 17-ley_federal_responsabilidades_admon_servidores_publicos.pdf
 pages: 30
 file_size_mb: 0.34
-extraction_date: "2026-04-21T16:13:19.962886+00:00"
-language: unknown
+extraction_date: "2026-04-21T21:45:43.218982+00:00"
+language: es
 tables_found: 0
 has_images: true
 has_scanned_pages: false
 features_used: ["markdown_llm", "text_fast"]
-extraction_time_sec: 19.11
-quality_score: 86.0
-quality_label: "good"
+extraction_time_sec: 15.56
+quality_score: 71.0
+quality_label: "acceptable"
 is_valid: true
 from_cache: false
 warnings: []
 ---
+## Contenido
+
+- [LEY FEDERAL DE RESPONSABILIDADES ADMINISTRATIVAS DE LOS SERVIDORES PÚBLICOS](#ley-federal-de-responsabilidades-administrativas-de-los-servidores-públicos)
+ - [Nueva Ley publicada en el Diario Oficial de la Federación el 13 de marzo de 2002](#nueva-ley-publicada-en-el-diario-oficial-de-la-federación-el-13-de-marzo-de-2002)
+ - [DECRETO](#decreto)
+ - [LEY FEDERAL DE RESPONSABILIDADES ADMINISTRATIVAS DE LOS SERVIDORES PUBLICOS](#ley-federal-de-responsabilidades-administrativas-de-los-servidores-publicos)
+ - [TITULO PRIMERO](#titulo-primero)
+ - [CAPITULO UNICO Disposiciones Generales](#capitulo-unico-disposiciones-generales)
+- [TITULO SEGUNDO Responsabilidades Administrativas](#titulo-segundo-responsabilidades-administrativas)
+ - [CAPITULO I Principios que rigen la función pública, sujetos de responsabilidad administrativa y obligaciones en el servicio público](#capitulo-i-principios-que-rigen-la-función-pública-sujetos-de-responsabilidad-administrativa-y-obligaciones-en-el-servicio-público)
+- [CAPITULO II](#capitulo-ii)
+ - [Quejas o Denuncias, Sanciones Administrativas y Procedimientos para aplicarlas](#quejas-o-denuncias-sanciones-administrativas-y-procedimientos-para-aplicarlas)
+- [ARTICULO 33.-** (Se deroga).](#articulo-33-se-deroga)
+ - [TITULO TERCERO](#titulo-tercero)
+- [CAPITULO UNICO Registro Patrimonial de los Servidores Públicos](#capitulo-unico-registro-patrimonial-de-los-servidores-públicos)
+- [TITULO CUARTO](#titulo-cuarto)
+ - [CAPITULO UNICO](#capitulo-unico)
+ - [De las acciones preventivas para garantizar el adecuado ejercicio del servicio público](#de-las-acciones-preventivas-para-garantizar-el-adecuado-ejercicio-del-servicio-público)
+- [TRANSITORIOS](#transitorios)
+- [TRANSITORIOS](#transitorios)
+- [ARTÍCULOS TRANSITORIOS DE DECRETOS DE REFORMA](#artículos-transitorios-de-decretos-de-reforma)
+ - [LEY Federal de Responsabilidad Patrimonial del Estado.](#ley-federal-de-responsabilidad-patrimonial-del-estado)
+ - [TRANSITORIOS](#transitorios)
+- [DECRETO por el que se reforman la fracción III del artículo 3 y el párrafo tercero del artículo 5 de la Ley Federal de Responsabilidades Administrativas de los Servidores Públicos.](#decreto-por-el-que-se-reforman-la-fracción-iii-del-artículo-3-y-el-párrafo-tercero-del-artículo-5-de-la-ley-federal-de-responsabilidades-administrativas-de-los-servidores-públicos)
+ - [TRANSITORIO](#transitorio)
+- [DECRETO por el que se reforman y adicionan los artículos 15, 52, 72 y 73 de la Ley de la Comisión Nacional de los Derechos Humanos; 8 de la Ley Federal de Responsabilidades Administrativas de los Servidores Públicos; y 214 fracción V del Código Penal Federal.](#decreto-por-el-que-se-reforman-y-adicionan-los-artículos-15-52-72-y-73-de-la-ley-de-la-comisión-nacional-de-los-derechos-humanos-8-de-la-ley-federal-de-responsabilidades-administrativas-de-los-servidores-públicos-y-214-fracción-v-del-código-penal-federal)
+ - [TRANSITORIO](#transitorio)
+- [ARTÍCULOS TRANSITORIOS](#artículos-transitorios)
+- [TRANSITORIOS](#transitorios)
+- [ARTÍCULOS TRANSITORIOS](#artículos-transitorios)
+- [DECRETO por el que se reforman los artículos 13 y 37 de la Ley Federal de Responsabilidades Administrativas de los Servidores Públicos.](#decreto-por-el-que-se-reforman-los-artículos-13-y-37-de-la-ley-federal-de-responsabilidades-administrativas-de-los-servidores-públicos)
+ - [TRANSITORIO](#transitorio)
+
 <!-- Page 1 -->
+
+LEY FEDERAL DE RESPONSABILIDADES ADMINISTRATIVAS DE LOS SERVIDORES PÚBLICOS
+
+Última Reforma DOF 15-06-2012
+
+CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN 
+Secretaría General 
+Secretaría de Servicios Parlamentarios 
+Dirección General de Servicios de Documentación, Información y Análisis
+
+LEY FEDERAL DE RESPONSABILIDADES ADMINISTRATIVAS DE LOS SERVIDORES
+
+PÚBLICOS
+
+Nueva Ley publicada en el Diario Oficial de la Federación el 13 de marzo de 2002
+
+TEXTO VIGENTE 
+Última reforma publicada DOF 15-06-2012 
+ 
+ 
+ 
+Al margen un sello con el Escudo Nacional, que dice: Estados Unidos Mexicanos.- Presidencia de la 
+República.
+
+VICENTE FOX QUESADA, Presidente de los Estados Unidos Mexicanos, a sus habitantes sabed: 
+ 
+Que el Honorable Congreso de la Unión, se ha servido dirigirme el siguiente
+
+DECRETO
+
+"EL CONGRESO DE LOS ESTADOS UNIDOS MEXICANOS, DECRETA: 
+ 
+ARTICULO PRIMERO.- Se expide la Ley Federal de Responsabilidades Administrativas de los 
+Servidores Públicos para quedar como sigue:
+
+LEY FEDERAL DE RESPONSABILIDADES ADMINISTRATIVAS DE LOS SERVIDORES
+
+PUBLICOS
+
+TITULO PRIMERO
+
+CAPITULO UNICO 
+Disposiciones Generales
+
+ARTICULO 1.- Esta Ley tiene por objeto reglamentar el Título Cuarto de la Constitución Política de los 
+Estados Unidos Mexicanos, en materia de:
+
+I.- 
+Los sujetos de responsabilidad administrativa en el servicio público; 
+ 
+II.- Las obligaciones en el servicio público; 
+ 
+III.- Las responsabilidades y sanciones administrativas en el servicio público; 
+ 
+IV.- Las autoridades competentes y el procedimiento para aplicar dichas sanciones, y 
+ 
+V.- El registro patrimonial de los servidores públicos. 
+ 
+ARTICULO 2.- Son sujetos de esta Ley, los servidores públicos federales mencionados en el párrafo 
+primero del artículo 108 Constitucional, y todas aquellas personas que manejen o apliquen recursos 
+públicos federales.
+
+ARTICULO 3.- En el ámbito de su competencia, serán autoridades facultadas para aplicar la presente 
+Ley:
+
+1
+
+<!-- Page 2 -->
 
 **LEY FEDERAL DE RESPONSABILIDADES ADMINISTRATIVAS DE LOS SERVIDORES PÚBLICOS** 
 
@@ -63,7 +164,9 @@ Que el Honorable Congreso de la Unión, se ha servido dirigirme el siguiente
 
 **ARTICULO 3.-** En el ámbito de su competencia, serán autoridades facultadas para aplicar la presente Ley: 
 
-1 
+1
+
+<!-- Page 3 -->
 
 **LEY FEDERAL DE RESPONSABILIDADES ADMINISTRATIVAS DE LOS SERVIDORES PÚBLICOS** 
 
@@ -113,7 +216,9 @@ Entidades: A las consideradas como entidades paraestatales en la Ley Orgánica d
 
 **ARTICULO 6.-** Cuando los actos u omisiones de los servidores públicos, materia de las quejas o denuncias, queden comprendidos en más de uno de los casos sujetos a sanción y previstos en el artículo 109 Constitucional, los procedimientos respectivos se desarrollarán en forma autónoma según su naturaleza y por la vía procesal que corresponda, debiendo las autoridades a que alude el artículo 3 turnar 
 
-2 
+2
+
+<!-- Page 4 -->
 
 **LEY FEDERAL DE RESPONSABILIDADES ADMINISTRATIVAS DE LOS SERVIDORES PÚBLICOS** 
 
@@ -123,7 +228,7 @@ _Última Reforma DOF 15-06-2012_
 
 las quejas o denuncias a quien deba conocer de ellas. No podrán imponerse dos veces por una sola conducta sanciones de la misma naturaleza. 
 
-## **TITULO SEGUNDO Responsabilidades Administrativas** 
+# **TITULO SEGUNDO Responsabilidades Administrativas** 
 
 ## **CAPITULO I Principios que rigen la función pública, sujetos de responsabilidad administrativa y obligaciones en el servicio público** 
 
@@ -147,7 +252,9 @@ las quejas o denuncias a quien deba conocer de ellas. No podrán imponerse dos v
 
 - **VIII.-** Abstenerse de ejercer las funciones de un empleo, cargo o comisión, por haber concluido el período para el cual se le designó, por haber sido cesado o por cualquier otra causa legal que se lo impida; 
 
-3 
+3
+
+<!-- Page 5 -->
 
 **LEY FEDERAL DE RESPONSABILIDADES ADMINISTRATIVAS DE LOS SERVIDORES PÚBLICOS** 
 
@@ -175,7 +282,9 @@ _Párrafo adicionado DOF 21-08-2006_
 
 - **XIV.-** Abstenerse de intervenir o participar indebidamente en la selección, nombramiento, designación, contratación, promoción, suspensión, remoción, cese, rescisión del contrato o sanción de cualquier servidor público, cuando tenga interés personal, familiar o de negocios en 
 
-4 
+4
+
+<!-- Page 6 -->
 
 **LEY FEDERAL DE RESPONSABILIDADES ADMINISTRATIVAS DE LOS SERVIDORES PÚBLICOS** 
 
@@ -207,7 +316,9 @@ el caso, o pueda derivar alguna ventaja o beneficio para él o para las personas
 
 - **XXI.-** Abstenerse de inhibir por sí o por interpósita persona, utilizando cualquier medio, a los posibles quejosos con el fin de evitar la formulación o presentación de denuncias o realizar, 
 
-5 
+5
+
+<!-- Page 7 -->
 
 **LEY FEDERAL DE RESPONSABILIDADES ADMINISTRATIVAS DE LOS SERVIDORES PÚBLICOS** 
 
@@ -233,7 +344,7 @@ El incumplimiento a lo dispuesto en el presente artículo dará lugar al procedi
 
 - **c)** Los servidores públicos que se hayan desempeñado en cargos de Dirección en el Instituto Federal Electoral, sus Consejeros, y los Magistrados del Tribunal Electoral del Poder Judicial de la Federación, se abstendrán de participar en cualquier encargo público de la administración encabezada por quien haya ganado la elección que ellos organizaron o calificaron. 
 
-## **CAPITULO II** 
+# **CAPITULO II** 
 
 ## **Quejas o Denuncias, Sanciones Administrativas y Procedimientos para aplicarlas** 
 
@@ -245,7 +356,9 @@ La Secretaría establecerá las normas y procedimientos para que las quejas o de
 
 **ARTICULO 11.-** Las autoridades a que se refieren las fracciones I, II y IV a X del artículo 3, conforme a la legislación respectiva, y por lo que hace a su competencia, establecerán los órganos y sistemas para 
 
-6 
+6
+
+<!-- Page 8 -->
 
 **LEY FEDERAL DE RESPONSABILIDADES ADMINISTRATIVAS DE LOS SERVIDORES PÚBLICOS** 
 
@@ -289,7 +402,9 @@ La contravención a lo dispuesto por el párrafo que antecede será causa de res
 
 - **II.-** Las circunstancias socioeconómicas del servidor público; 
 
-7 
+7
+
+<!-- Page 9 -->
 
 **LEY FEDERAL DE RESPONSABILIDADES ADMINISTRATIVAS DE LOS SERVIDORES PÚBLICOS** 
 
@@ -327,7 +442,9 @@ Para los efectos de la Ley se entenderá por salario mínimo mensual, el equival
 
 Cuando los presuntos responsables desaparezcan o exista riesgo inminente de que oculten, enajenen o dilapiden sus bienes a juicio de la Secretaría, del contralor interno o del titular del área de responsabilidades, se solicitará a la Tesorería de la Federación, en cualquier fase del procedimiento administrativo a que se refiere el artículo 21 de la Ley, proceda al embargo precautorio de sus bienes, a fin de garantizar el cobro de las sanciones económicas que llegaren a imponerse con motivo de la infracción cometida. Impuesta la sanción económica, el embargo precautorio se convertirá en definitivo y se procederá en los términos del tercer párrafo del artículo 30 de la Ley. 
 
-8 
+8
+
+<!-- Page 10 -->
 
 **LEY FEDERAL DE RESPONSABILIDADES ADMINISTRATIVAS DE LOS SERVIDORES PÚBLICOS** 
 
@@ -359,7 +476,9 @@ La Secretaría o el contralor interno podrán comprobar el cumplimiento de las o
 
 - **I.-** Citará al presunto responsable a una audiencia, notificándole que deberá comparecer personalmente a rendir su declaración en torno a los hechos que se le imputen y que puedan ser causa de responsabilidad en los términos de la Ley, y demás disposiciones aplicables. 
 
-9 
+9
+
+<!-- Page 11 -->
 
 **LEY FEDERAL DE RESPONSABILIDADES ADMINISTRATIVAS DE LOS SERVIDORES PÚBLICOS** 
 
@@ -391,7 +510,9 @@ La suspensión temporal a que se refiere el párrafo anterior suspenderá los ef
 
 La suspensión cesará cuando así lo resuelva la Secretaría, el contralor interno o el titular del área de responsabilidades, independientemente de la iniciación o continuación del procedimiento a que se refiere 
 
-10 
+10
+
+<!-- Page 12 -->
 
 **LEY FEDERAL DE RESPONSABILIDADES ADMINISTRATIVAS DE LOS SERVIDORES PÚBLICOS** 
 
@@ -425,7 +546,9 @@ Las resoluciones que se dicten en el recurso de revocación serán también impu
 
 La tramitación del recurso se sujetará a las normas siguientes: 
 
-11 
+11
+
+<!-- Page 13 -->
 
 **LEY FEDERAL DE RESPONSABILIDADES ADMINISTRATIVAS DE LOS SERVIDORES PÚBLICOS** 
 
@@ -463,7 +586,9 @@ No procederá la suspensión de la ejecución de las resoluciones administrativa
 
 **ARTICULO 29.-** Las resoluciones que dicte el Tribunal Federal de Justicia Fiscal y Administrativa podrán ser impugnadas por la Secretaría, el contralor interno o el titular del área de responsabilidades, según corresponda. 
 
-12 
+12
+
+<!-- Page 14 -->
 
 **LEY FEDERAL DE RESPONSABILIDADES ADMINISTRATIVAS DE LOS SERVIDORES PÚBLICOS** 
 
@@ -487,7 +612,7 @@ Las sanciones económicas que se impongan constituirán créditos fiscales a fav
 
 Si existe resistencia al mandamiento legítimo de autoridad, se estará a lo que prevenga la legislación penal. 
 
-## **ARTICULO 33.-** (Se deroga). 
+# **ARTICULO 33.-** (Se deroga). 
 
 _Artículo derogado DOF 31-12-2004_ 
 
@@ -503,7 +628,9 @@ _Párrafo derogado DOF 31-12-2004_
 
 ## **TITULO TERCERO** 
 
-13 
+13
+
+<!-- Page 15 -->
 
 **LEY FEDERAL DE RESPONSABILIDADES ADMINISTRATIVAS DE LOS SERVIDORES PÚBLICOS** 
 
@@ -513,7 +640,7 @@ _Última Reforma DOF 15-06-2012_
 
 Dirección General de Servicios de Documentación, Información y Análisis 
 
-## **CAPITULO UNICO Registro Patrimonial de los Servidores Públicos** 
+# **CAPITULO UNICO Registro Patrimonial de los Servidores Públicos** 
 
 **ARTICULO 35.-** La Secretaría llevará el registro y seguimiento de la evolución de la situación patrimonial de los servidores públicos de las dependencias y entidades, así como de las autoridades a que se refieren las fracciones IV y V del artículo 3, en los términos de la Ley y demás disposiciones aplicables. 
 
@@ -541,7 +668,9 @@ Para los efectos del párrafo que antecede, las citadas autoridades conforme a s
 
 - **IX.-** En la Auditoría Superior de la Federación: Todos los servidores públicos, desde el nivel de jefe de departamento u homólogo hasta el de Auditor Superior de la Federación; 
 
-14 
+14
+
+<!-- Page 16 -->
 
 **LEY FEDERAL DE RESPONSABILIDADES ADMINISTRATIVAS DE LOS SERVIDORES PÚBLICOS** 
 
@@ -583,7 +712,9 @@ _Párrafo reformado DOF 05-06-2012_
 
 En caso de que la omisión en la declaración continúe por un período de treinta días naturales siguientes a la fecha en que hubiere sido suspendido el servidor público, la Secretaría declarará que el 
 
-15 
+15
+
+<!-- Page 17 -->
 
 **LEY FEDERAL DE RESPONSABILIDADES ADMINISTRATIVAS DE LOS SERVIDORES PÚBLICOS** 
 
@@ -621,7 +752,9 @@ Tratándose de bienes muebles, la Secretaría determinará las características 
 
 **ARTICULO 40.-** La Secretaría llevará un registro de servidores públicos, el cual tendrá el carácter de público. 
 
-16 
+16
+
+<!-- Page 18 -->
 
 **LEY FEDERAL DE RESPONSABILIDADES ADMINISTRATIVAS DE LOS SERVIDORES PÚBLICOS** 
 
@@ -655,7 +788,9 @@ Contra la práctica de la notificación respectiva, el servidor público podrá 
 
 Una vez desahogadas las pruebas admitidas, si las hubiere, la Secretaría contará con un plazo de diez días hábiles para emitir su resolución. 
 
-17 
+17
+
+<!-- Page 19 -->
 
 **LEY FEDERAL DE RESPONSABILIDADES ADMINISTRATIVAS DE LOS SERVIDORES PÚBLICOS** 
 
@@ -679,7 +814,7 @@ Para los efectos de esta disposición, se considerará a la Secretaría coadyuva
 
 **ARTICULO 47.-** En todas las cuestiones relativas al procedimiento no previstas en los Títulos Segundo y Tercero de la Ley, así como en la apreciación de las pruebas, se observarán las disposiciones del Código Federal de Procedimientos Civiles. 
 
-## **TITULO CUARTO** 
+# **TITULO CUARTO** 
 
 ## **CAPITULO UNICO** 
 
@@ -689,7 +824,9 @@ Para los efectos de esta disposición, se considerará a la Secretaría coadyuva
 
 En el establecimiento de las acciones referidas las dependencias y entidades deberán atender los lineamientos generales que emita la Secretaría. 
 
-18 
+18
+
+<!-- Page 20 -->
 
 **LEY FEDERAL DE RESPONSABILIDADES ADMINISTRATIVAS DE LOS SERVIDORES PÚBLICOS** 
 
@@ -705,7 +842,7 @@ El Código de Etica a que se refiere el párrafo anterior, deberá hacerse del c
 
 **ARTICULO 51.-** Las dependencias y entidades deberán promover la participación de los sectores social y privado, así como en su caso, de los gobiernos estatales y municipales correspondientes, en la elaboración del diagnóstico a que se refiere el artículo 48 de la Ley, así como en la evaluación de las acciones que las mismas determinen, a efecto de garantizar la prevención de conductas indebidas de los servidores públicos. 
 
-## **TRANSITORIOS** 
+# **TRANSITORIOS** 
 
 **Artículo Primero.-** La presente Ley entrará en vigor al día siguiente de su publicación en el **Diario Oficial de la Federación** . 
 
@@ -721,7 +858,9 @@ Las disposiciones de la Ley Federal de Responsabilidades de los Servidores Públ
 
 **Artículo Sexto.-** Los procedimientos seguidos a servidores públicos federales que se encuentren en trámite o pendientes de resolución a la fecha de entrada en vigor de esta Ley, así como las resoluciones de fondo materia de los mismos, deberán sustanciarse y concluirse de conformidad con las disposiciones vigentes al momento en que se iniciaron tales procedimientos. 
 
-19 
+19
+
+<!-- Page 21 -->
 
 **LEY FEDERAL DE RESPONSABILIDADES ADMINISTRATIVAS DE LOS SERVIDORES PÚBLICOS** 
 
@@ -743,7 +882,7 @@ Las disposiciones de la Ley Federal de Responsabilidades de los Servidores Públ
 
 **ARTICULO TERCERO.-** .......... 
 
-## **TRANSITORIOS** 
+# **TRANSITORIOS** 
 
 **Artículo Primero.-** El presente Decreto entrará en vigor al día siguiente de su publicación en el **Diario Oficial de la Federación** . 
 
@@ -755,7 +894,9 @@ México, D.F., a 15 de diciembre de 2001.- Dip. **Beatriz Elena Paredes Rangel**
 
 En cumplimiento de lo dispuesto por la fracción I del Artículo 89 de la Constitución Política de los Estados Unidos Mexicanos, y para su debida publicación y observancia, expido el presente Decreto en la Residencia del Poder Ejecutivo Federal, en la Ciudad de México, Distrito Federal, a los doce días del mes de marzo de dos mil dos.- **Vicente Fox Quesada** .- Rúbrica.- El Secretario de Gobernación, **Santiago Creel Miranda** .- Rúbrica. 
 
-20 
+20
+
+<!-- Page 22 -->
 
 **LEY FEDERAL DE RESPONSABILIDADES ADMINISTRATIVAS DE LOS SERVIDORES PÚBLICOS** 
 
@@ -763,7 +904,7 @@ _Última Reforma DOF 15-06-2012_
 
 **CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN** Secretaría General Secretaría de Servicios Parlamentarios Dirección General de Servicios de Documentación, Información y Análisis 
 
-## **ARTÍCULOS TRANSITORIOS DE DECRETOS DE REFORMA** 
+# **ARTÍCULOS TRANSITORIOS DE DECRETOS DE REFORMA** 
 
 ## **LEY Federal de Responsabilidad Patrimonial del Estado.** 
 
@@ -787,7 +928,9 @@ México, D.F., a 14 de diciembre de 2004.- Dip. **Manlio Fabio Beltrones Rivera*
 
 En cumplimiento de lo dispuesto por la fracción I del Artículo 89 de la Constitución Política de los Estados Unidos Mexicanos, y para su debida publicación y observancia, expido el presente Decreto en la Residencia del Poder Ejecutivo Federal, en la Ciudad de México, Distrito Federal, a los treinta días del mes de diciembre de dos mil cuatro.- **Vicente Fox Quesada** .- Rúbrica.- El Secretario de Gobernación, **Santiago Creel Miranda** .- Rúbrica. 
 
-21 
+21
+
+<!-- Page 23 -->
 
 **LEY FEDERAL DE RESPONSABILIDADES ADMINISTRATIVAS DE LOS SERVIDORES PÚBLICOS** 
 
@@ -795,7 +938,7 @@ _Última Reforma DOF 15-06-2012_
 
 **CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN** Secretaría General Secretaría de Servicios Parlamentarios Dirección General de Servicios de Documentación, Información y Análisis 
 
-## **DECRETO por el que se reforman la fracción III del artículo 3 y el párrafo tercero del artículo 5 de la Ley Federal de Responsabilidades Administrativas de los Servidores Públicos.** 
+# **DECRETO por el que se reforman la fracción III del artículo 3 y el párrafo tercero del artículo 5 de la Ley Federal de Responsabilidades Administrativas de los Servidores Públicos.** 
 
 Publicado en el Diario Oficial de la Federación el 26 de diciembre de 2005 
 
@@ -811,7 +954,9 @@ México, D.F., a 15 de noviembre de 2005.- Dip. **Heliodoro Díaz Escárraga** ,
 
 En cumplimiento de lo dispuesto por la fracción I del Artículo 89 de la Constitución Política de los Estados Unidos Mexicanos, y para su debida publicación y observancia, expido el presente Decreto en la Residencia del Poder Ejecutivo Federal, en la Ciudad de México, Distrito Federal, a los diecinueve días del mes de diciembre de dos mil cinco.- **Vicente Fox Quesada** .- Rúbrica.- El Secretario de Gobernación, **Carlos María Abascal Carranza** .- Rúbrica. 
 
-22 
+22
+
+<!-- Page 24 -->
 
 **LEY FEDERAL DE RESPONSABILIDADES ADMINISTRATIVAS DE LOS SERVIDORES PÚBLICOS** 
 
@@ -821,7 +966,7 @@ Secretaría General Secretaría de Servicios Parlamentarios Dirección General d
 
 **CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN** 
 
-## **DECRETO por el que se reforman y adicionan los artículos 15, 52, 72 y 73 de la Ley de la Comisión Nacional de los Derechos Humanos; 8 de la Ley Federal de Responsabilidades Administrativas de los Servidores Públicos; y 214 fracción V del Código Penal Federal.** 
+# **DECRETO por el que se reforman y adicionan los artículos 15, 52, 72 y 73 de la Ley de la Comisión Nacional de los Derechos Humanos; 8 de la Ley Federal de Responsabilidades Administrativas de los Servidores Públicos; y 214 fracción V del Código Penal Federal.** 
 
 Publicado en el Diario Oficial de la Federación el 30 de junio de 2006 
 
@@ -837,7 +982,9 @@ México, D.F., a 26 de abril de 2006.- Dip. **Marcela González Salas P.** , Pre
 
 En cumplimiento de lo dispuesto por la fracción I del Artículo 89 de la Constitución Política de los Estados Unidos Mexicanos, y para su debida publicación y observancia, expido el presente Decreto en la Residencia del Poder Ejecutivo Federal, en la Ciudad de México, Distrito Federal, a los veintiséis días del mes de junio de dos mil seis.- **Vicente Fox Quesada** .- Rúbrica.- El Secretario de Gobernación, **Carlos María Abascal Carranza** .- Rúbrica. 
 
-23 
+23
+
+<!-- Page 25 -->
 
 **LEY FEDERAL DE RESPONSABILIDADES ADMINISTRATIVAS DE LOS SERVIDORES PÚBLICOS** 
 
@@ -853,7 +1000,7 @@ Publicado en el Diario Oficial de la Federación el 21 de agosto de 2006
 
 .......... 
 
-## **ARTÍCULOS TRANSITORIOS** 
+# **ARTÍCULOS TRANSITORIOS** 
 
 **Primero.** El presente Decreto entrará en vigor al día siguiente de su publicación en el Diario Oficial de la Federación. 
 
@@ -863,7 +1010,9 @@ México, D.F., a 26 de abril de 2006.- Dip. **Marcela González Salas P** ., Pre
 
 En cumplimiento de lo dispuesto por la fracción I del Artículo 89 de la Constitución Política de los Estados Unidos Mexicanos, y para su debida publicación y observancia, expido el presente Decreto en la Residencia del Poder Ejecutivo Federal, en la Ciudad de México, Distrito Federal, a los quince días del mes de agosto de dos mil seis.- **Vicente Fox Quesada** .- Rúbrica.- El Secretario de Gobernación, **Carlos María Abascal Carranza** .- Rúbrica. 
 
-24 
+24
+
+<!-- Page 26 -->
 
 **LEY FEDERAL DE RESPONSABILIDADES ADMINISTRATIVAS DE LOS SERVIDORES PÚBLICOS** 
 
@@ -879,7 +1028,7 @@ Publicado en el Diario Oficial de la Federación el 23 de enero de 2009
 
 ………. 
 
-## **TRANSITORIOS** 
+# **TRANSITORIOS** 
 
 **PRIMERO.** El presente Decreto entrará en vigor al día siguiente de su publicación en el Diario Oficial de la Federación. 
 
@@ -891,7 +1040,9 @@ México, D.F., a 9 de diciembre de 2008.- Sen. **Gustavo Enrique Madero Muñoz**
 
 En cumplimiento de lo dispuesto por la fracción I del Artículo 89 de la Constitución Política de los Estados Unidos Mexicanos, y para su debida publicación y observancia, expido el presente Decreto en la Residencia del Poder Ejecutivo Federal, en la Ciudad de México, Distrito Federal, a veintidós de enero de dos mil nueve.- **Felipe de Jesús Calderón Hinojosa** .- Rúbrica.- El Secretario de Gobernación, Lic. **Fernando Francisco Gómez Mont Urueta** .- Rúbrica. 
 
-25 
+25
+
+<!-- Page 27 -->
 
 **LEY FEDERAL DE RESPONSABILIDADES ADMINISTRATIVAS DE LOS SERVIDORES PÚBLICOS** 
 
@@ -907,7 +1058,7 @@ Publicado en el Diario Oficial de la Federación el 28 de mayo de 2009
 
 ………. 
 
-## **ARTÍCULOS TRANSITORIOS** 
+# **ARTÍCULOS TRANSITORIOS** 
 
 **PRIMERO.** El presente Decreto entrará en vigor a los treinta días naturales siguientes al de su publicación en el Diario Oficial de la Federación, salvo las disposiciones que para su aplicación requieran de las modificaciones al sistema electrónico CompraNet a que se refiere el artículo Décimo transitorio del presente Decreto. 
 
@@ -923,7 +1074,9 @@ Publicado en el Diario Oficial de la Federación el 28 de mayo de 2009
 
 **SÉPTIMO.** Los procedimientos de contratación que se encuentren en trámite a la fecha de entrada en vigor del presente Decreto, continuarán tramitándose hasta su conclusión conforme a las disposiciones de la Ley de Adquisiciones, Arrendamientos y Servicios del Sector Público y de la Ley de Obras Públicas y Servicios Relacionados con las Mismas, según corresponda, vigentes al momento de su inicio. 
 
-26 
+26
+
+<!-- Page 28 -->
 
 **LEY FEDERAL DE RESPONSABILIDADES ADMINISTRATIVAS DE LOS SERVIDORES PÚBLICOS** 
 
@@ -949,7 +1102,9 @@ En el caso de las dependencias y entidades que cuenten con una base de datos sob
 
 **DÉCIMO SEGUNDO.** La unidad administrativa de la Secretaría de la Función Pública a que se refieren los artículos 2 fracción II y 56 de la Ley de Adquisiciones, Arrendamientos y Servicios del Sector Público y 
 
-27 
+27
+
+<!-- Page 29 -->
 
 **LEY FEDERAL DE RESPONSABILIDADES ADMINISTRATIVAS DE LOS SERVIDORES PÚBLICOS** 
 
@@ -975,7 +1130,9 @@ México, D.F., a 30 de abril de 2009.- Dip. **Cesar Horacio Duarte Jaquez** , Pr
 
 En cumplimiento de lo dispuesto por la fracción I del Artículo 89 de la Constitución Política de los Estados Unidos Mexicanos, y para su debida publicación y observancia, expido el presente Decreto en la Residencia del Poder Ejecutivo Federal, en la Ciudad de México, Distrito Federal, a veintiséis de mayo de dos mil nueve.- **Felipe de Jesús Calderón Hinojosa** .- Rúbrica.- El Secretario de Gobernación, Lic. **Fernando Francisco Gómez Mont Urueta** .- Rúbrica. 
 
-28 
+28
+
+<!-- Page 30 -->
 
 **LEY FEDERAL DE RESPONSABILIDADES ADMINISTRATIVAS DE LOS SERVIDORES PÚBLICOS** 
 
@@ -983,7 +1140,7 @@ _Última Reforma DOF 15-06-2012_
 
 **CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN** Secretaría General Secretaría de Servicios Parlamentarios Dirección General de Servicios de Documentación, Información y Análisis 
 
-## **DECRETO por el que se reforman los artículos 13 y 37 de la Ley Federal de Responsabilidades Administrativas de los Servidores Públicos.** 
+# **DECRETO por el que se reforman los artículos 13 y 37 de la Ley Federal de Responsabilidades Administrativas de los Servidores Públicos.** 
 
 Publicado en el Diario Oficial de la Federación el 5 de junio de 2012 
 
@@ -999,88 +1156,4 @@ México, D.F., a 24 de abril de 2012.- Dip. **Guadalupe Acosta Naranjo** , Presi
 
 En cumplimiento de lo dispuesto por la fracción I del Artículo 89 de la Constitución Política de los Estados Unidos Mexicanos, y para su debida publicación y observancia, expido el presente Decreto en la Residencia del Poder Ejecutivo Federal, en la Ciudad de México, Distrito Federal, a cuatro de junio de dos mil doce.- **Felipe de Jesús Calderón Hinojosa** .- Rúbrica.- El Secretario de Gobernación, **Alejandro Alfonso Poiré Romero** .- Rúbrica. 
 
-29 
-
-**LEY FEDERAL DE RESPONSABILIDADES ADMINISTRATIVAS DE LOS SERVIDORES PÚBLICOS** 
-
-_Última Reforma DOF 15-06-2012_ 
-
-**CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN** Secretaría General Secretaría de Servicios Parlamentarios Dirección General de Servicios de Documentación, Información y Análisis 
-
-## **DECRETO por el que se reforman, adicionan y derogan diversas disposiciones de la Ley de la Comisión Nacional de los Derechos Humanos y se adiciona el artículo 8 de la Ley Federal de Responsabilidades Administrativas de los Servidores Públicos.** 
-
-Publicado en el Diario Oficial de la Federación el 15 de junio de 2012 
-
-**ARTÍCULO SEGUNDO.-** Se adicionan las fracciones XIX-A y XIX-B al artículo 8 de la Ley Federal de Responsabilidades Administrativas de los Servidores Públicos, para quedar como sigue: 
-
-………. 
-
-## **TRANSITORIO** 
-
-**Único.-** El presente Decreto entrará en vigor al día siguiente de su publicación en el Diario Oficial de la Federación. 
-
-México, D.F., a 27 de abril de 2012.- Sen. **Jose Gonzalez Morfin** , Presidente.- Dip. **Guadalupe Acosta Naranjo** , Presidente.- Sen. **Renan Cleominio Zoreda Novelo** , Secretario.- Dip. **Laura Arizmendi Campos** , Secretaria.- Rúbricas. **"** 
-
-En cumplimiento de lo dispuesto por la fracción I del Artículo 89 de la Constitución Política de los Estados Unidos Mexicanos, y para su debida publicación y observancia, expido el presente Decreto en la Residencia del Poder Ejecutivo Federal, en la Ciudad de México, Distrito Federal, a trece de junio de dos mil doce.- **Felipe de Jesús Calderón Hinojosa** .- Rúbrica.- El Secretario de Gobernación, **Alejandro Alfonso Poiré Romero** .- Rúbrica. 
-
-30 
-
-
-
-<!-- Page 2 -->
-
-<!-- Page 3 -->
-
-<!-- Page 4 -->
-
-<!-- Page 5 -->
-
-<!-- Page 6 -->
-
-<!-- Page 7 -->
-
-<!-- Page 8 -->
-
-<!-- Page 9 -->
-
-<!-- Page 10 -->
-
-<!-- Page 11 -->
-
-<!-- Page 12 -->
-
-<!-- Page 13 -->
-
-<!-- Page 14 -->
-
-<!-- Page 15 -->
-
-<!-- Page 16 -->
-
-<!-- Page 17 -->
-
-<!-- Page 18 -->
-
-<!-- Page 19 -->
-
-<!-- Page 20 -->
-
-<!-- Page 21 -->
-
-<!-- Page 22 -->
-
-<!-- Page 23 -->
-
-<!-- Page 24 -->
-
-<!-- Page 25 -->
-
-<!-- Page 26 -->
-
-<!-- Page 27 -->
-
-<!-- Page 28 -->
-
-<!-- Page 29 -->
-
-<!-- Page 30 -->
+29

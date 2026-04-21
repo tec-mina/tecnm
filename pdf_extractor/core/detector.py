@@ -30,6 +30,7 @@ class PDFProfile:
     dominant_language: str = "unknown"
     has_images: bool = False
     page_count: int = 0
+    warnings: list[str] = field(default_factory=list)
 
     def to_dict(self) -> dict:
         return {
@@ -40,6 +41,7 @@ class PDFProfile:
             "dominant_language": self.dominant_language,
             "has_images": self.has_images,
             "page_count": self.page_count,
+            "warnings": self.warnings,
         }
 
 
@@ -129,8 +131,8 @@ def _detect_tables(pdf_path: str, start_idx: int, end_idx: int, profile: PDFProf
                 if score >= _TABLE_RECT_MIN:
                     if page_1indexed not in profile.table_pages:
                         profile.table_pages.append(page_1indexed)
-    except Exception:
-        pass
+    except Exception as exc:
+        profile.warnings.append(f"table detection failed: {type(exc).__name__}: {exc}")
 
 
 def _detect_language(doc, profile: PDFProfile) -> None:
@@ -148,5 +150,5 @@ def _detect_language(doc, profile: PDFProfile) -> None:
 
     try:
         profile.dominant_language = detect(sample_text)
-    except Exception:
-        pass
+    except LangDetectException as exc:
+        profile.warnings.append(f"language detection failed: {exc}")

@@ -2,13 +2,13 @@
 source: 18-ley_federal_responsabilidades_servidores_publicos.pdf
 pages: 43
 file_size_mb: 0.22
-extraction_date: "2026-04-21T16:13:24.266171+00:00"
-language: unknown
+extraction_date: "2026-04-21T21:45:48.249349+00:00"
+language: es
 tables_found: 0
 has_images: true
 has_scanned_pages: false
-features_used: ["text_fast", "tables", "tables_camelot", "tables_tabula"]
-extraction_time_sec: 3.34
+features_used: ["text_fast"]
+extraction_time_sec: 4.52
 quality_score: 92.0
 quality_label: "excellent"
 is_valid: true

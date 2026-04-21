@@ -2,13 +2,13 @@
 source: 15-DC-TecNM.pdf
 pages: 9
 file_size_mb: 0.18
-extraction_date: "2026-04-21T16:12:57.319808+00:00"
-language: unknown
+extraction_date: "2026-04-21T21:45:26.373043+00:00"
+language: es
 tables_found: 0
 has_images: false
 has_scanned_pages: false
-features_used: ["text_fast", "tables", "tables_camelot", "tables_tabula"]
-extraction_time_sec: 1.45
+features_used: ["text_fast"]
+extraction_time_sec: 1.87
 quality_score: 92.0
 quality_label: "excellent"
 is_valid: true

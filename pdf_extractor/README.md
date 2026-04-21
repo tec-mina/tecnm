@@ -1,8 +1,13 @@
 # PDF Extractor
 
-Pipeline de extracción PDF → Markdown de grado productivo para el **TecNM / DPPP**.  
-Convierte cualquier PDF (texto nativo, escaneado, tablas, imágenes) a Markdown limpio y LLM-ready.  
+Pipeline de extracción PDF → Markdown de grado productivo para el **TecNM / DPPP**.
+Convierte cualquier PDF (texto nativo, escaneado, tablas, imágenes) a Markdown limpio y LLM-ready.
 Incluye interfaz web con arrastrar-y-soltar, log en tiempo real y comparación de estrategias.
+
+**Consumidores**: humanos (CLI con Rich, web drag-and-drop) **y** agentes de IA
+(Claude Skills, Copilot, GitHub Actions). Para agentes, consulta el contrato
+estable en [`AGENT.md`](./AGENT.md) — define el stream NDJSON, el schema del
+resultado final y los exit codes documentados.
 
 ---
 
@@ -232,6 +237,19 @@ preflight → profile → strategy_plan → feature_start/done × N
 ```
 
 ---
+
+## Exit codes (CLI / CI)
+
+| Código | Significado |
+|---|---|
+| `0` | Éxito |
+| `1` | Error genérico |
+| `2` | Quality gate no alcanzado (`--quality-threshold`) |
+| `3` | Preflight falló (PDF corrupto, cifrado o ausente) |
+| `4` | Bloqueado — no se pudo extraer contenido |
+| `5` | `--strict`: alguna estrategia solicitada no se usó |
+
+Ver [`AGENT.md`](./AGENT.md) para el contrato completo.
 
 ## Variables de entorno
 

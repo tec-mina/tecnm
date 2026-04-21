@@ -2,13 +2,13 @@
 source: 11-ly_iva.pdf
 pages: 106
 file_size_mb: 0.91
-extraction_date: "2026-04-21T16:12:54.926964+00:00"
-language: unknown
+extraction_date: "2026-04-21T21:43:47.954931+00:00"
+language: es
 tables_found: 0
 has_images: true
 has_scanned_pages: false
-features_used: ["text_fast", "tables", "tables_camelot", "tables_tabula"]
-extraction_time_sec: 7.92
+features_used: ["text_fast"]
+extraction_time_sec: 12.41
 quality_score: 92.0
 quality_label: "excellent"
 is_valid: true

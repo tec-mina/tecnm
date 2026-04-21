@@ -2,20 +2,128 @@
 source: 10-reglamento_codigo_fiscal_federacion.pdf
 pages: 66
 file_size_mb: 0.54
-extraction_date: "2026-04-21T16:13:24.754836+00:00"
-language: unknown
+extraction_date: "2026-04-21T21:43:34.391820+00:00"
+language: es
 tables_found: 0
 has_images: true
 has_scanned_pages: false
 features_used: ["markdown_llm", "text_fast"]
-extraction_time_sec: 39.33
-quality_score: 89.0
-quality_label: "good"
+extraction_time_sec: 33.43
+quality_score: 74.0
+quality_label: "acceptable"
 is_valid: true
 from_cache: false
 warnings: []
 ---
+## Contenido
+
+- [REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN](#reglamento-del-código-fiscal-de-la-federación)
+ - [REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN](#reglamento-del-código-fiscal-de-la-federación)
+ - [TÍTULO I Disposiciones Generales](#título-i-disposiciones-generales)
+- [I.** Se determinará el valor del bien a la fecha en que se practique el avalúo;](#i-se-determinará-el-valor-del-bien-a-la-fecha-en-que-se-practique-el-avalúo)
+ - [TÍTULO II De los Derechos y Obligaciones de los Contribuyentes](#título-ii-de-los-derechos-y-obligaciones-de-los-contribuyentes)
+ - [CAPÍTULO I](#capítulo-i)
+- [De los Requisitos de las Promociones y la Representación ante las Autoridades Fiscales](#de-los-requisitos-de-las-promociones-y-la-representación-ante-las-autoridades-fiscales)
+ - [CAPÍTULO II](#capítulo-ii)
+ - [Del Pago, de la Devolución y de la Compensación de Contribuciones](#del-pago-de-la-devolución-y-de-la-compensación-de-contribuciones)
+- [CAPÍTULO III](#capítulo-iii)
+- [De la Inscripción y Avisos en el Registro Federal de Contribuyentes](#de-la-inscripción-y-avisos-en-el-registro-federal-de-contribuyentes)
+ - [SECCIÓN I De la Inscripción en el Registro Federal de Contribuyentes](#sección-i-de-la-inscripción-en-el-registro-federal-de-contribuyentes)
+- [SECCIÓN II De los Avisos al Registro Federal de Contribuyentes](#sección-ii-de-los-avisos-al-registro-federal-de-contribuyentes)
+- [CAPÍTULO IV De la Contabilidad](#capítulo-iv-de-la-contabilidad)
+- [CAPÍTULO V De los Comprobantes Fiscales](#capítulo-v-de-los-comprobantes-fiscales)
+- [CAPÍTULO VI De la Conservación de la Contabilidad](#capítulo-vi-de-la-conservación-de-la-contabilidad)
+- [CAPÍTULO VII De las Declaraciones, Solicitudes y Avisos](#capítulo-vii-de-las-declaraciones-solicitudes-y-avisos)
+- [TÍTULO III De las Facultades de las Autoridades Fiscales](#título-iii-de-las-facultades-de-las-autoridades-fiscales)
+ - [CAPÍTULO I Disposiciones Generales](#capítulo-i-disposiciones-generales)
+ - [CAPÍTULO II De los Dictámenes y Declaratorias del Contador Público Registrado](#capítulo-ii-de-los-dictámenes-y-declaratorias-del-contador-público-registrado)
+ - [SECCIÓN I Del Contador Público Registrado](#sección-i-del-contador-público-registrado)
+ - [Del Registro del Contador Público y de las Asociaciones de Contadores](#del-registro-del-contador-público-y-de-las-asociaciones-de-contadores)
+- [De las Sanciones a los Contadores Públicos Registrados](#de-las-sanciones-a-los-contadores-públicos-registrados)
+- [Disposiciones Generales a los Dictámenes](#disposiciones-generales-a-los-dictámenes)
+- [Del Dictamen Fiscal](#del-dictamen-fiscal)
+- [b)** La reserva legal;](#b-la-reserva-legal)
+- [a)** Resultado fiscal;](#a-resultado-fiscal)
+ - [a)** Resultado fiscal;](#a-resultado-fiscal)
+ - [i)** Dividendos pagados;](#i-dividendos-pagados)
+ - [a)** Concepto del pago;](#a-concepto-del-pago)
+ - [c)** Tasa;](#c-tasa)
+- [f)** Diferencias determinadas, y](#f-diferencias-determinadas-y)
+ - [b)** Tipo de moneda;](#b-tipo-de-moneda)
+- [De la Declaratoria](#de-la-declaratoria)
+- [CAPÍTULO IV De las Infracciones Fiscales](#capítulo-iv-de-las-infracciones-fiscales)
+- [CAPÍTULO I De la Garantía del Interés Fiscal](#capítulo-i-de-la-garantía-del-interés-fiscal)
+- [SECCIÓN I Disposiciones Generales](#sección-i-disposiciones-generales)
+- [SECCIÓN II Del Embargo, Intervención y Remate](#sección-ii-del-embargo-intervención-y-remate)
+- [II.** Al inicio de la intervención:](#ii-al-inicio-de-la-intervención)
+
 <!-- Page 1 -->
+
+REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN
+
+Nuevo Reglamento DOF 07-12-2009
+
+CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN 
+Secretaría General 
+Secretaría de Servicios Parlamentarios
+
+REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN
+
+TEXTO VIGENTE 
+Nuevo Reglamento publicado en el Diario Oficial de la Federación el 7 de diciembre de 2009 
+ 
+ 
+ 
+Al margen un sello con el Escudo Nacional, que dice: Estados Unidos Mexicanos.- Presidencia de la 
+República.
+
+FELIPE DE JESÚS CALDERÓN HINOJOSA, Presidente de los Estados Unidos Mexicanos, en 
+ejercicio de la facultad que me confiere el artículo 89, fracción I de la Constitución Política de los Estados 
+Unidos Mexicanos, con fundamento en el artículo 31 de la Ley Orgánica de la Administración Pública 
+Federal, he tenido a bien emitir el siguiente
+
+REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN
+
+TÍTULO I 
+Disposiciones Generales
+
+Artículo 1.- Para los efectos de este Reglamento se entenderá por: 
+ 
+I. Autoridades fiscales, aquellas que estén adscritas a la Secretaría de Hacienda y Crédito Público, al 
+Servicio de Administración Tributaria, y a las unidades administrativas de las entidades federativas 
+coordinadas y de los organismos desconcentrados y descentralizados que ejerzan las facultades en 
+materia fiscal establecidas en el Código y en las demás leyes fiscales, en el ámbito de sus respectivas 
+competencias, y
+
+II. Código, el Código Fiscal de la Federación. 
+ 
+Artículo 2.- La obligación de presentar solicitudes, declaraciones y avisos ante las autoridades 
+fiscales se llevará a cabo en los términos de las disposiciones fiscales aplicables y, en su caso, siguiendo 
+los procedimientos que se establezcan en este Reglamento o en las reglas de carácter general que emita 
+el Servicio de Administración Tributaria.
+
+Los avisos deberán presentarse conjuntamente con la declaración del ejercicio del impuesto sobre la 
+renta, a menos que en las disposiciones respectivas se establezca un plazo distinto para hacerlo o que 
+no exista obligación de presentar dicha declaración; en este último caso, la presentación deberá 
+efectuarse dentro de los quince días siguientes a aquél en que se actualice el supuesto jurídico o el 
+hecho que lo motive.
+
+Tratándose de avisos relacionados con aportaciones de seguridad social, si en las disposiciones 
+respectivas no se establece plazo para su presentación, la misma deberá efectuarse dentro de los quince 
+días siguientes a aquél en que se actualice el supuesto jurídico o el hecho que lo motive.
+
+Los contribuyentes no presentarán avisos cuando así se señale expresamente al aprobar la forma 
+oficial de la declaración que incluya la información requerida por el aviso de que se trate.
+
+Artículo 3.- Los avalúos que se practiquen para efectos fiscales tendrán vigencia de un año, contado 
+a partir de la fecha en que se emitan, mismos que podrán practicarse por las autoridades fiscales, por las 
+instituciones de crédito y por el Instituto de Administración y Avalúos de Bienes Nacionales. Los avalúos 
+también podrán practicarse por corredores públicos, empresas dedicadas a la compraventa o subasta de 
+bienes o personas que cuenten con cédula profesional de valuadores expedida por la Secretaría de
+
+1 de 66
+
+<!-- Page 2 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -51,7 +159,9 @@ Los contribuyentes no presentarán avisos cuando así se señale expresamente al
 
 **Artículo 3.-** Los avalúos que se practiquen para efectos fiscales tendrán vigencia de un año, contado a partir de la fecha en que se emitan, mismos que podrán practicarse por las autoridades fiscales, por las instituciones de crédito y por el Instituto de Administración y Avalúos de Bienes Nacionales. Los avalúos también podrán practicarse por corredores públicos, empresas dedicadas a la compraventa o subasta de bienes o personas que cuenten con cédula profesional de valuadores expedida por la Secretaría de 
 
-1 de 66 
+1 de 66
+
+<!-- Page 3 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -65,7 +175,7 @@ En aquellos casos en que después de realizado el avalúo se lleven a cabo const
 
 Cuando los avalúos sean referidos a una fecha anterior a aquélla en que se practiquen, se procederá conforme a lo siguiente: 
 
-## **I.** Se determinará el valor del bien a la fecha en que se practique el avalúo; 
+# **I.** Se determinará el valor del bien a la fecha en que se practique el avalúo; 
 
 **II.** La cantidad obtenida conforme a la fracción anterior se dividirá entre el factor que se obtenga de dividir el Índice Nacional de Precios al Consumidor del mes inmediato anterior a aquél en que se practique el avalúo, entre el índice del mes al cual es referido el mismo, y 
 
@@ -85,7 +195,9 @@ Cuando los avalúos sean referidos a una fecha anterior a aquélla en que se pra
 
 ## **CAPÍTULO I** 
 
-2 de 66 
+2 de 66
+
+<!-- Page 4 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -93,7 +205,7 @@ _Nuevo Reglamento DOF 07-12-2009_
 
 **CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN** Secretaría General Secretaría de Servicios Parlamentarios 
 
-## **De los Requisitos de las Promociones y la Representación ante las Autoridades Fiscales** 
+# **De los Requisitos de las Promociones y la Representación ante las Autoridades Fiscales** 
 
 **Artículo 9.-** Para los efectos del artículo 18-A, fracción II del Código, los residentes en el extranjero que de conformidad con la legislación del país en el que sean residentes para efectos fiscales no estén obligados a contar con un número de identificación fiscal, no lo señalarán en las promociones que presenten ante las autoridades fiscales. 
 
@@ -115,7 +227,9 @@ El pago de créditos fiscales podrá realizarse con cheques personales del contr
 
 Cuando la presentación de la declaración que contenga el saldo a favor o la realización del pago de lo indebido se hubieran llevado a cabo con posterioridad a la fecha en la que se causó la contribución o aprovechamiento a pagar, los recargos se causarán por el periodo comprendido entre la fecha en la que 
 
-3 de 66 
+3 de 66
+
+<!-- Page 5 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -141,9 +255,11 @@ Para los efectos del párrafo anterior, el Servicio de Administración Tributari
 
 El aviso a que se refiere el párrafo anterior se presentará ante la autoridad fiscal dentro de los quince días siguientes a aquél en el que el residente en el extranjero comience a prestar sus servicios y deberá cumplir con los requisitos que establezca el Servicio de Administración Tributaria en las reglas de carácter general que al efecto emita. 
 
-## **CAPÍTULO III** 
+# **CAPÍTULO III** 
 
-4 de 66 
+4 de 66
+
+<!-- Page 6 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -151,7 +267,7 @@ _Nuevo Reglamento DOF 07-12-2009_
 
 **CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN** Secretaría General Secretaría de Servicios Parlamentarios 
 
-## **De la Inscripción y Avisos en el Registro Federal de Contribuyentes** 
+# **De la Inscripción y Avisos en el Registro Federal de Contribuyentes** 
 
 ## **SECCIÓN I De la Inscripción en el Registro Federal de Contribuyentes** 
 
@@ -187,7 +303,9 @@ En los demás supuestos, la solicitud de inscripción se presentará dentro del 
 
 **I.** Se actualice el supuesto jurídico o el hecho que dé lugar a la presentación de declaraciones periódicas, de pago o informativas por sí mismas o por cuenta de terceros, y 
 
-5 de 66 
+5 de 66
+
+<!-- Page 7 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -215,7 +333,9 @@ Para los efectos de la inscripción a que se refiere el párrafo anterior, la de
 
 **Artículo 23.-** Para los efectos del artículo 27, quinto párrafo del Código, las personas que obtengan ingresos de los mencionados en el Capítulo I del Título IV de la Ley del Impuesto sobre la Renta, deberán proporcionar a sus empleadores los datos necesarios para su inscripción en el Registro Federal de Contribuyentes y en el caso de que ya se encuentren inscritas en dicho registro deberán comprobarles esta circunstancia. Cuando el contribuyente no tenga el comprobante de su inscripción éste o su empleador podrán solicitarlo ante la autoridad fiscal competente. 
 
-6 de 66 
+6 de 66
+
+<!-- Page 8 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -239,7 +359,7 @@ Se considera que los fedatarios públicos verificaron que la clave del Registro 
 
 Tratándose de la constitución de personas morales con fines no lucrativos a que se refiere el Título III de la Ley del Impuesto sobre la Renta o de la protocolización de actas de asamblea de dichas personas, el fedatario público deberá asentar dicha circunstancia en las actas correspondientes, así como señalar el objeto social de las mismas. 
 
-## **SECCIÓN II De los Avisos al Registro Federal de Contribuyentes** 
+# **SECCIÓN II De los Avisos al Registro Federal de Contribuyentes** 
 
 **Artículo 25.-** Para los efectos del artículo 27 del Código, las personas físicas o morales presentarán, en su caso, los avisos siguientes: 
 
@@ -247,7 +367,9 @@ Tratándose de la constitución de personas morales con fines no lucrativos a qu
 
 - **II.** Cambio de régimen de capital; 
 
-7 de 66 
+7 de 66
+
+<!-- Page 9 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -297,7 +419,9 @@ Los residentes en el extranjero con establecimiento permanente en territorio nac
 
 **II.** El aviso de corrección o cambio de nombre, se presentará por las personas físicas que cambien o corrijan su nombre o apellidos en los términos de las disposiciones legales aplicables; 
 
-8 de 66 
+8 de 66
+
+<!-- Page 10 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -331,7 +455,9 @@ Las personas que efectúen los pagos a que se refiere el Capítulo I del Título
 
 **c)** Elija una opción de tributación diferente a la que viene aplicando, respecto de la misma actividad económica y que dé lugar a un cambio de obligaciones fiscales, inclusive cuando únicamente opte por 
 
-9 de 66 
+9 de 66
+
+<!-- Page 11 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -365,7 +491,9 @@ Para los efectos del párrafo anterior y del artículo 86, fracción VI de la Le
 
 **XII.** El aviso de cancelación en el Registro Federal de Contribuyentes por cese total de operaciones, se presentará por los residentes en el extranjero que dejen de realizar operaciones en México o cierren sus establecimientos permanentes. 
 
-10 de 66 
+10 de 66
+
+<!-- Page 12 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -395,13 +523,15 @@ El aviso a que se refiere esta fracción deberá presentarse una vez que se llev
 
 **III.** Tratándose de actividades de pesca, el lugar en donde se almacene el pescado, siempre que éste pertenezca a la persona que realiza la actividad. 
 
-## **CAPÍTULO IV De la Contabilidad** 
+# **CAPÍTULO IV De la Contabilidad** 
 
 **Artículo 29.-** Para los efectos del artículo 28, fracción I del Código, los sistemas y registros contables deberán llevarse por los contribuyentes mediante los instrumentos, recursos y sistemas de registro o procesamiento que mejor convenga a las características particulares de su actividad, pero en todo caso deberán satisfacer como mínimo los requisitos que permitan: 
 
 **I.** Identificar cada operación, acto o actividad y sus características, relacionándolas con la documentación comprobatoria, de tal forma que aquéllos puedan identificarse con las distintas contribuciones, tasas y cuotas, incluyendo las actividades liberadas de pago por las disposiciones aplicables; 
 
-11 de 66 
+11 de 66
+
+<!-- Page 13 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -437,7 +567,9 @@ Cuando se adopte el sistema de registro manual o mecánico, el contribuyente deb
 
 **Artículo 31.-** Para los efectos del artículo anterior, los contribuyentes que adopten el sistema de registro manual, deberán llevar sus libros diario, mayor y los que estén obligados a llevar por otras disposiciones fiscales, debidamente encuadernados, empastados y foliados. 
 
-12 de 66 
+12 de 66
+
+<!-- Page 14 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -465,7 +597,9 @@ Tratándose de destrucción o inutilización total, pérdida o robo de los libro
 
 El asiento de los nuevos registros a que se refiere el párrafo anterior, no exime de las responsabilidades administrativas o penales que deriven de los actos u omisiones relacionados con la destrucción de la contabilidad. 
 
-13 de 66 
+13 de 66
+
+<!-- Page 15 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -481,7 +615,7 @@ Lo dispuesto en este artículo no es aplicable a los contribuyentes que utilicen
 
 **Artículo 38.-** Para los efectos del artículo 28, fracción III del Código, el contribuyente que se encuentre en suspensión de actividades deberá conservar su contabilidad en el último domicilio que tenga manifestado en el Registro Federal de Contribuyentes y, si con posterioridad el contribuyente desocupa el domicilio consignado ante el referido Registro, deberá presentar el aviso de cambio de domicilio fiscal, en el cual deberá conservar su contabilidad de conformidad con los plazos que establece el artículo 30 del Código. 
 
-## **CAPÍTULO V De los Comprobantes Fiscales** 
+# **CAPÍTULO V De los Comprobantes Fiscales** 
 
 **Artículo 39.** - Para los efectos del artículo 29, segundo párrafo del Código, las facturas, las notas de crédito y de cargo, los recibos de honorarios, de arrendamiento, de donativos deducibles para los efectos del impuesto sobre la renta y en general cualquier comprobante que se expida por las actividades realizadas, deberán ser impresos por personas autorizadas por el Servicio de Administración Tributaria. 
 
@@ -499,7 +633,9 @@ El requisito a que se refiere el artículo 29-A, fracción VII del Código, sól
 
 **Artículo 40.-** Para los efectos del artículo 29, tercer párrafo del Código, se considera que quien utilice comprobantes fiscales se cerciora de que los datos de la persona que expide un comprobante fiscal son correctos cuando: 
 
-14 de 66 
+14 de 66
+
+<!-- Page 16 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -535,7 +671,9 @@ Los contribuyentes que se encuentren en el supuesto a que se refiere el párrafo
 
 **I.** Cuando la totalidad de los actos o actividades que ampara el comprobante se encuentren sujetos a la misma tasa o cuota, el impuesto trasladado se incluya en forma expresa y por separado en el comprobante sin que sea necesario señalar la tasa aplicable, salvo que se trate de la tasa del 0%, en cuyo caso no será necesario hacer separación o desglose del impuesto; 
 
-15 de 66 
+15 de 66
+
+<!-- Page 17 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -575,7 +713,9 @@ Cuando las necesidades del contribuyente exijan el uso simultáneo de varias ser
 
 Cuando el comprobante ampare la donación de bienes, deberá consignar la siguiente leyenda: “En el caso de que los bienes donados hayan sido deducidos previamente para los efectos del impuesto sobre la renta, este donativo no es deducible”. 
 
-16 de 66 
+16 de 66
+
+<!-- Page 18 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -607,7 +747,9 @@ Se considera que se cumple con el requisito de anotar en los comprobantes los da
 
 **III.** Los contribuyentes que estén obligados a dictaminar sus estados financieros por contador público registrado en los términos del artículo 32-A del Código, podrán utilizar sus propios equipos para el registro de operaciones con el público en general siempre que cumplan los requisitos siguientes: 
 
-17 de 66 
+17 de 66
+
+<!-- Page 19 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -631,7 +773,7 @@ _Nuevo Reglamento DOF 07-12-2009_
 
 No se requerirá que los comprobantes a que se refiere este artículo sean impresos por establecimientos autorizados. 
 
-## **CAPÍTULO VI De la Conservación de la Contabilidad** 
+# **CAPÍTULO VI De la Conservación de la Contabilidad** 
 
 **Artículo 52.-** Para los efectos del artículo 30, sexto y séptimo párrafos del Código, los contribuyentes que opten por microfilmar o grabar los comprobantes o documentación comprobatoria de los actos o actividades que realicen, de los servicios que reciban y de las compras que efectúen, deberán cumplir con los siguientes requisitos: 
 
@@ -643,7 +785,9 @@ No se requerirá que los comprobantes a que se refiere este artículo sean impre
 
 **IV.** Consignar, al inicio y al final de la microfilmación o grabación, la fecha en que se realiza la misma. Dicha consignación deberá estar firmada por el contador público registrado; 
 
-18 de 66 
+18 de 66
+
+<!-- Page 20 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -661,7 +805,7 @@ La grabación en discos ópticos se efectuará en los términos y con las caract
 
 **VIII.** Conservar hasta la fecha en que se presente la siguiente declaración anual, los originales de los documentos microfilmados o grabados correspondientes al último ejercicio de doce meses por el que se presentó o debió haberse presentado declaración anual o, cuando se hayan ejercido las facultades de comprobación en relación con el ejercicio cuya documentación se microfilma o se graba, hasta la fecha en que quede firme la resolución que, en su caso, se haya emitido con relación a dicho ejercicio de facultades. Los documentos que comprueben la adquisición de bienes de inversión, los aduaneros, los de tenencia o uso de vehículos, la documentación relacionada con aportaciones de seguridad social y las declaraciones de contribuciones, deberán conservarse en original durante el plazo que al efecto señala el artículo 30 del Código, en tanto no se extingan las facultades de las autoridades fiscales en los términos del artículo 67 del citado ordenamiento. 
 
-## **CAPÍTULO VII De las Declaraciones, Solicitudes y Avisos** 
+# **CAPÍTULO VII De las Declaraciones, Solicitudes y Avisos** 
 
 **Artículo 53.-** Para los efectos de los artículos 20, séptimo párrafo y 31, primer párrafo del Código, las personas obligadas a presentar pagos provisionales o definitivos de contribuciones federales a través de medios y formatos electrónicos, incluyendo las retenciones y las declaraciones complementarias, extemporáneas y de corrección fiscal, las deberán efectuar por cada grupo de obligaciones fiscales, inclusive las retenciones, que tengan la misma periodicidad y la misma fecha de vencimiento legal. 
 
@@ -671,7 +815,9 @@ Los grupos de obligaciones a que se refiere el párrafo anterior se determinará
 
 **Artículo 55.-** Para los efectos del artículo 31, décimo primer párrafo del Código, cuando las solicitudes o los avisos se hayan presentado con errores, omisiones o empleando de manera equivocada las formas oficiales o formatos electrónicos aprobados por el Servicio de Administración Tributaria, se rectificarán mediante solicitudes o avisos complementarios, los cuales deberán formularse en su totalidad, inclusive con los datos que no se modifican; así mismo, se deberá señalar que se trata de una solicitud o de un aviso complementario del original e indicar la fecha y oficina en que se hubiera presentado la solicitud o aviso que se corrige. 
 
-19 de 66 
+19 de 66
+
+<!-- Page 21 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -689,7 +835,7 @@ Los contribuyentes que se inscriban en el Registro Federal de Contribuyentes man
 
 El Servicio de Administración Tributaria dará a conocer el catálogo de actividades económicas a través de su página de Internet. 
 
-## **TÍTULO III De las Facultades de las Autoridades Fiscales** 
+# **TÍTULO III De las Facultades de las Autoridades Fiscales** 
 
 ## **CAPÍTULO I Disposiciones Generales** 
 
@@ -705,7 +851,9 @@ Si el documento a que se refiere el párrafo anterior se exhibe en el momento de
 
 ## **Del Registro del Contador Público y de las Asociaciones de Contadores** 
 
-20 de 66 
+20 de 66
+
+<!-- Page 22 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -743,7 +891,9 @@ En la solicitud a que se refiere este artículo, el contador público que solici
 
 Anualmente el contador público registrado deberá obtener las siguientes constancias: 
 
-21 de 66 
+21 de 66
+
+<!-- Page 23 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -771,7 +921,9 @@ Cuando la autoridad fiscal tenga conocimiento del fallecimiento de un contador p
 
 **I.** La sociedad o asociación civil y su representante legal deberán estar inscritos en el Registro Federal de Contribuyentes, así como encontrarse en dicho Registro con el estatus de localizados en su domicilio fiscal y no haber presentado el aviso de suspensión de actividades previsto en el artículo 25, fracción V de este Reglamento; 
 
-22 de 66 
+22 de 66
+
+<!-- Page 24 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -789,7 +941,7 @@ Las sociedades o asociaciones civiles que hayan obtenido el registro a que se re
 
 El aviso a que se refiere el párrafo anterior, se presentará ante la autoridad fiscal dentro de los quince días siguientes a la fecha en que se actualice cualquiera de los supuestos que se señalan en el citado párrafo, señalando los datos de identificación del contador público: nombre, número de registro a que se refiere el artículo 52, fracción I del Código, clave en el Registro Federal de Contribuyentes, Clave Única del Registro de Población y cargo que desempeña en la persona moral de que se trate y los demás que mediante reglas de carácter general establezca el Servicio de Administración Tributaria. 
 
-## **De las Sanciones a los Contadores Públicos Registrados** 
+# **De las Sanciones a los Contadores Públicos Registrados** 
 
 **Artículo 63.-** Para los efectos del artículo 52, antepenúltimo párrafo del Código, el Servicio de Administración Tributaria, previa audiencia, aplicará al contador público registrado las sanciones siguientes: 
 
@@ -809,7 +961,9 @@ La sanción a que se refiere este inciso se aplicará por cada dictamen formulad
 
 La sanción a que se refiere este inciso se aplicará por cada dictamen o declaratoria formulado en contravención a las disposiciones legales aplicables, independientemente del ejercicio fiscal de que se trate y las sanciones correspondientes se acumularán; 
 
-23 de 66 
+23 de 66
+
+<!-- Page 25 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -843,7 +997,9 @@ La sanción a que se refiere este inciso se aplicará por cada dictamen o declar
 
 **I.** Determinada la irregularidad, ésta será hecha del conocimiento del contador público registrado, a efecto de que en un plazo de quince días manifieste por escrito lo que a su derecho convenga, y ofrezca y exhiba las pruebas que considere pertinentes. 
 
-24 de 66 
+24 de 66
+
+<!-- Page 26 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -857,7 +1013,7 @@ La autoridad fiscal admitirá toda clase de pruebas, excepto la testimonial y la
 
 **III.** La resolución se emitirá en un plazo que no excederá de doce meses, contado a partir de que se agote el plazo señalado en la fracción I de este artículo. **SECCIÓN II De los Dictámenes y las Declaratorias** 
 
-## **Disposiciones Generales a los Dictámenes** 
+# **Disposiciones Generales a los Dictámenes** 
 
 **Artículo 66.** - Para los efectos del artículo 32-A del Código, los avisos o escritos libres para optar por dictaminar estados financieros y los dictámenes de estados financieros formulados por un contador público registrado, que presenten las personas físicas que únicamente perciban ingresos distintos a los provenientes de actividades empresariales, no surtirán efecto jurídico alguno. 
 
@@ -875,7 +1031,9 @@ El contador público registrado estará impedido para formular dictámenes sobre
 
 El comisario de la empresa no se considerará impedido para dictaminar, salvo que concurra otra causal de las que se mencionan en este artículo; 
 
-25 de 66 
+25 de 66
+
+<!-- Page 27 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -907,13 +1065,15 @@ _Nuevo Reglamento DOF 07-12-2009_
 
 **X.** Se encuentre vinculado con el contribuyente de forma tal que le impida independencia e imparcialidad de criterio. 
 
-## **Del Dictamen Fiscal** 
+# **Del Dictamen Fiscal** 
 
 **Artículo 68.-** El dictamen y el informe sobre la revisión de la situación fiscal del contribuyente que emita el contador público registrado en términos del artículo 52, fracciones II y III del Código, se elaborarán con base en el análisis efectuado a la información a que se refieren los artículos 69 a 80 de este Reglamento. 
 
 Los contribuyentes que dictaminen sus estados financieros deberán presentar, directamente o por conducto del contador público registrado que haya elaborado el dictamen, a través de medios electrónicos y de conformidad con las reglas de carácter general que al efecto emita el Servicio de Administración Tributaria, la siguiente información y documentación: 
 
-26 de 66 
+26 de 66
+
+<!-- Page 28 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -953,7 +1113,9 @@ La información a que se refiere este artículo deberá ir acompañada de una de
 
 **g)** Si el contribuyente realizó operaciones con fideicomisos o con partes relacionadas nacionales o extranjeras; 
 
-27 de 66 
+27 de 66
+
+<!-- Page 29 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -1005,7 +1167,9 @@ _Nuevo Reglamento DOF 07-12-2009_
 
 **a)** Los datos señalados en los incisos a) al e) de la fracción II de este artículo; 
 
-28 de 66 
+28 de 66
+
+<!-- Page 30 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -1035,7 +1199,9 @@ El contador público registrado que emita el informe a que se refiere este artí
 
 **a)** La descripción del sistema de muestreo elegido, del método seguido para seleccionar los conceptos e importes individuales que integraron la muestra y de los procedimientos de auditoría aplicados a los conceptos e importes que integran la muestra; 
 
-29 de 66 
+29 de 66
+
+<!-- Page 31 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -1069,7 +1235,9 @@ En el caso de declaraciones complementarias presentadas por el contribuyente en 
 
 **VIII** . Se manifestará que se revisó la información relativa a los estímulos fiscales aplicados, a las exenciones, subsidios y créditos fiscales, así como la aplicación de las resoluciones obtenidas de las 
 
-30 de 66 
+30 de 66
+
+<!-- Page 32 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -1099,7 +1267,9 @@ El cuestionario a que se refiere el párrafo anterior incluirá la información 
 
 **I.** El estado de posición financiera o balance general, el cual deberá mostrar las principales cuentas que integran los importes totales del activo, pasivo y capital contable o patrimonio, conforme a lo establecido en las normas de información financiera y en las regulaciones financieras que emitan la Comisión Nacional Bancaria y de Valores y la Comisión Nacional de Seguros y Fianzas, según corresponda; 
 
-31 de 66 
+31 de 66
+
+<!-- Page 33 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -1113,7 +1283,7 @@ _Nuevo Reglamento DOF 07-12-2009_
 
 **a)** El capital social, nominal y actualizado. En el caso de establecimientos permanentes de residentes en el extranjero en lugar del capital social se deberá reflejar el patrimonio de la oficina central del extranjero en el establecimiento permanente; 
 
-## **b)** La reserva legal; 
+# **b)** La reserva legal; 
 
 **c)** Las aportaciones para futuros aumentos de capital; 
 
@@ -1141,7 +1311,9 @@ Las instituciones de crédito y los intermediarios financieros no bancarios que 
 
 **IV.** El estado de flujos de efectivo, el cual deberá mostrar las cuentas o rubros de las actividades de operación, de inversión y de financiamiento. 
 
-32 de 66 
+32 de 66
+
+<!-- Page 34 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -1183,7 +1355,9 @@ Los estados financieros básicos, incluyendo sus notas, deberán presentarse en 
 
 **III.** La determinación del costo de lo vendido para efectos contables y del impuesto sobre la renta, el cual deberá mostrar los conceptos que lo componen según el sistema de costeo utilizado por el contribuyente; 
 
-33 de 66 
+33 de 66
+
+<!-- Page 35 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -1215,7 +1389,9 @@ _Nuevo Reglamento DOF 07-12-2009_
 
 **X.** La cuenta de utilidad fiscal neta, en la cual se proporcionará el importe total de dicha cuenta al cierre del ejercicio, integrando por cada ejercicio en el que se determinó la misma, el detalle de su cálculo en términos de las disposiciones fiscales aplicables en los periodos correspondientes, conforme a lo siguiente: 
 
-34 de 66 
+34 de 66
+
+<!-- Page 36 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -1223,7 +1399,7 @@ _Nuevo Reglamento DOF 07-12-2009_
 
 **CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN** Secretaría General Secretaría de Servicios Parlamentarios 
 
-## **a)** Resultado fiscal; 
+# **a)** Resultado fiscal; 
 
 **b)** Impuesto sobre la renta determinado; 
 
@@ -1269,7 +1445,9 @@ _Nuevo Reglamento DOF 07-12-2009_
 
 **e)** Impuesto sobre la renta retenido y pagado; 
 
-35 de 66 
+35 de 66
+
+<!-- Page 37 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -1277,7 +1455,7 @@ _Nuevo Reglamento DOF 07-12-2009_
 
 **CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN** Secretaría General Secretaría de Servicios Parlamentarios 
 
-## **f)** Diferencias determinadas, y 
+# **f)** Diferencias determinadas, y 
 
 **g)** Si se aplicaron los beneficios de algún tratado celebrado por México para evitar la doble tributación; 
 
@@ -1321,7 +1499,9 @@ _Nuevo Reglamento DOF 07-12-2009_
 
 **e)** Si se generaron intereses; 
 
-36 de 66 
+36 de 66
+
+<!-- Page 38 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -1371,7 +1551,9 @@ _Nuevo Reglamento DOF 07-12-2009_
 
 **c)** Monto de aportaciones y de retiros al capital efectuadas en el ejercicio, y 
 
-37 de 66 
+37 de 66
+
+<!-- Page 39 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -1419,7 +1601,9 @@ Tratándose de operaciones con fideicomiso, se deberá señalar si la informaci�
 
 **d)** La determinación de la base del impuesto o la base para el cálculo del crédito fiscal del ejercicio, y 
 
-38 de 66 
+38 de 66
+
+<!-- Page 40 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -1453,7 +1637,9 @@ Como parte de la información a que se refiere el párrafo anterior se deberá s
 
 **c)** Tratándose de empresas maquiladoras o de contribuyentes que estén sujetos al régimen aduanero de recinto fiscalizado estratégico, por cuál disposición fiscal optaron para cumplir con sus obligaciones 
 
-39 de 66 
+39 de 66
+
+<!-- Page 41 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -1495,7 +1681,9 @@ fiscales en materia de precios de transferencia, incluyendo la aplicación de es
 
 **d)** Datos correspondientes a las operaciones totales efectuadas por el fideicomiso que tienen efectos para el impuesto sobre la renta, mismos que contendrán la utilidad o pérdida fiscal del ejercicio y los pagos provisionales efectuados, y 
 
-40 de 66 
+40 de 66
+
+<!-- Page 42 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -1535,7 +1723,9 @@ _Nuevo Reglamento DOF 07-12-2009_
 
 En caso de que el contribuyente tenga impuesto a los depósitos en efectivo, efectivamente pagado durante el ejercicio y ejerza la opción del artículo 8 de la Ley del Impuesto a los Depósitos en Efectivo, adicionalmente informará sobre los montos acreditados contra pagos provisionales del impuesto sobre la 
 
-41 de 66 
+41 de 66
+
+<!-- Page 43 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -1565,7 +1755,9 @@ La información señalada en las fracciones I a VI de este artículo deberá pre
 
 **I.** El impuesto sobre la renta del contribuyente como sujeto directo, incluyendo los pagos provisionales efectuados, los estímulos fiscales, las exenciones, los subsidios, los créditos fiscales y las reducciones aplicados; el impuesto que, en su caso, se hubiere entregado a la sociedad controladora en la participación consolidable; cualquier compensación o acreditamiento realizados; el impuesto a cargo o a favor del ejercicio, así como el correspondiente a los ingresos sujetos a regímenes fiscales preferentes y el proveniente de la distribución de dividendos; 
 
-42 de 66 
+42 de 66
+
+<!-- Page 44 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -1595,7 +1787,9 @@ En la información sobre las compensaciones efectuadas y devoluciones obtenidas 
 
 En el caso de contribuyentes personas físicas con actividad empresarial para los efectos del impuesto sobre la renta, deberán mencionarse las contribuciones causadas por dicha actividad, informando 
 
-43 de 66 
+43 de 66
+
+<!-- Page 45 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -1641,7 +1835,9 @@ Las personas morales y las personas físicas a que se refiere el primer párrafo
 
 **Artículo 76.-** Los residentes en el extranjero que tengan un establecimiento permanente en el país, además de presentar la información establecida en los artículos 68 a 74 de este Reglamento y la que 
 
-44 de 66 
+44 de 66
+
+<!-- Page 46 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -1671,7 +1867,9 @@ determine el Servicio de Administración Tributaria mediante reglas de carácter
 
 **II.** La relación de los pagos provisionales del impuesto sobre la renta consolidados, especificando, respecto de las contribuciones a su cargo en su carácter de sociedad controladora, la contribución a cargo o a favor determinada por el contador público registrado que lo dictaminó o por el contribuyente y el tipo y fecha de pago, así como el lugar de presentación de la declaración correspondiente y el número de la operación bancaria con la cual se realizó el pago; 
 
-45 de 66 
+45 de 66
+
+<!-- Page 47 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -1715,7 +1913,9 @@ _Nuevo Reglamento DOF 07-12-2009_
 
 **g)** Las pérdidas fiscales consolidadas de ejercicios anteriores; 
 
-46 de 66 
+46 de 66
+
+<!-- Page 48 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -1757,7 +1957,9 @@ _Nuevo Reglamento DOF 07-12-2009_
 
 **b)** Los conceptos especiales de consolidación que con motivo de la desincorporación o de la desconsolidación deben considerarse como efectuados con terceros, en la participación consolidable; 
 
-47 de 66 
+47 de 66
+
+<!-- Page 49 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -1795,7 +1997,9 @@ _Nuevo Reglamento DOF 07-12-2009_
 
 **e)** Las pérdidas por enajenación de acciones de las sociedades controladas obtenidas por las sociedades controladas y la sociedad controladora, así como las que hubieran deducido las sociedades controladas y la sociedad controladora en lo individual, y 
 
-48 de 66 
+48 de 66
+
+<!-- Page 50 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -1833,7 +2037,9 @@ _Nuevo Reglamento DOF 07-12-2009_
 
 **a)** La utilidad o pérdida fiscal consolidada del ejercicio inmediato anterior; 
 
-49 de 66 
+49 de 66
+
+<!-- Page 51 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -1869,7 +2075,9 @@ _Nuevo Reglamento DOF 07-12-2009_
 
 **XV.** Información detallada del registro individual por la obtención de la devolución o por efectuar la compensación del impuesto al activo contra el impuesto sobre la renta de cada una de las sociedades 
 
-50 de 66 
+50 de 66
+
+<!-- Page 52 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -1901,7 +2109,9 @@ Además de cumplir con los requisitos señalados en este artículo, los contribu
 
 **I.** Una relación de los socios o accionistas de la sociedad que surja o subsista con motivo de la fusión, indicando su participación social o accionaria a la fecha en que se realizó la fusión, así como el número, valor nominal y naturaleza de las partes sociales o acciones que conforman el capital social a esa misma fecha, y 
 
-51 de 66 
+51 de 66
+
+<!-- Page 53 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -1919,7 +2129,7 @@ Conjuntamente con la declaración a que se refiere el párrafo anterior, el cont
 
 **Artículo 82.-** Las cantidades a que se refieren los artículos 68 a 84 de este Reglamento deberán expresarse en pesos sin fracciones, salvo que dichos artículos expresamente señalen que las cantidades deberán proporcionarse en otro tipo de moneda. El Servicio de Administración Tributaria podrá establecer mediante reglas de carácter general los casos en los que la información se proporcionará en miles o en millones de pesos. 
 
-## **De la Declaratoria** 
+# **De la Declaratoria** 
 
 **Artículo 83.-** Para los efectos del artículo 52, fracción II del Código, la declaratoria que con motivo de la devolución de saldos a favor del impuesto al valor agregado formule el contador público registrado, deberá contener, además de la información que determine el Servicio de Administración Tributaria mediante reglas de carácter general, la siguiente: 
 
@@ -1937,7 +2147,9 @@ Conjuntamente con la declaración a que se refiere el párrafo anterior, el cont
 
 **f)** Las disposiciones fiscales aplicables a la presentación de la declaratoria, y 
 
-52 de 66 
+52 de 66
+
+<!-- Page 54 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -1987,7 +2199,9 @@ _Nuevo Reglamento DOF 07-12-2009_
 
 **a)** Que los actos o actividades que constan en los comprobantes corresponden a las tasas a que éstos están afectos en la Ley del Impuesto al Valor Agregado, indicando las tasas aplicables a los mismos; 
 
-53 de 66 
+53 de 66
+
+<!-- Page 55 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -2019,7 +2233,9 @@ _Nuevo Reglamento DOF 07-12-2009_
 
 **d)** Que el impuesto al valor agregado acreditable que consta en los comprobantes por la realización de actos o actividades gravados por la Ley de la materia, fue efectivamente pagado en el mes por el que se presenta la declaratoria y, en su caso, se haya retenido el impuesto al valor agregado en los términos de la referida Ley, indicando el porcentaje que representa respecto del total del impuesto al valor agregado acreditable; 
 
-54 de 66 
+54 de 66
+
+<!-- Page 56 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -2041,13 +2257,15 @@ La declaratoria deberá estar firmada por el contribuyente o su representante le
 
 Cuando el contribuyente no cumpla en tiempo o con el monto establecido para cualquiera de las parcialidades, no pague en la fecha propuesta el monto diferido u omita garantizar el interés fiscal estando obligado a ello, se considerará que se ha desistido de su solicitud de pago a plazos, debiendo cubrirse el saldo insoluto de las contribuciones omitidas actualizadas, conforme al artículo 17-A del Código con los recargos correspondientes, que se causarán a la tasa prevista en el artículo 21 del referido ordenamiento, a partir de la fecha en que debió realizarse el pago. 
 
-## **CAPÍTULO IV De las Infracciones Fiscales** 
+# **CAPÍTULO IV De las Infracciones Fiscales** 
 
 **Artículo 86** .- Para los efectos del artículo 70, segundo párrafo del Código, la actualización de las multas deberá realizarse a partir del día siguiente al vencimiento del plazo de cuarenta y cinco días a que se refiere el artículo 65 del citado Código. 
 
 **Artículo 87.-** Para determinar el monto de los ingresos a que se refiere el artículo 70, cuarto párrafo del Código, se estará a lo siguiente: 
 
-55 de 66 
+55 de 66
+
+<!-- Page 57 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -2069,7 +2287,7 @@ La reducción a que se refiere el artículo 70, cuarto párrafo del Código, se 
 
 **Artículo 88.-** Para los efectos del artículo 70-A del Código, para la reducción de las multas y recargos causados se considerarán los tres ejercicios inmediatos anteriores a la fecha en que fue determinada la sanción. **TÍTULO IV De los Procedimientos Administrativos** 
 
-## **CAPÍTULO I De la Garantía del Interés Fiscal** 
+# **CAPÍTULO I De la Garantía del Interés Fiscal** 
 
 **Artículo 89.-** Para los efectos del artículo 141 del Código, la garantía del interés fiscal se otorgará a favor de la Tesorería de la Federación, del organismo descentralizado que sea competente para cobrar coactivamente créditos fiscales, así como de las tesorerías o de las dependencias de las entidades federativas o municipios que realicen esas funciones aun cuando tengan otra denominación, según corresponda. 
 
@@ -2079,7 +2297,9 @@ Las garantías del interés fiscal subsistirán hasta que proceda su cancelació
 
 Cuando el ofrecimiento, cancelación, sustitución, ampliación o disminución de la garantía del interés fiscal se presente ante el Servicio de Administración Tributaria, ésta deberá efectuarse a través de la forma oficial o formato electrónico que para tal efecto establezca dicho órgano mediante reglas de carácter general. 
 
-56 de 66 
+56 de 66
+
+<!-- Page 58 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -2109,7 +2329,9 @@ En caso de que las instituciones de crédito no realicen el pago de las cartas d
 
 Una vez efectuada la transferencia electrónica de fondos, la institución de crédito de que se trate deberá enviar a la Tesorería de la Federación por conducto del Servicio de Administración Tributaria o al 
 
-57 de 66 
+57 de 66
+
+<!-- Page 59 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -2143,7 +2365,9 @@ El otorgante podrá garantizar con la misma hipoteca los recargos futuros o ampl
 
 El escrito a que se refiere el párrafo anterior deberá ser firmado por el interesado y tratándose de personas morales, por el administrador único o, en su caso, por la totalidad de los miembros del Consejo 
 
-58 de 66 
+58 de 66
+
+<!-- Page 60 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -2175,7 +2399,9 @@ de Administración. Cuando en los estatutos sociales de la persona moral interes
 
 En la solicitud a que se refiere el párrafo anterior se deberá señalar, bajo protesta de decir verdad, lo siguiente: 
 
-59 de 66 
+59 de 66
+
+<!-- Page 61 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -2209,7 +2435,9 @@ La autoridad fiscal podrá aceptar la garantía ofrecida por el contribuyente au
 
 **Artículo 100.-** Para garantizar el interés fiscal sobre un mismo crédito podrán combinarse las diferentes formas que al efecto establece el artículo 141 del Código, así como sustituirse entre sí, en cuyo caso antes de cancelarse la garantía original deberá constituirse la garantía sustituta, siempre y cuando no sea exigible la que se pretende sustituir. 
 
-60 de 66 
+60 de 66
+
+<!-- Page 62 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -2243,13 +2471,15 @@ Las garantías que se hubieran inscrito en el registro público que corresponda,
 
 Cuando los contribuyentes a que se refiere el párrafo anterior interpongan medios de defensa en contra de la resolución que determine un crédito fiscal se suspenderá el procedimiento administrativo de ejecución, así como el plazo a que se refiere el artículo 146 del Código. **CAPÍTULO II Del Procedimiento Administrativo de Ejecución** 
 
-## **SECCIÓN I Disposiciones Generales** 
+# **SECCIÓN I Disposiciones Generales** 
 
 **Artículo 104.-** Para los efectos del artículo 137, último párrafo del Código, se cobrará la cantidad de $380.00 por concepto de honorarios. 
 
 La autoridad fiscal determinará los honorarios a que se refiere este artículo y los hará del conocimiento del infractor conjuntamente con la notificación de la infracción de que se trate. Dichos honorarios se deberán pagar a más tardar en la fecha en que se cumpla con el requerimiento. 
 
-61 de 66 
+61 de 66
+
+<!-- Page 63 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -2273,7 +2503,7 @@ Para la determinación del monto de los gastos de ejecución a que se refiere el
 
 **Artículo 107.-** Tratándose de los sujetos a que se refiere el artículo 146-C del Código, cuya liquidación o extinción no esté a cargo del Servicio de Administración y Enajenación de Bienes, el liquidador designado para tal efecto deberá informar que existe el dictamen a que se refiere el artículo 146-C, fracción I del citado Código. 
 
-## **SECCIÓN II Del Embargo, Intervención y Remate** 
+# **SECCIÓN II Del Embargo, Intervención y Remate** 
 
 **Artículo 108.-** Para los efectos del artículo 157 del Código, cuando las disposiciones legales aplicables establezcan que algún bien es inembargable o inalienable la autoridad fiscal no podrá trabar embargo sobre el mismo. 
 
@@ -2281,7 +2511,9 @@ Para la determinación del monto de los gastos de ejecución a que se refiere el
 
 **I.** Tener acceso a toda la información contable, fiscal y financiera de la negociación intervenida, a fin de tener conocimiento del manejo de las operaciones que ella realice, pudiendo requerir todo tipo de 
 
-62 de 66 
+62 de 66
+
+<!-- Page 64 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -2301,7 +2533,7 @@ Los contribuyentes intervenidos estarán obligados a brindar al interventor toda
 
 **I.** Estar presente en el local en donde se encuentre la administración principal del negocio o en el lugar que conforme al artículo 10 del Código se considere el domicilio fiscal del contribuyente intervenido, o en los establecimientos, locales, sucursales o cualquier lugar de negocio donde el contribuyente intervenido desarrolle sus actividades; 
 
-## **II.** Al inicio de la intervención: 
+# **II.** Al inicio de la intervención: 
 
 **a)** Verificar la existencia y estado físico del activo fijo embargado, levantando constancia de hechos en los casos en que falten bienes. De existir bienes que no se encuentren señalados en el acta de embargo o en la relación de activo fijo y el crédito fiscal no se encuentre totalmente garantizado, deberá informar a la autoridad fiscal para que proceda a la ampliación del embargo; 
 
@@ -2317,7 +2549,9 @@ Los contribuyentes intervenidos estarán obligados a brindar al interventor toda
 
 **III.** Enterar la cantidad recaudada diariamente salvo los días en que no se recaude ninguna cantidad, mediante la forma oficial o formato electrónico correspondiente, debiendo entregar a más tardar el día siguiente a la fecha en que se le proporcionó, el original del formulario de pago en el que conste la 
 
-63 de 66 
+63 de 66
+
+<!-- Page 65 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -2351,7 +2585,9 @@ El ejecutor levantará un acta haciendo constar el inventario completo del conte
 
 Los bienes sujetos a remate se encontrarán a la vista del público interesado en los lugares y horarios que se indiquen en la página de Internet del Servicio de Administración Tributaria. 
 
-64 de 66 
+64 de 66
+
+<!-- Page 66 -->
 
 **REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
 
@@ -2383,158 +2619,4 @@ Con cada nueva postura que mejore las anteriores, el Servicio de Administración
 
 **Artículo 120.-** Para los efectos de los artículos 180, último párrafo y 192 del Código, la autoridad fiscal podrá enajenar a plazos los bienes embargados cuando no haya postura para adquirirse de contado y siempre que el comprador garantice el saldo del adeudo más los intereses que correspondan en alguna de las formas señaladas en el artículo 141 del Código. En este caso los intereses serán iguales a los recargos exigibles tratándose del pago a plazo de los créditos fiscales. 
 
-65 de 66 
-
-**REGLAMENTO DEL CÓDIGO FISCAL DE LA FEDERACIÓN** 
-
-_Nuevo Reglamento DOF 07-12-2009_ 
-
-**CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN** Secretaría General 
-
-Secretaría de Servicios Parlamentarios 
-
-## **TRANSITORIOS** 
-
-**Primero.-** El presente Decreto entrará en vigor al día siguiente de su publicación en el Diario Oficial de la Federación con excepción de lo establecido en el artículo 67, fracción IX de este Reglamento, que entrará en vigor el 1 de enero de 2010. 
-
-**Segundo.-** Se abroga el Reglamento del Código Fiscal de la Federación publicado el 29 de febrero de 1984 en el Diario Oficial de la Federación. 
-
-Continuarán vigentes, en lo que no se opongan al Reglamento que se expide, las disposiciones de carácter administrativo, reglas, consultas e interpretaciones de carácter general contenidas en circulares o publicadas en el Diario Oficial de la Federación. 
-
-**Tercero.-** La cantidad que establece el artículo 104 de este Reglamento, se encuentra actualizada al 1 de enero de 2009. 
-
-Dado en la Residencia del Poder Ejecutivo Federal, en la Ciudad de México, Distrito Federal, a los cuatro días del mes de diciembre de dos mil nueve.- **Felipe de Jesús Calderón Hinojosa** .- Rúbrica.- El Secretario de Hacienda y Crédito Público, **Agustín Guillermo Carstens Carstens** .- Rúbrica. 
-
-66 de 66 
-
-
-
-<!-- Page 2 -->
-
-<!-- Page 3 -->
-
-<!-- Page 4 -->
-
-<!-- Page 5 -->
-
-<!-- Page 6 -->
-
-<!-- Page 7 -->
-
-<!-- Page 8 -->
-
-<!-- Page 9 -->
-
-<!-- Page 10 -->
-
-<!-- Page 11 -->
-
-<!-- Page 12 -->
-
-<!-- Page 13 -->
-
-<!-- Page 14 -->
-
-<!-- Page 15 -->
-
-<!-- Page 16 -->
-
-<!-- Page 17 -->
-
-<!-- Page 18 -->
-
-<!-- Page 19 -->
-
-<!-- Page 20 -->
-
-<!-- Page 21 -->
-
-<!-- Page 22 -->
-
-<!-- Page 23 -->
-
-<!-- Page 24 -->
-
-<!-- Page 25 -->
-
-<!-- Page 26 -->
-
-<!-- Page 27 -->
-
-<!-- Page 28 -->
-
-<!-- Page 29 -->
-
-<!-- Page 30 -->
-
-<!-- Page 31 -->
-
-<!-- Page 32 -->
-
-<!-- Page 33 -->
-
-<!-- Page 34 -->
-
-<!-- Page 35 -->
-
-<!-- Page 36 -->
-
-<!-- Page 37 -->
-
-<!-- Page 38 -->
-
-<!-- Page 39 -->
-
-<!-- Page 40 -->
-
-<!-- Page 41 -->
-
-<!-- Page 42 -->
-
-<!-- Page 43 -->
-
-<!-- Page 44 -->
-
-<!-- Page 45 -->
-
-<!-- Page 46 -->
-
-<!-- Page 47 -->
-
-<!-- Page 48 -->
-
-<!-- Page 49 -->
-
-<!-- Page 50 -->
-
-<!-- Page 51 -->
-
-<!-- Page 52 -->
-
-<!-- Page 53 -->
-
-<!-- Page 54 -->
-
-<!-- Page 55 -->
-
-<!-- Page 56 -->
-
-<!-- Page 57 -->
-
-<!-- Page 58 -->
-
-<!-- Page 59 -->
-
-<!-- Page 60 -->
-
-<!-- Page 61 -->
-
-<!-- Page 62 -->
-
-<!-- Page 63 -->
-
-<!-- Page 64 -->
-
-<!-- Page 65 -->
-
-<!-- Page 66 -->
+65 de 66

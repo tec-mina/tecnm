@@ -2,13 +2,13 @@
 source: 2026_01_19_MAT_presrep.pdf
 pages: 27
 file_size_mb: 0.28
-extraction_date: "2026-04-21T16:34:16.798524+00:00"
-language: unknown
+extraction_date: "2026-04-21T21:49:01.714459+00:00"
+language: es
 tables_found: 0
 has_images: false
 has_scanned_pages: false
-features_used: ["text_fast", "tables", "tables_camelot", "tables_tabula"]
-extraction_time_sec: 1.77
+features_used: ["text_fast"]
+extraction_time_sec: 4.19
 quality_score: 92.0
 quality_label: "excellent"
 is_valid: true

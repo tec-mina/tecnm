@@ -44,7 +44,12 @@ def compute_key(
 
 
 def hit(key: str) -> bool:
-    """Return True if a valid cached result exists for this key."""
+    """Return True if a valid cached result exists for this key.
+
+    Note: this is a best-effort signal only. A concurrent process can evict
+    the entry between hit() and load(). Callers must handle the race by
+    using ``load_or_none()`` or wrapping ``load()`` in try/except.
+    """
     entry = _entry_dir(key)
     return (entry / "full_output.md").exists() and (entry / "metadata.json").exists()
 
@@ -54,6 +59,20 @@ def load(key: str) -> tuple[str, dict[str, Any]]:
     entry = _entry_dir(key)
     markdown = (entry / "full_output.md").read_text(encoding="utf-8")
     metadata = json.loads((entry / "metadata.json").read_text(encoding="utf-8"))
+    return markdown, metadata
+
+
+def load_or_none(key: str) -> tuple[str, dict[str, Any]] | None:
+    """Atomic cache read. Returns None on any read error (missing, partial,
+    corrupt JSON) so the caller can fall back to a fresh extraction instead
+    of crashing on a concurrent cache eviction.
+    """
+    entry = _entry_dir(key)
+    try:
+        markdown = (entry / "full_output.md").read_text(encoding="utf-8")
+        metadata = json.loads((entry / "metadata.json").read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError, OSError):
+        return None
     return markdown, metadata
 
 

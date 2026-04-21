@@ -2,20 +2,338 @@
 source: 14-reglamento_impuesto_sobre_renta.pdf
 pages: 81
 file_size_mb: 0.73
-extraction_date: "2026-04-21T16:13:18.108886+00:00"
-language: unknown
+extraction_date: "2026-04-21T21:45:22.517336+00:00"
+language: es
 tables_found: 0
 has_images: false
 has_scanned_pages: false
 features_used: ["markdown_llm", "text_fast"]
-extraction_time_sec: 23.97
-quality_score: 86.0
-quality_label: "good"
+extraction_time_sec: 25.31
+quality_score: 71.0
+quality_label: "acceptable"
 is_valid: true
 from_cache: false
 warnings: []
 ---
+## Contenido
+
+- [Reglamento de la Ley del Impuesto sobre la Renta](#reglamento-de-la-ley-del-impuesto-sobre-la-renta)
+- [Reglamento de la Ley del Impuesto sobre la Renta](#reglamento-de-la-ley-del-impuesto-sobre-la-renta)
+ - [REGLAMENTO DE LA LEY DEL IMPUESTO SOBRE LA RENTA](#reglamento-de-la-ley-del-impuesto-sobre-la-renta)
+ - [TITULO I Disposiciones generales](#titulo-i-disposiciones-generales)
+ - [CAPITULO UNICO](#capitulo-unico)
+ - [_**Referencias**_](#_referencias_)
+ - [_**Definición de automóvil**_](#_definición-de-automóvil_)
+- [LISR: 3.](#lisr-3)
+- [TITULO II De las personas morales Disposiciones generales](#titulo-ii-de-las-personas-morales-disposiciones-generales)
+ - [CAPITULO I](#capitulo-i)
+- [LISR: 19.](#lisr-19)
+- [LISR: 21; RCFF: 75-III.](#lisr-21-rcff-75-iii)
+ - [LISR: 25.](#lisr-25)
+- [_**Copias certificadas**_](#_copias-certificadas_)
+ - [LISR: 24, 25, 26-IV.](#lisr-24-25-26-iv)
+ - [CAPITULO II De las deducciones](#capitulo-ii-de-las-deducciones)
+ - [_**SECCION I**_](#_seccion-i_)
+ - [_**De las deducciones en general**_](#_de-las-deducciones-en-general_)
+ - [_**Comprobantes con requisitos fiscales**_](#_comprobantes-con-requisitos-fiscales_)
+- [LISR: 29-III, 31; RISR: 121; CFF: 29-A.](#lisr-29-iii-31-risr-121-cff-29-a)
+ - [LISR: 29-III; RISR: 164](#lisr-29-iii-risr-164)
+ - [LISR: 29-III; CFF: 21.](#lisr-29-iii-cff-21)
+- [_**Aportaciones no superiores a 12.5%**_](#_aportaciones-no-superiores-a-125_)
+ - [_**Vigencia de términos y condiciones**_](#_vigencia-de-términos-y-condiciones_)
+ - [_**Administradas por otras sociedades**_](#_administradas-por-otras-sociedades_)
+ - [LISR: 29-VII, 31-XII, 33; RISR: 65.](#lisr-29-vii-31-xii-33-risr-65)
+ - [_**Concepto de disposición de bienes**_](#_concepto-de-disposición-de-bienes_)
+ - [_**Donativos autorizados**_](#_donativos-autorizados_)
+ - [_**Donación de activo fijo**_](#_donación-de-activo-fijo_)
+- [LISR: 21, 24, 29-II, 31-I, 37, 221-III.](#lisr-21-24-29-ii-31-i-37-221-iii)
+ - [_**Pagos por quebrantos no se consideran gastos estrictamente indispensables**_](#_pagos-por-quebrantos-no-se-consideran-gastos-estrictamente-indispensables_)
+ - [LISR: 31-III](#lisr-31-iii)
+ - [_**Pagos en donde no existan servicios bancarios**_](#_pagos-en-donde-no-existan-servicios-bancarios_)
+ - [_**Autorizaciones con vigencia anual**_](#_autorizaciones-con-vigencia-anual_)
+- [_**Cheque cobrado después del cierre fiscal**_](#_cheque-cobrado-después-del-cierre-fiscal_)
+- [_**Deducción de previsión social cuando se exceden de los límites autorizados**_](#_deducción-de-previsión-social-cuando-se-exceden-de-los-límites-autorizados_)
+ - [_**Deducción de contribuciones locales**_](#_deducción-de-contribuciones-locales_)
+ - [_**Concepto de ingresos exentos**_](#_concepto-de-ingresos-exentos_)
+- [LISR: 20-IX, 32-V; CFF: 29, 29-A.](#lisr-20-ix-32-v-cff-29-29-a)
+ - [_**Límite de deducción**_](#_límite-de-deducción_)
+ - [_**Lugar de erogación**_](#_lugar-de-erogación_)
+ - [II.** En el caso de aviones:](#ii-en-el-caso-de-aviones)
+ - [_**c)**_ Bitácoras de vuelo.](#_c_-bitácoras-de-vuelo)
+- [_**Gastos por transportación aérea**_](#_gastos-por-transportación-aérea_)
+ - [LISR: 32-XIII.](#lisr-32-xiii)
+ - [LISR: 32-XXI.](#lisr-32-xxi)
+- [_**Capital contable determinado en el estado de posición financiera**_](#_capital-contable-determinado-en-el-estado-de-posición-financiera_)
+ - [_**Incremento de reservas**_](#_incremento-de-reservas_)
+ - [LISR: 33.](#lisr-33)
+ - [_**Metodología utilizada**_](#_metodología-utilizada_)
+ - [_**Retiro de aportaciones**_](#_retiro-de-aportaciones_)
+- [_**Disposición del exceso de reservas**_](#_disposición-del-exceso-de-reservas_)
+ - [ART. 63. (Se deroga.)** _**DG-4/12/06**_](#art-63-se-deroga-_dg-41206_)
+ - [LISR: 33-II.](#lisr-33-ii)
+ - [_**SECCION II**_](#_seccion-ii_)
+ - [_**De las inversiones**_](#_de-las-inversiones_)
+- [LISR: 37.](#lisr-37)
+ - [_**SECCION III**_](#_seccion-iii_)
+ - [_**Del costo de lo vendido**_](#_del-costo-de-lo-vendido_)
+ - [CFF: 11.](#cff-11)
+- [LISR: 29-II, 45-A.](#lisr-29-ii-45-a)
+- [_**Determinación del margen de utilidad bruta**_](#_determinación-del-margen-de-utilidad-bruta_)
+ - [CAPITULO III Del ajuste por inflación](#capitulo-iii-del-ajuste-por-inflación)
+- [LISR: 46, 47, 48.](#lisr-46-47-48)
+ - [CAPITULO IV De las instituciones de crédito, de seguros y de fianzas, de los almacenes generales de depósito, arrendadoras financieras, uniones de crédito y de las sociedades de inversión de capitales](#capitulo-iv-de-las-instituciones-de-crédito-de-seguros-y-de-fianzas-de-los-almacenes-generales-de-depósito-arrendadoras-financieras-uniones-de-crédito-y-de-las-sociedades-de-inversión-de-capitales)
+ - [CAPITULO V Del régimen de consolidación fiscal](#capitulo-v-del-régimen-de-consolidación-fiscal)
+- [_**Requisitos**_](#_requisitos_)
+ - [CFF: 32-A, 52.](#cff-32-a-52)
+ - [LISR: 64; CFF: 32-A, 52; RCFF: 44-BIS-1 a 54.](#lisr-64-cff-32-a-52-rcff-44-bis-1-a-54)
+- [CAPITULO VI Del Régimen Simplificado](#capitulo-vi-del-régimen-simplificado)
+- [CAPITULO VII](#capitulo-vii)
+ - [De las obligaciones de las personas morales](#de-las-obligaciones-de-las-personas-morales)
+ - [_**Informativa de clientes y proveedores**_](#_informativa-de-clientes-y-proveedores_)
+ - [_**Publicación de bienes ofrecidos en donación**_](#_publicación-de-bienes-ofrecidos-en-donación_)
+ - [_**Destrucción una vez al año y en horas hábiles**_](#_destrucción-una-vez-al-año-y-en-horas-hábiles_)
+- [_**Presentación de información**_](#_presentación-de-información_)
+ - [_**Condiciones de los bienes**_](#_condiciones-de-los-bienes_)
+ - [_**Conservación de documentación**_](#_conservación-de-documentación_)
+ - [_**Información de bienes donados**_](#_información-de-bienes-donados_)
+ - [_**Destrucción de bienes**_](#_destrucción-de-bienes_)
+- [LISR: 86-XI.](#lisr-86-xi)
+- [LISR: 24, 25, 89.](#lisr-24-25-89)
+ - [_**Determinación del capital contable**_](#_determinación-del-capital-contable_)
+ - [LISR: 89.](#lisr-89)
+ - [LISR: 89.](#lisr-89)
+- [CAPITULO VIII De las facultades de las autoridades fiscales](#capitulo-viii-de-las-facultades-de-las-autoridades-fiscales)
+ - [TITULO III Del régimen de las personas morales con fines no lucrativos](#titulo-iii-del-régimen-de-las-personas-morales-con-fines-no-lucrativos)
+- [LISR: 97, 101-II, 176-III; RISR: 119-A.](#lisr-97-101-ii-176-iii-risr-119-a)
+ - [_**Concepto de donativo**_](#_concepto-de-donativo_)
+ - [LISR: 97, 176-III; RCFF: 29; RMF-13: I.3.9.8., II.2.11.6.](#lisr-97-176-iii-rcff-29-rmf-13-i398-ii2116)
+ - [LISR: 95-X, 97.](#lisr-95-x-97)
+ - [_**Comprobantes de los donativos**_](#_comprobantes-de-los-donativos_)
+ - [RMF-13: I.3.9.6.](#rmf-13-i396)
+ - [I.** Escritura constitutiva y estatutos que la rigen.](#i-escritura-constitutiva-y-estatutos-que-la-rigen)
+ - [RMF-13: I.3.9.8.](#rmf-13-i398)
+ - [LISR: 31-I, 97, 176-III; RISR: 31; RMF-13: I.3.9.8., II.2.11.6.](#lisr-31-i-97-176-iii-risr-31-rmf-13-i398-ii2116)
+ - [_**Definición de orientación social**_](#_definición-de-orientación-social_)
+- [_**Entidades que apoyan a donatarias autorizadas**_](#_entidades-que-apoyan-a-donatarias-autorizadas_)
+ - [CFF: 32-A.](#cff-32-a)
+- [LISR: 31-I, 176-III; RISR: 31, 108, 114.](#lisr-31-i-176-iii-risr-31-108-114)
+ - [TITULO IV De las personas físicas. Disposiciones generales](#titulo-iv-de-las-personas-físicas-disposiciones-generales)
+- [CSAT: 14/2012/CFF](#csat-142012cff)
+ - [_**Traspaso de recursos**_](#_traspaso-de-recursos_)
+ - [_**Viáticos no comprobados. Exención**_](#_viáticos-no-comprobados-exención_)
+- [_**Viáticos de funcionarios públicos**_](#_viáticos-de-funcionarios-públicos_)
+ - [LISR: 109-XIII.](#lisr-109-xiii)
+ - [RMF-13: I.3.10.7.](#rmf-13-i3107)
+ - [LISR: 109-XXI.](#lisr-109-xxi)
+- [_**Derechos de autor**_](#_derechos-de-autor_)
+ - [CAPITULO I](#capitulo-i)
+- [LISR: 109-XI, 113; RISR: 128; SPE: 8-I.](#lisr-109-xi-113-risr-128-spe-8-i)
+ - [LISR: 113; SPE: 8-I.](#lisr-113-spe-8-i)
+- [LISR: 113; RISR: 145; SPE: 8-I.](#lisr-113-risr-145-spe-8-i)
+ - [LISR: 113, 177; SPE: 8-I.](#lisr-113-177-spe-8-i)
+- [_**SECCION I De las personas físicas con actividades empresariales y profesionales**_](#_seccion-i-de-las-personas-físicas-con-actividades-empresariales-y-profesionales_)
+- [LISR: 113, 116, 117, 118, 120; SPE: 8-I.](#lisr-113-116-117-118-120-spe-8-i)
+ - [RISR: 87, 88, 89.](#risr-87-88-89)
+ - [_**SECCION II**_](#_seccion-ii_)
+ - [_**Del Régimen Intermedio de las personas físicas con actividades empresariales**_](#_del-régimen-intermedio-de-las-personas-físicas-con-actividades-empresariales_)
+- [_**Pérdida o descompostura irreparables**_](#_pérdida-o-descompostura-irreparables_)
+- [_**Máquinas registradoras de comprobación fiscal**_](#_máquinas-registradoras-de-comprobación-fiscal_)
+ - [RMF-13: II.3.7.1.2.](#rmf-13-ii3712)
+ - [_**Equipos electrónicos de registro fiscal**_](#_equipos-electrónicos-de-registro-fiscal_)
+- [RMF-13: II.3.7.1.1.](#rmf-13-ii3711)
+- [LISR: 134; RISR: 172, 174.](#lisr-134-risr-172-174)
+ - [_**Otros requisitos para obtener aprobación y registro de máquinas registradoras, equipos o sistemas**_](#_otros-requisitos-para-obtener-aprobación-y-registro-de-máquinas-registradoras-equipos-o-sistemas_)
+- [RISR: 174-V.](#risr-174-v)
+ - [LISR: 134; RISR: 170-IV, 177, 179.](#lisr-134-risr-170-iv-177-179)
+- [LISR: 134; RISR: 177, 178.](#lisr-134-risr-177-178)
+ - [_**SECCION III**_](#_seccion-iii_)
+ - [_**Del Régimen de Pequeños Contribuyentes**_](#_del-régimen-de-pequeños-contribuyentes_)
+- [CAPITULO IV De los ingresos por enajenación de bienes](#capitulo-iv-de-los-ingresos-por-enajenación-de-bienes)
+- [_**Determinación de ingresos acumulables**_](#_determinación-de-ingresos-acumulables_)
+ - [_**Pago provisional**_](#_pago-provisional_)
+- [LISR: 148, 150, 156; RCFF: 3.](#lisr-148-150-156-rcff-3)
+ - [LISR: 148.](#lisr-148)
+ - [I.** Las obras de arte.](#i-las-obras-de-arte)
+- [_**Casos en los que se releva al fedatario de calcular y recaudar el impuesto por la enajenación de inmuebles**_](#_casos-en-los-que-se-releva-al-fedatario-de-calcular-y-recaudar-el-impuesto-por-la-enajenación-de-inmuebles_)
+- [RCFF: 66 al 82.](#rcff-66-al-82)
+ - [CAPITULO V De los ingresos por adquisición de bienes](#capitulo-v-de-los-ingresos-por-adquisición-de-bienes)
+- [LISR: 154.](#lisr-154)
+ - [RCFF: 3.](#rcff-3)
+ - [CAPITULO VI De los ingresos por intereses](#capitulo-vi-de-los-ingresos-por-intereses)
+ - [LISR: 104, 159; RISR: 209-A, 209-B, 209-C, 209-D, 214-A.](#lisr-104-159-risr-209-a-209-b-209-c-209-d-214-a)
+ - [_**Distribución de gastos administrativos**_](#_distribución-de-gastos-administrativos_)
+- [_**Determinación de la estimativa diaria del INPC**_](#_determinación-de-la-estimativa-diaria-del-inpc_)
+- [_**Retención del impuesto por la enajenación de títulos que se consideran interés**_](#_retención-del-impuesto-por-la-enajenación-de-títulos-que-se-consideran-interés_)
+ - [LISR: 9, 160; CFF: 6-I](#lisr-9-160-cff-6-i)
+ - [RMF-13: I.3.17.9.](#rmf-13-i3179)
+ - [LISR: 9.](#lisr-9)
+ - [LISR: 9](#lisr-9)
+- [CAPITULO VII De los ingresos por obtención de premios](#capitulo-vii-de-los-ingresos-por-obtención-de-premios)
+- [CAPITULO VIII De los demás ingresos que obtengan las personas físicas](#capitulo-viii-de-los-demás-ingresos-que-obtengan-las-personas-físicas)
+- [LISR: 9, 46; CFF: 20-Bis; RMF-13: I.3.16.5.](#lisr-9-46-cff-20-bis-rmf-13-i3165)
+ - [_**Créditos denominados en UDI’s**_](#_créditos-denominados-en-udis_)
+ - [RISR: 231-B-I.](#risr-231-b-i)
+- [CAPITULO X De la declaración anual](#capitulo-x-de-la-declaración-anual)
+- [_**Declaración de ingresos percibidos antes del fallecimiento**_](#_declaración-de-ingresos-percibidos-antes-del-fallecimiento_)
+ - [_**Ingresos devengados no percibidos antes del fallecimiento**_](#_ingresos-devengados-no-percibidos-antes-del-fallecimiento_)
+ - [_**Por salarios, honorarios y arrendamiento**_](#_por-salarios-honorarios-y-arrendamiento_)
+ - [_**Por los demás ingresos**_](#_por-los-demás-ingresos_)
+ - [LISR: 176-II.](#lisr-176-ii)
+- [TITULO V De los residentes en el extranjero con ingresos provenientes de fuente de riqueza ubicada en territorio nacional](#titulo-v-de-los-residentes-en-el-extranjero-con-ingresos-provenientes-de-fuente-de-riqueza-ubicada-en-territorio-nacional)
+- [CFF: 18; RMF-13: II.3.9.3.](#cff-18-rmf-13-ii393)
+ - [LISR: 208; CFF: 26.](#lisr-208-cff-26)
+- [LISR: 186; CFF: 29, 29-A; RMF-13: I.2.8.3.1.5.](#lisr-186-cff-29-29-a-rmf-13-i28315)
+- [LISR: 189.](#lisr-189)
+ - [LISR: 5, 190, 208; CFF: 18; RMF-13: I.3.1.13., II.3.9.12.](#lisr-5-190-208-cff-18-rmf-13-i3113-ii3912)
+ - [LISR: 190](#lisr-190)
+- [RMF-13: I.3.1.13.](#rmf-13-i3113)
+ - [RMF-13: I.3.17.18.](#rmf-13-i31718)
+- [RMF-13: II.3.9.4.](#rmf-13-ii394)
+- [LISR: 212.](#lisr-212)
+ - [CFF: 29-A.](#cff-29-a)
+- [_**Mercancías de importación**_](#_mercancías-de-importación_)
+ - [LISR: 31-XVI.](#lisr-31-xvi)
+ - [LISR: 42-II, 42-III; RISR: 3-A.](#lisr-42-ii-42-iii-risr-3-a)
+ - [LISR: 31-V, 31-VII, 32-XV.](#lisr-31-v-31-vii-32-xv)
+- [LISR: 220.](#lisr-220)
+ - [TITULO VII De los estímulos fiscales](#titulo-vii-de-los-estímulos-fiscales)
+- [TRANSITORIOS 2003 (DOF 17-oct-03)](#transitorios-2003-dof-17-oct-03)
+- [LISR: 25, DT03 2-VIII.](#lisr-25-dt03-2-viii)
+- [RISR: 277.](#risr-277)
+ - [LISR: 220, 221; RISR: 277.](#lisr-220-221-risr-277)
+ - [TRANSITORIOS 2006 (DOF 4-dic-06)](#transitorios-2006-dof-4-dic-06)
+ - [RISR: 69-E.](#risr-69-e)
+ - [RISR: 87-II, 88-II, 89-I; RMF-13: II.3.2.1.2.](#risr-87-ii-88-ii-89-i-rmf-13-ii3212)
+ - [LISR: 31-XXII.](#lisr-31-xxii)
+
 <!-- Page 1 -->
+
+Reglamento de la
+
+Ley del Impuesto
+
+sobre la Renta
+
+Ultima reforma incluida: DOF 4 de diciembre de 2006
+
+Artículos 
+Título I 
+Disposiciones Generales 
+Capítulo Unico ...................................................................................................................... 
+1o. a 11 
+ 
+Título II 
+De las Personas Morales 
+Disposiciones Generales ......................................................................................................... 
+12 a 12-B 
+ 
+Capítulo I 
+ 
+De los Ingresos .................................................................................................................. 
+13 a 24 
+ 
+Capítulo II 
+ 
+De las Deducciones 
+ 
+ 
+Sección I 
+ 
+ 
+De las Deducciones en General .................................................................................... 
+25 a 65 
+ 
+ 
+Sección II 
+ 
+ 
+De las Inversiones ......................................................................................................... 
+66 a 69 
+ 
+ 
+Sección III 
+ 
+ 
+Del Costo de lo Vendido ................................................................................................ 69-A a 69-J 
+ 
+ 
+ 
+Capítulo III 
+ 
+Del Ajuste por Inflación ....................................................................................................... 
+70 a 72 
+ 
+Capítulo IV 
+ 
+De las Instituciones de Crédito, de Seguros y de Fianzas, 
+ 
+ 
+de los Almacenes Generales de Depósito, Arrendadoras Financieras, 
+ 
+ 
+Uniones de Crédito y de las Sociedades de Inversión de Capitales .............................. 
+73 a 75 
+ 
+Capítulo V 
+ 
+Del Régimen de Consolidación Fiscal ................................................................................ 
+76 a 80 
+ 
+Capítulo VI 
+ 
+Del Régimen Simplificado................................................................................................... 
+81 a 85 
+ 
+Capítulo VII 
+ 
+De las Obligaciones de las Personas Morales .................................................................... 
+86 a 101 
+ 
+Capítulo VIII 
+ 
+De las Facultades de las Autoridades Fiscales .................................................................. 
+102 a 104 
+ 
+Título III 
+Del Régimen de las Personas Morales con Fines no Lucrativos ............................................. 105 a 119-A 
+ 
+Título IV 
+De las Personas Físicas 
+Disposiciones Generales ......................................................................................................... 120 a 135-A 
+ 
+Capítulo I 
+ 
+De los Ingresos por Salarios y en General por la Prestación 
+ 
+ 
+de un Servicio Personal Subordinado ............................................................................ 136 a 155-C 
+ 
+Capítulo II 
+ 
+ 
+De los Ingresos por Actividades Empresariales y Profesionales ................................... 
+156 y 157 
+ 
+ 
+Sección I 
+ 
+ 
+De las Personas Físicas con Actividades Empresariales y Profesionales ..................... 
+158 a 167 
+ 
+ 
+Sección II 
+ 
+ 
+Del Régimen Intermedio de las Personas Físicas con Actividades Empresariales ........ 
+168 a 182 
+ 
+ 
+Sección III
+
+1
+
+<!-- Page 2 -->
 
 # **Reglamento de la Ley del Impuesto sobre la Renta** 
 
@@ -25,7 +343,9 @@ _Ultima reforma incluida: DOF 4 de diciembre de 2006_
 
 **Título I** Disposiciones Generales **Capítulo Unico** ...................................................................................................................... 1o. a 11 **Título II** De las Personas Morales Disposiciones Generales ......................................................................................................... 12 a 12-B **Capítulo I** De los Ingresos .................................................................................................................. 13 a 24 **Capítulo II** De las Deducciones **Sección I** De las Deducciones en General .................................................................................... 25 a 65 **Sección II** De las Inversiones ......................................................................................................... 66 a 69 **Sección III** Del Costo de lo Vendido ................................................................................................ 69-A a 69-J **Capítulo III** Del Ajuste por Inflación ....................................................................................................... 70 a 72 **Capítulo IV** De las Instituciones de Crédito, de Seguros y de Fianzas, de los Almacenes Generales de Depósito, Arrendadoras Financieras, Uniones de Crédito y de las Sociedades de Inversión de Capitales .............................. 73 a 75 **Capítulo V** Del Régimen de Consolidación Fiscal ................................................................................ 76 a 80 **Capítulo VI** Del Régimen Simplificado................................................................................................... 81 a 85 **Capítulo VII** De las Obligaciones de las Personas Morales .................................................................... 86 a 101 **Capítulo VIII** De las Facultades de las Autoridades Fiscales .................................................................. 102 a 104 **Título III** Del Régimen de las Personas Morales con Fines no Lucrativos ............................................. 105 a 119-A **Título IV** De las Personas Físicas Disposiciones Generales ......................................................................................................... 120 a 135-A **Capítulo I** De los Ingresos por Salarios y en General por la Prestación de un Servicio Personal Subordinado ............................................................................ 136 a 155-C **Capítulo II** De los Ingresos por Actividades Empresariales y Profesionales ................................... 156 y 157 **Sección I** De las Personas Físicas con Actividades Empresariales y Profesionales ..................... 158 a 167 **Sección II** Del Régimen Intermedio de las Personas Físicas con Actividades Empresariales ........ 168 a 182 **Sección III** 
 
-1 
+1
+
+<!-- Page 3 -->
 
 Del Régimen de Pequeños Contribuyentes ................................................................... 182-A y 182-B 
 
@@ -33,9 +353,11 @@ Del Régimen de Pequeños Contribuyentes .......................................
 
 **Artículos Transitorios** 
 
-2 
+2
 
-## **Reglamento de la Ley del Impuesto sobre la Renta** 
+<!-- Page 4 -->
+
+# **Reglamento de la Ley del Impuesto sobre la Renta** 
 
 _(Fecha de publicación: DOF 17-oct-03. Inicio de vigencia: 18-oct-03. Ultima reforma incluida: DOF 4-dic-06.)_ 
 
@@ -79,7 +401,9 @@ _**Alcance del término construcción de obras**_
 
 _**Cómputo de días**_ 
 
-3 
+3
+
+<!-- Page 5 -->
 
 El cómputo de días de duración de los servicios a que se refiere el sexto y séptimo párrafos del artículo 2o. mencionado, se hará considerando la totalidad de días naturales comprendidos entre el inicio y la terminación de los servicios. **LISR: 2.** 
 
@@ -95,7 +419,7 @@ _**Actividades que no se consideran previas o auxiliares**_
 
 **ART. 5o.** Para los efectos de la fracción IV del artículo 3o. de la Ley, se considera que no son actividades previas o auxiliares, las que sean iguales a las actividades del residente en el extranjero, salvo que dichas actividades también tengan la naturaleza de previas o auxiliares en el extranjero. No se considerarán actividades auxiliares las de dirección. 
 
-## **LISR: 3.** 
+# **LISR: 3.** 
 
 _**Acreditamiento de la residencia fiscal**_ 
 
@@ -129,7 +453,9 @@ _**Determinación de las pérdidas cambiarias por las casas de cambio**_
 
 **ART. 10.** Para los efectos del artículo 9o., sexto párrafo de la Ley, las casas de cambio y centros cambiarios, para determinar las pérdidas cambiarias devengadas por la fluctuación de la moneda extranjera, podrán utilizar el tipo de cambio promedio de sus operaciones del día, calculado como sigue: _**RF-4/12/06**_ 
 
-4 
+4
+
+<!-- Page 6 -->
 
 **I.** Se sumarán los tipos de cambio promedios ponderados de venta y de compra y el resultado obtenido se dividirá entre dos. 
 
@@ -153,7 +479,7 @@ En los casos de enajenación, amortización o redención, de bonos, obligaciones
 
 Cuando el costo de adquisición a que se refiere el párrafo anterior, adicionado de los intereses devengados, ya acumulados y no cobrados, sea mayor que el monto de la enajenación, amortización o redención del bono, obligación o título valor, la diferencia será la pérdida que sufra el contribuyente y que se considerará interés devengado a cargo, en los términos de la fracción IX del artículo 29 de la Ley. 
 
-## **TITULO II De las personas morales Disposiciones generales** 
+# **TITULO II De las personas morales Disposiciones generales** 
 
 _**Determinación de pagos provisionales**_ 
 
@@ -179,7 +505,9 @@ _**Solicitud de autorización para disminuir pagos provisionales. Plazo**_
 
 _**Acumulación de ingresos para los servicios de tiempo compartido. Opción**_ 
 
-5 
+5
+
+<!-- Page 7 -->
 
 **ART. 13.** Para los efectos del artículo 18, fracciones I y II de la Ley, los contribuyentes que proporcionen el servicio turístico de tiempo compartido mediante el otorgamiento del uso o goce temporal de bienes inmuebles o mediante la prestación de servicios de hospedaje, podrán acumular los ingresos y pagar el impuesto considerando únicamente las contraprestaciones que sean exigibles, las que se consignen en los comprobantes que se expidan o las que efectivamente se cobren en el periodo de que se trate, lo que suceda primero, siempre que ejerzan esta opción respecto de la totalidad de los contratos celebrados y las contraprestaciones derivadas de los mismos. 
 
@@ -205,7 +533,7 @@ _**Contratos por demolición, proyección, inspección o supervisión. Opción**
 
 **ART. 15.** Los contribuyentes que celebren contratos de obra inmueble que tengan por objeto la demolición, proyección, inspección o supervisión de obra, podrán aplicar lo dispuesto en el artículo 19 de la Ley. Dicha opción se deberá aplicar para todos los contratos de referencia que celebren en el ejercicio. 
 
-## **LISR: 19.** 
+# **LISR: 19.** 
 
 _**Avance mensual de obra. Acumulación de ingresos**_ 
 
@@ -233,13 +561,15 @@ _**Depósitos en garantía no son ingresos acumulables**_
 
 _**Casos en que se considera ingreso acumulable**_ Cuando los depósitos se apliquen al cumplimiento de cualquier obligación derivada del contrato de arrendamiento, el monto aplicado será considerado como ingreso acumulable para el arrendador en el mes en que se apliquen. _**AD-4/12/06 Todo el artículo**_ 
 
-6 
+6
+
+<!-- Page 8 -->
 
 _**MOI actualizado del terreno mayor al ingreso se considera pérdida**_ 
 
 **ART. 19.** Para los efectos del artículo 21 de la Ley, cuando el monto original de la inversión actualizado sea mayor que el ingreso obtenido por la enajenación de los bienes a que se refiere dicho artículo, la diferencia será la pérdida que los contribuyentes podrán deducir en los términos de la propia Ley. 
 
-## **LISR: 21; RCFF: 75-III.** 
+# **LISR: 21; RCFF: 75-III.** 
 
 _**Ingreso acumulable o deducción autorizada en operaciones financieras derivadas**_ 
 
@@ -285,11 +615,13 @@ _**Número de acciones representativas**_
 
 _**Costo comprobado de adquisición**_ 
 
-7 
+7
+
+<!-- Page 9 -->
 
 Para los efectos del párrafo anterior, el costo comprobado de adquisición de las acciones que recibe el solicitante, será el que resulte de dividir el monto original ajustado a que se refiere la fracción I de este artículo, entre el número de acciones recibidas, considerándose que la fecha de adquisición de las mismas, es la fecha de enajenación de las acciones de las que era propietario el solicitante. 
 
-## _**Copias certificadas**_ 
+# _**Copias certificadas**_ 
 
 Asimismo, se deberán presentar copias certificadas por el secretario del consejo de administración o el administrador único, correspondientes al Libro de Registro de Acciones Nominativas y al Libro de Variaciones de Capital, en su caso, que las personas morales se encuentran obligadas a llevar conforme a la Ley General de Sociedades Mercantiles. 
 
@@ -345,7 +677,9 @@ _**Comprobante por los servicios de administración**_
 
 _**Conservación de documentos y contabilidad**_ 
 
-8 
+8
+
+<!-- Page 10 -->
 
 **VI.** La documentación y registros contables deberán conservarse por la asamblea de condóminos o, en su defecto, por los condóminos que opten por deducir los gastos comunes en 
 
@@ -353,7 +687,7 @@ los términos del presente artículo.
 
 No se podrá optar por efectuar la deducción de los gastos comunes en los términos del presente artículo, cuando las personas que presten los servicios de administración carezcan de facultades para actuar en nombre y representación de la asamblea general de condóminos. _**RF-4/12/06 Todo el artículo**_ 
 
-## **LISR: 29-III, 31; RISR: 121; CFF: 29-A.** 
+# **LISR: 29-III, 31; RISR: 121; CFF: 29-A.** 
 
 _**Devoluciones, descuentos o bonificaciones que se realizan después del ejercicio fiscal**_ 
 
@@ -403,13 +737,15 @@ _**Requisitos adicionales para las reservas de los fondos de pensiones o jubilac
 
 _**Opción del trabajador para incorporarse**_ 
 
-9 
+9
+
+<!-- Page 11 -->
 
 **I.** Que contemplen la opción para el trabajador de elegir su incorporación al plan de pensiones o jubilaciones de personal de que se trate. En el caso de que el trabajador decida incorporarse a dicho plan, el empleador deberá obtener por escrito la manifestación respectiva. 
 
 **RMF-13: I.3.3.1.21.** 
 
-## _**Aportaciones no superiores a 12.5%**_ 
+# _**Aportaciones no superiores a 12.5%**_ 
 
 **II.** Que la suma de las aportaciones patronales que se efectúen a favor de cada trabajador y las aportaciones de los propios trabajadores, no excedan del 12.5% del salario anual declarado para los efectos del impuesto, sin incluir las prestaciones exentas ni los ingresos que la Ley asimila a salarios. 
 
@@ -461,11 +797,13 @@ En el caso de bienes de activo fijo, se considerará como monto del donativo la 
 
 _**Donación de otros bienes muebles**_ 
 
-10 
+10
+
+<!-- Page 12 -->
 
 Tratándose de bienes muebles distintos de los señalados en los párrafos anteriores, se considerará como monto del donativo el que resulte de actualizar la cantidad que se haya pagado para adquirir el bien por el periodo comprendido desde el mes en el que se adquirió y hasta el mes en el que se efectúe la donación. 
 
-## **LISR: 21, 24, 29-II, 31-I, 37, 221-III.** 
+# **LISR: 21, 24, 29-II, 31-I, 37, 221-III.** 
 
 ## _**Pagos por quebrantos no se consideran gastos estrictamente indispensables**_ 
 
@@ -527,7 +865,9 @@ No se limitará la deducción de intereses en el caso de que la tasa de interés
 
 _**Determinación de la tasa mensual de interés**_ 
 
-11 
+11
+
+<!-- Page 13 -->
 
 Cuando el contribuyente otorgue préstamos en determinada moneda y no hubiera obtenido créditos suficientes en la misma, considerará como tasa mensual de interés, pagada por las cantidades excedentes, la más baja que rija por operaciones interbancarias en el mercado de Londres (LIBOR) en la fecha en que se conceda el préstamo; dicha tasa deberá ser la correspondiente al tipo de moneda de que se trate y al plazo en que se hubiera otorgado el préstamo. Si la moneda fuere peso mexicano, se considerará como tasa la promedio diaria de los Certificados de la Tesorería de la Federación, colocados a plazo de noventa días, en el mes inmediato anterior, o en su defecto, del valor a cargo del Gobierno Federal inscrito en el Registro Nacional de Valores equiparable a los certificados mencionados. **LISR: 31-VIII.** 
 
@@ -535,7 +875,7 @@ _**Deducción de erogaciones pagadas con cheque**_
 
 **ART. 39.** Para los efectos del artículo 31, fracción IX, segundo párrafo de la Ley, se podrá efectuar la deducción de las erogaciones efectuadas con cheque, aun cuando hayan transcurrido más de cuatro meses entre la fecha consignada en la documentación comprobatoria que se haya expedido y la fecha en la que efectivamente se cobre dicho cheque, siempre que ambas fechas correspondan al mismo ejercicio. 
 
-## _**Cheque cobrado después del cierre fiscal**_ 
+# _**Cheque cobrado después del cierre fiscal**_ 
 
 Cuando el cheque se cobre en el ejercicio inmediato siguiente a aquel al que corresponda la documentación comprobatoria que se haya expedido, los contribuyentes podrán efectuar la deducción en el ejercicio en el que éste se cobre, siempre que entre la fecha consignada en la documentación comprobatoria y la fecha en que efectivamente se cobre el cheque no hayan transcurrido más de cuatro meses. 
 
@@ -583,11 +923,13 @@ _**Efectuados en relación con los contribuyentes**_
 
 **II.** Que se efectúen en relación con trabajadores del contribuyente y, en su caso, con el cónyuge o la persona con quien viva en concubinato o con los ascendientes o descendientes, cuando dependan económicamente del trabajador, incluso cuando tengan 
 
-12 
+12
+
+<!-- Page 14 -->
 
 parentesco civil, así como los menores de edad que satisfaciendo el requisito de dependencia económica vivan en el mismo domicilio del trabajador. En el caso de prestaciones por fallecimiento no será necesaria la dependencia económica. **LISR: 31-XII.** 
 
-## _**Deducción de previsión social cuando se exceden de los límites autorizados**_ 
+# _**Deducción de previsión social cuando se exceden de los límites autorizados**_ 
 
 **ART. 43-A.** Cuando las prestaciones de previsión social a que se refiere el artículo 31, fracción XII de la Ley excedan de los límites establecidos en el artículo citado, la prestación excedente sólo será deducible cuando el contribuyente cubra por cuenta del trabajador el impuesto que corresponda a dicho excedente, considerándose el importe de dicho impuesto como ingreso para el trabajador por el mismo concepto y efectúe asimismo las retenciones correspondientes. _**AD-4/12/06**_ **LISR: 31-XII, 113.** 
 
@@ -637,11 +979,13 @@ _**Comprobantes a nombre del contribuyente**_
 
 Cuando los viáticos y gastos a que este artículo se refiere, beneficien a personas que presten al contribuyente servicios profesionales, los comprobantes deberán ser expedidos a nombre del propio contribuyente. Si benefician a personas que le prestan 
 
-13 
+13
+
+<!-- Page 15 -->
 
 servicios personales subordinados, los comprobantes podrán ser expedidos a nombre de dichas personas, en cuyo caso y para los efectos de la fracción IX del artículo 20 de la Ley, se tendrá por cumplido el requisito de respaldar dichos gastos con documentación comprobatoria a nombre de aquel por cuenta de quien se efectuó el gasto. 
 
-## **LISR: 20-IX, 32-V; CFF: 29, 29-A.** 
+# **LISR: 20-IX, 32-V; CFF: 29, 29-A.** 
 
 _**Deducción de erogaciones efectuadas por el uso del automóvil del trabajador**_ 
 
@@ -705,9 +1049,11 @@ Los gastos que se realicen en relación con los bienes a que se refiere el prime
 
 **LISR: 32-XIII; CFF: 30.** 
 
-14 
+14
 
-## _**Gastos por transportación aérea**_ 
+<!-- Page 16 -->
+
+# _**Gastos por transportación aérea**_ 
 
 **ART. 53.** Para los efectos de lo dispuesto por el primer párrafo de la fracción XIII del artículo 32 de la Ley, se considera que se encuentran incluidos en el límite previsto en dicho precepto, los gastos que se eroguen por concepto de pagos por servicios de transportación aérea. 
 
@@ -763,9 +1109,11 @@ _**Concepto de capital contable por acción**_
 
 **ART. 58.** Para los efectos de lo dispuesto por la fracción II del artículo 54 de este Reglamento, el capital contable por acción o por parte social actualizado será el que resulte de dividir el capital contable actualizado, entre el total de acciones o partes sociales de la persona moral a la fecha de la enajenación respectiva, incluyendo las correspondientes a la reinversión o capitalización de utilidades o de cualquier otro concepto que integre el capital contable de la misma. 
 
-15 
+15
 
-## _**Capital contable determinado en el estado de posición financiera**_ 
+<!-- Page 17 -->
+
+# _**Capital contable determinado en el estado de posición financiera**_ 
 
 El capital contable a que se refiere el párrafo anterior será el que se hubiera determinado en el estado de posición financiera que señala la fracción V del artículo 86 de la Ley, formulado a la fecha de cierre del ejercicio inmediato anterior al de la enajenación, actualizado conforme a los principios de contabilidad generalmente aceptados o normas de información financiera cuando se utilicen dichos principios o normas para integrar la contabilidad; en caso contrario, la actualización se efectuará conforme a lo dispuesto en el artículo 95 de este Reglamento. _**RF-4/12/06**_ 
 
@@ -821,11 +1169,13 @@ _**Aportaciones de los trabajadores al fondo de pensiones y jubilaciones**_
 
 Para los efectos del párrafo anterior, cuando los recursos provenientes del fondo de que se trate, se retiren antes de que el trabajador cumpla con los requisitos de pensión o jubilación, dichos recursos deberán transferirse a otro fondo de pensiones o jubilaciones complementario a los que señala la Ley del Seguro Social, constituido por la empresa a la que el trabajador fuere a 
 
-16 
+16
+
+<!-- Page 18 -->
 
 prestar sus servicios, a través de las instituciones o sociedades autorizadas a que se refiere la fracción III del artículo 33 de la Ley. Estas transferencias no se considerarán aportaciones deducibles para los efectos del impuesto. _**RF-4/12/06 Todo el artículo**_ **LISR: 33.** 
 
-## _**Disposición del exceso de reservas**_ 
+# _**Disposición del exceso de reservas**_ 
 
 **ART. 62.** Los contribuyentes que hayan constituido en exceso reservas para fondos de pensiones o jubilaciones y de primas de antigüedad del personal a que se refiere el artículo 33 de la Ley, podrán disponer de dicho excedente para cubrir las cuotas en el ramo de retiro, de la subcuenta de retiro, cesantía en edad avanzada y vejez de la cuenta individual que establece la Ley del Seguro Social. En este caso, se pagará el impuesto a la tasa que para el ejercicio establezca el artículo 10 de la Ley, sobre la diferencia entre el monto de lo dispuesto de las mencionadas reservas y el monto de las cuotas pagadas a que se refiere este precepto. 
 
@@ -877,11 +1227,13 @@ _**Cambio de porcentajes para la deducción de inversiones**_
 
 **ART. 66.** El por ciento de deducción de inversiones a que se refiere el artículo 37 de la Ley podrá cambiarse una sola vez en cada periodo de cinco años para cada bien de que se trate. Cuando no hubieran transcurrido cinco años como mínimo desde el 
 
-17 
+17
+
+<!-- Page 19 -->
 
 último cambio, podrá cambiarse nuevamente por una sola vez, siempre que se dé alguno de los supuestos establecidos en el artículo 14 de este Reglamento o bien, cuando el contribuyente no haya incurrido en pérdida fiscal en el ejercicio en el cual efectúa el cambio o en cualquiera de los últimos tres anteriores a éste, siempre que el cambio no tenga como efecto que se produzca una pérdida fiscal en el ejercicio de que se trate. 
 
-## **LISR: 37.** 
+# **LISR: 37.** 
 
 _**Deducción de inversiones en caso de suspensión de actividades**_ 
 
@@ -939,9 +1291,11 @@ _**Tratamiento a la diferencia entre el costo histórico y el predeterminado**_
 
 El cálculo de los costos predeterminados a que se refiere este artículo se determinará con base en la experiencia de ejercicios anteriores, o conforme a investigaciones o especificaciones técnicas de cada producto en particular. _**AD-4/12/06 Todo el artículo**_ 
 
-18 
+18
 
-## **LISR: 29-II, 45-A.** 
+<!-- Page 20 -->
+
+# **LISR: 29-II, 45-A.** 
 
 _**Sistema de costeo directo aplicable fiscal y contablemente**_ 
 
@@ -1001,9 +1355,11 @@ Los contribuyentes que ejerzan la opción a que se refiere este artículo, deber
 
 **LISR: 29-II, 45-A, 45-G, 86-V.** 
 
-19 
+19
 
-## _**Determinación del margen de utilidad bruta**_ 
+<!-- Page 21 -->
+
+# _**Determinación del margen de utilidad bruta**_ 
 
 **ART. 69-I.** Para los efectos del cuarto párrafo del artículo 45-G de la Ley, los contribuyentes determinarán el margen de utilidad bruta con el que operan en el ejercicio de que se trate, por cada grupo de artículos homogéneos o por departamentos, considerando únicamente las mercancías que se encuentren en el área de ventas al público. La diferencia entre el precio de venta y el último precio de adquisición de las mercancías del ejercicio de que se trate, será el margen de utilidad bruta. _**AD-4/12/06**_ **LISR: 29-II, 45-A, 45-G.** 
 
@@ -1051,9 +1407,11 @@ _**Caso en que no se considera la cancelación de operaciones**_
 
 Cuando la totalidad de los créditos o deudas que se cancelan deriven de ingresos o deducciones propias de la actividad del contribuyente y no excedan del 5% del total de ingresos acumulables o deducciones autorizadas, según sea el caso, correspondientes al periodo comprendido desde el mes en el que se concertó la operación de que se trate hasta aquel en el que se canceló, no será necesario efectuar la cancelación del ajuste anual por inflación a que se refiere este artículo. 
 
-20 
+20
 
-## **LISR: 46, 47, 48.** 
+<!-- Page 22 -->
+
+# **LISR: 46, 47, 48.** 
 
 _**Definición de cancelación de una operación**_ 
 
@@ -1107,11 +1465,13 @@ _**Autorización para dejar de determinar el resultado fiscal consolidado**_
 
 **ART. 76.** Las sociedades controladoras que opten por dejar de determinar el resultado fiscal consolidado una vez que hayan transcurrido los cinco ejercicios a que se refiere el artículo 64 de la Ley, deberán solicitar autorización a más tardar al término de los 
 
-21 
+21
+
+<!-- Page 23 -->
 
 seis primeros meses del ejercicio por el que se va a dejar de determinar el resultado fiscal consolidado. Después de este término y antes de concluir el ejercicio, solamente por causa justificada superveniente se podrá solicitar dicha autorización. 
 
-## _**Requisitos**_ 
+# _**Requisitos**_ 
 
 La solicitud de autorización a que se refiere este artículo deberá presentarse ante la autoridad fiscal correspondiente, acompañada de la siguiente documentación: 
 
@@ -1159,11 +1519,13 @@ _**Procedimiento para reconocer los efectos de la desincorporación de una socie
 
 **ART. 80.** Para reconocer los efectos de la desincorporación de una sociedad conforme al segundo párrafo del artículo 71 de la Ley, en el supuesto de que la declaración correspondiente al ejercicio inmediato anterior no se haya presentado por encontrarse dentro del plazo establecido en la Ley citada, la sociedad controladora podrá presentar la declaración complementaria a que se refiere dicha disposición dentro del mes siguiente a la fecha en que se presente o debió presentarse la declaración del ejercicio, en cuyo caso el impuesto que corresponda a la desincorporación deberá enterarse actualizado en los términos del artículo 17-A del Código Fiscal de la Federación, por el periodo comprendido desde el mes en que debió pagarse el impuesto y hasta el mes en que se pague, así como con los recargos correspondientes al mismo periodo calculados en los términos del artículo 21 del citado Código. En cualquier caso los efectos de la desincorporación deberán reconocerse en declaración complementaria del ejercicio. 
 
-22 
+22
+
+<!-- Page 24 -->
 
 **LISR: 71; CFF: 17-A, 21, 32.** 
 
-## **CAPITULO VI Del Régimen Simplificado** 
+# **CAPITULO VI Del Régimen Simplificado** 
 
 _**Pagos provisionales de los integrantes cuando no se realizan actividades empresariales**_ 
 
@@ -1215,9 +1577,11 @@ _**Personas dedicadas al autotransporte que cumplen sus obligaciones por conduct
 
 **LISR: 10, 83.** 
 
-23 
+23
 
-## **CAPITULO VII** 
+<!-- Page 25 -->
+
+# **CAPITULO VII** 
 
 ## **De las obligaciones de las personas morales** 
 
@@ -1285,13 +1649,15 @@ _**Aviso**_
 
 > _**a)**_ La fecha de caducidad, así como el plazo adicional a partir de dicha fecha, en el que el bien de que se trate pueda ser consumido o usado sin que sea perjudicial para la salud. En el caso de productos que no estén sujetos a una fecha de caducidad, de conformidad con las disposiciones sanitarias, el contribuyente deberá informar la fecha máxima en que pueden ser consumidos. 
 
-24 
+24
+
+<!-- Page 26 -->
 
 _**b)**_ Las condiciones especiales que, en su caso, se requieran para la conservación del bien. 
 
 _**c)**_ El tipo de población o regiones hacia las cuales están enfocados sus productos. 
 
-## _**Presentación de información**_ 
+# _**Presentación de información**_ 
 
 **II.** Los contribuyentes que ofrezcan en donación los bienes a que se refiere este artículo, deberán presentar la información prevista por el artículo 87, fracción II de este Reglamento. 
 
@@ -1347,7 +1713,9 @@ _**Constancias para residentes en el extranjero por pago de intereses**_
 
 **ART. 90.** Los residentes en el país que realicen pagos por concepto de intereses a residentes en el extranjero provenientes de títulos de crédito que emitan y que se coloquen en el extranjero a través de bancos o casas de bolsa, en los términos del inciso _b)_ de la fracción I del artículo 195 de la Ley, podrán expedir las constancias a que se refiere la fracción III del artículo 86 de la citada Ley, únicamente respecto de los beneficiarios efectivos que las soliciten. Para estos efectos, las personas que soliciten las constancias, deberán acreditar su calidad de beneficiario efectivo de los intereses de que se trate y proporcionar al residente en el país que efectúa los pagos, ya sea directamente o a través del agente pagador, la información necesaria para su expedición. 
 
-25 
+25
+
+<!-- Page 27 -->
 
 Las personas que efectúen los pagos por intereses de conformidad con el párrafo anterior, deberán expedir una sola constancia a cada agente pagador que ampare los intereses por los que no se hayan expedido constancias a los beneficiarios efectivos en los términos antes mencionados, debiendo anotar en el recuadro relativo a los datos del residente en el extranjero los correspondientes a dicho agente. 
 
@@ -1363,7 +1731,7 @@ _**Registro de operaciones efectuadas con títulos valor emitidos en serie**_
 
 **ART. 92.** Para los efectos de lo dispuesto por la fracción XI del artículo 86 de la Ley, se entenderá que se cumple con la obligación de llevar un registro de las operaciones efectuadas con títulos valor emitidos en serie, cuando el contribuyente conserve los estados de cuenta en los que consten dichas operaciones, expedidos por el sistema financiero en los términos de la Ley. 
 
-## **LISR: 86-XI.** 
+# **LISR: 86-XI.** 
 
 _**Dividendos provenientes de acciones colocadas entre el gran público inversionista**_ 
 
@@ -1403,11 +1771,13 @@ El monto de la actualización se obtendrá restando del valor de los activos act
 
 La actualización de dichos activos se efectuará conforme al procedimiento establecido en el artículo 3o. de la Ley del Impuesto al Activo, considerando como el mes más reciente del periodo de actualización, el que corresponda a la fecha en que se efectúe la disminución del capital. 
 
-26 
+26
+
+<!-- Page 28 -->
 
 El valor de las acciones a que se refiere el primer párrafo de este artículo, se determinará a través del método de participación, según los principios de contabilidad generalmente aceptados o las normas de información financiera, a excepción de los casos en los que el contribuyente posea menos del 10% del capital social de la emisora de dichas acciones, en cuyo caso el valor será el costo promedio por acción a que se refieren los artículos 24 y 25 de la Ley, actualizado por el periodo entre la fecha en que se hubiere determinado la última enajenación y en la que se actualiza el capital en los términos de este artículo, multiplicado por el número de acciones que tenga el contribuyente. _**RF-4/12/06**_ 
 
-## **LISR: 24, 25, 89.** 
+# **LISR: 24, 25, 89.** 
 
 ## _**Determinación del capital contable**_ 
 
@@ -1449,11 +1819,13 @@ _**Determinación de la Cufin y Cuca cuando el capital está representado por pa
 
 Asimismo, tratándose de una asociación en participación, para determinar el monto de las cuentas de utilidad fiscal neta y de capital de aportación que le corresponda a las aportaciones reembolsadas al asociante o a los asociados, se considerará la proporción que de las utilidades les corresponda a cada uno de ellos en los términos del contrato respectivo. 
 
-27 
+27
+
+<!-- Page 29 -->
 
 **LISR: 89-I; CFF: 17-B.** 
 
-## **CAPITULO VIII De las facultades de las autoridades fiscales** 
+# **CAPITULO VIII De las facultades de las autoridades fiscales** 
 
 _**Determinación presuntiva cuando se recibe el pago en bienes usados que después son enajenados**_ 
 
@@ -1501,11 +1873,13 @@ Tratándose de las asociaciones civiles que de conformidad con sus estatutos ten
 
 _**Comprobantes de fideicomisos autorizados para recibir donativos**_ 
 
-28 
+28
+
+<!-- Page 30 -->
 
 **ART. 108.** Las personas morales y las fiduciarias respecto del fideicomiso autorizado para recibir donativos deducibles, deberán utilizar los comprobantes de donativos únicamente para amparar dicha operación, debiendo expedir los que correspondan a facturas, notas de crédito y de cargo, recibos de honorarios, de arrendamiento, por servicios y en general cualquier comprobante que se expida por las actividades realizadas, con todos los requisitos previstos en las disposiciones fiscales para amparar cualquier otra operación diferente a la donación, y realizar todos los asientos derivados de la realización de sus actividades en una misma contabilidad. 
 
-## **LISR: 97, 101-II, 176-III; RISR: 119-A.** 
+# **LISR: 97, 101-II, 176-III; RISR: 119-A.** 
 
 ## _**Concepto de donativo**_ 
 
@@ -1563,7 +1937,9 @@ Las asociaciones, instituciones y organizaciones que destinen la totalidad de lo
 
 _**Fideicomisos que pueden ser autorizados para recibir donativos**_ 
 
-29 
+29
+
+<!-- Page 31 -->
 
 **ART. 113.** Los fideicomisos cuyas finalidades sean exclusivamente de las señaladas en los artículos 95, fracciones VI, X, XI, XII, XIX y XX, 96, 98 y 99 de la Ley, así como 31, segundo párrafo de este Reglamento, podrán ser autorizados para recibir donativos deducibles del impuesto sobre la renta, siempre que cumplan con los requisitos previstos en las disposiciones fiscales. **RMF-13: I.7.6.** 
 
@@ -1579,7 +1955,7 @@ _**Bibliotecas y museos que se consideran personas morales con fines no lucrativ
 
 **LISR: 95-XII-** _**d),**_ **95-XII-** _**e);**_ **RISR: 119-A; RMF-13: I.3.9.2., I.3.9.8.** 
 
-## _**Entidades que apoyan a donatarias autorizadas**_ 
+# _**Entidades que apoyan a donatarias autorizadas**_ 
 
 **ART. 115.** Se les aplicará el régimen de personas morales con fines no lucrativos a que se refiere el Título III de la Ley, a aquellas personas morales señaladas en el artículo 96 de la citada Ley autorizadas para recibir donativos deducibles que tengan por objeto primordial la fundación, la administración, el financiamiento o el fomento, a las personas morales que realicen exclusivamente cualquiera de las actividades a que se refieren las fracciones X y XVII del artículo 95 de la Ley. 
 
@@ -1631,13 +2007,15 @@ _**Información a disposición del público**_
 
 **II.** Una relación de los administradores y empleados que hubieren recibido ingresos de la donataria autorizada en cantidad superior a $295,000.00, por concepto de salarios, honorarios, compensaciones o cualquier otro. _**RF-4/12/06**_ **LISR: 97.** 
 
-30 
+30
+
+<!-- Page 32 -->
 
 _**Donativos onerosos y remunerativos. Concepto**_ 
 
 **ART. 119-A.** Para los efectos de los artículos 31, fracción I y 176, fracción III de la Ley, así como 31, segundo párrafo, 108 y 114 de este Reglamento, se consideran onerosos o remunerativos y, por ende no deducibles, los donativos otorgados a alguna organización civil o fideicomiso que sean considerados como donatarios autorizados, para tener acceso o participar en eventos de cualquier índole, así como los que den derecho a recibir algún bien, servicio o beneficio que éstos presten u otorguen. Asimismo, no será deducible la donación de servicios. _**AD-4/12/06**_ 
 
-## **LISR: 31-I, 176-III; RISR: 31, 108, 114.** 
+# **LISR: 31-I, 176-III; RISR: 31, 108, 114.** 
 
 ## **TITULO IV De las personas físicas. Disposiciones generales** 
 
@@ -1689,11 +2067,13 @@ Para los efectos del párrafo anterior, cada contribuyente podrá deducir la par
 
 _**Declaraciones de sucesión**_ 
 
-31 
+31
+
+<!-- Page 33 -->
 
 **ART. 124.** Para los efectos del último párrafo del artículo 108 de la Ley, será el representante quien efectúe los pagos provisionales del impuesto y presente la declaración anual correspondiente considerando los ingresos y deducciones en forma conjunta, sin perjuicio de lo dispuesto en el último párrafo del artículo 198 de este Reglamento. _**RF-4/12/06**_ 
 
-## **CSAT: 14/2012/CFF** 
+# **CSAT: 14/2012/CFF** 
 
 Los herederos y legatarios podrán optar por acumular a sus demás ingresos del ejercicio, los que les correspondan de la sucesión, igualmente podrán acreditar el impuesto pagado por el representante de la misma, en igual proporción que les corresponda de los ingresos de la sucesión. 
 
@@ -1739,7 +2119,9 @@ _**Gratificación anual exenta**_
 
 **RMF-13: I.3.10.8.** 
 
-32 
+32
+
+<!-- Page 34 -->
 
 Las cantidades no comprobadas se considerarán ingresos exentos para los efectos del impuesto sobre la renta, siempre que además se cumplan con los requisitos del artículo 32, fracción V de la Ley. 
 
@@ -1747,7 +2129,7 @@ Lo dispuesto en el presente artículo no es aplicable tratándose de gastos de h
 
 **LISR: 32-V, 109-XIII.** 
 
-## _**Viáticos de funcionarios públicos**_ 
+# _**Viáticos de funcionarios públicos**_ 
 
 **ART. 128-B.** Para los efectos del artículo 109, fracción XIII de la Ley, los viáticos erogados por servidores públicos de la Administración Pública Federal en comisiones oficiales en el extranjero, cuyo monto se fije con base en criterios presupuestales relativos al país donde se efectuará la comisión o por nivel de puesto del servidor público, se comprobarán como efectivamente erogados en servicio del patrón, únicamente con la documentación relativa a los gastos de hospedaje, pasaje de avión y un informe de los demás gastos efectuados durante dicha comisión. 
 
@@ -1797,7 +2179,9 @@ _**Pago de prima de seguros**_ lo dispuesto por el tercer
 
 _**Ganancia por operaciones financieras derivadas. Exención**_ 
 
-33 
+33
+
+<!-- Page 35 -->
 
 **ART. 134.** Se dará el tratamiento establecido en el artículo 109, fracción XXVI de la Ley, a la ganancia acumulable obtenida por las personas físicas en operaciones financieras derivadas de capital referidas al Indice de Precios y Cotizaciones (IPC), siempre que la operación se realice en bolsa de valores concesionada en los términos de la Ley del Mercado de Valores o en el Mercado Mexicano de Derivados. 
 
@@ -1807,7 +2191,7 @@ Asimismo, para los efectos del precepto legal citado, no se considera que la ena
 
 **LISR: 109-XXVI.** 
 
-## _**Derechos de autor**_ 
+# _**Derechos de autor**_ 
 
 **ART. 135.** Se consideran comprendidas en el artículo 109, fracción XXVIII de la Ley, los ingresos que obtengan los - contribuyentes por permitir a terceros la publicación de fotografías o dibujos de su creación en libros, periódicos o revistas, siempre que se destinen para su enajenación al público por la persona que efectúe los pagos por esos conceptos y el creador de la obra no se encuentre en cualquiera de los supuestos previstos en los incisos de la citada fracción y cumpla con los demás requisitos que establece dicha fracción. 
 
@@ -1849,7 +2233,9 @@ _**Honorarios por servicios preponderantes**_
 
 **ART. 138.** Los contribuyentes que obtengan ingresos en los términos de la fracción IV del artículo 110 de la Ley, durante el primer año que presten servicios a un prestatario no estarán obligados a presentarle la comunicación a que se refiere el tercer párrafo de dicha fracción; sin embargo, podrán optar por comunicar al prestatario que les efectúe las retenciones correspondientes durante dicho periodo, en lugar de cumplir con la obligación a que se refiere el artículo 127 de la Ley. **LISR: 110-IV, 127.** 
 
-34 
+34
+
+<!-- Page 36 -->
 
 _**Subsidio acreditable para asimilados**_ 
 
@@ -1903,7 +2289,9 @@ Los intereses devengados deberán incluir tanto los cobrados por la sociedad com
 
 **III.** Para calcular los intereses reales acumulables de sus inversionistas, las sociedades a que se refiere este artículo estarán a lo siguiente: 
 
-35 
+35
+
+<!-- Page 37 -->
 
 - _**a)**_ Restarán 
 
@@ -1931,7 +2319,7 @@ _**Gratificaciones, PTU, prima dominical y vacaciones. Opción de cálculo**_
 
 **V.** La tasa a que se refiere la fracción anterior, se calculará dividiendo el impuesto que se determine en los términos de la fracción III de este artículo entre la cantidad que resulte conforme a la fracción I del mismo. El cociente se multiplicará por cien y el producto se expresará en por ciento. 
 
-## **LISR: 109-XI, 113; RISR: 128; SPE: 8-I.** 
+# **LISR: 109-XI, 113; RISR: 128; SPE: 8-I.** 
 
 _**SMGAG del trabajador donde presta sus servicios**_ 
 
@@ -1969,7 +2357,9 @@ _**efectuadas por pagos semanales**_
 
 **LISR: 110; RISR: 145; SPE: 8-I.** 
 
-36 
+36
+
+<!-- Page 38 -->
 
 _**Retenciones mensuales. Procedimiento**_ 
 
@@ -1983,7 +2373,7 @@ Cuando se hagan pagos que comprendan periodos de siete, diez o quince días, pod
 
 Cuando se modifique alguna de las cantidades en base a las cuales se efectuó el cálculo a que se refieren las fracciones anteriores, se deberá recalcular el impuesto a retener. 
 
-## **LISR: 113; RISR: 145; SPE: 8-I.** 
+# **LISR: 113; RISR: 145; SPE: 8-I.** 
 
 _**Pago provisional por pago único correspondiente a varios meses**_ **ART. 148.** Cuando por razones no imputables al trabajador, éste obtenga en una sola vez percepciones gravables correspondientes a varios meses, distintas de la gratificación anual, de la participación de utilidades, de las primas vacacionales o dominicales, el pago provisional se calculará conforme a lo siguiente: **I.** Se dividirá el monto total de la percepción mencionada entre el número de días a que corresponda y el resultado se multiplicará por 30.4. **II.** A la cantidad que se obtenga conforme a la fracción anterior se le adicionará el ingreso ordinario por la prestación de un servicio personal subordinado que perciba el trabajador en forma regular en el mes de que se trate y al resultado se le aplicará el procedimiento establecido en el artículo 113 de la Ley. 
 
@@ -2019,7 +2409,9 @@ _**Personas que dejaron de prestar el servicio antes de fin de año no presentan
 
 **ART. 152.** Los contribuyentes que hayan dejado de prestar servicios personales subordinados antes del 31 de diciembre del año de que se trate, podrán no presentar la declaración a que se refiere el inciso _c)_ de la fracción III del artículo 117 de la Ley, cuando la totalidad de sus percepciones provengan únicamente de ingresos obtenidos por la prestación en el país de un servicio 
 
-37 
+37
+
+<!-- Page 39 -->
 
 personal subordinado, éstos no excedan de la cantidad señalada en el inciso _e)_ de la citada fracción III del artículo 117 de la Ley, y no deriven de la prestación de servicios a dos o más empleadores en forma simultánea. 
 
@@ -2069,7 +2461,9 @@ _**Determinación del subsidio acreditable cuando se inician operaciones**_
 
 **CAPITULO II De los ingresos por actividades empresariales y profesionales** 
 
-38 
+38
+
+<!-- Page 40 -->
 
 _**Disposiciones del reglamento aplicables a personas morales también aplica para personas físicas**_ 
 
@@ -2077,7 +2471,7 @@ _**Disposiciones del reglamento aplicables a personas morales también aplica pa
 
 **ART. 157. (Se deroga.)** _**DG-4/12/06**_ 
 
-## _**SECCION I De las personas físicas con actividades empresariales y profesionales**_ 
+# _**SECCION I De las personas físicas con actividades empresariales y profesionales**_ 
 
 _**Deducción proporcional de erogaciones efectuadas por casa habitación**_ 
 
@@ -2119,7 +2513,9 @@ _**Honorarios por obra determinada. Opción de retención**_
 
 El prestador del servicio presentará su declaración anual acumulando a sus ingresos comprendidos en el Capítulo I del Título IV de la Ley, los obtenidos en los términos de este artículo, salvo que en el año de calendario de que se trate obtenga únicamente 
 
-39 
+39
+
+<!-- Page 41 -->
 
 estos últimos ingresos, no provengan simultáneamente de dos o más prestatarios, ni excedan de la cantidad a que se refiere el inciso _e)_ de la fracción III del artículo 117 de la Ley y el prestatario cumpla con la obligación señalada en la fracción II de este artículo. 
 
@@ -2127,7 +2523,7 @@ El prestador del servicio deberá solicitar las constancias a que se refiere la 
 
 La opción a que se refiere este artículo podrá ejercerse por cada uno de los prestatarios y considerando todos los ingresos que se obtengan en el año de calendario de dicho prestatario por concepto de prestación de servicios profesionales a que se refiere el primer párrafo de este artículo. Dicha opción se entenderá ejercida hasta en tanto el contribuyente manifieste por escrito al prestatario de que se trate, que pagará el impuesto por los ingresos de referencia en los términos de la Sección I del Capítulo II del Título IV de la Ley. 
 
-## **LISR: 113, 116, 117, 118, 120; SPE: 8-I.** 
+# **LISR: 113, 116, 117, 118, 120; SPE: 8-I.** 
 
 _**Condonaciones, quitas o remisiones de deudas**_ **ART. 163.** Para los efectos de los artículos 121, fracción I y 122, tercer párrafo de la Ley, se entenderá que los ingresos son efectivamente percibidos en el momento en el que se consuma la prescripción, conforme a la legislación aplicable al acto jurídico del que proviene el derecho del acreedor, no siendo necesaria la declaratoria de procedencia por parte de la autoridad correspondiente. **LISR: 121-I, 122.** 
 
@@ -2175,7 +2571,9 @@ _**Máquinas registradoras de comprobación fiscal y equipos o sistemas de regis
 
 > **II.** Equipos electrónicos de registro fiscal, los equipos electrónicos que permitan al contribuyente registrar, almacenar y verificar sus operaciones, siempre que para ello utilice un sistema electrónico previamente autorizado por el SAT. 
 
-40 
+40
+
+<!-- Page 42 -->
 
 **III.** Sistema electrónico de registro fiscal, aquel programa informático que genera un registro lógico, permanente, inviolable e inalterable, el cual cumpla con las características autorizadas por el SAT para el registro, almacenamiento y verificación de operaciones, a través de medios electrónicos. 
 
@@ -2225,7 +2623,7 @@ _**Obligaciones relacionadas con máquinas registradoras, equipos o sistemas**_
 
 **VI.** Colocar en lugar visible de sus establecimientos, una leyenda que indique que utiliza máquinas registradoras de comprobación fiscal, equipos o sistemas electrónicos de registro fiscal, que facilite al público solicitar el comprobante de las operaciones respectivas. 
 
-## _**Pérdida o descompostura irreparables**_ 
+# _**Pérdida o descompostura irreparables**_ 
 
 Los contribuyentes que utilicen máquinas registradoras de comprobación fiscal, equipos o sistemas electrónicos del registro fiscal, en el caso de pérdida o descompostura de imposible reparación, o de descompostura de su memoria fiscal, o del módulo lógico fiscal tratándose de sistemas, estarán obligados a sustituirlos por otros que por lo menos reúnan las mismas características. **RISR: 180, 181.** 
 
@@ -2239,9 +2637,11 @@ _**Características mínimas de las máquinas registradoras, equipos y sistemas*
 
 **ART. 171.** Las máquinas registradoras de comprobación fiscal, equipos y sistemas electrónicos de registro fiscal a que se refiere el tercer párrafo del artículo 134 de la Ley, deberán reunir como mínimo, las siguientes características: 
 
-41 
+41
 
-## _**Máquinas registradoras de comprobación fiscal**_ 
+<!-- Page 43 -->
+
+# _**Máquinas registradoras de comprobación fiscal**_ 
 
  - **I.** Tratándose de máquinas registradoras de comprobación fiscal: 
 
@@ -2329,9 +2729,11 @@ El reporte global diario formará parte de la contabilidad del contribuyente que
 
 - _**g)**_ Tener contadores que reúnan las siguientes características: 
 
-42 
+42
 
- **1.** El primero, con por lo menos seis dígitos para numerar consecutivamente los comprobantes fiscales. 
+<!-- Page 44 -->
+
+**1.** El primero, con por lo menos seis dígitos para numerar consecutivamente los comprobantes fiscales. 
 
  **2.** El segundo, con cuatro dígitos para numerar los reportes globales diarios. 
 
@@ -2365,7 +2767,7 @@ _**Requisitos para obtener aprobación y registro de máquinas registradoras, eq
 
 **ART. 172.** Para los efectos de lo dispuesto por el artículo 134, tercer párrafo de la Ley, los fabricantes, importadores o empresas desarrolladoras de sistemas, de máquinas registradoras de comprobación fiscal, equipos o sistemas electrónicos de registro fiscal, deberán obtener del SAT, la aprobación por modelo y registro de los mismos, para lo cual además deben acreditar previamente, los siguientes requisitos: 
 
-## **RMF-13: II.3.7.1.1.** 
+# **RMF-13: II.3.7.1.1.** 
 
 **I.** Obtener de las autoridades competentes el certificado de reconocimiento de que cada uno de los modelos de máquinas registradoras, equipos o sistemas electrónicos, que se proponga fabricar, importar o enajenar, reúnen los requisitos y características de fabricación y funcionamiento establecidos por la Norma Mexicana de Calidad, expedida conforme a la Ley Federal Sobre Metrología y Normalización, para ser considerados de comprobación fiscal o registro fiscal, según se trate. 
 
@@ -2391,9 +2793,11 @@ _**Información que acompañará a la solicitud de registro de máquinas registr
 
 El número de registro de las máquinas registradoras de comprobación fiscal, equipos o sistemas electrónicos de registro fiscal que otorguen las autoridades fiscales, estará formado por 3 letras del nombre del fabricante, importador o desarrollador y 7 dígitos progresivos. 
 
-43 
+43
 
-## **LISR: 134; RISR: 172, 174.** 
+<!-- Page 45 -->
+
+# **LISR: 134; RISR: 172, 174.** 
 
 ## _**Otros requisitos para obtener aprobación y registro de máquinas registradoras, equipos o sistemas**_ 
 
@@ -2461,7 +2865,9 @@ _**Amonestaciones acumuladas**_
 
 _**Procedimiento al que se sujetará el SAT para cancelación de aprobación y registro**_ 
 
-44 
+44
+
+<!-- Page 46 -->
 
 **ART. 176.** En los supuestos a que se refiere el artículo anterior, el SAT procederá como sigue: 
 
@@ -2505,7 +2911,7 @@ _**Información que deberán proporcionar los fabricantes, importadores o empres
 
 La información recabada en los términos de este artículo, deberá ser proporcionada por los fabricantes, importadores o empresas desarrolladoras a la autoridad fiscal conjuntamente con la información a que se refiere la fracción V del artículo 174 de este Reglamento, excepto la referida en la fracción VII de este artículo, la cual deberá proporcionarse al día siguiente en que se reciba. 
 
-## **RISR: 174-V.** 
+# **RISR: 174-V.** 
 
 Asimismo, el técnico del centro de servicio autorizado deberá anotar en el libro de control a que se refiere el inciso _a)_ de la fracción IV del artículo 170 de este Reglamento, conjuntamente con su nombre y firma, la información contenida en las fracciones III, IV y V de este artículo. 
 
@@ -2515,7 +2921,9 @@ _**Procedimiento ante la descompostura de máquinas registradoras, equipos o sis
 
 **ART. 179.** Si la máquina registradora de comprobación fiscal, equipo o sistema electrónico de registro fiscal, presenta alguna descompostura que impida su correcto funcionamiento, el contribuyente debe solicitar la reparación por escrito o a través de medios 
 
-45 
+45
+
+<!-- Page 47 -->
 
 electrónicos, al centro de servicio correspondiente, a más tardar el día siguiente a aquel en que dejó de funcionar. En el caso de que sólo utilice dicha máquina, equipo o sistema, en el establecimiento de que se trate, procederá a hacer los registros correspondientes en forma manual, mecanizada o electrónica y si utiliza varios continuará el registro en los otros. 
 
@@ -2525,7 +2933,7 @@ El contribuyente está obligado a conservar los registros, reportes y demás inf
 
 Cuando la descompostura corresponda a la memoria fiscal, ésta agote su capacidad de registro, o se trate del módulo lógico fiscal, el técnico de servicio se abstendrá de efectuar la reparación y deberá dar aviso en los términos del tercer párrafo de este artículo y procederá conforme a lo señalado por el mismo. 
 
-## **LISR: 134; RISR: 177, 178.** 
+# **LISR: 134; RISR: 177, 178.** 
 
 _**Procedimiento ante la pérdida o destrucción de máquinas registradoras, equipos o sistemas**_ 
 
@@ -2567,7 +2975,9 @@ _**Registro de ingresos diarios por cada entidad federativa y por mercancías ex
 
 _**Obligaciones de representante común de copropiedad**_ 
 
-46 
+46
+
+<!-- Page 48 -->
 
 **ART. 182-B.** Las personas físicas copropietarias de una negociación que tributen en el Régimen de Pequeños Contribuyentes, designarán a uno de ellos como representante común, el cual deberá llevar los registros, expedir y recabar la documentación que determinen las disposiciones fiscales, conservar los registros y documentación referidos y cumplir con las obligaciones en materia de retención de impuestos a que se refiere la Ley. _**AD-4/12/06**_ **LISR: 108, 137, 139.** 
 
@@ -2617,7 +3027,9 @@ _**Pagos provisionales del primer ejercicio en que se perciban ingresos por arre
 
 _**Contabilidad simplificada de arrendadores**_ 
 
-47 
+47
+
+<!-- Page 49 -->
 
 **ART. 188.** Los contribuyentes que perciban ingresos por otorgar el uso o goce temporal de bienes inmuebles superiores a la cantidad señalada en la fracción II del artículo 145 de la Ley, podrán cumplir con la obligación a que se refiere dicha fracción llevando la contabilidad simplificada conforme se establece en el Código Fiscal de la Federación y su Reglamento. Lo dispuesto en este artículo no será aplicable cuando el contribuyente obtenga ingresos por actividades empresariales por los que deba tributar en los términos del Capítulo II, Sección I del Título IV de la Ley. 
 
@@ -2633,7 +3045,7 @@ Tratándose de ingresos derivados de bienes en copropiedad, será el representan
 
 **LISR: 108.** 
 
-## **CAPITULO IV De los ingresos por enajenación de bienes** 
+# **CAPITULO IV De los ingresos por enajenación de bienes** 
 
 _**Pagos en parcialidades de bienes enajenados**_ 
 
@@ -2683,9 +3095,11 @@ _**Obtención de ganancias separadas de terreno y construcción**_
 
 **LISR: 148.** 
 
-48 
+48
 
-## _**Determinación de ingresos acumulables**_ 
+<!-- Page 50 -->
+
+# _**Determinación de ingresos acumulables**_ 
 
 **III.** Las ganancias obtenidas conforme a la fracción anterior se dividirán entre el número de años transcurridos, sin que exceda de veinte, entre la fecha de adquisición y construcción, respectivamente, y la de enajenación; la suma de ambos resultados será la parte de la ganancia que se acumulará a los demás ingresos obtenidos en el año de calendario de que se trate. 
 
@@ -2739,11 +3153,13 @@ _**Costo de adquisición de bienes adquiridos por rifa, sorteo o donación**_
 
 _**Costo de adquisición mediante avalúo de bienes adquiridos por prescripción**_ 
 
-49 
+49
+
+<!-- Page 51 -->
 
 **ART. 196.** Para los efectos del artículo 148 de la Ley, tratándose de la enajenación de bienes adquiridos por prescripción, se determinará su costo conforme al avalúo que haya servido de base para el pago de impuestos con motivo de la adquisición, disminuido por las deducciones señaladas por el artículo 156 de la Ley. Si en la fecha en que se adquirió no procedía la realización de avalúo, se efectuará uno referido al momento en que la prescripción se hubiera consumado, independientemente de la fecha de la sentencia que la declare. Cuando no pueda determinarse la fecha en que se consumó la prescripción adquisitiva, se tomará como tal aquella en que se haya interpuesto la demanda. 
 
-## **LISR: 148, 150, 156; RCFF: 3.** 
+# **LISR: 148, 150, 156; RCFF: 3.** 
 
 Queda excluido de esta disposición el caso en que se acuda a la prescripción para purgar vicios en los supuestos del artículo 205 de este Reglamento. 
 
@@ -2801,9 +3217,11 @@ _**Costo de adquisición de inmuebles ejidales adquiridos por herencia, legado o
 
 **II.** Como fecha de adquisición del ejidatario, la que señala en la fracción anterior. 
 
-50 
+50
 
-## _**Casos en los que se releva al fedatario de calcular y recaudar el impuesto por la enajenación de inmuebles**_ 
+<!-- Page 52 -->
+
+# _**Casos en los que se releva al fedatario de calcular y recaudar el impuesto por la enajenación de inmuebles**_ 
 
 **ART. 201.** Para los efectos del tercer párrafo del artículo 154 de la Ley, los notarios, corredores, jueces y demás fedatarios que por disposición legal tengan funciones notariales, quedan relevados de la obligación de efectuar el cálculo y entero del impuesto a que se refiere dicho artículo, cuando la enajenación de inmuebles se realice por personas físicas dedicadas a actividades empresariales, éstas declaren que el inmueble forma parte del activo de la empresa y exhiban copia sellada o copia del acuse de recibo electrónico con sello digital de la declaración correspondiente al último año de calendario para el pago del impuesto; tratándose del primer año de calendario deberá presentarse copia de la constancia de inscripción en el Registro Federal de Contribuyentes o, en su defecto, de la solicitud de inscripción en el citado Registro. 
 
@@ -2851,7 +3269,9 @@ _**Plazo de presentación del dictamen**_
 
 **CFF: 52-I.** 
 
-51 
+51
+
+<!-- Page 53 -->
 
 - _**b)**_ Determinación del resultado obtenido en la enajenación, señalando por cada sociedad emisora el precio de las acciones, su costo promedio por acción y el resultado parcial obtenido en la operación, así como el nombre y firma del contador público, y el número de su registro que lo autoriza para dictaminar. 
 
@@ -2915,11 +3335,13 @@ _**Anexos que deberá contener el dictamen**_
 
 _**Reglas aplicables a la elaboración del dictamen**_ 
 
-52 
+52
+
+<!-- Page 54 -->
 
 **IV.** Que el dictamen se formule de acuerdo con las disposiciones del Reglamento del Código Fiscal de la Federación y a las normas de auditoría que regulan la capacidad, independencia o imparcialidad profesionales del contador público, el trabajo que desempeña y la información que rinda como resultado del mismo. 
 
-## **RCFF: 66 al 82.** 
+# **RCFF: 66 al 82.** 
 
 El contador público que realice el dictamen deberá firmarlo, señalar su nombre y el número de registro que lo autoriza para dictaminar. 
 
@@ -2963,7 +3385,9 @@ _**Pago provisional por diferencia entre el precio de venta y el valor de avalú
 
 _**Casos en los que no se calculará el impuesto**_ 
 
-53 
+53
+
+<!-- Page 55 -->
 
 _**Programas públicos de fomento a la vivienda**_ 
 
@@ -2985,7 +3409,7 @@ _**Elevación a escritura de inmuebles por los que se hayan cedido los derechos*
 
 **III.** Cuando el adquirente en el contrato que se eleva a escritura pública sea una persona distinta de la que adquirió o tenía derecho a adquirir conforme a un contrato privado de promesa de compraventa o de compraventa, deberá cumplirse con lo previsto en la fracción anterior y acreditarse, además, que se pagó el impuesto por enajenación de bienes, por las cesiones de derechos que se hubieran pactado por el inmueble de que se trate, o bien, que por dichas operaciones se presentó declaración en los términos del tercer párrafo del artículo 154 de la Ley. 
 
-## **LISR: 154.** 
+# **LISR: 154.** 
 
 _**Se asentará en la escritura pública la razón por la que no se calcula el impuesto**_ 
 
@@ -3025,7 +3449,9 @@ _**a)**_ Dividirán el valor de la cartera de instrumentos de deuda gravados par
 
 - _**b)**_ Dividirán el valor de la cartera de instrumentos de deuda exentos para personas físicas entre el valor de la cartera total. 
 
-54 
+54
+
+<!-- Page 56 -->
 
 - _**c)**_ Los resultados de los incisos _a)_ y _b)_ inmediatos anteriores, se multiplicarán por el importe de los gastos administrativos deducibles diarios de la cartera total para obtener la parte de éstos que se adjudicará a la operación de cada tipo de instrumento. 
 
@@ -3081,7 +3507,9 @@ _**Cálculo de los intereses reales acumulables de los accionistas de sociedades
 
 **IV.** Para determinar los intereses reales acumulables del ejercicio correspondientes a cada accionista persona física, las sociedades de inversión sumarán o restarán, según corresponda, los intereses reales acumulables diarios a favor de cada 
 
-55 
+55
+
+<!-- Page 57 -->
 
 accionista persona física, correspondientes a cada uno de los días del ejercicio en el que dicho accionista haya tenido acciones de la sociedad. _**AD-4/12/06 Todo el artículo**_ 
 
@@ -3121,7 +3549,7 @@ _**Factor calculado hasta el cienmillonésimo**_
 
 **III.** El resultado obtenido de acuerdo a la fracción II anterior será el factor a que se refiere el primer párrafo de este artículo, el cual deberá calcularse hasta el cienmillonésimo. _**AD-4/12/06 Todo el artículo**_ 
 
-## _**Determinación de la estimativa diaria del INPC**_ 
+# _**Determinación de la estimativa diaria del INPC**_ 
 
 **ART. 211-B.** Para determinar la estimativa diaria del Indice Nacional de Precios al Consumidor a que se refiere el artículo 211A del presente Reglamento, se estará a lo siguiente: 
 
@@ -3141,9 +3569,11 @@ _**Cálculo de las estimativas diarias y cocientes hasta el cienmillonésimo**_
 
 Para los efectos de este artículo la estimativa diaria del Indice Nacional de Precios al Consumidor y los cocientes a los que hace referencia el mismo, deberán calcularse hasta el cienmillo-nésimo. _**AD-4/12/06 Todo el artículo**_ 
 
-56 
+56
 
-## _**Retención del impuesto por la enajenación de títulos que se consideran interés**_ 
+<!-- Page 58 -->
+
+# _**Retención del impuesto por la enajenación de títulos que se consideran interés**_ 
 
 **ART. 212.** Las instituciones de crédito o casas de bolsa que intervengan en la enajenación de los títulos a que se refiere el artículo 9o. de la Ley, efectuarán la retención del impuesto señalada en el artículo 160 de la misma Ley, en cuyo caso, quienes paguen los ingresos no estarán obligadas a efectuar la retención. 
 
@@ -3207,7 +3637,9 @@ _**No se efectuará la retención por intereses pagados por establecimientos en 
 
 **ART. 214.** Para los efectos del artículo 160 de la Ley, no se efectuará la retención del impuesto por los intereses que se paguen a residentes en México que provengan de la captación de recursos de establecimientos ubicados en el extranjero de 
 
-57 
+57
+
+<!-- Page 59 -->
 
 instituciones de crédito del país, siempre y cuando dichas instituciones informen a la autoridad fiscal correspondiente sobre los intereses pagados durante el ejercicio a cada uno de los contribuyentes, identificándolos por su clave del Registro Federal de Contribuyentes tratándose de personas morales y de la Clave Única de Registro de Población en el caso de personas físicas. **LISR: 160; CFF: 6-I, 27.** 
 
@@ -3249,7 +3681,7 @@ Tratándose de los intereses provenientes de los depósitos, créditos o présta
 
 **LISR: 46, 158, 168.** 
 
-## **CAPITULO VII De los ingresos por obtención de premios** 
+# **CAPITULO VII De los ingresos por obtención de premios** 
 
 _**Requisitos para que no se efectúe la retención del impuesto por premios a personas morales de régimen general, partidos y asociaciones políticas**_ 
 
@@ -3265,13 +3697,15 @@ _**Supuestos en los que no se expedirá constancia por la entrega de los premios
 
 _**Requisitos para expedir constancia de premios otorgados**_ 
 
-58 
+58
+
+<!-- Page 60 -->
 
 En los casos en los que se solicite la constancia, quien efectúe el pago del premio deberá solicitar, copia de la identificación oficial, así como de la clave del Registro Federal de Contribuyentes o de la Clave Única de Registro de Población de la persona que obtuvo dicho premio. 
 
 **CFF: 27.** 
 
-## **CAPITULO VIII De los demás ingresos que obtengan las personas físicas** 
+# **CAPITULO VIII De los demás ingresos que obtengan las personas físicas** 
 
 _**Ingresos de los copropietarios o de los integrantes de una sociedad conyugal**_ 
 
@@ -3315,7 +3749,9 @@ _**Declaraciones y retención del ISR de ingresos por operaciones financieras de
 
 _**Requisitos de los comprobantes fiscales de las deducciones**_ 
 
-59 
+59
+
+<!-- Page 61 -->
 
 **ART. 223.** Para los efectos de la fracción IV del artículo 172 de la Ley, los comprobantes de las deducciones reúnen los requisitos fiscales, cuando han sido expedidos de conformidad con el Código Fiscal de la Federación y su Reglamento y con el artículo 189 de este Reglamento, según sea el caso. Igualmente será aplicable para los efectos de la citada fracción lo dispuesto por el artículo 35 de este Reglamento. 
 
@@ -3369,7 +3805,9 @@ _**Deducción de intereses reales por créditos hipotecarios contratados con org
 
 **LISR: 176-IV.** 
 
-60 
+60
+
+<!-- Page 62 -->
 
 _**Información que se debe incluir en los estados de cuenta de créditos hipotecarios o en la constancia**_ 
 
@@ -3415,9 +3853,11 @@ _**Créditos denominados en moneda nacional**_
 
 **I.** En el caso de los créditos denominados en moneda nacional, la diferencia entre los intereses nominales devengados efectivamente pagados en el ejercicio y el ajuste anual por inflación correspondiente al periodo por el que se pagan los intereses. El ajuste por inflación se determinará multiplicando el saldo promedio del crédito que genere los intereses correspondiente al periodo citado, por el factor que se obtenga de restar la unidad al cociente que resulte de dividir el Indice Nacional de Precios al Consumidor del mes más reciente del periodo entre el citado índice correspondiente al mes inmediato anterior al primer mes del periodo. El saldo promedio del periodo por el que se pagan los intereses se determinará sumando los saldos del crédito de que se trate al último día de cada uno de los meses que comprenda el periodo mencionado y dividiendo el resultado obtenido entre el número de meses que comprenda dicho periodo. 
 
-61 
+61
 
-## **LISR: 9, 46; CFF: 20-Bis; RMF-13: I.3.16.5.** 
+<!-- Page 63 -->
+
+# **LISR: 9, 46; CFF: 20-Bis; RMF-13: I.3.16.5.** 
 
 ## _**Créditos denominados en UDI’s**_ 
 
@@ -3469,7 +3909,9 @@ _**Información de contribuyentes que retiran recursos de subcuenta de aportacio
 
 _**Reglas aplicables a las Afores que hagan pagos por retiros de la subcuenta de aportaciones voluntarias**_ 
 
-62 
+62
+
+<!-- Page 64 -->
 
 Las Administradoras a las que se refiere el presente artículo, que efectúen pagos por concepto de retiros de aportaciones voluntarias de la subcuenta de aportaciones voluntarias a que se refieren los artículos 74 o 74-Bis, según corresponda, de la Ley de los Sistemas de Ahorro para el Retiro, estarán a lo siguiente: 
 
@@ -3525,7 +3967,9 @@ _**adaptaciones que se consideran inversiones**_
 
 _**Utilización de porcentajes de deducción de inversiones menores a los aplicables y cambios posteriores**_ 
 
-63 
+63
+
+<!-- Page 65 -->
 
 **ART. 236.** Los contribuyentes podrán utilizar por cientos de deducción menores a los establecidos en el artículo 174 de la Ley; en este caso los por cientos elegidos serán obligatorios y únicamente los podrán cambiar, sin exceder del máximo autorizado, debiendo aplicar los nuevos por cientos sobre el monto original de la inversión a partir del año de calendario en que se realice el cambio. Tratándose del segundo y posteriores cambios, deberán transcurrir cuando menos cinco años, desde el último cambio para que éstos se puedan efectuar; el cambio se podrá realizar antes de que transcurran los cinco años siempre que se dé cualquiera de los siguientes supuestos: **LISR: 174.** 
 
@@ -3539,7 +3983,7 @@ _**Deducción de inversiones en suspensión de actividades**_
 
 **LISR: 174; RCFF: 26-IV-** _**a).**_ 
 
-## **CAPITULO X De la declaración anual** 
+# **CAPITULO X De la declaración anual** 
 
 _**Opción de presentar la declaración anual por sueldos y salarios cuando no se está obligado a ello**_ 
 
@@ -3573,9 +4017,11 @@ _**Procedimiento ante el fallecimiento de personas obligadas a presentar declara
 
 **LISR: 108, 175; CSAT: 14/2012/CFF** 
 
-64 
+64
 
-## _**Declaración de ingresos percibidos antes del fallecimiento**_ 
+<!-- Page 66 -->
+
+# _**Declaración de ingresos percibidos antes del fallecimiento**_ 
 
 **I.** Dentro de los 90 días siguientes a la fecha en que se discierna el cargo al albacea, éste deberá presentar la declaración por los ingresos a que se refiere el Título IV de la Ley, que hubiera percibido el autor de la sucesión desde el 1 de enero del año de su fallecimiento y hasta el momento de su muerte, a efecto de cubrir el impuesto correspondiente. 
 
@@ -3633,7 +4079,9 @@ _**Deducción personal de primas pagadas por seguros de salud**_
 
 _**Requisito de deducción de transportación escolar**_ 
 
-65 
+65
+
+<!-- Page 67 -->
 
 **ART. 243.** Para los efectos del artículo 176, fracción VII de la Ley, se entenderá que se cumple con el requisito establecido en dicha fracción, cuando la escuela de que se trate, obligue a todos sus alumnos a pagar el servicio de transporte escolar. **LISR: 176-VII.** 
 
@@ -3659,7 +4107,7 @@ _**Monto de subsidio acreditable y no acreditable en constancia expedida por pat
 
 **ART. 246.** Para los efectos del penúltimo párrafo del artículo 178 de la Ley, se considerará que el empleador cumple con lo dispuesto en dicho precepto, cuando en la constancia de remuneraciones cubiertas y de retenciones efectuadas, expedida en los términos del artículo 118, fracción III de la Ley, señale el monto del subsidio acreditable y el no acreditable. **LISR: 178, 118-III.** 
 
-## **TITULO V De los residentes en el extranjero con ingresos provenientes de fuente de riqueza ubicada en territorio nacional** 
+# **TITULO V De los residentes en el extranjero con ingresos provenientes de fuente de riqueza ubicada en territorio nacional** 
 
 _**Impuesto por liquidación de una operación financiera derivada**_ 
 
@@ -3679,7 +4127,9 @@ De conformidad con lo dispuesto en el párrafo anterior, las personas que efect�
 
 **RMF-13: I.3.17.6.** 
 
-66 
+66
+
+<!-- Page 68 -->
 
 _**Formas en las que se podrá enterar el impuesto correspondiente a salarios**_ 
 
@@ -3687,7 +4137,7 @@ _**Formas en las que se podrá enterar el impuesto correspondiente a salarios**_
 
 **I.** Mediante retención y entero que les efectúe la persona física o moral residente en el extranjero que realiza los pagos por concepto de salarios y en general por la prestación de su servicio personal subordinado, para lo cual dicho retenedor deberá presentar ante la autoridad fiscal correspondiente, en escrito libre, solicitud de inscripción como retenedor al Registro Federal de Contribuyentes. 
 
-## **CFF: 18; RMF-13: II.3.9.3.** 
+# **CFF: 18; RMF-13: II.3.9.3.** 
 
 **II.** Mediante entero que realice la persona residente en México en cuyas instalaciones se prestó el servicio personal subordinado. 
 
@@ -3729,7 +4179,9 @@ _**Constancia trimestral a trabajadores residentes en el extranjero**_
 
 **II.** Que la persona residente en México, en cuyas instalaciones se prestó el servicio, emita en forma trimestral a cada uno de los residentes en el extranjero que hubieren prestado servicios personales subordinados en sus instalaciones, constancia que deberá ser entregada a cada una de las personas durante los meses de abril, julio, octubre y enero, debiéndose señalar en la misma los 
 
-67 
+67
+
+<!-- Page 69 -->
 
 datos a que se refiere el registro que se menciona en la fracción I de este artículo, así como el número de días laborados. Para los efectos del cómputo antes mencionado, se deberán contar meses completos. 
 
@@ -3745,7 +4197,7 @@ _**Requisitos de comprobantes de arrendamientode residentes en el extranjero**_
 
 **ART. 254.** Los comprobantes a que se refiere el artículo 186 de la Ley, deberán reunir los requisitos mencionados en el Código Fiscal de la Federación, a excepción de la clave del Registro Federal de Contribuyentes, debiendo además señalar el número de cuenta predial del inmueble de que se trate, o en su caso, los datos de identificación del certificado de participación inmobiliaria no amortizable. 
 
-## **LISR: 186; CFF: 29, 29-A; RMF-13: I.2.8.3.1.5.** 
+# **LISR: 186; CFF: 29, 29-A; RMF-13: I.2.8.3.1.5.** 
 
 Los comprobantes a que se refiere el párrafo anterior, podrán no cumplir con el requisito de que los datos que deben contener se encuentren impresos, así como el de que dichos comprobantes hayan sido impresos por establecimientos autorizados. 
 
@@ -3777,11 +4229,13 @@ _**Garantía del interés fiscal en enajenaciones que se paguen en parcialidades
 
 **CFF: 141.** 
 
-68 
+68
+
+<!-- Page 70 -->
 
 Se podrá garantizar el interés fiscal mediante responsabilidad solidaria asumida por el adquirente del inmueble, en la escritura pública respectiva, hasta por el monto de dicho interés fiscal. 
 
-## **LISR: 189.** 
+# **LISR: 189.** 
 
 _**Bonos, obligaciones y otros títulos de crédito colocados entre el gran público inversionista**_ 
 
@@ -3823,7 +4277,9 @@ Para los efectos de la emisión de la autorización de diferimiento del impuesto
 
 **RISR: 260; RMF-13: II.3.9.13.** 
 
-69 
+69
+
+<!-- Page 71 -->
 
 _**Documentos para obtener autorización de diferimiento del impuesto en reestructuración de sociedades**_ 
 
@@ -3835,7 +4291,7 @@ _**Documentos para obtener autorización de diferimiento del impuesto en reestru
 
 **III.** Los certificados de residencia de las sociedades enajenantes y adquirentes que intervienen en la reestructura expedidos por la autoridad competente del país en el que residan para los efectos fiscales. 
 
-## **RMF-13: I.3.1.13.** 
+# **RMF-13: I.3.1.13.** 
 
 **IV.** Declaratoria del representante legal de la sociedad emisora de las acciones objeto de la autorización a que se refiere dicho artículo en el que asuma la obligación de informar, a la autoridad fiscal, de cualquier cambio en su libro de accionistas, obligación que deberá cumplirse dentro de los treinta días siguientes a la fecha de inscripción de dicho cambio, siempre que éste se efectúe dentro de un plazo de doce meses siguientes a la fecha de la autorización para diferir el impuesto, en los términos del citado artículo, y, en caso de no haberlo, así señalarlo, bajo protesta de decir verdad, dentro del citado término de doce meses. **RMF-13: I.3.17.18.** 
 
@@ -3873,7 +4329,9 @@ _**Valor de inversiones que forman parte de remesas recibidas por establecimient
 
 _**Importe de inversiones que se disminuye de la cuenta de remesas de capital**_ 
 
-70 
+70
+
+<!-- Page 72 -->
 
 Asimismo, el importe de las inversiones que formen parte de las remesas que envíe un establecimiento permanente de personas morales extranjeras a la oficina central de la sociedad o a otro establecimiento de ésta en el extranjero, que se disminuirá de la cuenta de remesas de capital, será la parte aún no deducida del bien de que se trate, calculada en los términos del penúltimo párrafo del artículo 37 de la Ley, actualizada de conformidad con el mismo artículo; o bien la que resulte en los términos de la fracción III del artículo 221 de la Ley, según sea el caso. 
 
@@ -3909,7 +4367,7 @@ _**Impuesto de actividades artísticas distintas a espectáculos públicos**_
 
 **ART. 268.** Para los efectos del artículo 203 de la Ley, las personas físicas o morales que obtengan ingresos derivados del desarrollo de actividades artísticas en territorio nacional, distintas de la presentación de espectáculos públicos o privados, podrán pagar el impuesto sólo en el caso en que el periodo en que se lleven a cabo estas actividades, sea mayor a 183 días naturales, consecutivos o no, en un periodo de doce meses, siempre que no tengan un establecimiento permanente en el país o que, teniéndolo, dichos ingresos no sean atribuibles a su establecimiento permanente. 
 
-## **RMF-13: II.3.9.4.** 
+# **RMF-13: II.3.9.4.** 
 
 Cuando se dé el supuesto a que se refiere el párrafo anterior, las personas físicas y morales deberán pagar el impuesto en los términos del artículo 203 citado, mediante retención y entero que les efectúe la persona que realiza los pagos a la persona física o moral, para lo cual dicho retenedor deberá presentar ante la autoridad fiscal, solicitud de inscripción al Registro Federal de Contribuyentes como retenedor, a través de escrito firmado que contenga los datos a que se refiere el artículo 18 del Reglamento del Código Fiscal de la Federación. 
 
@@ -3927,7 +4385,9 @@ En los casos de reorganización o reestructura, así como de fusión, escisión 
 
 **TITULO VI De los regímenes fiscales preferentes y de las empresas multinacionales** 
 
-71 
+71
+
+<!-- Page 73 -->
 
 _**Cálculo de impuesto de contribuyentes sujetos a regímenes fiscales preferentes de manera indirecta**_ 
 
@@ -3939,7 +4399,7 @@ _**Ingresos sujetos a regímenes fiscales preferentes generados a través de ent
 
 **ART. 270-A.** Para los efectos del tercer párrafo del artículo 212 de la Ley, los contribuyentes que generen ingresos a través de entidades o figuras jurídicas extranjeras en las que participen, directa o indirectamente, podrán determinar si esos ingresos están o no sujetos a regímenes fiscales preferentes, considerando la totalidad de las operaciones realizadas en el ejercicio, por cada entidad o figura, en forma individual y por separado, salvo que consoliden para efectos fiscales en el país o territorio en que residan, en cuyo caso podrán determinarlo en forma consolidada. _**AD-4/12/06**_ 
 
-## **LISR: 212.** 
+# **LISR: 212.** 
 
 _**Ingresos que no se consideran sujetos a regímenes fiscales preferentes**_ 
 
@@ -3985,13 +4445,15 @@ _**Pagos con cheque nominativo o traspasos de cuentas**_
 
 _**Primas de seguros y fianzas**_ 
 
-72 
+72
+
+<!-- Page 74 -->
 
 **V.** Tratándose de pagos por primas de seguros o fianzas, éstos deberán corresponder a conceptos que la Ley señala como deducibles y siempre que, tratándose de seguros, se esté a lo dispuesto por los párrafos primero y segundo de la fracción XIII del artículo 31 de la propia Ley. 
 
 **LISR: 31-XIII.** 
 
-## _**Mercancías de importación**_ 
+# _**Mercancías de importación**_ 
 
 **VI.** En el caso de la adquisición de los bienes a que se refiere la fracción XV del artículo 31 de la citada Ley, se deberá comprobar que se cumplieron los requisitos legales establecidos en el país o territorio en el que se genera el ingreso sujeto a un régimen fiscal preferente, para su legal estancia en el mismo. Para estos efectos no serán deducibles las adquisiciones que se mantengan fuera del país o territorio en el que se genere el ingreso sujeto a un régimen fiscal preferente. _**RF-4/12/06**_ **LISR: 31-XV.** 
 
@@ -4037,7 +4499,9 @@ _**Declaración informativa de ingresos sujetos a regímenes fiscales preferente
 
 **LISR: 214.** 
 
-73 
+73
+
+<!-- Page 75 -->
 
 _**Ajuste de precios, contraprestaciones o márgenes de utilidad mediante método intercuartil**_ 
 
@@ -4087,7 +4551,9 @@ _**Acreditamiento de crédito fiscal contra impuesto anual de empresas maquilado
 
 El monto que se obtenga conforme a lo dispuesto en el párrafo anterior, será el crédito fiscal que podrán acreditar contra el impuesto del ejercicio que determinen conforme al artículo 216-Bis. de la Ley. Cuando el importe del crédito a que se refiere este artículo exceda al impuesto del ejercicio causado correspondiente a su utilidad fiscal, la diferencia actualizada se podrá acreditar en 
 
-74 
+74
+
+<!-- Page 76 -->
 
 los ejercicios subsecuentes hasta agotarla. La parte de la diferencia que se acreditará en los ejercicios subsecuentes, se actualizará por el periodo comprendido desde el último mes de la primera mitad del ejercicio en el que se aplicó por primera vez dicho crédito y hasta el último mes de la primera mitad del ejercicio en el que se aplicará. 
 
@@ -4129,11 +4595,13 @@ Las empresas maquiladoras que opten por aplicar el crédito fiscal a que se refi
 
 **LISR: 86-XVII.** 
 
-75 
+75
+
+<!-- Page 77 -->
 
 Tratándose de empresas maquiladoras que hubiesen optado por aplicar lo dispuesto en el artículo 216-Bis. de la Ley, deberán proporcionar a la autoridad fiscal una relación de los activos por los cuales se aplicó la deducción inmediata, desglosada por cada categoría de activo fijo atendiendo a las categorías señaladas por el artículo 220 de la Ley, en la que se detalle el por ciento de deducción inmediata aplicada en cada caso, el monto original de la inversión y el monto del crédito fiscal que para cada activo resulte de aplicar las fracciones I y II de este artículo. Cuando la empresa maquiladora se ubique en alguno de los supuestos de la fracción III de este artículo deberá reportar el impuesto correspondiente determinado conforme a dicha fracción, así como el monto del crédito fiscal pendiente de adicionar a ejercicios fiscales posteriores a aquel por el cual se reporta. 
 
-## **LISR: 220.** 
+# **LISR: 220.** 
 
 ## **TITULO VII De los estímulos fiscales** 
 
@@ -4183,7 +4651,9 @@ _**Estímulo fiscal por aportaciones a subcuenta de ahorro a largo plazo del SAR
 
 **LISR: 218.** 
 
-76 
+76
+
+<!-- Page 78 -->
 
 Para tal efecto, en el contrato que el contribuyente celebre con la Administradora de Fondos para el Retiro de que se trate, se deberá consignar que la subcuenta a que se refiere el párrafo anterior, cumple con lo dispuesto en el artículo 218 de la Ley y con las demás disposiciones fiscales aplicables. 
 
@@ -4213,7 +4683,7 @@ _**Información que se debe asentar en la escritura pública del terreno que se 
 
 **LISR: 225-V.** 
 
-## **TRANSITORIOS 2003 (DOF 17-oct-03)** 
+# **TRANSITORIOS 2003 (DOF 17-oct-03)** 
 
 _**Vigencia del reglamento**_ 
 
@@ -4239,7 +4709,9 @@ La reducción se calculará aplicando la tasa contenida en el artículo 10 de la
 
 _**Costo promedio de acciones debe considerar saldos de cuentade utilidad fiscal neta reinvertida**_ 
 
-77 
+77
+
+<!-- Page 79 -->
 
 **CUARTO.** Para los efectos del cuarto párrafo del artículo 154 de la Ley, el análisis del costo promedio por acción, a que se refiere el inciso _c)_ de la fracción II del artículo 204 de este Reglamento, deberá contener, en su caso, la determinación del saldo de la cuenta de utilidad fiscal neta reinvertida a la fecha de adquisición y de enajenación de las acciones, en la proporción que corresponda al enajenante por las acciones adquiridas en la misma fecha, con base en las constancias que deben emitir las sociedades emisoras de las acciones, así como, la determinación de la diferencia de los saldos de la cuenta de utilidad fiscal neta reinvertida a la fecha de adquisición y de enajenación y los factores de actualización aplicados. **LISR: 154; RISR: 204-II-** _**c).**_ 
 
@@ -4279,13 +4751,15 @@ _**Monto original ajustado de acciones adquiridas con anterioridad al 1 de enero
 
 La opción a que se refiere el párrafo anterior se deberá ejercer por todas las acciones que tenga el contribuyente al 31 de diciembre del 2001. 
 
-78 
+78
+
+<!-- Page 80 -->
 
 _**Enajenación de acciones por las que ya se calculó costo promedio con anterioridad al 1 de abril de 2002**_ 
 
 **NOVENO.** Para los efectos del Artículo Segundo fracción VIII de las Disposiciones Transitorias de la Ley publicadas en el **Diario Oficial de la Federación** el 30 de diciembre del 2002, los contribuyentes podrán optar por aplicar lo dispuesto en el artículo 25 de la Ley vigente a partir del 1 de enero del 2003, para enajenaciones de acciones por las cuales ya se hubiera calculado el costo promedio con anterioridad al 1 de abril del 2002, siempre que apliquen lo dispuesto en este artículo y consideren como costo comprobado de adquisición en la subsecuente enajenación de dichas acciones el costo promedio por acción que determinen conforme a lo siguiente: 
 
-## **LISR: 25, DT03 2-VIII.** 
+# **LISR: 25, DT03 2-VIII.** 
 
 **I.** Considerarán como fecha de adquisición de las acciones que se enajenen, el 31 de marzo de 2002 y como costo comprobado de adquisición de dichas acciones, el monto original ajustado determinado al 31 de marzo de 2002 de las acciones que tenía a esa fecha de la misma emisora, aplicando las disposiciones vigentes al 31 de diciembre de 2001, disminuido de lo siguiente: 
 
@@ -4323,7 +4797,9 @@ Lo dispuesto en este artículo será aplicable en el caso de fusiones o escision
 
 Los contribuyentes que hubiesen enajenado acciones entre el 1 de abril de 2002 y la entrada en vigor del presente artículo, que opten por aplicar lo dispuesto en la misma, deberán efectuar un nuevo cálculo para determinar el costo promedio por acción de dichas acciones, aplicando para tales efectos el procedimiento señalado en este artículo. En el caso de que resulte impuesto a cargo del contribuyente, éste se deberá enterar debidamente actualizado y con los recargos correspondientes, mediante declaración complementaria que se deberá presentar a más tardar el día 17 del mes siguiente a aquel en el que se ejerza la opción a que se 
 
-79 
+79
+
+<!-- Page 81 -->
 
 refiere el presente artículo. En este caso, el adquirente no estará obligado a efectuar retención alguna por el impuesto que resulte a cargo en los términos de este párrafo. 
 
@@ -4331,7 +4807,7 @@ _**Crédito fiscal a maquiladoras sólo es aplicable por inversiones realizadas 
 
 **DECIMO.** Lo establecido en el artículo 277 de este Reglamento, será aplicable sólo para las inversiones realizadas a partir del ejercicio de 2002. 
 
-## **RISR: 277.** 
+# **RISR: 277.** 
 
 _**Aplicación de decreto en materia de deducción inmediata para crédito fiscal a maquiladoras**_ 
 
@@ -4371,186 +4847,4 @@ Lo dispuesto en este artículo no será aplicable a los contribuyentes que celeb
 
 _**Instituciones que reciban en donación bienes presentarán información al SAT en febrero de 2007**_ 
 
-80 
-
-**CUARTO.** Las instituciones que reciban en donación los bienes a que se refieren los artículos 87 y 88 de este Reglamento, obligados a presentar la información prevista por la fracción IV del artículo 89 del mismo ordenamiento, vigente hasta antes de la entrada en vigor del presente Decreto, deberán presentar la información correspondiente al año 2006 a más tardar en el mes de febrero de 2007. 
-
-## **RISR: 87, 88, 89-IV.** 
-
-## _**Reglas para contribuyentes que adquirieron acciones sin costo o inferior al precio de mercado de su empleador o una parte relacionada**_ 
-
-**QUINTO.** Para los efectos de la fracción XXVI del artículo 3 de las Disposiciones Transitorias de la Ley del Impuesto sobre la Renta para el ejercicio fiscal de 2005, publicadas en el **Diario Oficial de la Federación** el 1 de diciembre de 2004, los contribuyentes a quienes su empleador o una parte relacionada de éste, les haya otorgado opciones antes del 31 de diciembre de 2004, cuya fecha de ejercicio sea posterior a la fecha citada, para adquirir, incluso mediante suscripción, acciones o títulos valor que representen bienes, sin costo alguno o a un precio menor al de mercado que tengan dichas acciones o títulos valor al momento del ejercicio de dichas opciones, estarán a lo siguiente: 
-
-## **LISR: 110-VII, DT05 3-XXVI.** 
-
-**I.** Considerarán como ingresos por adquisición de bienes, la diferencia que resulte de restar al valor de mercado al 31 de diciembre de 2004 de las acciones o títulos valor a los que esté referida la opción, el precio de compra de dichas acciones o títulos establecido en la opción que se les otorgó. 
-
-**II.** Considerarán como ingresos por salarios o por la prestación de un servicio personal subordinado, conforme se establece en los artículos 110, fracción VII y 110-A, de la Ley del Impuesto sobre la Renta, la diferencia que resulte de restar al valor de mercado de las acciones o títulos valor sujetos a la opción, al momento en el que los contribuyentes ejerzan la misma, el valor de mercado que dichas acciones o títulos tengan al 31 de diciembre de 2004. 
-
-## **LISR: 110-VII, 110-A.** 
-
-Los contribuyentes a los que se refiere este transitorio podrán considerar como ingresos por salarios o por la prestación de un servicio personal subordinado, la diferencia que resulte de restar al valor de mercado al 31 de diciembre de 2004 de las acciones o títulos valor a los que esté referida la opción, el precio de compra de dichas acciones o títulos establecido en la opción que se les otorgó, siempre que el valor de mercado de las acciones o títulos valor a los que se encuentre referida la opción, no hayan tenido una variación superior al 10% durante el periodo comprendido desde la fecha en la que se otorgó dicha opción y hasta el 31 de diciembre de 2004. 
-
-81 
-
-
-
-<!-- Page 2 -->
-
-<!-- Page 3 -->
-
-<!-- Page 4 -->
-
-<!-- Page 5 -->
-
-<!-- Page 6 -->
-
-<!-- Page 7 -->
-
-<!-- Page 8 -->
-
-<!-- Page 9 -->
-
-<!-- Page 10 -->
-
-<!-- Page 11 -->
-
-<!-- Page 12 -->
-
-<!-- Page 13 -->
-
-<!-- Page 14 -->
-
-<!-- Page 15 -->
-
-<!-- Page 16 -->
-
-<!-- Page 17 -->
-
-<!-- Page 18 -->
-
-<!-- Page 19 -->
-
-<!-- Page 20 -->
-
-<!-- Page 21 -->
-
-<!-- Page 22 -->
-
-<!-- Page 23 -->
-
-<!-- Page 24 -->
-
-<!-- Page 25 -->
-
-<!-- Page 26 -->
-
-<!-- Page 27 -->
-
-<!-- Page 28 -->
-
-<!-- Page 29 -->
-
-<!-- Page 30 -->
-
-<!-- Page 31 -->
-
-<!-- Page 32 -->
-
-<!-- Page 33 -->
-
-<!-- Page 34 -->
-
-<!-- Page 35 -->
-
-<!-- Page 36 -->
-
-<!-- Page 37 -->
-
-<!-- Page 38 -->
-
-<!-- Page 39 -->
-
-<!-- Page 40 -->
-
-<!-- Page 41 -->
-
-<!-- Page 42 -->
-
-<!-- Page 43 -->
-
-<!-- Page 44 -->
-
-<!-- Page 45 -->
-
-<!-- Page 46 -->
-
-<!-- Page 47 -->
-
-<!-- Page 48 -->
-
-<!-- Page 49 -->
-
-<!-- Page 50 -->
-
-<!-- Page 51 -->
-
-<!-- Page 52 -->
-
-<!-- Page 53 -->
-
-<!-- Page 54 -->
-
-<!-- Page 55 -->
-
-<!-- Page 56 -->
-
-<!-- Page 57 -->
-
-<!-- Page 58 -->
-
-<!-- Page 59 -->
-
-<!-- Page 60 -->
-
-<!-- Page 61 -->
-
-<!-- Page 62 -->
-
-<!-- Page 63 -->
-
-<!-- Page 64 -->
-
-<!-- Page 65 -->
-
-<!-- Page 66 -->
-
-<!-- Page 67 -->
-
-<!-- Page 68 -->
-
-<!-- Page 69 -->
-
-<!-- Page 70 -->
-
-<!-- Page 71 -->
-
-<!-- Page 72 -->
-
-<!-- Page 73 -->
-
-<!-- Page 74 -->
-
-<!-- Page 75 -->
-
-<!-- Page 76 -->
-
-<!-- Page 77 -->
-
-<!-- Page 78 -->
-
-<!-- Page 79 -->
-
-<!-- Page 80 -->
-
-<!-- Page 81 -->
+80
