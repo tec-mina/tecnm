@@ -1,0 +1,3415 @@
+# 1_Acuerdo_MAAGCI_Titulo_Tercero
+
+## Página 1
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+ACUERDO por el que se emiten las Disposiciones y el Manual Administrativo de Aplicación General en Materia
+de Control Interno.
+Acuerdo publicado en el Diario Oficial de la Federación el 3 de noviembre de 2016
+Texto vigente
+Última reforma publicada DOF 05-09-2018
+Al margen un sello con el Escudo Nacional, que dice: Estados Unidos Mexicanos.- Secretaría de la Función
+Pública.
+JAVIER VARGAS ZEMPOALTECATL, Subsecretario de Responsabilidades Administrativas y
+Contrataciones Públicas, en ausencia del Secretario de la Función Pública, con fundamento en lo dispuesto
+por los artículos 37, fracciones I, II, III y IV de la Ley Orgánica de la Administración Pública Federal; y 1, 6,
+fracciones I y XXIV; 7, fracción XII y 86 del Reglamento Interior de la Secretaría de la Función Pública, y
+CONSIDERANDO
+Que el Plan Nacional de Desarrollo 2013-2018, establece como estrategia transversal el Programa para
+un Gobierno Cercano y Moderno (PGCM), mediante el que se busca contar con un gobierno orientado a
+resultados, eficiente, con mecanismos de evaluación que permitan mejorar su desempeño y la calidad de
+los servicios; que simplifique la normatividad y trámites gubernamentales, rinda cuentas de manera clara y
+oportuna a la ciudadanía, que optimice el uso de los recursos públicos, y que utilice las nuevas tecnologías
+de la información y comunicación.
+El PGCM establece como cuarto objetivo el Mejorar la Gestión Pública Gubernamental en la
+Administración Pública Federal (APF), consistente en transformar el funcionamiento de sus dependencias
+y entidades, a través de la mejora en la prestación de bienes y servicios a la población, el incremento en la
+eficiencia de su operación mediante la simplificación de sus procesos y normas; el mejor aprovechamiento
+de los recursos, la eficiencia de los procesos vinculados a las contrataciones que realiza el Estado; así
+como el incremento en el desempeño de los servidores públicos.
+Que en este sentido la estrategia 4.1 Transformar los procesos de las dependencias y entidades,
+establece como línea de acción 4.1.3 Estandarizar procesos con fines similares para homologar su
+operación y garantizar la calidad de sus resultados y, la estrategia 4.5 Simplificar la regulación que rige a
+las dependencias y entidades para garantizar la eficiente operación del gobierno, se vincula con la línea de
+acción 4.5.2 Fortalecer la contención normativa para no sobrerregular a la Administración Pública Federal.
+Que la Secretaría cuenta con atribuciones para organizar y coordinar el desarrollo administrativo integral
+de las dependencias y entidades de la APF y emitir las normas para que los recursos humanos,
+patrimoniales y los procedimientos técnicos de la misma, sean aprovechados y aplicados, respectivamente,
+con criterios de eficacia, legalidad, eficiencia y simplificación administrativa, así como para realizar o
+encomendar las investigaciones, estudios y análisis necesarios sobre estas materias.
+Que el día 12 de julio de 2010 se publicó en el Diario Oficial de la Federación, el Acuerdo por el que se
+emiten las Disposiciones en Materia de Control Interno y se expide el Manual Administrativo de Aplicación
+General en Materia de Control Interno (Acuerdo de Control Interno), como parte de las acciones
+instrumentadas en esta Secretaría para estandarizar bajo criterios de simplificación administrativa, las
+disposiciones, políticas o estrategias, acciones o criterios y los procedimientos internos que en materia de
+control interno, se deberán observar en el ámbito de la APF y, en lo conducente, en la Procuraduría General
+de la República; con la emisión del Acuerdo de Control Interno se regula la implementación del modelo
+estándar de control interno, la metodología general de administración de riesgos y el funcionamiento del
+Comité de Control y Desempeño Institucional, fortaleciendo la cultura del autocontrol y la autoevaluación,
+así como el análisis y seguimiento de las estrategias y acciones como un medio para contribuir a lograr las
+metas y objetivos de cada institución.
+Que con la entrada en vigor del Sistema Nacional de Anticorrupción, se conformó el Comité Coordinador
+por los titulares de la Auditoría Superior de la Federación; de la Fiscalía Especializada en Combate a la
+Corrupción; de la Secretaría de la Función Pública; por el Presidente del Tribunal Federal de Justicia
+Administrativa; el Comisionado Presidente del Instituto Nacional de Acceso a la Información; un
+representante del Consejo de la Judicatura Federal y otro del Comité de Participación Ciudadana. Esta
+instancia coordinadora, tiene entre sus principales responsabilidades, el diseño y promoción de políticas
+integrales en materia de fiscalización y control de recursos públicos, de prevención, control y disuasión de
+faltas administrativas y hechos de corrupción, en especial sobre las causas que los generan, así como el
+establecimiento de bases y principios para la efectiva coordinación de las autoridades de los órdenes de
+gobierno en materia de fiscalización y control de los recursos públicos.
+Que bajo esta premisa, se reconoce al Sistema Nacional de Fiscalización (SNF), del cual forma parte
+activa esta Secretaría, como el conjunto de mecanismos interinstitucionales de coordinación entre los
+órganos responsables de las tareas de auditoría gubernamental en los distintos órdenes de gobierno, con
+
+## Página 2
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+el objetivo de maximizar la cobertura y el impacto de la fiscalización en todo el país, con base en una visión
+estratégica, la aplicación de estándares profesionales similares, la creación de capacidades y el intercambio
+efectivo de información, y a través del mismo se persigue, entre otros objetivos, generar una estrategia para
+homologar la normativa en materia de control interno, que sea aplicable en los tres órdenes de gobierno;
+de asegurar la inclusión de la evaluación del control interno de los organismos auditores e identificar los
+cambios legales estructurales y normativos que permitan fortalecer a los Órganos de Control del Poder
+Ejecutivo.
+Que en este contexto, durante la quinta reunión plenaria del SNF celebrada en 2014, se publicó el Marco
+Integrado de Control Interno para el Sector Público (MICI), basado en el Marco COSO 2013, como un
+modelo general de control interno, para ser adoptado y adaptado por las instituciones en los ámbitos
+Federal, Estatal y Municipal, mediante la expedición de los decretos correspondientes.
+Que derivado de este supuesto, se revisó el marco normativo aplicable en materia de control interno a
+la APF, con objeto de identificar áreas de oportunidad e integrar las propuestas realizadas por las
+instituciones de la APF, originadas en un ejercicio de apertura y de consulta para redefinir el esquema de
+la evaluación del control interno, fortalecer el proceso de administración de riesgos y optimizar el relativo al
+Comité de Control y Desempeño Institucional; así como lo adaptable del Marco Integrado de Control Interno.
+Que contar con un Sistema de Control Interno efectivo en las instituciones de la APF promueve la
+consecución de sus metas y objetivos, así como una eficiente administración de sus riesgos y su
+seguimiento a través de un Comité de Control y Desempeño Institucional, constituido como un foro
+colegiado de apoyo en la toma de decisiones relacionadas con el seguimiento al desempeño institucional y
+control interno, propiciando reducir la probabilidad de ocurrencia de actos contrarios a la integridad,
+asegurar el comportamiento ético de los servidores públicos, considerar la integración de las tecnologías
+de información en el control interno y consolidar los procesos de rendición de cuentas y de transparencia
+gubernamental.
+Que el día 18 de julio de 2016 se publicó en el Diario Oficial de la Federación el Decreto por el que se
+reforma y deroga diversas disposiciones de la Ley Orgánica de la Administración Pública Federal en Materia
+de Control Interno del Ejecutivo Federal, en el que se establece que los titulares de los Órganos Internos
+de Control de las dependencias y entidades de la Administración Pública Federal y de sus áreas de
+auditoría, quejas y responsabilidades, serán responsables de mantener el control interno de la dependencia
+o entidad a la que se encuentren adscritos y que los titulares de dichos órganos encabezarán comités de
+control y desempeño institucional para el seguimiento y evaluación de la gestión.
+Que de conformidad con las mejores prácticas internacionales en materia de control interno, la
+implementación, mantenimiento y actualización del sistema de control interno son responsabilidad del titular
+de la institución y, en su caso del Órgano de Gobierno, quien las cumple con la contribución de la
+Administración y del resto del personal; así como, con la asesoría, apoyo y vigilancia del Órgano Interno de
+Control para mantener el sistema de control interno de la institución operando y en un proceso de
+evaluación, fortalecimiento y mejora continua.
+Que el Comité de Control y Desempeño Institucional tiene entre otros objetivos, agregar valor a la
+gestión institucional de las dependencias y entidades de la APF y apoyar el cumplimiento de metas y
+objetivos institucionales con enfoque a resultados, así como a la mejora de los programas presupuestarios,
+el cual será encabezado por el Titular de la Institución como Presidente y por el Titular del Órgano
+Fiscalizador como Vocal Ejecutivo.
+Que con base en las consideraciones anteriores, he tenido a bien expedir el
+ACUERDO POR EL QUE SE EMITEN LAS DISPOSICIONES Y EL MANUAL ADMINISTRATIVO DE
+APLICACIÓN GENERAL EN MATERIA DE CONTROL INTERNO
+ARTÍCULO PRIMERO.- El presente Acuerdo tiene por objeto establecer las Disposiciones, que las
+dependencias y entidades paraestatales de la Administración Pública Federal, la Consejería Jurídica del
+Ejecutivo Federal, los órganos reguladores coordinados en materia energética y la Procuraduría General
+de la República deberán observar para el establecimiento, supervisión, evaluación, actualización y mejora
+continua de su Sistema de Control Interno Institucional.
+
+## Página 3
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+ARTÍCULO SEGUNDO.- En términos del Artículo Primero de este Acuerdo, se emiten las siguientes:
+DISPOSICIONES EN MATERIA DE CONTROL INTERNO
+TÍTULO PRIMERO
+DISPOSICIONES GENERALES
+CAPÍTULO I
+Objeto, Ámbito de Aplicación y Definiciones
+1. BASE DE REFERENCIA, OBJETO Y ÁMBITO DE APLICACIÓN.
+Los titulares y, en su caso, el Órgano de Gobierno, así como los demás servidores públicos de las
+instituciones que integran la APF y la Procuraduría General de la República, en sus respectivos niveles de
+control interno, establecerán, actualizarán y mantendrán en operación su sistema de control interno,
+tomando como referencia el Marco Integrado de Control Interno (MICI) del Sistema Nacional de
+Fiscalización y como base las presentes Disposiciones, para el cumplimiento del objetivo del control interno
+en las categorías correspondientes (operación, información, cumplimiento y salvaguarda).
+A las sociedades nacionales de crédito, entidades paraestatales del sector financiero, organismos de
+fomento y entidades de fomento, les serán aplicables las presentes Disposiciones en lo que no se oponga
+a los preceptos legales y administrativos que regulan su funcionamiento, quedando exceptuadas de su
+aplicación las entidades paraestatales en proceso de desincorporación.
+Las entidades que tengan un Comité de Vigilancia y agreguen en su Orden del Día, de forma
+permanente y complementaria, los temas que se establecen para el Comité de Control y Desempeño
+Institucional, se considerará que el primero asume las funciones de este último.
+2. DEFINICIONES.
+Para efectos de las presentes Disposiciones se entenderá por:
+I. Acción (es) de control: las actividades determinadas e implantadas por los Titulares y demás
+servidores públicos de las Instituciones para alcanzar los objetivos institucionales, prevenir y
+administrar los riesgos identificados, incluidos los de corrupción y de tecnologías de la
+información;
+II. Acción (es) de mejora: las actividades determinadas e implantadas por los Titulares y demás
+servidores públicos de las Instituciones para eliminar debilidades de control interno; diseñar,
+implementar y reforzar controles preventivos, detectivos o correctivos; así como atender áreas
+de oportunidad que permitan fortalecer el Sistema de Control Interno Institucional;
+III. Administración: los servidores públicos de mandos superiores y medios diferentes al Titular
+de la institución;
+IV. Administración de riesgos: el proceso dinámico desarrollado para contextualizar, identificar,
+analizar, evaluar, responder, supervisar y comunicar los riesgos, incluidos los de corrupción,
+inherentes o asociados a los procesos por los cuales se logra el mandato de la institución,
+mediante el análisis de los distintos factores que pueden provocarlos, con la finalidad de definir
+las estrategias y acciones que permitan mitigarlos y asegurar el logro de metas y objetivos
+institucionales de una manera razonable, en términos de eficacia, eficiencia y economía en un
+marco de transparencia y rendición de cuentas;
+V. APF: la Administración Pública Federal;
+VI. Área (s) de oportunidad: la situación favorable en el entorno institucional, bajo la forma de
+hechos, tendencias, cambios o nuevas necesidades que se pueden aprovechar para el
+fortalecimiento del Sistema de Control Interno Institucional;
+VII. Autocontrol: la implantación de mecanismos, acciones y prácticas de supervisión o evaluación
+de cada sistema, actividad o proceso, que permita identificar, evitar y, en su caso, corregir con
+oportunidad los riesgos o condiciones que limiten, impidan o hagan ineficiente el logro de metas
+y objetivos institucionales;
+VIII. Carpeta electrónica: la aplicación informática que contiene la información que servirá de base
+para el análisis y tratamiento de los asuntos que se presenten en las sesiones del Comité;
+IX. Comité y/o COCODI: el Comité de Control y Desempeño Institucional;
+X. Competencia profesional: la cualificación para llevar a cabo las responsabilidades asignadas,
+la cual requiere habilidades y conocimientos, que son adquiridos generalmente con la
+
+## Página 4
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+formación y experiencia profesional y certificaciones. Se expresa en la actitud y el
+comportamiento de los individuos para llevar a cabo sus funciones y cumplir con sus
+responsabilidades;
+XI. Control correctivo (después): el mecanismo específico de control que opera en la etapa final
+de un proceso, el cual permite identificar y corregir o subsanar en algún grado, omisiones o
+desviaciones;
+XII. Control detectivo (durante): el mecanismo específico de control que opera en el momento en
+que los eventos o transacciones están ocurriendo, e identifican las omisiones o desviaciones
+antes de que concluya un proceso determinado;
+XIII. Control Interno: el proceso efectuado por el Titular, la Administración, en su caso el Órgano
+de Gobierno, y los demás servidores públicos de una institución, con objeto de proporcionar
+una seguridad razonable sobre la consecución de las metas y objetivos institucionales y la
+salvaguarda de los recursos públicos, así como para prevenir actos contrarios a la integridad;
+XIV. Control preventivo (antes): el mecanismo específico de control que tiene el propósito de
+anticiparse a la posibilidad de que ocurran incumplimientos, desviaciones, situaciones no
+deseadas o inesperadas que pudieran afectar al logro de las metas y objetivos institucionales;
+XV. Debilidad(es) de control interno: la insuficiencia, deficiencia o inexistencia de controles en el
+Sistema de Control Interno Institucional, que obstaculizan o impiden el logro de las metas y
+objetivos institucionales, o materializan un riesgo, identificadas mediante la supervisión,
+verificación y evaluación interna y/o de los Órganos Internos de Control;
+Fracción reformada DOF 05-09-2018
+XVI. Dependencias: las Secretarías de Estado, incluyendo a sus órganos administrativos
+desconcentrados, órganos reguladores coordinados en materia energética, y la Consejería
+Jurídica del Ejecutivo Federal, conforme a lo dispuesto en la Ley Orgánica de la Administración
+Pública Federal y la Procuraduría General de la República;
+XVII. Disposiciones: las Disposiciones en Materia de Control Interno y el Manual Administrativo de
+Aplicación General en Materia de Control Interno;
+XVIII. Economía: los términos y condiciones bajo los cuales se adquieren recursos, en cantidad y
+calidad apropiada y al menor costo posible para realizar una actividad determinada, con la
+calidad requerida;
+XIX. Eficacia: el cumplimiento de los objetivos y metas establecidos, en lugar, tiempo, calidad y
+cantidad;
+XX. Eficiencia: el logro de objetivos y metas programadas con la misma o menor cantidad de
+recursos;
+XXI. Elementos de control: los puntos de interés que deberá instrumentar y cumplir cada
+institución en su sistema de control interno para asegurar que su implementación, operación y
+actualización sea apropiada y razonable;
+XXII. Entidades: los organismos públicos descentralizados, empresas de participación estatal
+mayoritaria y fideicomisos públicos que en términos de la Ley Orgánica de la Administración
+Pública Federal y de la Ley Federal de las Entidades Paraestatales son considerados entidades
+de la Administración Pública Federal Paraestatal;
+XXIII. Evaluación del Sistema de Control Interno: el proceso mediante el cual se determina el
+grado de eficacia y de eficiencia con que se cumplen las normas generales de control interno
+y sus principios, así como los elementos de control del Sistema de Control Interno Institucional
+en sus tres niveles: Estratégico, Directivo y Operativo, para asegurar razonablemente el
+cumplimiento del objetivo del control interno en sus respectivas categorías;
+XXIV. Factor (es) de riesgo: la circunstancia, causa o situación interna y/o externa que aumenta la
+probabilidad de que un riesgo se materialice;
+XXV. Gestión de riesgos de corrupción: Proceso desarrollado para contextualizar, identificar,
+analizar, evaluar, atender, monitorear y comunicar los riesgos que por acción u omisión,
+mediante el abuso del poder y/o el uso indebido de recursos y/o de información, empleo, cargo
+
+## Página 5
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+o comisión, se pueden dañar los intereses de una institución, para la obtención de un beneficio
+particular o de terceros, incluye soborno, fraude, apropiación indebida u otras formas de
+desviación de recursos por un funcionario público, nepotismo, extorsión, tráfico de influencias,
+uso indebido de información privilegiada, entre otras prácticas, en aquellos procesos o
+temáticas relacionados con áreas financieras, presupuestales, de contratación, de información
+y documentación, investigación y sanción, trámites y/o servicios internos y externos;
+XXVI. Impacto o efecto: las consecuencias negativas que se generarían en la Institución, en el
+supuesto de materializarse el riesgo;
+XXVII. Informe Anual: el Informe Anual del Estado que Guarda el Sistema de Control Interno
+Institucional;
+XXVIII. Institución (es): las que se refieren en las fracciones XVI y XXII del presente numeral;
+XXIX. Líneas de reporte: las líneas de comunicación, internas y externas, a todos los niveles de la
+organización que proporcionan métodos de comunicación para la oportuna toma de decisiones;
+XXX. Mapa de riesgos: la representación gráfica de uno o más riesgos que permite vincular la
+probabilidad de ocurrencia y su impacto en forma clara y objetiva;
+XXXI. Matriz de Administración de Riesgos: la herramienta que refleja el diagnóstico general de
+los riesgos para identificar estrategias y áreas de oportunidad en la Institución, considerando
+las etapas de la metodología de administración de riegos;
+XXXII. MICI y/o Marco Integrado de Control Interno: Documento desarrollado por el Grupo de
+Trabajo de Control Interno del Sistema Nacional de Fiscalización, aplicable a los tres órdenes
+de gobierno del estado mexicano, publicado en los sitios de internet del Sistema Nacional de
+Fiscalización y de la Auditoría Superior de la Federación;
+XXXIII. MIR y/o Matriz de Indicadores para Resultados: la herramienta de planeación estratégica
+que expresa en forma sencilla, ordenada y homogénea la lógica interna de los programas
+presupuestarios, a la vez que alinea su contribución a los ejes de política pública y objetivos
+del Plan Nacional de Desarrollo y sus programas derivados, y a los objetivos estratégicos de
+las dependencias y entidades; y que coadyuva a establecer los indicadores estratégicos y de
+gestión, que constituirán la base para el funcionamiento del Sistema de Evaluación del
+Desempeño;
+XXXIV. Mejora continua: al proceso de optimización y perfeccionamiento del Sistema de Control
+Interno; de la eficacia, eficiencia y economía de su gestión; y de la mitigación de riesgos, a
+través de indicadores de desempeño y su evaluación periódica;
+XXXV. Modelo Estándar de Control Interno: al conjunto de normas generales de control interno y
+sus principios y elementos de control, los niveles de responsabilidad de control interno, su
+evaluación, informes, programas de trabajo y reportes relativos al sistema de control interno
+institucional;
+XXXVI. Objetivos institucionales: Conjunto de objetivos específicos que conforman el desglose
+lógico de los programas emanados del Plan Nacional de Desarrollo, en términos del Capítulo
+Cuarto de la Ley de Planeación, en particular de los programas sectoriales, institucionales y
+especiales, según corresponda;
+XXXVII. Se deroga;
+Fracción derogada DOF 05-09-2018
+XXXVIII. Órgano de Gobierno: el cuerpo colegiado de la administración de las entidades paraestatales,
+de conformidad con los artículos 17 y 18 de la Ley Federal de las Entidades Paraestatales y 2
+de su Reglamento;
+XXXIX. Procesos administrativos: aquellos necesarios para la gestión interna de la institución que
+no contribuyen directamente con su razón de ser, ya que dan soporte a los procesos
+sustantivos.
+XL. Probabilidad de ocurrencia: la estimación de que se materialice un riesgo, en un periodo
+determinado;
+XLI. Procesos sustantivos: aquellos que se relacionan directamente con las funciones sustantivas
+de la institución, es decir, con el cumplimiento de su misión.
+
+## Página 6
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+XLII. Programa presupuestario: la categoría programática que organiza, en forma representativa
+y homogénea, las asignaciones de recursos para el cumplimiento de objetivos y metas;
+XLIII. PTAR: el Programa de Trabajo de Administración de Riesgos;
+XLIV. PTCI: el Programa de Trabajo de Control Interno;
+XLV. Riesgo: el evento adverso e incierto (externo o interno) que derivado de la combinación de su
+probabilidad de ocurrencia y el posible impacto pudiera obstaculizar o impedir el logro de las
+metas y objetivos institucionales;
+XLVI. Riesgo (s) de corrupción: la posibilidad de que por acción u omisión, mediante el abuso del
+poder y/o el uso indebido de recursos y/o de información, empleo, cargo o comisión, se dañan
+los intereses de una institución, para la obtención de un beneficio particular o de terceros,
+incluye soborno, fraude, apropiación indebida u otras formas de desviación de recursos por un
+funcionario público, nepotismo, extorsión, tráfico de influencias, uso indebido de información
+privilegiada, entre otras prácticas;
+XLVII. Secretaría: la Secretaría de la Función Pública;
+XLVIII. Seguridad razonable: el alto nivel de confianza, más no absoluta, de que las metas y objetivos
+de la institución serán alcanzados;
+XLIX. Sesión (es) virtual (es): la celebrada a través de medios electrónicos de comunicación a
+distancia que permiten la transmisión simultánea de voz e imagen;
+L. Sistema de Control Interno Institucional o SCII: el conjunto de procesos, mecanismos y
+elementos organizados y relacionados que interactúan entre sí, y que se aplican de manera
+específica por una Institución a nivel de planeación, organización, ejecución, dirección,
+información y seguimiento de sus procesos de gestión, para dar certidumbre a la toma de
+decisiones y conducirla con una seguridad razonable al logro de sus metas y objetivos en un
+ambiente ético e íntegro, de calidad, mejora continua, eficiencia y de cumplimiento de la ley;
+LI. Sistema de información: el conjunto de procedimientos ordenados que, al ser ejecutados,
+proporcionan información para apoyar la toma de decisiones y el control de la Institución;
+LII. Sistema Informático: la herramienta electrónica administrada por la UCEGP para sistematizar
+el registro, seguimiento, control y reporte de información de los procesos previstos en las
+presentes Disposiciones;
+LIII. TIC´s: las Tecnologías de la Información y Comunicaciones;
+LIV. Unidades administrativas: las comprendidas en el reglamento interior, estatuto orgánico y/o
+estructura orgánica básica de una Institución, responsables de ejercer la asignación
+presupuestaria correspondiente;
+LV. UCEGP: la Unidad de Control y Evaluación de la Gestión Pública de la Secretaría, y
+LVI. UTIC: la Unidad Administrativa en la institución, responsable de proveer infraestructura y
+servicios de TIC´s.
+CAPÍTULO II
+Responsables de su Aplicación y Vigilancia
+3. RESPONSABLES DE SU APLICACIÓN.
+Será responsabilidad del Órgano de Gobierno, del Titular y demás servidores públicos de la Institución,
+establecer y actualizar el Sistema de Control Interno Institucional, evaluar y supervisar su funcionamiento,
+así como ordenar las acciones para su mejora continua; además de instrumentar los mecanismos,
+procedimientos específicos y acciones que se requieran para la debida observancia de las presentes
+Disposiciones.
+En la implementación, actualización y mejora del SCII, se identificarán y clasificarán los mecanismos de
+control en preventivos, detectivos y correctivos, privilegiándose los preventivos y las prácticas de
+autocontrol, para evitar que se produzcan resultados o acontecimientos no deseados o inesperados que
+impidan en términos de eficiencia, eficacia y economía el cumplimiento de las metas y objetivos de la
+institución.
+
+## Página 7
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+4. DESIGNACIÓN DE COORDINADOR DE CONTROL INTERNO Y ENLACES.
+El Titular de la Institución designará mediante oficio dirigido al Titular de la Secretaría a un servidor
+público de nivel jerárquico inmediato inferior como Coordinador de Control Interno para asistirlo en la
+aplicación y seguimiento de las presentes Disposiciones, el nombramiento recaerá preferentemente en el
+Oficial Mayor o equivalente.
+El Coordinador de Control Interno designará a un Enlace, mediante oficio dirigido al Titular de la UCEGP
+para cada uno de los procesos contemplados en este instrumento, quienes deberán tener un nivel jerárquico
+inmediato inferior a éste; se podrá nombrar a un servidor público como Enlace en más de un proceso, pero
+al menos deberán designarse dos enlaces para la totalidad de los procesos.
+En los oficios de designación se deberá marcar copia al Titular del Órgano Interno de Control, con el
+propósito de que éste solicite la baja y alta para los designados de claves de acceso al sistema informático
+del Comité. Los cambios en las designaciones anteriores se informarán de la misma forma, dentro de los
+10 días hábiles posteriores a que se efectúen.
+Párrafo reformado DOF 05-09-2018
+5. DE SU VIGILANCIA Y ASESORÍA.
+La Secretaría por sí o a través de los Órganos Internos de Control y los Delegados y Comisarios Públicos,
+conforme a sus respectivas atribuciones, serán responsables de vigilar la implementación y aplicación
+adecuada de las Disposiciones; adicionalmente, los Órganos Internos de Control, en el ámbito de su
+competencia, otorgarán la asesoría y apoyo que corresponda a los Titulares y demás servidores públicos
+de la Institución para la implementación de su SCII.
+Párrafo reformado DOF 05-09-2018
+CAPÍTULO III
+Uso de Tecnologías de la Información y Comunicaciones
+6. DE LAS CUENTAS DE CORREO ESTANDARIZADAS.
+El Coordinador de Control Interno y los Enlaces gestionarán a través de la mesa de servicios de la UTIC
+o, en su caso, de la UTIC de su coordinadora sectorial, la creación y asignación de cuentas de correo
+estandarizadas con el dominio de la Institución, su uso quedará bajo responsabilidad de los mismos,
+debiendo cumplir lo siguiente:
+Designación Correo electrónico estandarizado
+Coordinador de Control Interno coordinadorci@
+Enlace del SCII enlacescii@
+Enlace de ARI enlaceari@
+Enlace del COCODI enlacecocodi@
+Las cuentas de correo estandarizadas son el medio oficial de comunicación de la Secretaría; serán
+permanentes y transferibles a los servidores públicos que asuman cada designación; no deberán cancelarse
+y/o dar de baja, siendo responsabilidad del Coordinador de Control Interno y de cada Enlace, proveer lo
+necesario ante la UTIC correspondiente para que las cuentas permanezcan activas.
+7. DE LA SISTEMATIZACIÓN.
+Las instituciones que hayan realizado acciones de mejora funcionales y una sistematización integral de
+los procesos en materia de control interno podrán operar con sus procedimientos optimizados, siempre que
+acrediten ante la UCEGP, que los mismos son compatibles con lo establecido en las Disposiciones.
+
+## Página 8
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+TÍTULO SEGUNDO
+MODELO ESTÁNDAR DE CONTROL INTERNO
+CAPÍTULO I
+Estructura del Modelo
+8. CATEGORÍAS DEL OBJETIVO DEL CONTROL INTERNO.
+El control interno tiene como objetivo proporcionar una seguridad razonable en el logro de objetivos y
+metas de la Institución dentro de las siguientes categorías:
+I. Operación: Eficacia, eficiencia y economía de las operaciones, programas y proyectos;
+II. Información: Confiabilidad, veracidad y oportunidad de la información financiera, presupuestaria
+y de operación;
+III. Cumplimiento: Observancia del marco legal, reglamentario, normativo y administrativo aplicable
+a las Instituciones, y
+IV. Salvaguarda: Protección de los recursos públicos y prevención de actos de corrupción.
+9. NORMAS GENERALES, PRINCIPIOS Y ELEMENTOS DE CONTROL INTERNO.
+PRIMERA. AMBIENTE DE CONTROL.
+Es la base que proporciona la disciplina y estructura para lograr un sistema de control interno eficaz e
+influye en la definición de los objetivos y la constitución de las actividades de control. Para la aplicación de
+esta norma, el Titular, la Administración y, en su caso, el Órgano de Gobierno, deberán establecer y
+mantener un ambiente de control en toda la institución, que implique una actitud de respaldo hacia el control
+interno, así como vigilar la implementación y operación en conjunto y de manera sistémica de los siguientes
+principios y elementos de control:
+1. Mostrar actitud de respaldo y compromiso.- El Titular y la Administración deben tener una
+actitud de compromiso en lo general con la integridad, los valores éticos, las normas de conducta,
+así como la prevención de irregularidades administrativas y actos contrarios a la integridad y en lo
+particular con lo dispuesto en el Acuerdo que tiene por objeto emitir el Código de Ética de los
+servidores públicos del Gobierno Federal, las Reglas de Integridad para el ejercicio de la función
+pública, y los Lineamientos generales para propiciar la integridad de los servidores públicos y para
+implementar acciones permanentes que favorezcan su comportamiento ético, a través de los
+Comités de Ética y de Prevención de Conflictos de Interés, publicado en el Diario Oficial de la
+Federación el 20 de agosto de 2015:
+Actitud de Respaldo del Titular y la Administración.
+1.01 El Titular, la Administración y, en su caso, el Órgano de Gobierno deben demostrar la
+importancia de la integridad, los valores éticos y las normas de conducta en sus
+directrices, actitudes y comportamiento.
+1.02 El Titular, la Administración y, en su caso, el Órgano de Gobierno deben guiar a través
+del ejemplo sobre los valores, la filosofía y el estilo operativo de la institución. En
+instituciones grandes, los distintos niveles administrativos en la estructura organizacional
+también deben establecer la “actitud de respaldo de la Administración”.
+1.03 Las directrices, actitudes y conductas del Titular y, en su caso, del Órgano de Gobierno
+deben reflejar la integridad, los valores éticos y las normas de conducta que se esperan
+por parte de los servidores públicos en la institución.
+1.04 La actitud de respaldo de los Titulares y la Administración puede ser un impulsor, como
+se muestra en los párrafos anteriores, o un obstáculo para el control interno.
+Normas de Conducta.
+1.05 La Administración debe establecer directrices para comunicar las expectativas en materia
+de integridad, valores éticos y normas de conducta.
+1.06 La Administración, con la supervisión del Titular o, en su caso, del Órgano de Gobierno,
+debe definir las expectativas que guarda la institución respecto de los valores éticos en
+las normas de conducta.
+
+## Página 9
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+Apego a las Normas de Conducta.
+1.07 La Administración debe establecer procesos para evaluar el desempeño del personal
+frente a las normas de conducta de la institución y atender oportunamente cualquier
+desviación identificada.
+1.08 La Administración debe utilizar las normas de conducta como base para evaluar el apego
+a la integridad, los valores éticos y las normas de conducta en toda la institución.
+1.09 La Administración debe determinar el nivel de tolerancia para las desviaciones. Puede
+establecer un nivel de tolerancia cero para el incumplimiento de ciertas normas de
+conducta, mientras que el incumplimiento de otras puede atenderse mediante
+advertencias a los servidores públicos, siempre atendiendo el incumplimiento a las
+normas de conducta de manera oportuna, consistente y aplicando las leyes y reglamentos
+correspondientes.
+Programa, política o lineamiento de Promoción de la Integridad y Prevención de la
+Corrupción.
+1.10 La Administración debe articular un programa, política o lineamiento institucional de
+promoción de la integridad y prevención de la corrupción, que considere como mínimo la
+capacitación continua en la materia de todo el personal; la difusión adecuada de los
+códigos de ética y conducta implementados; el establecimiento, difusión y operación de
+una línea ética o mecanismo de denuncia anónima y confidencial de hechos contrarios a
+la integridad; así como una función específica de gestión de riesgos de corrupción en la
+institución, como parte del componente de administración de riesgos (con todos los
+elementos incluidos en dicho componente).
+Cumplimiento, Supervisión y Actualización Continua del Programa, política o lineamiento
+de Promoción de la Integridad y Prevención de la Corrupción.
+1.11 La Administración debe asegurar una supervisión continua sobre la aplicación efectiva y
+apropiada del programa, política o lineamiento institucional de promoción de la integridad,
+medir si es suficiente y eficaz, y corregir sus deficiencias con base en los resultados de
+las evaluaciones internas y externas a que esté sujeta.
+2. Ejercer la responsabilidad de vigilancia.- El Titular y, en su caso, el Órgano de Gobierno, es
+responsable de vigilar el funcionamiento del control interno, a través de la Administración y las
+instancias que establezca para tal efecto:
+Estructura de Vigilancia.
+2.01 El Titular o, en su caso, el Órgano de Gobierno, es responsable de establecer una
+estructura de vigilancia adecuada en función de las disposiciones jurídicas aplicables, la
+estructura y características de la institución.
+Responsabilidades del Titular o, en su caso, del Órgano de Gobierno.
+2.02 El Titular y, en su caso, el Órgano de Gobierno, deben vigilar las operaciones de la
+institución, ofrecer orientación constructiva a la Administración y, cuando proceda, tomar
+decisiones de vigilancia para asegurar que la institución logre sus objetivos en línea con
+el programa de promoción de la integridad, los valores éticos y las normas de conducta.
+Requisitos de un Órgano de Gobierno o del Titular.
+2.03 En la selección del Titular y, en su caso, de los miembros del Órgano de Gobierno, se
+debe considerar el conocimiento necesario respecto de la institución, los conocimientos
+especializados pertinentes, el número de miembros con que contará el Órgano de
+Gobierno y su neutralidad, independencia y objetividad técnica requeridos para cumplir
+con las responsabilidades de vigilancia en la institución.
+2.04 El Titular o, en su caso, los miembros del Órgano de Gobierno, deben comprender los
+objetivos de la institución, sus riesgos asociados y las expectativas de sus grupos de
+interés.
+2.05 El Titular o, en su caso, los miembros del Órgano de Gobierno, deben demostrar además
+la pericia requerida para vigilar, deliberar y evaluar el control interno de la institución.
+2.06 En la determinación del número de miembros que componen al Órgano de Gobierno, en
+su caso, se debe considerar la necesidad de incluir personal con otras habilidades
+
+## Página 10
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+especializadas, que permitan la discusión, ofrezcan orientación constructiva al Titular y
+favorezcan la toma de decisiones adecuadas.
+2.07 La institución debe considerar la inclusión de miembros independientes en el Órgano de
+Gobierno, en su caso, y cuando las disposiciones jurídicas y normativas aplicables lo
+permitan.
+Vigilancia General del Control Interno.
+2.08 El Titular o, en su caso, el Órgano de Gobierno debe vigilar, de manera general, el diseño,
+implementación y operación del control interno realizado por la Administración. Las
+responsabilidades del Titular o del Órgano de Gobierno respecto del control interno son,
+entre otras, las siguientes:
+ Ambiente de Control. Establecer y promover la integridad, los valores éticos y las
+normas de conducta, así como la estructura de vigilancia, desarrollar expectativas
+de competencia profesional y mantener la rendición de cuentas ante el Titular o, en
+su caso, todos los miembros del Órgano de Gobierno y de las principales partes
+interesadas.
+ Administración de Riesgos. Vigilar la evaluación de los riesgos que amenazan el
+logro de las metas y objetivos institucionales, incluyendo el impacto potencial de los
+cambios significativos, la corrupción y la elusión (omisión) de controles por parte de
+cualquier servidor público.
+ Actividades de Control. Vigilar a la Administración en el desarrollo y ejecución de
+las actividades de control.
+ Información y Comunicación. Analizar y discutir la información relativa al logro de
+las metas y objetivos institucionales.
+ Supervisión. Examinar la naturaleza y alcance de las actividades de supervisión de
+la Administración, así como las evaluaciones realizadas por ésta y las acciones
+correctivas implementadas para remediar las deficiencias identificadas.
+Corrección de deficiencias.
+2.09 El Titular o, en su caso, el Órgano de Gobierno debe proporcionar información a la
+Administración para dar seguimiento a la corrección de las deficiencias detectadas en el
+control interno.
+2.10 La Administración debe informar al Titular o, en su caso, al Órgano de Gobierno sobre
+aquellas deficiencias en el control interno identificadas.
+2.11 El Titular o, en su caso, el Órgano de Gobierno es responsable de monitorear la
+corrección de las deficiencias y de proporcionar orientación a la Administración sobre los
+plazos para corregirlas.
+3. Establecer la estructura, responsabilidad y autoridad.- El Titular debe autorizar, con apoyo de
+la Administración y conforme a las disposiciones jurídicas y normativas aplicables, la estructura
+organizacional, asignar responsabilidades y delegar autoridad para alcanzar las metas y objetivos
+institucionales, preservar la integridad y rendir cuentas de los resultados alcanzados:
+Estructura Organizacional.
+3.01 El Titular debe instruir a la Administración y, en su caso, a las unidades especializadas,
+el establecimiento de la estructura organizacional necesaria para permitir la planeación,
+ejecución, control y evaluación de la institución en la consecución de sus objetivos.
+3.02 La Administración debe desarrollar y actualizar la estructura organizacional con
+entendimiento de las responsabilidades generales, y debe asignarlas a las distintas
+unidades para que la institución alcance sus objetivos de manera eficiente, eficaz y
+económica; brinde información confiable y de calidad; cumpla con las disposiciones
+jurídicas y normativas aplicables, y prevenga, disuada y detecte actos contrarios a la
+integridad.
+3.03 Como parte del establecimiento de una estructura organizacional actualizada, la
+Administración debe considerar el modo en que las unidades interactúan a fin de cumplir
+con sus responsabilidades.
+
+## Página 11
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+3.04 La Administración debe evaluar periódicamente la estructura organizacional para
+asegurar que se alinea con los objetivos institucionales y que ha sido adaptada y
+actualizada a cualquier objetivo emergente, como nuevas leyes o regulaciones.
+Asignación de Responsabilidad y Delegación de Autoridad.
+3.05 Para alcanzar los objetivos institucionales, el Titular debe asignar responsabilidad y
+delegar autoridad a los puestos clave a lo largo de la institución.
+3.06 La Administración debe considerar las responsabilidades generales asignadas a cada
+unidad, debe determinar qué puestos clave son necesarios para cumplir con las
+responsabilidades asignadas y debe establecer dichos puestos.
+3.07 El Titular debe determinar qué nivel de autoridad necesitan los puestos clave para cumplir
+con sus obligaciones.
+Documentación y Formalización del Control Interno.
+3.08 La Administración debe desarrollar y actualizar la documentación y formalización de su
+control interno.
+3.09 La documentación y formalización efectiva del control interno apoya a la Administración
+en el diseño, implementación, operación y actualización de éste, al establecer y
+comunicar al personal el cómo, qué, cuándo, dónde y por qué del control interno.
+3.10 La Administración debe documentar y formalizar el control interno para satisfacer las
+necesidades operativas de la institución. La documentación de controles, incluidos los
+cambios realizados a éstos, es evidencia de que las actividades de control son
+identificadas, comunicadas a los responsables de su funcionamiento y que pueden ser
+supervisadas y evaluadas por la institución.
+3.11 La extensión de la documentación necesaria para respaldar el diseño, implementación y
+eficacia operativa de las cinco Normas Generales de Control Interno depende del juicio
+de la Administración, del mandato institucional y de las disposiciones jurídicas aplicables.
+4. Demostrar compromiso con la competencia profesional.- La Administración es responsable
+de establecer los medios necesarios para contratar, capacitar y retener profesionales competentes
+en cada puesto y área de trabajo:
+Expectativas de Competencia Profesional.
+4.01 La Administración debe establecer expectativas de competencia profesional sobre los
+puestos clave y los demás cargos institucionales para ayudar a la institución a lograr sus
+objetivos.
+4.02 La Administración debe contemplar los estándares de conducta, las responsabilidades
+asignadas y la autoridad delegada al establecer expectativas de competencia profesional
+para los puestos clave y para el resto del personal, a través de políticas al interior del
+Sistema de Control Interno.
+4.03 El personal debe poseer y mantener un nivel de competencia profesional que le permita
+cumplir con sus responsabilidades, así como entender la importancia y eficacia del control
+interno. La Administración debe evaluar la competencia profesional del personal en toda
+la institución.
+Atracción, Desarrollo y Retención de Profesionales.
+4.04 La Administración debe atraer, desarrollar y retener profesionales competentes para
+lograr los objetivos de la institución. Por lo tanto, debe seleccionar y contratar, capacitar,
+proveer orientación en el desempeño, motivación y reforzamiento del personal.
+
+## Página 12
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+Planes y Preparativos para la Sucesión y Contingencias.
+4.05 La Administración debe definir cuadros de sucesión y planes de contingencia para los
+puestos clave, con objeto de garantizar la continuidad en el logro de los objetivos.
+4.06 La Administración debe seleccionar y capacitar a los candidatos que asumirán los
+puestos clave. Si la Administración utiliza servicios tercerizados para cumplir con las
+responsabilidades asignadas a puestos clave, debe evaluar si éstos pueden continuar
+con los puestos clave y debe identificar otros servicios tercerizados para tales puestos.
+4.07 La Administración debe definir los planes de contingencia para la asignación de
+responsabilidades si un puesto clave se encuentra vacante sin vistas a su ocupación.
+5. Establecer la estructura para el reforzamiento de la rendición de cuentas.- La Administración
+debe evaluar el desempeño del control interno en la institución y hacer responsable a todo el
+personal por sus obligaciones específicas en el SCII:
+Establecimiento de la Estructura para Responsabilizar al Personal por sus Obligaciones de
+Control Interno.
+5.01 La Administración debe establecer y mantener una estructura que permita, de manera
+clara y sencilla, responsabilizar al personal por sus funciones y por sus obligaciones
+específicas en materia de control interno, lo cual forma parte de la obligación de rendición
+de cuentas institucional. El Titular o, en su caso, el Órgano de Gobierno debe evaluar y
+responsabilizar a la Administración por el desempeño de sus funciones en materia de
+control interno.
+5.02 En caso de que la Administración establezca incentivos para el desempeño del personal,
+debe reconocer que tales estímulos pueden provocar consecuencias no deseadas, por lo
+que debe evaluarlos a fin de que se encuentren alineados a los principios éticos y normas
+de conducta de la institución.
+5.03 La Administración debe responsabilizar a las organizaciones de servicios que contrate
+por las funciones de control interno relacionadas con las actividades tercerizadas que
+realicen.
+5.04 La Administración, bajo la supervisión del Titular o, en su caso, del Órgano de Gobierno
+debe tomar acciones correctivas cuando sea necesario fortalecer la estructura para la
+asignación de responsabilidades y la rendición de cuentas.
+Consideración de las Presiones por las Responsabilidades Asignadas al Personal.
+5.05 La Administración debe equilibrar las presiones excesivas sobre el personal de la
+institución.
+5.06 La Administración es responsable de evaluar las presiones sobre el personal para ayudar
+a los empleados a cumplir con sus responsabilidades asignadas, en alineación con las
+normas de conducta, los principios éticos y el programa de promoción de la integridad.
+SEGUNDA. ADMINISTRACIÓN DE RIESGOS.
+Es el proceso dinámico desarrollado para identificar, analizar, evaluar, responder, supervisar y
+comunicar los riesgos, incluidos los de corrupción, inherentes o asociados a los procesos por los cuales se
+logra el mandato de la institución, mediante el análisis de los distintos factores que pueden provocarlos, con
+la finalidad de definir las estrategias y acciones que permitan mitigarlos y asegurar el logro de metas y
+objetivos institucionales de una manera razonable, en términos de eficacia, eficiencia y economía en un
+marco de transparencia y rendición de cuentas. Para la aplicación de esta norma, el Titular, la
+Administración y, en su caso, el Órgano de Gobierno, deberán vigilar la implementación y operación en
+conjunto y de manera sistémica de los siguientes principios y elementos de control:
+6. Definir Metas y Objetivos institucionales.- El Titular, con el apoyo de la Administración, debe
+definir claramente las metas y objetivos, a través de un plan estratégico que de manera coherente
+y ordenada, se asocie a su mandato legal, asegurando su alineación al Plan Nacional de Desarrollo
+y a los Programas Institucionales, Sectoriales y Especiales:
+
+## Página 13
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+Definición de Objetivos.
+6.01 La Administración debe definir objetivos en términos específicos y medibles para permitir
+el diseño del control interno y sus riesgos asociados.
+6.02 La Administración debe definir los objetivos en términos específicos de manera que sean
+comunicados y entendidos en todos los niveles en la institución. La definición de los
+objetivos debe realizarse en alineación con el mandato, la misión y visión institucional,
+con su plan estratégico y con otros planes y programas aplicables, así como con las
+metas de desempeño.
+6.03 La Administración debe definir objetivos en términos medibles cuantitativa y/o
+cualitativamente de manera que se pueda evaluar su desempeño.
+6.04 La Administración debe considerar los requerimientos externos y las expectativas
+internas al definir los objetivos que permiten el diseño del control interno.
+6.05 La Administración debe evaluar y, en su caso, replantear los objetivos definidos para que
+sean consistentes con los requerimientos externos y las expectativas internas de la
+institución, así como con el Plan Nacional de Desarrollo, los Programas Sectoriales,
+Institucionales, Especiales y demás planes, programas y disposiciones aplicables.
+6.06 La Administración debe determinar si los instrumentos e indicadores de desempeño para
+los objetivos establecidos son apropiados para evaluar el desempeño de la institución.
+7. Identificar, analizar y responder a los riesgos.- La Administración, debe identificar riesgos en
+todos los procesos institucionales, analizar su relevancia y diseñar acciones suficientes para
+responder a éstos y asegurar de manera razonable el logro de los objetivos institucionales. Los
+riesgos deben ser comunicados al personal de la institución, mediante las líneas de reporte y
+autoridad establecidas:
+Identificación de Riesgos.
+7.01 La Administración debe identificar riesgos en toda la institución para proporcionar una
+base para analizarlos, diseñar respuestas y determinar si están asociados con el mandato
+institucional, su plan estratégico, los objetivos del Plan Nacional de Desarrollo, los
+Programas Sectoriales, Institucionales y Especiales y demás planes y programas
+aplicables de acuerdo con los requerimientos y expectativas de la planeación estratégica,
+y de conformidad con las disposiciones jurídicas y normativas aplicables.
+7.02 Para identificar riesgos, la Administración debe considerar los tipos de eventos que
+impactan a la institución. Esto incluye tanto el riesgo inherente como el riesgo residual. El
+riesgo inherente es el riesgo que enfrenta la institución cuando la Administración no
+responde ante el riesgo. El riesgo residual es el riesgo que permanece después de la
+respuesta de la Administración al riesgo inherente. La falta de respuesta por parte de la
+Administración a ambos riesgos puede causar deficiencias graves en el control interno.
+7.03 La Administración debe considerar todas las interacciones significativas dentro de la
+institución y con las partes externas, cambios y otros factores tanto internos como
+externos, para identificar riesgos en toda la institución.
+Análisis de Riesgos.
+7.04 La Administración debe analizar los riesgos identificados para estimar su relevancia, lo
+cual provee la base para responder a éstos. La relevancia se refiere al efecto sobre el
+logro de los objetivos.
+7.05 La Administración debe estimar la relevancia de los riesgos identificados para evaluar su
+efecto sobre el logro de los objetivos, tanto a nivel institución como a nivel transacción.
+La Administración debe estimar la importancia de un riesgo al considerar la magnitud del
+impacto, la probabilidad de ocurrencia y la naturaleza del riesgo.
+7.06 Los riesgos pueden ser analizados sobre bases individuales o agrupadas dentro de
+categorías de riesgos asociados, los cuales son analizados de manera colectiva. La
+Administración debe considerar la correlación entre los distintos riesgos o grupos de
+riesgos al estimar su relevancia.
+
+## Página 14
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+Respuesta a los Riesgos.
+7.07 La Administración debe diseñar respuestas a los riesgos analizados de tal modo que
+éstos se encuentren debidamente controlados para asegurar razonablemente el
+cumplimiento de sus objetivos.
+7.08 Con base en la respuesta al riesgo seleccionada, la Administración debe diseñar acciones
+específicas de atención, como un programa de trabajo de administración de riesgos, el
+cual proveerá mayor garantía de que la institución alcanzará sus objetivos. La
+Administración debe efectuar evaluaciones periódicas de riesgos con el fin de asegurar
+la efectividad de las acciones de control propuestas para mitigarlos.
+8. Considerar el Riesgo de Corrupción.- La Administración, debe considerar la posibilidad de
+ocurrencia de actos de corrupción, fraudes, abuso, desperdicio y otras irregularidades
+relacionadas con la adecuada salvaguarda de los recursos públicos al identificar, analizar y
+responder a los riesgos asociados, principalmente a los procesos financieros, presupuestales, de
+contratación, de información y documentación, investigación y sanción, trámites y servicios
+internos y externos:
+Tipos de Corrupción.
+8.01 La Administración debe considerar los tipos de corrupción que pueden ocurrir en la
+institución, para proporcionar una base para la identificación de estos riesgos. Entre los
+tipos de corrupción más comunes se encuentran:
+ Informes Financieros Fraudulentos. Consistentes en errores intencionales u
+omisiones de cantidades o revelaciones en los estados financieros para engañar a
+los usuarios de los estados financieros.
+ Apropiación indebida de activos. Entendida como el robo de activos de la institución.
+Esto podría incluir el robo de la propiedad, la malversación de los ingresos o pagos
+fraudulentos.
+ Conflicto de interés. Cuando los intereses personales, familiares o de negocios de
+un servidor público puedan afectar el desempeño independiente e imparcial de sus
+empleos, cargos, comisiones o funciones.
+ Utilización de los recursos asignados y las facultades atribuidas para fines distintos
+a los legales.
+ Pretensión del servidor público de obtener beneficios adicionales a las
+contraprestaciones comprobables que la Institución le otorga por el desempeño de
+su función.
+ Participación indebida del servidor público en la selección, nombramiento,
+designación, contratación, promoción, suspensión, remoción, cese, rescisión del
+contrato o sanción de cualquier servidor público, cuando tenga interés personal,
+familiar o de negocios en el caso, o pueda derivar alguna ventaja o beneficio para él
+o para un tercero.
+ Aprovechamiento del cargo o comisión del servidor público para inducir a que otro
+servidor público o tercero efectúe, retrase u omita realizar algún acto de su
+competencia, que le reporte cualquier beneficio, provecho o ventaja indebida para sí
+o para un tercero.
+ Coalición con otros servidores públicos o terceros para obtener ventajas o ganancias
+ilícitas.
+ Intimidación del servidor público o extorsión para presionar a otro a realizar
+actividades ilegales o ilícitas.
+ Tráfico de influencias. Consistente en que el servidor público utilice la posición que
+su empleo, cargo o comisión le confiere para inducir a que otro servidor público
+efectúe, retrase u omita realizar algún acto de su competencia, para generar
+
+## Página 15
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+cualquier beneficio, provecho o ventaja para sí o para su cónyuge, parientes
+consanguíneos, parientes civiles o para terceros con los que tenga relaciones
+profesionales, laborales o de negocios, o para socios o sociedades de las que el
+servidor público o las personas antes referidas formen parte.
+ Enriquecimiento oculto u ocultamiento de conflicto de interés. Cuando en el ejercicio
+de sus funciones, el servidor público llegare a advertir actos u omisiones que
+pudieren constituir faltas administrativas, realice deliberadamente alguna conducta
+para su ocultamiento.
+ Peculado. Cuando el servidor público autorice, solicite o realice actos para el uso o
+apropiación para sí o para su cónyuge, parientes consanguíneos, parientes civiles o
+para terceros con los que tenga relaciones profesionales, laborales o de negocios, o
+para socios o sociedades de las que el servidor público o las personas antes
+referidas formen parte, de recursos públicos, sean materiales, humanos o
+financieros, sin fundamento jurídico o en contraposición a las normas aplicables.
+8.02 Además de la corrupción, la Administración debe considerar que pueden ocurrir otras
+transgresiones a la integridad, por ejemplo: el desperdicio de recursos de manera
+exagerada, extravagante o sin propósito; o el abuso de autoridad; o el uso del cargo para
+la obtención de un beneficio ilícito para sí o para un tercero.
+Factores de Riesgo de Corrupción.
+8.03 La Administración debe considerar los factores de riesgos de corrupción, abuso,
+desperdicio y otras irregularidades. Estos factores no implican necesariamente la
+existencia de un acto corrupto, pero están usualmente presentes cuando éstos ocurren.
+8.04 La Administración al utilizar el abuso, desperdicio y otras irregularidades como factores
+de riesgos de corrupción, debe considerar que cuando uno o más de estos están
+presentes podría indicar un riesgo de corrupción y que puede ser mayor cuando los tres
+factores están presentes. También se debe utilizar la información provista por partes
+internas y externas para identificar los riesgos de corrupción.
+Respuesta a los Riesgos de Corrupción.
+8.05 La Administración debe analizar y responder a los riesgos de corrupción, a fin de que
+sean efectivamente mitigados. Estos riesgos deben ser analizados por su relevancia,
+tanto individual como en su conjunto, mediante el mismo proceso de análisis de riesgos
+efectuado para todos los demás riesgos identificados.
+8.06 La Administración debe responder a los riesgos de corrupción, mediante el mismo
+proceso de respuesta general y acciones específicas para atender todos los riesgos
+institucionales analizados. Esto posibilita la implementación de controles anti-corrupción
+en la institución. Dichos controles pueden incluir la reorganización de ciertas operaciones
+y la reasignación de puestos entre el personal para mejorar la segregación de funciones.
+9. Identificar, analizar y responder al cambio.- La Administración debe identificar, analizar y
+responder a los cambios internos y externos que puedan impactar el control interno, ya que pueden
+generar que los controles se vuelvan ineficaces o insuficientes para alcanzar los objetivos
+institucionales y/o surgir nuevos riesgos.
+Los cambios internos incluyen modificaciones a los programas o actividades institucionales, la
+función de supervisión, la estructura organizacional, el personal y la tecnología. Los cambios
+externos refieren al entorno gubernamental, económico, tecnológico, legal, regulatorio y físico. Los
+cambios significativos identificados deben ser comunicados al personal adecuado de la institución
+mediante las líneas de reporte y autoridad establecidas.
+Identificación del Cambio.
+9.01 En la administración de riesgos o un proceso similar, la Administración debe identificar
+cambios que puedan impactar significativamente al control interno. La identificación,
+análisis y respuesta al cambio es parte del proceso regular de administración de riesgos.
+
+## Página 16
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+9.02 La Administración debe prevenir y planear acciones ante cambios significativos en las
+condiciones internas (modificaciones a los programas o actividades institucionales, la
+función de supervisión, la estructura organizacional, el personal y la tecnología) y
+externas (cambios en los entornos gubernamentales, económicos, tecnológicos, legales,
+regulatorios y físicos).
+Análisis y Respuesta al Cambio.
+9.03 La Administración debe analizar y responder a los cambios identificados y a los riesgos
+asociados con éstos, con el propósito de mantener un control interno apropiado.
+9.04 Las condiciones cambiantes usualmente generan nuevos riesgos o cambios a los riesgos
+existentes, los cuales deben ser evaluados para identificar, analizar y responder a
+cualquiera de éstos.
+TERCERA. ACTIVIDADES DE CONTROL.
+Son las acciones que define y desarrolla la Administración mediante políticas, procedimientos y
+tecnologías de la información con el objetivo de alcanzar las metas y objetivos institucionales; así como
+prevenir y administrar los riesgos, incluidos los de corrupción.
+Las actividades de control se ejecutan en todos los niveles de la institución, en las diferentes etapas de
+sus procesos y en el entorno tecnológico, y sirven como mecanismos para asegurar el cumplimiento de las
+metas y objetivos y prevenir la ocurrencia de actos contrarios a la integridad. Cada actividad de control que
+se aplique debe ser suficiente para evitar la materialización de los riesgos y minimizar el impacto de sus
+consecuencias.
+En todos los niveles de la institución existen responsabilidades en las actividades de control, debido a
+esto, es necesario que todos los servidores públicos conozcan cuáles son las tareas de control que deben
+ejecutar en su puesto, área o unidad administrativa. Para la aplicación de esta norma, el Titular, la
+Administración y, en su caso, el Órgano de Gobierno, deberán vigilar la implementación y operación en
+conjunto y de manera sistémica de los siguientes principios y elementos de control:
+10. Diseñar actividades de control.- La Administración debe diseñar, actualizar y garantizar la
+suficiencia e idoneidad de las actividades de control establecidas para lograr los objetivos
+institucionales. En este sentido, es responsable de que existan controles apropiados para hacer
+frente a los riesgos que se encuentran presentes en cada uno de los procesos institucionales,
+incluyendo los riesgos de corrupción:
+Respuesta a los Objetivos y Riesgos.
+10.01 La Administración debe diseñar actividades de control (políticas, procedimientos, técnicas
+y mecanismos) en respuesta a los riesgos asociados con los objetivos institucionales, a
+fin de alcanzar un control interno eficaz y apropiado.
+Diseño de Actividades de Control Apropiadas.
+10.02 La Administración debe diseñar las actividades de control apropiadas para asegurar el
+correcto funcionamiento del control interno, las cuales ayudan al Titular y a la
+Administración a cumplir con sus responsabilidades y a enfrentar apropiadamente a los
+riesgos identificados en la ejecución de los procesos del control interno. A continuación
+se presentan de manera enunciativa, mas no limitativa, las actividades de control que
+pueden ser útiles para la institución:
+ Revisiones por la Administración del desempeño actual, a nivel función o actividad.
+ Administración del capital humano.
+ Controles sobre el procesamiento de la información.
+ Controles físicos sobre los activos y bienes vulnerables.
+ Establecimiento y revisión de normas e indicadores de desempeño.
+ Segregación de funciones.
+ Ejecución apropiada de transacciones.
+ Registro de transacciones con exactitud y oportunidad.
+
+## Página 17
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+ Restricciones de acceso a recursos y registros, así como rendición de cuentas sobre
+éstos.
+ Documentación y formalización apropiada de las transacciones y el control interno.
+10.03 Las actividades de control pueden ser preventivas o detectivas. La primera se dirige a
+evitar que la institución falle en lograr un objetivo o enfrentar un riesgo y la segunda
+descubre antes de que concluya la operación cuándo la institución no está alcanzando
+un objetivo o enfrentando un riesgo, y corrige las acciones para ello.
+10.04 La Administración debe evaluar el propósito de las actividades de control, así como el
+efecto que una deficiencia tiene en el logro de los objetivos institucionales. Si tales
+actividades cumplen un propósito significativo o el efecto de una deficiencia en el control
+sería relevante para el logro de los objetivos, la Administración debe diseñar actividades
+de control tanto preventivas como detectivas para esa transacción, proceso, unidad
+administrativa o función.
+10.05 Las actividades de control deben implementarse ya sea de forma automatizada o manual,
+considerando que las automatizadas tienden a ser más confiables, ya que son menos
+susceptibles a errores humanos y suelen ser más eficientes. Si las operaciones en la
+Institución descansan en tecnologías de información, la Administración debe diseñar
+actividades de control para asegurar que dichas tecnologías se mantienen funcionando
+correctamente y son apropiadas para el tamaño, características y mandato de la
+institución.
+Diseño de Actividades de Control en varios niveles.
+10.06 La Administración debe diseñar actividades de control en los niveles adecuados de la
+estructura organizacional.
+10.07 La Administración debe diseñar actividades de control para asegurar la adecuada
+cobertura de los objetivos y los riesgos en las operaciones, así como a nivel transacción
+o ambos, dependiendo del nivel necesario para garantizar que la institución cumpla con
+sus objetivos y conduzca los riesgos relacionados.
+10.08 Los controles a nivel institución tienen un efecto generalizado en el control interno y
+pueden relacionarse con más de una de las Normas Generales.
+10.09 Las actividades de control a nivel transacción son acciones integradas directamente en
+los procesos operativos para contribuir al logro de los objetivos y enfrentar los riesgos
+asociados, las cuales pueden incluir verificaciones, conciliaciones, autorizaciones y
+aprobaciones, controles físicos y supervisión.
+10.10 Al elegir entre actividades de control a nivel institución o de transacción, la Administración
+debe evaluar el nivel de precisión necesario para que la institución cumpla con sus
+objetivos y enfrente los riesgos relacionados, considerando el propósito de las actividades
+de control, su nivel de agregación, la regularidad del control y su correlación directa con
+los procesos operativos pertinentes.
+Segregación de Funciones.
+10.11 La Administración debe considerar la segregación de funciones en el diseño de las
+responsabilidades de las actividades de control para garantizar que las funciones
+incompatibles sean segregadas y, cuando dicha segregación no sea práctica, debe
+diseñar actividades de control alternativas para enfrentar los riesgos asociados.
+10.12 La segregación de funciones contribuye a prevenir corrupción, desperdicio y abusos en
+el control interno. La elusión de controles cuenta con mayores posibilidades de ocurrencia
+cuando diversas responsabilidades, incompatibles entre sí, las realiza un solo servidor
+público, pero no puede impedirlo absolutamente, debido al riesgo de colusión en el que
+dos o más servidores públicos se confabulan para eludir los controles.
+10.13 Si la segregación de funciones no es práctica en un proceso operativo debido a personal
+limitado u otros factores, la Administración debe diseñar actividades de control
+alternativas para enfrentar el riesgo de corrupción, desperdicio o abuso en los procesos
+operativos.
+
+## Página 18
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+11. Seleccionar y desarrollar actividades de control basadas en las TIC´s.- La Administración
+debe desarrollar actividades de control, que contribuyan a dar respuesta y reducir los riesgos
+identificados, basadas principalmente en el uso de las tecnologías de información y
+comunicaciones para apoyar el logro de metas y objetivos institucionales.
+Desarrollo de los Sistemas de Información.
+11.01 La Administración debe desarrollar los sistemas de información de la institución de
+manera tal que se cumplan los objetivos institucionales y se responda apropiadamente a
+los riesgos asociados.
+11.02 La Administración debe desarrollar los sistemas de información para obtener y procesar
+apropiadamente la información de cada uno de los procesos operativos. Dichos sistemas
+contribuyen a alcanzar los objetivos institucionales y a responder a los riesgos asociados.
+Un sistema de información se integra por el personal, los procesos, los datos y la
+tecnología, organizados para obtener, comunicar o disponer de la información.
+Un sistema de información debe incluir tanto procesos manuales como automatizados.
+Los procesos automatizados se conocen comúnmente como las Tecnologías de
+Información y Comunicaciones (TIC’s).
+11.03 La Administración debe desarrollar los sistemas de información y el uso de las TIC’s
+considerando las necesidades de información definidas para los procesos operativos de
+la institución. Las TIC’s permiten que la información relacionada con los procesos
+operativos esté disponible de la forma más oportuna y confiable para la institución.
+Adicionalmente, las TIC’s pueden fortalecer el control interno sobre la seguridad y la
+confidencialidad de la información mediante una adecuada restricción de accesos.
+Aunque las TIC’s conllevan tipos específicos de actividades de control, no representan
+una consideración de control “independiente”, sino que son parte integral de la mayoría
+de las actividades de control.
+11.04 La Administración también debe evaluar los objetivos de procesamiento de información:
+integridad, exactitud y validez, para satisfacer las necesidades de información definidas.
+Diseño de los Tipos de Actividades de Control Apropiadas.
+11.05 La Administración debe diseñar actividades de control apropiados en los sistemas
+información para garantizar la cobertura de los objetivos de procesamiento de la
+información en los procesos operativos. En los sistemas de información, existen dos tipos
+principales de actividades de control: generales y de aplicación.
+11.06 Los controles generales (a nivel institución, de sistemas y de aplicaciones) son las
+políticas y procedimientos que se aplican a la totalidad o a un segmento de los sistemas
+de información. Los controles generales fomentan el buen funcionamiento de los sistemas
+de información mediante la creación de un entorno apropiado para el correcto
+funcionamiento de los controles de aplicación. Los controles generales deben incluir la
+administración de la seguridad, acceso lógico y físico, administración de la configuración,
+segregación de funciones, planes de continuidad y planes de recuperación de desastres,
+entre otros.
+11.07 Los controles de aplicación, a veces llamados controles de procesos de operación, son
+los controles que se incorporan directamente en las aplicaciones informáticas para
+contribuir a asegurar la validez, integridad, exactitud y confidencialidad de las
+transacciones y los datos durante el proceso de las aplicaciones. Los controles de
+aplicación deben incluir las entradas, el procesamiento, las salidas, los archivos
+maestros, las interfaces y los controles para los sistemas de administración de datos,
+entre otros.
+Diseño de la Infraestructura de las TIC’s.
+11.08 La Administración debe diseñar las actividades de control sobre la infraestructura de las
+TIC’s para soportar la integridad, exactitud y validez del procesamiento de la información
+mediante el uso de TIC’s. Las TIC’s requieren de una infraestructura para operar,
+incluyendo las redes de comunicación para vincularlas, los recursos informáticos para las
+aplicaciones y la electricidad. La infraestructura de TIC’s de la institución puede ser
+compleja y puede ser compartida por diferentes unidades dentro de la misma o
+
+## Página 19
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+tercerizada. La Administración debe evaluar los objetivos de la institución y los riesgos
+asociados al diseño de las actividades de control sobre la infraestructura de las TIC’s.
+11.09 La Administración debe mantener la evaluación de los cambios en el uso de las TIC’s y
+debe diseñar nuevas actividades de control cuando estos cambios se incorporan en la
+infraestructura de las TIC’s. La Administración también debe diseñar actividades de
+control necesarias para mantener la infraestructura de las TIC’s. El mantenimiento de la
+tecnología debe incluir los procedimientos de respaldo y recuperación de la información,
+así como la continuidad de los planes de operación, en función de los riesgos y las
+consecuencias de una interrupción total o parcial de los sistemas de energía, entre otros.
+Diseño de la Administración de la Seguridad.
+11.10 La Administración debe diseñar actividades de control para la gestión de la seguridad
+sobre los sistemas de información con el fin de garantizar el acceso adecuado, de fuentes
+internas y externas a éstos. Los objetivos para la gestión de la seguridad deben incluir la
+confidencialidad, la integridad y la disponibilidad.
+11.11 La gestión de la seguridad debe incluir los procesos de información y las actividades de
+control relacionadas con los permisos de acceso a las TIC’s, incluyendo quién tiene la
+capacidad de ejecutar transacciones. La gestión de la seguridad debe incluir los permisos
+de acceso a través de varios niveles de datos, el sistema operativo (software del sistema),
+la red de comunicación, aplicaciones y segmentos físicos, entre otros. La Administración
+debe diseñar las actividades de control sobre permisos para proteger a la institución del
+acceso inapropiado y el uso no autorizado del sistema.
+11.12 La Administración debe evaluar las amenazas de seguridad a las TIC’s tanto de fuentes
+internas como externas.
+11.13 La Administración debe diseñar actividades de control para limitar el acceso de los
+usuarios a las TIC’s a través de controles como la asignación de claves de acceso y
+dispositivos de seguridad para autorización de usuarios.
+Diseño de la Adquisición, Desarrollo y Mantenimiento de las TIC’s.
+11.14 La Administración debe diseñar las actividades de control para la adquisición, desarrollo
+y mantenimiento de las TIC’s. La Administración puede utilizar un modelo de Ciclo de
+Vida del Desarrollo de Sistemas (CVDS) en el diseño de las actividades de control. El
+CVDS proporciona una estructura para un nuevo diseño de las TIC’s al esbozar las fases
+específicas y documentar los requisitos, aprobaciones y puntos de revisión dentro de las
+actividades de control sobre la adquisición, desarrollo y mantenimiento de la tecnología.
+11.15 La Administración puede adquirir software de TIC’s, por lo que debe incorporar
+metodologías para esta acción y debe diseñar actividades de control sobre su selección,
+desarrollo continuo y mantenimiento. Las actividades de control sobre el desarrollo,
+mantenimiento y cambio en el software de aplicaciones previenen la existencia de
+programas o modificaciones no autorizados.
+11.16 La contratación de servicios tercerizados para el desarrollo de las TIC’s es otra alternativa
+y la Administración también debe evaluar los riesgos que su utilización representa para
+la integridad, exactitud y validez de la información presentada a los servicios tercerizados
+y ofrecida por éstos.
+12. Implementar Actividades de Control.- La Administración debe poner en operación políticas y
+procedimientos, las cuales deben estar documentadas y formalmente establecidas.
+Documentación y Formalización de Responsabilidades a través de Políticas.
+12.01 La Administración debe documentar, a través de políticas, manuales, lineamientos y otros
+documentos de naturaleza similar las responsabilidades de control interno en la
+institución.
+12.02 La Administración debe documentar mediante políticas para cada unidad su
+responsabilidad sobre el cumplimiento de los objetivos de los procesos, de sus riesgos
+asociados, del diseño de actividades de control, de la implementación de los controles y
+de su eficacia operativa.
+
+## Página 20
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+12.03 El personal de las unidades que ocupa puestos clave puede definir con mayor amplitud
+las políticas a través de los procedimientos del día a día, dependiendo de la frecuencia
+del cambio en el entorno operativo y la complejidad del proceso operativo. La
+Administración debe comunicar al personal las políticas y procedimientos para que éste
+pueda implementar las actividades de control respecto de las responsabilidades que tiene
+asignadas.
+Revisiones Periódicas a las Actividades de Control.
+12.04 La Administración debe revisar periódicamente las políticas, procedimientos y actividades
+de control asociadas para mantener la relevancia y eficacia en el logro de los objetivos o
+en el enfrentamiento de sus riesgos.
+CUARTA. INFORMACIÓN Y COMUNICACIÓN.
+La información y comunicación son relevantes para el logro de los objetivos institucionales. Al respecto,
+la Administración debe establecer mecanismos que aseguren que la información relevante cuenta con los
+elementos de calidad suficientes y que los canales de comunicación tanto al interior como al exterior son
+efectivos.
+La información que los servidores públicos generan, obtienen, utilizan y comunican para respaldar el
+sistema de control interno debe cubrir los requisitos establecidos por la Administración, con la exactitud
+apropiada, así como con la especificidad requerida del personal pertinente.
+Los sistemas de información y comunicación, deben diseñarse e instrumentarse bajo criterios de
+utilidad, confiabilidad y oportunidad, así como con mecanismos de actualización permanente, difusión eficaz
+por medios electrónicos y en formatos susceptibles de aprovechamiento para su procesamiento que
+permitan determinar si se están cumpliendo las metas y objetivos institucionales con el uso eficiente de los
+recursos. La Administración requiere tener acceso a información relevante y mecanismos de comunicación
+confiables, en relación con los eventos internos y externos que pueden afectar a la institución.
+Para la aplicación de esta norma, el Titular, la Administración y, en su caso, el Órgano de Gobierno,
+deberán vigilar la implementación y operación en conjunto y de manera sistémica de los siguientes
+principios y elementos de control:
+13. Usar Información relevante y de calidad.- La Administración debe implementar los medios
+necesarios para que las unidades administrativas generen y utilicen información relevante y de
+calidad, que contribuyan al logro de las metas y objetivos institucionales y den soporte al SCII;
+Identificación de los Requerimientos de Información.
+13.01 La Administración debe diseñar un proceso que considere los objetivos institucionales y
+los riesgos asociados a éstos, para identificar los requerimientos de información
+necesarios para alcanzarlos y enfrentarlos, respectivamente. Estos requerimientos deben
+considerar las expectativas de los usuarios internos y externos.
+13.02 La Administración debe identificar los requerimientos de información en un proceso
+continuo que se desarrolla en todo el control interno. Conforme ocurre un cambio en la
+institución, en sus objetivos y riesgos, la Administración debe modificar los requisitos de
+información según sea necesario para cumplir con los objetivos y hacer frente a los
+riesgos modificados.
+Datos Relevantes de Fuentes Confiables.
+13.03 La Administración debe obtener datos relevantes de fuentes confiables internas y
+externas, de manera oportuna, y en función de los requisitos de información identificados
+y establecidos. Los datos relevantes tienen una conexión lógica con los requisitos de
+información identificados y establecidos. Las fuentes internas y externas confiables
+proporcionan datos que son razonablemente libres de errores y sesgos.
+Datos Procesados en Información de Calidad.
+13.04 La Administración debe procesar los datos obtenidos y transformarlos en información de
+calidad que apoye al control interno.
+13.05 La Administración debe procesar datos relevantes a partir de fuentes confiables y
+transformarlos en información de calidad dentro de los sistemas de información de la
+institución.
+
+## Página 21
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+14. Comunicar Internamente.- La Administración es responsable de que las áreas o unidades
+administrativas establezcan mecanismos de comunicación interna apropiados y de conformidad
+con las disposiciones aplicables, para difundir la información relevante y de calidad.
+Comunicación en toda la Institución.
+14.01 La Administración debe comunicar información de calidad en toda la institución utilizando
+las líneas de reporte y autoridad establecidas. Tal información debe comunicarse hacia
+abajo, lateralmente y hacia arriba, mediante líneas de reporte, es decir, en todos los
+niveles de la institución.
+14.02 La Administración debe comunicar información de calidad hacia abajo y lateralmente a
+través de las líneas de reporte y autoridad para permitir que el personal desempeñe
+funciones clave en la consecución de objetivos, enfrentamiento de riesgos, prevención
+de la corrupción y apoyo al control interno.
+14.03 La Administración debe recibir información de calidad sobre los procesos operativos de
+la institución, la cual fluye por las líneas de reporte y autoridad apropiadas para que el
+personal apoye a la Administración en la consecución de los objetivos institucionales.
+14.04 El Titular o, en su caso, el Órgano de Gobierno debe recibir información de calidad que
+fluya hacia arriba por las líneas de reporte, proveniente de la Administración y demás
+personal. La información relacionada con el control interno que es comunicada al Titular
+o al Órgano de Gobierno debe incluir asuntos importantes acerca de la adhesión, cambios
+o asuntos emergentes en materia de control interno. La comunicación ascendente es
+necesaria para la vigilancia efectiva del control interno.
+14.05 Cuando las líneas de reporte directas se ven comprometidas, el personal utiliza líneas
+separadas para comunicarse de manera ascendente. Las disposiciones jurídicas y
+normativas, así como las mejores prácticas internacionales, pueden requerir a las
+instituciones establecer líneas de comunicación separadas, como líneas éticas de
+denuncia, para la comunicación de información confidencial o sensible.
+Métodos Apropiados de Comunicación.
+14.06 La Administración debe seleccionar métodos apropiados para comunicarse internamente
+y considerar una serie de factores en la selección de los métodos apropiados de
+comunicación, entre los que se encuentran: la audiencia, la naturaleza de la información,
+la disponibilidad, los requisitos legales o reglamentarios, el costo para comunicar la
+información, y los requisitos legales o reglamentarios.
+14.07 La Administración debe seleccionar métodos de comunicación apropiados, como
+documentos escritos, ya sea en papel o en formato electrónico, o reuniones con el
+personal. Asimismo, debe evaluar periódicamente los métodos de comunicación de la
+institución para asegurar que cuenta con las herramientas adecuadas para comunicar
+internamente información de calidad de manera oportuna.
+15. Comunicar Externamente.- La Administración es responsable de que las áreas o unidades
+administrativas establezcan mecanismos de comunicación externa apropiados y de conformidad
+con las disposiciones aplicables, para difundir la información relevante.
+Comunicación con Partes Externas.
+15.01 La Administración debe comunicar a las partes externas, y obtener de éstas, información
+de calidad, utilizando las líneas de reporte establecidas. Las líneas abiertas y
+bidireccionales de reporte con partes externas permiten esta comunicación. Las partes
+externas incluyen, entre otros, a los proveedores, contratistas, servicios tercerizados,
+reguladores, auditores externos, instituciones gubernamentales y el público en general.
+15.02 La Administración debe comunicar información de calidad externamente a través de las
+líneas de reporte. De ese modo, las partes externas pueden contribuir a la consecución
+de los objetivos institucionales y a enfrentar sus riesgos asociados. La Administración
+debe incluir en esta información la comunicación relativa a los eventos y actividades que
+impactan el control interno.
+
+## Página 22
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+15.03 La Administración debe recibir información externa a través de las líneas de reporte
+establecidas y autorizadas. La información comunicada a la Administración debe incluir
+los asuntos significativos relativos a los riesgos, cambios o problemas que afectan al
+control interno, entre otros. Esta comunicación es necesaria para el funcionamiento eficaz
+y apropiado del control interno.
+15.04 El Titular o, en su caso, el Órgano de Gobierno debe recibir información de partes
+externas a través de las líneas de reporte establecidas y autorizadas. La información
+comunicada al Titular o al Órgano de Gobierno debe incluir asuntos importantes
+relacionados con los riesgos, cambios o problemas que impactan al control interno, entre
+otros. Esta comunicación es necesaria para la vigilancia eficaz y apropiada del control
+interno.
+15.05 Cuando las líneas de reporte directas se ven comprometidas, las partes externas utilizan
+líneas separadas para comunicarse con la institución. Las disposiciones jurídicas y
+normativas, así como las mejores prácticas internacionales pueden requerir a las
+instituciones establecer líneas separadas de comunicación, como líneas éticas de
+denuncia, para comunicar información confidencial o sensible. La Administración debe
+informar a las partes externas sobre estas líneas separadas, la manera en que funcionan,
+cómo utilizarlas y cómo se mantendrá la confidencialidad de la información y, en su caso,
+el anonimato de quienes aporten información.
+Métodos Apropiados de Comunicación.
+15.06 La Administración debe seleccionar métodos apropiados para comunicarse
+externamente. Asimismo, debe considerar una serie de factores en la selección de
+métodos apropiados de comunicación, entre los que se encuentran: audiencia, la
+naturaleza de la información, la disponibilidad, el costo, y los requisitos legales o
+reglamentarios.
+15.07 Con base en la consideración de los factores, la Administración debe seleccionar
+métodos de comunicación apropiados, como documentos escritos, ya sea en papel o
+formato electrónico, o reuniones con el personal. De igual manera, debe evaluar
+periódicamente los métodos de comunicación de la institución para asegurar que cuenta
+con las herramientas adecuadas para comunicar externamente información de calidad de
+manera oportuna.
+15.08 Las instituciones deben informar sobre su desempeño a las instancias y autoridades que
+correspondan, de acuerdo con las disposiciones aplicables. Adicionalmente, deben rendir
+cuentas a la ciudadanía sobre su actuación y desempeño.
+QUINTA. SUPERVISIÓN Y MEJORA CONTINUA.
+Son las actividades establecidas y operadas por los responsables designados por el Titular de la
+institución, con la finalidad de mejorar de manera continua al control interno, mediante la supervisión y
+evaluación de su eficacia, eficiencia y economía. La supervisión es responsabilidad de la Administración en
+cada uno de los procesos que realiza, y se puede apoyar, en los resultados de las auditorías realizadas por
+el Órgano Interno de Control y por otras instancias fiscalizadoras, ya que proporcionan una supervisión
+adicional a nivel institución, división, unidad administrativa o función.
+Párrafo reformado DOF 05-09-2018
+La supervisión contribuye a la optimización permanente del control interno y, por lo tanto, a la calidad
+en el desempeño de las operaciones, la salvaguarda de los recursos públicos, la prevención de la
+corrupción, la oportuna resolución de los hallazgos de auditoría y de otras revisiones, así como a la
+idoneidad y suficiencia de los controles implementados.
+El Sistema de Control Interno Institucional debe mantenerse en un proceso de supervisión y mejora
+continua, con el propósito de asegurar que la insuficiencia, deficiencia o inexistencia detectadas en la
+supervisión, verificación y evaluación interna y/o por las diferentes instancias fiscalizadoras, se resuelva
+con oportunidad y diligencia, dentro de los plazos establecidos de acuerdo a las acciones a realizar,
+debiendo identificar y atender la causa raíz de las mismas a efecto de evitar su recurrencia.
+Para la aplicación de esta norma, el Titular, la Administración y, en su caso, el Órgano de Gobierno,
+deberán vigilar la implementación y operación en conjunto y de manera sistémica de los siguientes
+principios y elementos de control:
+
+## Página 23
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+16. Realizar actividades de supervisión.- La Administración implementará actividades para la
+adecuada supervisión del control interno y la evaluación de sus resultados, por lo que deberá
+realizar una comparación del estado que guarda, contra el diseño establecido por la
+Administración; efectuar autoevaluaciones y considerar las auditorías y evaluaciones de las
+diferentes instancias fiscalizadoras, sobre el diseño y eficacia operativa del control interno,
+documentando sus resultados para identificar las deficiencias y cambios que son necesarios
+aplicar al control interno, derivado de modificaciones en la institución y su entorno.
+Establecimiento de Bases de Referencia.
+16.01 La Administración debe establecer bases de referencia para supervisar el control interno,
+comparando su estado actual contra el diseño efectuado por la Administración. Dichas
+bases representarán la diferencia entre los criterios de diseño del control interno y su
+estado en un punto específico en el tiempo, por lo que deberán revelar las debilidades y
+deficiencias detectadas en el control interno de la institución.
+16.02 Una vez establecidas las bases de referencia, la Administración debe utilizarlas como
+criterio en la evaluación del control interno, y cuando existan diferencias entre las bases
+y las condiciones reales realizar los cambios necesarios para reducirlas, ajustando el
+diseño del control interno y enfrentar mejor los objetivos y los riesgos institucionales o
+mejorar la eficacia operativa del control interno. Como parte de la supervisión, la
+Administración debe determinar cuándo revisar las bases de referencia, mismas que
+servirán para las evaluaciones de control interno subsecuentes.
+Supervisión del Control Interno.
+16.03 La Administración debe supervisar el control interno a través de autoevaluaciones y
+evaluaciones independientes. Las autoevaluaciones están integradas a las operaciones
+de la institución, se realizan continuamente y responden a los cambios. Las evaluaciones
+independientes se utilizan periódicamente y pueden proporcionar información respecto
+de la eficacia e idoneidad de las autoevaluaciones.
+16.04 La Administración debe realizar autoevaluaciones al diseño y eficacia operativa del
+control interno como parte del curso normal de las operaciones, en donde se deben incluir
+actividades de supervisión permanente por parte de la Administración, comparaciones,
+conciliaciones y otras acciones de rutina, así como herramientas automatizadas, las
+cuales permiten incrementar la objetividad y la eficiencia de los resultados mediante la
+recolección electrónica de las autoevaluaciones a los controles y transacciones.
+16.05 La Administración puede incorporar evaluaciones independientes para supervisar el
+diseño y la eficacia operativa del control interno en un momento determinado, o de una
+función o proceso específico. El alcance y la frecuencia de las evaluaciones
+independientes dependen, principalmente, de la administración de riesgos, la eficacia del
+monitoreo permanente y la frecuencia de cambios dentro de la institución y en su entorno.
+16.06 Las evaluaciones independientes también incluyen auditorías y otras evaluaciones que
+pueden implicar la revisión del diseño de los controles y la prueba directa a la
+implementación del control interno.
+16.07 La Administración conserva la responsabilidad de supervisar si el control interno es eficaz
+y apropiado para los procesos asignados a los servicios tercerizados. También debe
+utilizar autoevaluaciones, las evaluaciones independientes o una combinación de ambas
+para obtener una seguridad razonable sobre la eficacia operativa de los controles internos
+sobre los procesos asignados a los servicios tercerizados.
+Evaluación de Resultados.
+16.08 La Administración debe evaluar y documentar los resultados de las autoevaluaciones y
+de las evaluaciones independientes para identificar problemas en el control interno.
+Asimismo, debe utilizar estas evaluaciones para determinar si el control interno es eficaz
+y apropiado.
+
+## Página 24
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+16.09 La Administración debe identificar los cambios que han ocurrido en el control interno,
+derivados de modificaciones en la institución y en su entorno. Las partes externas también
+pueden contribuir con la Administración a identificar problemas en el control interno como
+son las quejas o denuncias de la ciudadanía y el público en general, o de los cuerpos
+revisores o reguladores externos.
+17. Evaluar los problemas y corregir las deficiencias.- Todos los servidores públicos de la
+institución deben comunicar las deficiencias y problemas de control interno tanto a los
+responsables de adoptar medidas correctivas, como al Titular, a la Administración y, en su caso,
+al Órgano de Gobierno, a través de las líneas de reporte establecidas; la Administración es
+responsable de corregir las deficiencias de control interno detectadas, documentar las medidas
+correctivas implantadas y monitorear que las acciones pertinentes fueron llevadas a cabo
+oportunamente por los responsables. Las medidas correctivas se comunicarán al nivel de control
+apropiado de la institución.
+Informe sobre Problemas.
+17.01 Todo el personal debe reportar a las partes internas y externas adecuadas los problemas
+de control interno que haya detectado, mediante las líneas de reporte establecidas, para
+que la Administración, las unidades especializadas, en su caso, y las instancias de
+supervisión, evalúen oportunamente dichas cuestiones.
+17.02 El personal puede identificar problemas de control interno en el desempeño de sus
+responsabilidades. Asimismo, debe comunicar estas cuestiones internamente al personal
+en la función clave responsable del control interno o proceso asociado y, cuando sea
+necesario, a otro de un nivel superior a dicho responsable. Dependiendo de la naturaleza
+de los temas, el personal puede considerar informar determinadas cuestiones al Órgano
+de Gobierno o, en su caso, al Titular.
+17.03 En función de los requisitos legales o de cumplimiento, la institución también puede
+requerir informar de los problemas a los terceros pertinentes, tales como legisladores,
+reguladores, organismos normativos y demás encargados de la emisión de criterios y
+disposiciones normativas a las que la institución está sujeta.
+Evaluación de Problemas.
+17.04 La Administración debe evaluar y documentar los problemas de control interno y debe
+determinar las acciones correctivas apropiadas para hacer frente oportunamente a los
+problemas y deficiencias detectadas. Adicionalmente, puede asignar responsabilidades y
+delegar autoridad para la apropiada remediación de las deficiencias de control interno.
+Acciones Correctivas.
+17.05 La Administración debe poner en práctica y documentar en forma oportuna las acciones
+para corregir las deficiencias de control interno. Dependiendo de la naturaleza de la
+deficiencia, el Titular o la Administración, o el Órgano de Gobierno, en su caso, deben
+revisar la pronta corrección de las deficiencias, comunicar las medidas correctivas al nivel
+apropiado de la estructura organizativa, y delegar al personal apropiado la autoridad y
+responsabilidad para realizar las acciones correctivas.
+CAPÍTULO II
+Responsabilidades y funciones en el Sistema de Control Interno Institucional
+10. RESPONSABILIDADES Y FUNCIONES.
+El control interno es responsabilidad del Titular de la institución, quien lo implementa con apoyo de la
+Administración (mandos superiores y medios) y del resto de los servidores públicos, quienes deberán
+cumplir con las siguientes funciones:
+I. GENÉRICAS:
+Todos los servidores públicos de la institución, son responsables de:
+
+## Página 25
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+a) Informar al superior jerárquico sobre las deficiencias relevantes, riesgos asociados y sus
+actualizaciones, identificadas en los procesos sustantivos y administrativos en los que
+participan y/o son responsables, y
+b) Evaluar el SCII verificando el cumplimiento de las Normas Generales, sus principios y
+elementos de control, así como proponer las acciones de mejora e implementarlas en las
+fechas y forma establecidas, en un proceso de mejora continua.
+II. DEL TITULAR Y LA ADMINISTRACIÓN DE LA INSTITUCIÓN:
+a) Determinarán las metas y objetivos de la Institución como parte de la planeación estratégica,
+diseñando los indicadores que permitan identificar, analizar y evaluar sus avances y
+cumplimiento. En la definición de las metas y objetivos, se deberá considerar el mandato legal,
+su misión, visión y la contribución de la Institución para la consecución de los objetivos del
+Plan Nacional de Desarrollo, los programas sectoriales, especiales y demás planes y
+programas, así como al cumplimiento de las disposiciones jurídicas y normativas aplicables;
+b) Establecerán y mantendrán un SCII apropiado, operando y actualizado conforme a las
+Normas Generales de Control Interno, sus principios y elementos de control; además de
+supervisar periódicamente su funcionamiento;
+c) El Titular supervisará que la evaluación del SCII se realice por lo menos una vez al año y se
+elabore un informe sobre el estado que guarda;
+d) Verificarán que el control interno se evalúe en su diseño, implementación y eficacia operativa,
+así como se atiendan las deficiencias o áreas de oportunidad detectadas;
+e) El Titular aprobará el PTCI y el PTAR para garantizar el oportuno cumplimiento de las acciones
+comprometidas por los responsables de su atención;
+f) El Titular aprobará la metodología para la administración de riesgos.
+g) El Titular instruirá y supervisará que las unidades administrativas, el Coordinador de Control
+Interno y el Enlace de Administración de Riesgos inicien y concluyan el proceso de
+administración de riesgos institucional y acordará con el Coordinador de Control Interno la
+metodología de administración de riesgos.
+h) El Titular instruirá a las unidades administrativas que identifiquen en sus procesos los posibles
+riesgos de corrupción y analicen la pertinencia, suficiencia y efectividad de los controles
+establecidos para mitigar dichos riesgos. En caso de que se concluya que existen debilidades
+de control, el riesgo de corrupción deberá incluirse en la Matriz y Programa de Trabajo de
+Administración de Riesgos.
+III. DEL COORDINADOR DE CONTROL INTERNO:
+En el Fortalecimiento del Sistema de Control Interno Institucional:
+a) Ser el canal de comunicación e interacción con la Institución, el Órgano Interno de Control y la
+UCEGP, en la implementación, actualización, supervisión, seguimiento, control y vigilancia del
+SCII;
+Inciso reformado DOF 05-09-2018
+b) Acordar con el Titular de la Institución las acciones para la implementación y operación del
+Modelo Estándar de Control Interno;
+c) Coordinar la aplicación de la evaluación del SCII en los procesos prioritarios de la institución;
+d) Revisar con el Enlace del SCII y presentar para aprobación del Titular de la Institución el
+Informe Anual, el PTCI original y actualizado, y el Reporte de Avances Trimestral del PTCI.
+En la Administración de Riesgos:
+e) Acordar con el Titular de la Institución la metodología de administración de riesgos, los
+objetivos institucionales a los que se deberá alinear el proceso y los riesgos institucionales
+que fueron identificados, incluyendo los de corrupción, en su caso; así como comunicar los
+resultados a las unidades administrativas de la Institución, por conducto del Enlace de
+Administración de Riesgos en forma previa al inicio del proceso de administración de riesgos;
+f) Comprobar que la metodología para la administración de riesgos, se establezca y difunda
+formalmente en todas sus áreas administrativas y se constituya como proceso sistemático y
+herramienta de gestión. En caso de que la metodología instituida contenga etapas o
+
+## Página 26
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+actividades adicionales a las establecidas en las Disposiciones, se deberá informar por escrito
+a la UCEGP.
+g) Convocar a los titulares de todas las unidades administrativas de la Institución, al Titular del
+Órgano Interno de Control y al Enlace de Administración de Riesgos, para integrar el Grupo de
+Trabajo que definirá la Matriz, el Mapa y el Programa de Trabajo de Administración de Riesgos,
+para la autorización del Titular, así como el cronograma de acciones que serán desarrolladas
+para tal efecto;
+Inciso reformado DOF 05-09-2018
+h) Coordinar y supervisar que el proceso de administración de riesgos se implemente en apego
+a lo establecido en las presentes Disposiciones y ser el canal de comunicación e interacción
+con el Titular de la Institución y el Enlace de Administración de Riesgos;
+i) Revisar los proyectos de Matriz y Mapa de Administración de Riesgos y el PTAR,
+conjuntamente con el Enlace de Administración de Riesgos.
+j) Revisar el Reporte de Avances Trimestral del PTAR y el Reporte Anual del Comportamiento
+de los Riesgos.
+k) Presentar anualmente para firma del Titular de la Institución y el Enlace de Administración de
+Riesgos la Matriz y Mapa de Administración de Riesgos, el PTAR y el Reporte Anual del
+Comportamiento de los Riesgos.
+l) Difundir la Matriz de Administración de Riesgos, el Mapa de Riesgos y el PTAR Institucionales,
+e instruir la implementación del PTAR a los responsables de las acciones de control
+comprometidas;
+m) Comunicar al Enlace de Administración de Riesgos, los riesgos adicionales o cualquier
+actualización a la Matriz de Administración de Riesgos, al Mapa de Riesgos y al PTAR
+Institucionales determinados en el Comité u Órgano de Gobierno, según corresponda.
+n) Verificar que se registren en el Sistema Informático los reportes de avances trimestrales del
+PTAR.
+o) Presentar los documentos descritos en el inciso k) de esta fracción III, en la primera sesión
+ordinaria del ejercicio fiscal correspondiente, del Comité o del órgano de gobierno, según
+corresponda, y sus actualizaciones en las sesiones subsecuentes.
+Inciso adicionado DOF 05-09-2018
+En el Comité de Control y Desempeño Institucional:
+p) Determinar, conjuntamente con el Presidente y el Vocal Ejecutivo, los asuntos a tratar en las
+sesiones del Comité y reflejarlos en la Orden del Día; así como, la participación de los
+responsables de las áreas competentes de la Institución;
+Se recorre en su orden este inciso DOF 05-09-2018
+q) Revisar y validar que la información institucional sea suficiente, relevante y competente, e
+instruir al Enlace del Comité sobre la conformación de la carpeta electrónica, en los 10 días
+hábiles previos a la celebración de la sesión.
+Se recorre en su orden este inciso DOF 05-09-2018
+r) Solicitar al Enlace del Comité que incorpore al sistema informático la información que compete
+a las unidades administrativas de la Institución, para la conformación de la carpeta electrónica,
+a más tardar 5 días hábiles previos a la celebración de la sesión.
+Se recorre en su orden este inciso DOF 05-09-2018
+IV. DEL ENLACE DEL SISTEMA DE CONTROL INTERNO INSTITUCIONAL:
+a) Ser el canal de comunicación e interacción entre el Coordinador de Control Interno y las
+unidades administrativas de la Institución;
+b) Definir las áreas administrativas y los procesos prioritarios en donde será aplicada la
+evaluación del SCII;
+c) Instrumentar las acciones y los controles necesarios, con la finalidad de que las unidades
+administrativas realicen la evaluación de sus procesos prioritarios;
+
+## Página 27
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+d) Revisar con los responsables de las unidades administrativas la propuesta de acciones de
+mejora que serán incorporadas al PTCI para atender la inexistencia o insuficiencia en la
+implementación de las Normas Generales, sus principios y elementos de control interno;
+e) Elaborar el proyecto del Informe Anual y del PTCI para revisión del Coordinador de Control
+Interno;
+f) Elaborar la propuesta de actualización del PTCI para revisión del Coordinador de Control
+Interno;
+g) Integrar información para la elaboración del proyecto de Reporte de Avances Trimestral del
+cumplimiento del PTCI y presentarlo al Coordinador de Control Interno.
+h) Incorporar en el Sistema Informático el Informe Anual, el PTCI y el Reporte de Avances
+Trimestral, revisados y autorizados.
+V. DEL ENLACE DE ADMINISTRACIÓN DE RIESGOS:
+a) Ser el canal de comunicación e interacción con el Coordinador de Control Interno y las
+unidades administrativas responsables de la administración de riesgos;
+b) Informar y orientar a las unidades administrativas sobre el establecimiento de la metodología
+de administración de riesgos determinada por la Institución, las acciones para su aplicación y
+los objetivos institucionales a los que se deberá alinear dicho proceso, para que documenten
+la Matriz de Administración de Riesgos;
+c) Para tal efecto, se podrá utilizar el formato de Matriz de Administración de Riesgos, que se
+encuentra disponible en el portal de la Normateca Federal http://www.normateca.gob.mx;
+d) Revisar y analizar la información proporcionada por las unidades administrativas en forma
+integral, a efecto de elaborar y presentar al Coordinador de Control Interno los proyectos
+institucionales de la Matriz, Mapa y Programa de Trabajo de Administración de Riesgos; el
+Reporte de Avances Trimestral del PTAR; y el Reporte Anual del Comportamiento de los
+Riesgos.
+e) Resguardar los documentos señalados en el inciso anterior que hayan sido firmados y sus
+respectivas actualizaciones;
+f) Dar seguimiento permanente al PTAR y actualizar el Reporte de Avance Trimestral;
+g) Agregar en la Matriz de Administración de Riesgos, el PTAR y el Mapa de Riesgos, los riesgos
+adicionales determinados por el Comité o el Órgano de Gobierno, según corresponda.
+Inciso reformado DOF 05-09-2018
+h) Incorporar en el Sistema Informático la Matriz, Mapa y Programa de Trabajo de Administración
+de Riesgos; el Reporte de Avances Trimestral del PTAR; y el Reporte Anual del
+Comportamiento de los Riesgos.
+VI. DEL ENLACE DEL COMITÉ DE CONTROL Y DESEMPEÑO INSTITUCIONAL:
+a) Ser el canal de comunicación e interacción entre el Coordinador de Control Interno y las
+unidades administrativas de la Institución;
+b) Solicitar a las unidades administrativas de la Institución la información suficiente, relevante y
+competente para la integración de la carpeta electrónica con 10 días hábiles de anticipación
+a la celebración del Comité;
+c) Remitir al Coordinador de Control Interno la información institucional consolidada para su
+revisión y validación;
+d) Integrar y capturar la carpeta electrónica para su consulta por los convocados, con cinco días
+hábiles de anticipación a la celebración de la sesión.
+e) Registrar en el Sistema Informático el seguimiento y atención de los acuerdos del Comité.
+
+## Página 28
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+VII. DEL ÓRGANO INTERNO DE CONTROL:
+Denominación reformada DOF 05-09-2018
+En el Fortalecimiento del Sistema de Control Interno Institucional:
+a) Asesorar y apoyar a la Institución de forma permanente en el mantenimiento y fortalecimiento
+del SCII;
+b) Promover y vigilar que las acciones de mejora comprometidas en el PTCI, se cumplan en
+tiempo y forma;
+En la Administración de Riesgos:
+c) Apoyar a la Institución de forma permanente, en las recomendaciones formuladas sobre el
+proceso de administración de riesgos;
+d) Promover que las acciones de control que se comprometan en el PTAR, se orienten a: evitar,
+reducir, asumir, transferir o compartir los riesgos;
+e) Emitir opiniones no vinculantes, a través de su participación en los equipos de trabajo que
+para tal efecto constituya el Enlace de Administración de Riesgos;
+f) Evaluar el Reporte de Avances Trimestral del PTAR; y
+g) Presentar en la primera sesión ordinaria del Comité o del Órgano de Gobierno, según
+corresponda, su opinión y/o comentarios sobre el Reporte Anual de Comportamiento de los
+Riesgos.
+En el Comité de Control y Desempeño Institucional:
+h) Incorporar al sistema informático en la carpeta electrónica del Comité la información de su
+competencia, establecida en el numeral 47 de las presentes disposiciones.
+Inciso adicionado DOF 05-09-2018
+CAPÍTULO III
+Evaluación y Fortalecimiento del Sistema de Control Interno
+Sección I.
+Evaluación del Sistema de Control Interno Institucional.
+11. DE LA EVALUACIÓN DEL SCII.
+El SCII deberá ser evaluado anualmente, en el mes de noviembre de cada ejercicio, por los servidores
+públicos responsables de los procesos prioritarios (sustantivos y administrativos) en el ámbito de su
+competencia, identificando y conservando la evidencia documental y/o electrónica que acredite la existencia
+y suficiencia de la implementación de las cinco Normas Generales de Control Interno, sus 17 Principios y
+elementos de control interno, así como de tenerla a disposición de las instancias fiscalizadoras que la
+soliciten.
+Para evaluar el SCII, se deberá verificar la existencia y operación de los elementos de control de por lo
+menos cinco procesos prioritarios (sustantivos y administrativos) y como máximo los que determine la
+institución conforme a su mandato y características, a fin de conocer el estado que guarda su SCII.
+La Institución determinará los procesos prioritarios (sustantivos y administrativos) para la evaluación del
+SCII, cuando éstos se encuentren debidamente mapeados y formalmente incorporados a su inventario de
+procesos. En ese sentido, los procesos seleccionados podrán ser aquellos que formen parte de un mismo
+macroproceso, estar concatenados entre sí, o que se ejecuten de manera transversal entre varias áreas.
+Se podrá seleccionar cualquier proceso prioritario (sustantivo y administrativo), utilizando alguno o
+varios de los siguientes criterios:
+a) Aporta al logro de los compromisos y prioridades incluidas en el Plan Nacional de Desarrollo y
+programas sectoriales, regionales, institucionales, especiales y/o transversales.
+b) Contribuye al cumplimiento de la visión, misión y objetivos estratégicos de la Institución.
+c) Genera beneficios a la población (mayor rentabilidad social) o están relacionados con la entrega
+de subsidios.
+
+## Página 29
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+d) Se encuentra relacionado con trámites y servicios que se brindan al ciudadano, en especial
+permisos, licencias y concesiones.
+e) Su ejecución permite el cumplimiento de indicadores de desempeño de programas
+presupuestarios o se encuentra directamente relacionado con una Matriz de Indicadores para
+Resultados.
+f) Tiene un alto monto de recursos presupuestales asignados.
+g) Es susceptible de presentar riesgos de actos contrarios a la integridad, en lo específico de
+corrupción.
+h) Se ejecuta con apoyo de algún sistema informático.
+La institución deberá elaborar y remitir mediante oficio, en el mes de noviembre de cada año, a la
+UCEGP una matriz en donde señale los criterios adoptados para seleccionar los procesos prioritarios
+(sustantivos y administrativos) en los cuales realizó la evaluación del SCII, para ello podrá utilizar el
+siguiente formato:
+Párrafo reformado DOF 05-09-2018
+Unidad Criterios de Selección
+Nombre del
+Tipo Sustantivo/ Responsable
+Proceso
+Prioritario Administrativo (Dueña del a) b) c) d) e) f) g) h)
+proceso)
+Proceso 1
+Proceso 2
+Proceso 3
+Proceso 4
+Proceso 5
+La evaluación del SCII se realizará identificando la implementación y operación de las cinco Normas
+Generales de Control Interno y sus 17 Principios, a través de la verificación de la existencia y suficiencia de
+los siguientes elementos de control:
+PRIMERA. AMBIENTE DE CONTROL.
+1. Los servidores públicos de la Institución, conocen y aseguran en su área de trabajo el cumplimiento
+de metas y objetivos, visión y misión institucionales (Institucional);
+2. Los objetivos y metas institucionales derivados del plan estratégico están comunicados y
+asignados a los encargados de las áreas y responsables de cada uno de los procesos para su
+cumplimiento (Institucional);
+3. La institución cuenta con un Comité de Ética y de Prevención de Conflictos de Interés formalmente
+establecido para difundir y evaluar el cumplimiento del Código de Ética y de Conducta; se cumplen
+con las reglas de integridad para el ejercicio de la función pública y sus lineamientos generales
+(Institucional);
+4. Se aplican, al menos una vez al año, encuestas de clima organizacional, se identifican áreas de
+oportunidad, determinan acciones de mejora, dan seguimiento y evalúan sus resultados
+(Institucional);
+5. La estructura organizacional define la autoridad y responsabilidad, segrega y delega funciones,
+delimita facultades entre el personal que autoriza, ejecuta, vigila, evalúa, registra o contabiliza las
+transacciones de los procesos;
+6. Los perfiles y descripciones de puestos están actualizados conforme a las funciones y alineados
+a los procesos (Institucional);
+7. El manual de organización y de procedimientos de las unidades administrativas que intervienen
+en los procesos está alineado a los objetivos y metas institucionales y se actualizan con base en
+sus atribuciones y responsabilidades establecidas en la normatividad aplicable; y
+
+## Página 30
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+8. Se opera en el proceso un mecanismo para evaluar y actualizar el control interno (políticas y
+procedimientos), en cada ámbito de competencia y nivel jerárquico.
+SEGUNDA. ADMINISTRACIÓN DE RIESGOS.
+9. Se aplica la metodología establecida en cumplimiento a las etapas para la Administración de
+Riesgos, para su identificación, descripción, evaluación, atención y seguimiento, que incluya los
+factores de riesgo, estrategias para administrarlos y la implementación de acciones de control;
+10. Las actividades de control interno atienden y mitigan los riesgos identificados del proceso, que
+pueden afectar el logro de metas y objetivos institucionales, y éstas son ejecutadas por el servidor
+público facultado conforme a la normatividad;
+11. Existe un procedimiento formal que establezca la obligación de los responsables de los procesos
+que intervienen en la administración de riesgos; y
+12. Se instrumentan en los procesos acciones para identificar, evaluar y dar respuesta a los riesgos
+de corrupción, abusos y fraudes potenciales que pudieran afectar el cumplimiento de los objetivos
+institucionales.
+TERCERA. ACTIVIDADES DE CONTROL.
+13. Se seleccionan y desarrollan actividades de control que ayudan a dar respuesta y reducir los
+riesgos de cada proceso, considerando los controles manuales y/o automatizados con base en el
+uso de TIC´s;
+14. Se encuentran claramente definidas las actividades de control en cada proceso, para cumplir con
+las metas comprometidas con base en el presupuesto asignado del ejercicio fiscal;
+15. Se tienen en operación los instrumentos y mecanismos del proceso, que miden su avance,
+resultados y se analizan las variaciones en el cumplimiento de los objetivos y metas Institucionales;
+16. Se tienen establecidos estándares de calidad, resultados, servicios o desempeño en la ejecución
+de los procesos;
+17. Se establecen en los procesos mecanismos para identificar y atender la causa raíz de las
+observaciones determinadas por las diversas instancias de fiscalización, con la finalidad de evitar
+su recurrencia;
+18. Se identifica en los procesos la causa raíz de las debilidades de control interno determinadas, con
+prioridad en las de mayor importancia, a efecto de evitar su recurrencia e integrarlas a un Programa
+de Trabajo de Control Interno para su seguimiento y atención;
+19. Se evalúan y actualizan en los procesos las políticas, procedimientos, acciones, mecanismos e
+instrumentos de control;
+20. Las recomendaciones y acuerdos de los Comités Institucionales, relacionados con cada proceso,
+se atienden en tiempo y forma, conforme a su ámbito de competencia;
+21. Existen y operan en los procesos actividades de control desarrolladas mediante el uso de TIC’s;
+22. Se identifican y evalúan las necesidades de utilizar TIC’s en las operaciones y etapas del proceso,
+considerando los recursos humanos, materiales, financieros y tecnológicos que se requieren;
+23. En las operaciones y etapas automatizadas de los procesos se cancelan oportunamente los
+accesos autorizados del personal que causó baja, tanto a espacios físicos como a TIC’s; y
+24. Se cumple con las políticas y disposiciones establecidas para la Estrategia Digital Nacional en los
+procesos de gobernanza, organización y de entrega, relacionados con la planeación, contratación
+y administración de bienes y servicios de TIC’s y con la seguridad de la información (Institucional
+TIC’s).
+CUARTA. INFORMAR Y COMUNICAR.
+25. Existe en cada proceso un mecanismo para generar información relevante y de calidad (accesible,
+correcta, actualizada, suficiente, oportuna, válida y verificable), de conformidad con las
+disposiciones legales y administrativas aplicables;
+26. Se tiene implantado en cada proceso un mecanismo o instrumento para verificar que la elaboración
+de informes, respecto del logro del plan estratégico, objetivos y metas institucionales, cumplan con
+las políticas, lineamientos y criterios institucionales establecidos;
+
+## Página 31
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+27. Dentro del sistema de información se genera de manera oportuna, suficiente y confiable,
+información sobre el estado de la situación contable y programático-presupuestal del proceso;
+28. Se cuenta con el registro de acuerdos y compromisos, correspondientes a los procesos, aprobados
+en las reuniones del Órgano de Gobierno, de Comités Institucionales y de grupos de alta dirección,
+así como de su seguimiento, a fin de que se cumplan en tiempo y forma;
+29. Se tiene implantado un mecanismo específico para el registro, análisis y atención oportuna y
+suficiente de quejas y denuncias (Institucional); y
+30. Se cuenta con un sistema de Información que de manera integral, oportuna y confiable permite a
+la alta dirección y, en su caso, al Órgano de Gobierno realizar seguimientos y tomar decisiones
+(Institucional).
+QUINTA. SUPERVISIÓN Y MEJORA CONTINUA.
+31. Se realizan las acciones correctivas y preventivas que contribuyen a la eficiencia y eficacia de las
+operaciones, así como la supervisión permanente de los cinco componentes de control interno;
+32. Los resultados de las auditorías de instancias fiscalizadoras de cumplimiento, de riesgos, de
+funciones, evaluaciones y de seguridad sobre Tecnologías de la Información, se utilizan para
+retroalimentar a cada uno de los responsables y mejorar el proceso; y
+33. Se llevan a cabo evaluaciones del control interno de los procesos sustantivos y administrativos por
+parte del Titular y la Administración, Órgano Interno de Control o de una instancia independiente
+para determinar la suficiencia y efectividad de los controles establecidos.
+Numeral reformado DOF 05-09-2018
+El Coordinador de Control Interno deberá implementar acciones concretas para que los responsables
+de los procesos prioritarios seleccionados (sustantivos y administrativos), apliquen la evaluación con objeto
+de verificar la existencia y suficiencia de los elementos de control. El responsable o dueño del proceso
+deberá establecer y comprometer acciones de mejora en el Programa de Trabajo de Control Interno, cuando
+se identifiquen debilidades de control interno o áreas de oportunidad que permitan fortalecer el SCII.
+La UCEGP difundirá en medios electrónicos el listado de evidencias documentales y/o electrónicas
+sugeridas para sustentar la aplicación de cada elemento de control interno, las cuales podrán ser
+consideradas y/o complementadas con otras que la propia Institución tenga establecidas para comprobar
+que cumple con las condiciones del elemento de control.
+12. EVALUACIÓN DE ELEMENTOS DE CONTROL ADICIONALES.
+Con el propósito de fortalecer el SCII y que sea adaptable a las particularidades institucionales, el
+Coordinador de Control Interno podrá incorporar en la evaluación del SCII e implementación de los 17
+Principios, elementos de control adicionales a los descritos en el numeral anterior, los cuales deberán
+basarse en los específicos detallados en el numeral 9 de las presentes Disposiciones, mismos que retoman
+lo establecido en el MICI.
+El Órgano Interno de Control podrá recomendar la incorporación de elementos de control adicionales
+en virtud de las deficiencias que llegará a identificar en el SCII, sin embargo, será el Coordinador de Control
+Interno quien valorará la viabilidad y pertinencia de la inclusión de dichos elementos de control adicionales.
+Párrafo reformado DOF 05-09-2018
+En caso de que como resultado de la evaluación de los elementos de control adicionales, se identifiquen
+áreas de oportunidad o debilidades de control, deberán incorporarse al PTCI con acciones de mejora para
+su seguimiento y cumplimiento correspondientes.
+Sección II.
+Informe Anual del Estado que Guarda el Sistema de Control Interno Institucional.
+13. DE SU PRESENTACIÓN.
+Con base en los resultados obtenidos de la aplicación de la evaluación, los Titulares presentarán con
+su firma autógrafa un Informe Anual:
+I. Al Secretario de la Función Pública, con copia al Titular del Órgano Interno de Control, a más tardar
+el 31 de enero de cada año;
+Fracción reformada DOF 05-09-2018
+
+## Página 32
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+II. Al Comité en la primera sesión ordinaria, y
+III. Al Órgano de Gobierno, en su caso, en su primera sesión ordinaria.
+14. DE LOS APARTADOS QUE LO INTEGRAN.
+El Informe Anual no deberá exceder de tres cuartillas y se integrará con los siguientes apartados:
+I. Aspectos relevantes derivados de la evaluación del SCII:
+a) Porcentaje de cumplimiento general de los elementos de control y por norma general de
+control interno;
+b) Elementos de control con evidencia documental y/o electrónica, suficiente para acreditar su
+existencia y operación, por norma general de control interno;
+c) Elementos de control con evidencia documental y/o electrónica, inexistente o insuficiente para
+acreditar su implementación, por norma general de control interno, y
+d) Debilidades o áreas de oportunidad en el Sistema de Control Interno Institucional;
+II. Resultados relevantes alcanzados con la implementación de las acciones de mejora
+comprometidas en el año inmediato anterior en relación con los esperados, indicando en su caso,
+las causas por las cuales no se cumplió en tiempo y forma la totalidad de las acciones de mejora
+propuestas en el PTCI del ejercicio inmediato anterior.
+III. Compromiso de cumplir en tiempo y forma las acciones de mejora que conforman el PTCI.
+La evaluación del SCII y el PTCI deberán anexarse al Informe Anual y formarán parte integrante del
+mismo, ambos documentos se incorporarán en el Sistema Informático.
+15. DE LA SOLICITUD DEL INFORME ANUAL EN FECHA DISTINTA.
+La UCEGP podrá solicitar el Informe Anual con fecha distinta al 31 de enero de cada año, por
+instrucciones superiores, caso fortuito o causas de fuerza mayor.
+Sección III.
+Integración y seguimiento del Programa de Trabajo de Control Interno.
+16. INTEGRACIÓN DEL PTCI Y ACCIONES DE MEJORA.
+El PTCI deberá contener las acciones de mejora determinadas para fortalecer los elementos de control
+de cada norma general, identificados con inexistencias o insuficiencias en el SCII, las cuales pueden
+representar debilidades de control interno o áreas de oportunidad para diseñar nuevos controles o reforzar
+los existentes, también deberá incluir la fecha de inicio y término de la acción de mejora, la unidad
+administrativa y el responsable de su implementación, así como los medios de verificación. El PTCI deberá
+presentar la firma de autorización del Titular de la Institución, de revisión del Coordinador de Control Interno
+y de elaboración del Enlace del SCII.
+Las acciones de mejora deberán concluirse a más tardar el 31 de octubre de cada año, en caso
+contrario, se documentarán y presentarán en el Comité las justificaciones correspondientes, a fin de que se
+determine, mediante acuerdo, la reprogramación o replanteamiento de las mismas para su conclusión y
+determinar las nuevas acciones de mejora que serán integradas al PTCI.
+Párrafo reformado DOF 05-09-2018
+La evidencia documental y/o electrónica suficiente que acredite la implementación de las acciones de
+mejora y/o avances reportados sobre el cumplimiento del PTCI, deberá ser resguardada por los servidores
+públicos responsables de su implementación y estará a disposición de las instancias fiscalizadoras.
+17. ACTUALIZACIÓN DEL PTCI.
+El PTCI podrá ser actualizado con motivo de las recomendaciones formuladas por el Titular del Órgano
+Interno de Control, derivadas de la evaluación al Informe Anual y al PTCI original al identificarse áreas de
+oportunidad adicionales o que tiendan a fortalecer las acciones de mejora determinadas por la Institución.
+El PTCI actualizado y debidamente firmado deberá presentarse a más tardar en la segunda sesión ordinaria
+del Comité para su conocimiento y posterior seguimiento.
+Párrafo reformado DOF 05-09-2018
+
+## Página 33
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+18. REPORTE DE AVANCES TRIMESTRAL DEL PTCI.
+I. El seguimiento al cumplimiento de las acciones de mejora del PTCI deberá realizarse
+periódicamente por el Coordinador de Control Interno para informar trimestralmente al Titular de
+la Institución el resultado, a través del Reporte de Avances Trimestral, el cual deberá contener al
+menos lo siguiente:
+a) Resumen cuantitativo de las acciones de mejora comprometidas, indicando el total de las
+concluidas y el porcentaje de cumplimiento que representan, el total de las que se encuentran
+en proceso y porcentaje de avance de cada una de ellas, así como las pendientes sin avance;
+b) En su caso, la descripción de las principales problemáticas que obstaculizan el cumplimiento
+de las acciones de mejora reportadas en proceso y propuestas de solución para consideración
+del Comité u Órgano de Gobierno, según corresponda;
+c) Conclusión general sobre el avance global en la atención de las acciones de mejora
+comprometidas y respecto a las concluidas su contribución como valor agregado para corregir
+debilidades o insuficiencias de control interno o fortalecer el Sistema de Control Interno; y
+d) Firma del Coordinador de Control Interno y del Enlace del Sistema de Control Interno
+Institucional.
+Inciso reformado DOF 05-09-2018
+II. El Coordinador de Control Interno deberá presentar dicho reporte:
+a) Al Titular del Órgano Interno de Control, dentro de los 15 días hábiles posteriores al cierre de
+cada trimestre, para que esa instancia pueda emitir su informe de evaluación, y
+Inciso reformado DOF 05-09-2018
+b) Al Comité u Órgano de Gobierno, a través del Sistema Informático, en la sesión ordinaria
+posterior al cierre de cada trimestre. El primer reporte de avance trimestral se presentará en
+la segunda sesión ordinaría.
+19. INFORME DE EVALUACIÓN DEL ÓRGANO INTERNO DE CONTROL AL REPORTE DE AVANCES TRIMESTRAL DEL
+PTCI.
+Denominación reformada DOF 05-09-2018
+El Titular del Órgano Interno de Control realizará la evaluación del Reporte de Avances Trimestral del
+PTCI y elaborará el Informe de Evaluación de cada uno de los aspectos contenidos en dicho reporte, el cual
+presentará:
+Párrafo reformado DOF 05-09-2018
+I. Al Titular de la Institución y al Coordinador de Control Interno, dentro de los 15 días hábiles
+posteriores a la recepción del reporte de avance trimestral del PTCI, y
+II. Al Comité y, en su caso, al Órgano de Gobierno, en las sesiones ordinarias posteriores al cierre
+de cada trimestre. El primer reporte de avance trimestral se presentará en la segunda sesión
+ordinaría.
+Sección IV.
+Evaluación del Órgano Interno de Control al Informe Anual y PTCI.
+Denominación reformada DOF 05-09-2018
+20. INFORME DE RESULTADOS.
+El Titular del Órgano Interno de Control evaluará el Informe Anual y el PTCI, debiendo presentar con su
+firma autógrafa el Informe de Resultados:
+Párrafo reformado DOF 05-09-2018
+I. Al Titular de la Institución y al Secretario de la Función Pública, a más tardar el último día hábil del
+mes de febrero, y
+II. Al Comité o, en su caso, al Órgano de Gobierno, en su primera sesión ordinaria.
+
+## Página 34
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+21. DE SU CONTENIDO Y CRITERIOS PARA SU ELABORACIÓN.
+El Informe de Resultados de la evaluación del Titular del Órgano Interno de Control deberá contener su
+opinión sobre los siguientes aspectos:
+Párrafo reformado DOF 05-09-2018
+I. La evaluación aplicada por la Institución en los procesos prioritarios seleccionados, determinando
+la existencia de criterios o elementos específicos que justifiquen la elección de dichos procesos;
+II. La evidencia documental y/o electrónica que acredite la existencia y suficiencia de la
+implementación de los elementos de control evaluados en cada proceso prioritario seleccionado;
+III. La congruencia de las acciones de mejora integradas al PTCI con los elementos de control
+evaluados y si aportan indicios suficientes para desprender que en lo general o en lo específico
+podrán contribuir a corregir debilidades o insuficiencias de control interno y/o atender áreas de
+oportunidad para fortalecer el Sistema de Control Interno Institucional;
+IV. Conclusiones y recomendaciones.
+Los servidores públicos responsables de las Unidades Administrativas y/o procesos de la institución
+deberán atender, en todo momento, los requerimientos de información que les formule el Órgano Interno
+de Control, en cumplimiento a las obligaciones y atribuciones que le otorgan a éste las presentes
+Disposiciones.
+Párrafo reformado DOF 05-09-2018
+TÍTULO TERCERO.
+METODOLOGÍA DE ADMINISTRACIÓN DE RIESGOS
+CAPÍTULO I
+Proceso de Administración de Riesgos
+22. INICIO DEL PROCESO.
+El proceso de administración de riesgos deberá iniciarse a más tardar en el último trimestre de cada
+año, con la conformación de un grupo de trabajo en el que participen los titulares de todas las unidades
+administrativas de la Institución, el Titular del Órgano Interno de Control, el Coordinador de Control Interno
+y el Enlace de Administración de Riesgos, con objeto de definir las acciones a seguir para integrar la Matriz
+y el PTAR, las cuales deberán reflejarse en un cronograma que especifique las actividades a realizar,
+designación de responsables y fechas compromiso para la entrega de productos.
+Párrafo reformado DOF 05-09-2018
+23. FORMALIZACIÓN Y ETAPAS DE LA METODOLOGÍA.
+La metodología general de administración de riesgos que se describe en el presente numeral deberá
+tomarse como base para la metodología específica que aplique cada Institución, misma que deberá estar
+debidamente autorizada por el Titular de la Institución y documentada su aplicación en una Matriz de
+Administración de Riesgos.
+I. COMUNICACIÓN Y CONSULTA.
+Se realizará conforme a lo siguiente:
+a) Considerar el plan estratégico institucional, identificar y definir tanto las metas y objetivos de
+la Institución como los procesos prioritarios (sustantivos y administrativos), así como los
+actores directamente involucrados en el proceso de administración de riesgos, y
+b) Definir las bases y criterios que se deberán considerar para la identificación de las causas y
+posibles efectos de los riesgos, así como las acciones de control que se adopten para su
+tratamiento.
+c) Identificar los procesos susceptibles a riesgos de corrupción.
+Lo anterior debe tener como propósito:
+1. Establecer un contexto apropiado;
+2. Asegurar que los objetivos, metas y procesos de la Institución sean comprendidos y
+considerados por los responsables de instrumentar el proceso de administración de riesgos;
+
+## Página 35
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+3. Asegurar que los riesgos sean identificados correctamente, incluidos los de corrupción, y
+4. Constituir un grupo de trabajo en donde estén representadas todas las áreas de la institución
+para el adecuado análisis de los riesgos.
+II. CONTEXTO.
+Esta etapa se realizará conforme a lo siguiente:
+a) Describir el entorno externo social, político, legal, financiero, tecnológico, económico,
+ambiental y de competitividad, según sea el caso, de la Institución, a nivel internacional,
+nacional y regional.
+b) Describir las situaciones intrínsecas a la Institución relacionadas con su estructura,
+atribuciones, procesos, objetivos y estrategias, recursos humanos, materiales y financieros,
+programas presupuestarios y la evaluación de su desempeño, así como su capacidad
+tecnológica bajo las cuales se pueden identificar sus fortalezas y debilidades para responder
+a los riesgos que sean identificados.
+c) Identificar, seleccionar y agrupar los enunciados definidos como supuestos en los procesos
+de la Institución, a fin de contar con un conjunto sistemático de eventos adversos de
+realización incierta que tienen el potencial de afectar el cumplimiento de los objetivos
+institucionales. Este conjunto deberá utilizarse como referencia en la identificación y definición
+de los riesgos.
+d) Describir el comportamiento histórico de los riesgos identificados en ejercicios anteriores,
+tanto en lo relativo a su incidencia efectiva como en el impacto que, en su caso, hayan tenido
+sobre el logro de los objetivos institucionales.
+III. EVALUACIÓN DE RIESGOS.
+Se realizará conforme a lo siguiente:
+a) Identificación, selección y descripción de riesgos. Se realizará con base en las metas y
+objetivos institucionales, y los procesos sustantivos por los cuales se logran éstos, con el
+propósito de constituir el inventario de riesgos institucional.
+Algunas de las técnicas que se podrán utilizar en la identificación de los riesgos son: talleres
+de autoevaluación; mapeo de procesos; análisis del entorno; lluvia de ideas; entrevistas;
+cuestionarios; análisis de indicadores de gestión, desempeño o de riesgos; análisis
+comparativo y registros tanto de riesgos materializados como de resultados y estrategias
+aplicadas en años anteriores.
+Párrafo reformado DOF 05-09-2018
+En la descripción de los riesgos se deberá considerar la siguiente estructura general:
+sustantivo, verbo en participio y, adjetivo o adverbio o complemento circunstancial negativo.
+Los riesgos deberán ser descritos como una situación negativa que puede ocurrir y afectar el
+cumplimiento de metas y objetivos institucionales.
+b) Nivel de decisión del riesgo. Se identificará el nivel de exposición que tiene el riesgo en
+caso de su materialización, de acuerdo a lo siguiente:
+ Estratégico: Afecta negativamente el cumplimiento de la misión, visión, objetivos y
+metas institucionales.
+ Directivo: Impacta negativamente en la operación de los procesos, programas y
+proyectos de la institución,
+ Operativo: Repercute en la eficacia de las acciones y tareas realizadas por los
+responsables de su ejecución.
+c) Clasificación de los riesgos. Se realizará en congruencia con la descripción del riesgo que
+se determine, de acuerdo a la naturaleza de la Institución, clasificándolos en los siguientes
+tipos de riesgo: sustantivo, administrativo; legal; financiero; presupuestal; de servicios; de
+seguridad; de obra pública; de recursos humanos; de imagen; de TIC´s; de salud; de
+corrupción y otros.
+
+## Página 36
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+d) Identificación de factores de riesgo. Se describirán las causas o situaciones que puedan
+contribuir a la materialización de un riesgo, considerándose para tal efecto la siguiente
+clasificación:
+ Humano: Se relacionan con las personas (internas o externas), que participan directa o
+indirectamente en los programas, proyectos, procesos, actividades o tareas.
+ Financiero Presupuestal: Se refieren a los recursos financieros y presupuestales
+necesarios para el logro de metas y objetivos.
+ Técnico-Administrativo: Se vinculan con la estructura orgánica funcional, políticas,
+sistemas no informáticos, procedimientos, comunicación e información, que intervienen
+en la consecución de las metas y objetivos.
+ TIC´s: Se relacionan con los sistemas de información y comunicación automatizados;
+ Material: Se refieren a la Infraestructura y recursos materiales necesarios para el logro
+de las metas y objetivos.
+ Normativo: Se vinculan con las leyes, reglamentos, normas y disposiciones que rigen la
+actuación de la organización en la consecución de las metas y objetivos.
+ Entorno: Se refieren a las condiciones externas a la organización, que pueden incidir en
+el logro de las metas y objetivos.
+e) Tipo de factor de riesgo: Se identificará el tipo de factor conforme a lo siguiente:
+ Interno: Se encuentra relacionado con las causas o situaciones originadas en el ámbito
+de actuación de la organización;
+ Externo: Se refiere a las causas o situaciones fuera del ámbito de competencia de la
+organización.
+f) Identificación de los posibles efectos de los riesgos. Se describirán las consecuencias
+que incidirán en el cumplimiento de las metas y objetivos institucionales, en caso de
+materializarse el riesgo identificado;
+g) Valoración del grado de impacto antes de la evaluación de controles (valoración inicial).
+La asignación se determinará con un valor del 1 al 10 en función de los efectos, de acuerdo a
+la siguiente escala de valor:
+Escala de
+Impacto Descripción
+Valor
+10 Influye directamente en el cumplimiento de la misión, visión,
+metas y objetivos de la Institución y puede implicar pérdida
+patrimonial, incumplimientos normativos, problemas
+Catastrófico operativos o impacto ambiental y deterioro de la imagen,
+9 dejando además sin funcionar totalmente o por un periodo
+importante de tiempo, afectando los programas, proyectos,
+procesos o servicios sustantivos de la Institución.
+8 Dañaría significativamente el patrimonio, incumplimientos
+normativos, problemas operativos o de impacto ambiental y
+Grave deterioro de la imagen o logro de las metas y objetivos
+7 institucionales. Además se requiere una cantidad importante
+de tiempo para investigar y corregir los daños.
+6 Causaría, ya sea una pérdida importante en el patrimonio o un
+Moderado
+5 deterioro significativo en la imagen institucional.
+4 Causa un daño en el patrimonio o imagen institucional, que se
+Bajo puede corregir en el corto tiempo y no afecta el cumplimiento
+3 de las metas y objetivos institucionales.
+2 Riesgo que puede ocasionar pequeños o nulos efectos en la
+Menor
+1 Institución.
+
+## Página 37
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+h) Valoración de la probabilidad de ocurrencia antes de la evaluación de controles
+(valoración inicial). La asignación se determinará con un valor del 1 al 10, en función de los
+factores de riesgo, considerando las siguientes escalas de valor:
+Probabilidad
+Escala de
+de Descripción
+Valor
+Ocurrencia
+10 Probabilidad de ocurrencia muy alta.
+Recurrente Se tiene la seguridad de que el riesgo se materialice,
+9
+tiende a estar entre 90% y 100%.
+8 Probabilidad de ocurrencia alta.
+Muy probable Está entre 75% a 89% la seguridad de que se materialice
+7
+el riesgo.
+6 Probabilidad de ocurrencia media.
+Probable Está entre 51% a 74% la seguridad de que se materialice
+5
+el riesgo.
+4 Probabilidad de ocurrencia baja.
+Inusual Está entre 25% a 50% la seguridad de que se materialice
+3
+el riesgo.
+2 Probabilidad de ocurrencia muy baja.
+Remota Está entre 1% a 24% la seguridad de que se materialice el
+1
+riesgo.
+La valoración del grado de impacto y de la probabilidad de ocurrencia deberá realizarse antes de la
+evaluación de controles (evaluación inicial), se determinará sin considerar los controles existentes para
+administrar los riesgos, a fin de visualizar la máxima vulnerabilidad a que está expuesta la Institución de no
+responder ante ellos adecuadamente.
+IV. EVALUACIÓN DE CONTROLES.
+Se realizará conforme a lo siguiente:
+a) Comprobar la existencia o no de controles para cada uno de los factores de riesgo y, en su caso,
+para sus efectos.
+b) Describir los controles existentes para administrar los factores de riesgo y, en su caso, para sus
+efectos.
+c) Determinar el tipo de control: preventivo, correctivo y/o detectivo.
+d) Identificar en los controles lo siguiente:
+1. Deficiencia: Cuando no reúna alguna de las siguientes condiciones:
+ Está documentado: Que se encuentra descrito.
+ Está formalizado: Se encuentra autorizado por servidor público facultado.
+ Se aplica: Se ejecuta consistentemente el control, y
+ Es efectivo. Cuando se incide en el factor de riesgo, para disminuir la probabilidad de
+ocurrencia.
+2. Suficiencia: Cuando se cumplen todos los requisitos anteriores y se cuenta con el número
+adecuado de controles por cada factor de riesgo.
+e) Determinar si el riesgo está controlado suficientemente, cuando todos sus factores cuentan con
+controles suficientes.
+
+## Página 38
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+V. EVALUACIÓN DE RIESGOS RESPECTO A CONTROLES.
+Valoración final del impacto y de la probabilidad de ocurrencia del riesgo. En esta etapa se
+realizará la confronta de los resultados de la evaluación de riesgos y de controles, a fin de visualizar la
+máxima vulnerabilidad a que está expuesta la Institución de no responder adecuadamente ante ellos,
+considerando los siguientes aspectos:
+a) La valoración final del riesgo nunca podrá ser superior a la valoración inicial;
+b) Si todos los controles del riesgo son suficientes, la valoración final del riesgo deberá ser inferior a
+la inicial;
+c) Si alguno de los controles del riesgo son deficientes, o se observa inexistencia de controles, la
+valoración final del riesgo deberá ser igual a la inicial, y
+d) La valoración final carecerá de validez cuando no considere la valoración inicial del impacto y de
+la probabilidad de ocurrencia del riesgo; la totalidad de los controles existentes y la etapa de
+evaluación de controles.
+Para la valoración del impacto y de la probabilidad de ocurrencia antes y después de la evaluación de
+controles, las Instituciones podrán utilizar metodologías, modelos y/o teorías basados en cálculos
+matemáticos, tales como puntajes ponderados, cálculos de preferencias, proceso de jerarquía analítica y
+modelos probabilísticos, entre otros.
+VI. MAPA DE RIESGOS.
+Los riesgos se ubicarán por cuadrantes en la Matriz de Administración de Riesgos y se graficarán en el
+Mapa de Riesgos, en función de la valoración final del impacto en el eje horizontal y la probabilidad de
+ocurrencia en el eje vertical. La representación gráfica del Mapa de Riesgos deberá contener los cuadrantes
+siguientes:
+Cuadrante I. Riesgos de Atención Inmediata.- Son críticos por su alta probabilidad de ocurrencia y
+grado de impacto, se ubican en la escala de valor mayor a 5 y hasta 10 de ambos ejes;
+Cuadrante II. Riesgos de Atención Periódica.- Tienen alta probabilidad de ocurrencia ubicada en la
+escala de valor mayor a 5 y hasta 10 y bajo grado de impacto de 1 y hasta 5;
+Cuadrante III. Riesgos Controlados.- Son de baja probabilidad de ocurrencia y grado de impacto, se
+ubican en la escala de valor de 1 y hasta 5 de ambos ejes, y
+Cuadrante IV. Riesgos de Seguimiento.- Tienen baja probabilidad de ocurrencia con valor de 1 y hasta
+5 y alto grado de impacto mayor a 5 y hasta 10.
+VII. DEFINICIÓN DE ESTRATEGIAS Y ACCIONES DE CONTROL PARA RESPONDER A LOS
+RIESGOS.
+Se realizará considerando lo siguiente:
+a) Las estrategias constituirán las opciones y/o políticas de respuesta para administrar los riesgos,
+basados en la valoración final del impacto y de la probabilidad de ocurrencia del riesgo, lo que
+permitirá determinar las acciones de control a implementar por cada factor de riesgo. Es
+imprescindible realizar un análisis del beneficio ante el costo en la mitigación de los riesgos para
+establecer las siguientes estrategias:
+Inciso reformado DOF 05-09-2018
+1. Evitar el riesgo.- Se refiere a eliminar el factor o factores que pueden provocar la
+materialización del riesgo, considerando que sí una parte del proceso tiene alto riesgo, el
+segmento completo recibe cambios sustanciales por mejora, rediseño o eliminación, resultado
+de controles suficientes y acciones emprendidas.
+2. Reducir el riesgo.- Implica establecer acciones dirigidas a disminuir la probabilidad de
+ocurrencia (acciones de prevención) y el impacto (acciones de contingencia), tales como la
+optimización de los procedimientos y la implementación o mejora de controles.
+3. Asumir el riesgo.- Se aplica cuando el riesgo se encuentra en el Cuadrante III, Riesgos
+Controlados de baja probabilidad de ocurrencia y grado de impacto y puede aceptarse sin
+necesidad de tomar otras medidas de control diferentes a las que se poseen, o cuando no se
+tiene opción para abatirlo y sólo pueden establecerse acciones de contingencia.
+
+## Página 39
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+4. Transferir el riesgo.- Consiste en trasladar el riesgo a un externo a través de la contratación
+de servicios tercerizados, el cual deberá tener la experiencia y especialización necesaria para
+asumir el riesgo, así como sus impactos o pérdidas derivadas de su materialización. Esta
+estrategia cuenta con tres métodos:
+ Protección o cobertura: Cuando la acción que se realiza para reducir la exposición a
+una pérdida, obliga también a renunciar a la posibilidad de una ganancia.
+ Aseguramiento: Significa pagar una prima (el precio del seguro) para que en caso de
+tener pérdidas, éstas sean asumidas por la aseguradora.
+Hay una diferencia fundamental entre el aseguramiento y la protección. Cuando se
+recurre a la segunda medida se elimina el riesgo renunciando a una ganancia posible.
+Cuando se recurre a la primera medida se paga una prima para eliminar el riesgo de
+pérdida, sin renunciar por ello a la ganancia posible.
+ Diversificación: Implica mantener cantidades similares de muchos activos riesgosos en
+lugar de concentrar toda la inversión en uno sólo, en consecuencia la diversificación
+reduce la exposición al riesgo de un activo individual.
+5. Compartir el riesgo.- Se refiere a distribuir parcialmente el riesgo y las posibles
+consecuencias, a efecto de segmentarlo y canalizarlo a diferentes unidades administrativas
+de la institución, las cuales se responsabilizarán de la parte del riesgo que les corresponda en
+su ámbito de competencia.
+b) Las acciones de control para administrar los riesgos se definirán a partir de las estrategias
+determinadas para los factores de riesgo, las cuales se incorporarán en el PTAR.
+c) Para los riesgos de corrupción que hayan identificado las instituciones, éstas deberán contemplar
+solamente las estrategias de evitar y reducir el riesgo, toda vez que los riesgos de corrupción son
+inaceptables e intolerables, en tanto que lesionan la imagen, la credibilidad y la transparencia de
+las Instituciones.
+24. DE LOS RIESGOS DE CORRUPCIÓN.
+En la identificación de riesgos de corrupción se podrá aplicar la metodología general de administración
+riesgos del presente Titulo, tomando en consideración para las etapas que se enlistan los siguientes
+aspectos:
+COMUNICACIÓN Y CONSULTA.
+Para la identificación de los riesgos de corrupción, las instituciones deberán considerar los procesos
+financieros, presupuestales, de contratación, de información y documentación, investigación y sanción, así
+como los trámites y servicios internos y externos.
+CONTEXTO.
+Para el caso de los riesgos de corrupción, las causas se establecerán a partir de la identificación de las
+DEBILIDADES (factores internos) y las AMENAZAS (factores externos) que pueden influir en los procesos
+y procedimientos que generan una mayor vulnerabilidad frente a riesgos de corrupción.
+EVALUACIÓN DE RIESGOS RESPECTO A CONTROLES.
+Tratándose de los riesgos de corrupción no se tendrán en cuenta la clasificación y los tipos de riesgos
+establecidas en el inciso g) de la etapa de Evaluación de Riesgos, debido a que serán de impacto grave,
+ya que la materialización de este tipo de riesgos es inaceptable e intolerable, en tanto que lesionan la
+imagen, confianza, credibilidad y transparencia de la institución, afectando los recursos públicos y el
+cumplimiento de las funciones de administración.
+Algunas de las herramientas técnicas que se podrán utilizar de manera complementaria en la
+identificación de los riesgos de corrupción son la “Guía de Autoevaluación a la Integridad en el Sector
+Público” e “Integridad y Prevención de la Corrupción en el Sector Público. Guía Básica de Implementación”,
+las cuales fueron emitidas por la Auditoría Superior de la Federación y se pueden localizar en su portal de
+internet.
+
+## Página 40
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+25. TOLERANCIA AL RIESGO.
+La Administración deberá definir la tolerancia a los riesgos identificados para los objetivos estratégicos
+definidos por la Institución. En donde la tolerancia al riesgo se debe considerar como el nivel aceptable de
+diferencia entre el cumplimiento cabal del objetivo estratégico, respecto de su grado real de cumplimiento.
+Una vez definidos los niveles de tolerancia, los responsables de cada riesgo deben supervisar el
+comportamiento de los niveles de tolerancia, mediante indicadores que para tal efecto establezcan,
+reportando en todo momento al Titular de la Institución y Coordinador de Control Interno, en caso que se
+exceda el riesgo el nivel de tolerancia establecido.
+No operará en ningún caso, la definición de niveles de tolerancia para los riesgos de corrupción y de
+actos contrarios a la integridad, así como para los que impliquen incumplimiento de cualquier disposición
+legal, reglamentaria o administrativa relacionada con el servicio público, o que causen la suspensión o
+deficiencia de dicho servicio, por parte de las áreas administrativas que integran la institución.
+26. SERVICIOS TERCERIZADOS.
+La Administración conserva la responsabilidad sobre el desempeño de las actividades realizadas por
+los servicios tercerizados que contrate para realizar algunos procesos operativos para la institución, tales
+como servicios de tecnologías de información y comunicaciones, servicios de mantenimiento, servicios de
+seguridad o servicios de limpieza, entre otros; por lo que en cada área administrativa que involucre dichos
+servicios, solicitará al responsable del servicio, la identificación de riesgos y diseño de control respecto del
+trabajo que desempeña, con objeto de entender y analizar la implementación y operación de los controles,
+así como el modo en que el control interno de dichos terceros impacta en el control interno de la institución.
+La Administración debe determinar si los controles internos establecidos por los servicios tercerizados
+son apropiados para asegurar que la institución alcance sus objetivos y responda a los riesgos asociados,
+o si se deben establecer controles complementarios en el control interno de la institución.
+CAPÍTULO II
+Seguimiento de la Administración de Riesgos
+27. PROGRAMA DE TRABAJO DE ADMINISTRACIÓN DE RIESGOS.
+Para la implementación y seguimiento de las estrategias y acciones, se elaborará y concluirá el PTAR,
+a más tardar el último día hábil de diciembre de cada año, debidamente firmado por el Titular de la
+Institución, el Coordinador de Control Interno y el Enlace de Administración de Riesgos e incluirá:
+Párrafo reformado DOF 05-09-2018
+a) Los riesgos;
+b) Los factores de riesgo;
+c) Las estrategias para administrar los riesgos, y
+d) Las acciones de control registradas en la Matriz de Administración de Riesgos, las cuales deberán
+identificar:
+■ Unidad administrativa;
+■ Responsable de su implementación;
+■ Las fechas de inicio y término, y
+■ Medios de verificación.
+28. REPORTE DE AVANCES TRIMESTRAL DEL PTAR.
+El seguimiento al cumplimiento de las acciones de control del PTAR deberá realizarse periódicamente
+por el Coordinador de Control Interno y el Enlace de Administración de Riesgos para informar
+trimestralmente al Titular de la Institución el resultado, a través del Reporte de Avances Trimestral del PTAR,
+el cual deberá contener al menos lo siguiente:
+a) Resumen cuantitativo de las acciones de control comprometidas, indicando el total de las
+concluidas y el porcentaje de cumplimiento que representan, el total de las que se encuentran en
+proceso y el porcentaje de avance de cada una de ellas, así como las pendientes sin avance;
+
+## Página 41
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+b) En su caso, la descripción de las principales problemáticas que obstaculizan el cumplimiento de
+las acciones de control reportadas en proceso y propuestas de solución para consideración del
+Comité u Órgano de Gobierno, según corresponda;
+c) Conclusión general sobre el avance global en la atención de las acciones de control
+comprometidas y respecto a las concluidas su contribución como valor agregado para evitar que
+se materialicen los riesgos, indicando sus efectos en el Sistema de Control Interno y en el
+cumplimiento de metas y objetivos; y
+d) Firmas del Coordinador de Control Interno y del Enlace de Administración de Riesgos.
+El Coordinador de Control Interno deberá presentar el Reporte de Avances Trimestral del PTAR:
+a) Al Titular del Órgano Interno de Control, dentro de los 15 días hábiles posteriores al cierre de cada
+trimestre para fines del informe de evaluación, y
+Inciso reformado DOF 05-09-2018
+b) Al Comité u Órgano de Gobierno, según corresponda, a través del Sistema Informático, en las
+sesiones ordinarias como sigue:
+1. Reporte de Avances del primer trimestre en la segunda sesión;
+2. Reporte de Avances del segundo trimestre en la tercera sesión;
+3. Reporte de Avances del tercer trimestre en la cuarta sesión, y
+4. Reporte de Avances del cuarto trimestre en la primera sesión de cada año.
+29. EVIDENCIA DOCUMENTAL DEL PTAR.
+La evidencia documental y/o electrónica que acredite la implementación y avances reportados, será
+resguardada por los servidores públicos responsables de las acciones de control comprometidas en el
+PTAR institucional y deberá ponerse a disposición de los Órganos Internos de Control, a través del Enlace
+de Administración de Riesgos.
+Párrafo reformado DOF 05-09-2018
+30. INFORME DE EVALUACIÓN DEL ÓRGANO INTERNO DE CONTROL AL REPORTE DE AVANCES TRIMESTRAL DEL
+PTAR.
+Denominación reformada DOF 05-09-2018
+El Titular del Órgano Interno de Control presentará en las sesiones ordinarias del Comité o del Órgano
+de Gobierno, según corresponda, su informe de evaluación de cada uno de los aspectos del Reporte de
+Avances Trimestral del PTAR, como sigue:
+Párrafo reformado DOF 05-09-2018
+I. Al Titular de la Institución, dentro de los 15 días hábiles posteriores a la recepción del reporte de
+avance trimestral del PTAR, y
+II. Al Comité y, en su caso, al Órgano de Gobierno, a través del Sistema Informático, en las sesiones
+inmediatas posteriores al cierre de cada trimestre.
+31. DEL REPORTE ANUAL DE COMPORTAMIENTO DE LOS RIESGOS.
+Se realizará un Reporte Anual del comportamiento de los riesgos, con relación a los determinados en
+la Matriz de Administración de Riesgos del año inmediato anterior, y contendrá al menos lo siguiente:
+I. Riesgos con cambios en la valoración final de probabilidad de ocurrencia y grado de impacto, los
+modificados en su conceptualización y los nuevos riesgos;
+II. Comparativo del total de riesgos por cuadrante;
+III. Variación del total de riesgos y por cuadrante; y
+IV. Conclusiones sobre los resultados alcanzados en relación con los esperados, tanto cuantitativos
+como cualitativos de la administración de riesgos.
+El Reporte Anual del comportamiento de los riesgos, deberá fortalecer el proceso de administración de
+riesgos y el Titular de la Institución lo informará al Comité o al Órgano de Gobierno, según corresponda, a
+través del Sistema Informático, en su primera sesión ordinaria de cada ejercicio fiscal.
+
+## Página 42
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+Para apoyar el registro y documentación del Proceso de Administración de Riesgos, la UCEGP pondrá
+a disposición de las Instituciones una herramienta informática, que contemple tanto los riesgos generales
+como los de corrupción.
+TÍTULO CUARTO
+COMITÉ DE CONTROL Y DESEMPEÑO INSTITUCIONAL
+CAPÍTULO I
+De los Objetivos del Comité
+32. DE LOS OBJETIVOS DEL COMITÉ.
+Los Titulares de las Instituciones instalarán y encabezarán el Comité de Control y Desempeño
+Institucional, el cual tendrá los siguientes objetivos:
+I. Contribuir al cumplimiento oportuno de metas y objetivos institucionales con enfoque a resultados,
+así como a la mejora de los programas presupuestarios;
+II. Contribuir a la administración de riesgos institucionales con el análisis y seguimiento de las
+estrategias y acciones de control determinadas en el PTAR, dando prioridad a los riesgos de
+atención inmediata y de corrupción;
+III. Analizar las variaciones relevantes, principalmente las negativas, que se presenten en los
+resultados operativos, financieros, presupuestarios y administrativos y, cuando proceda, proponer
+acuerdos con medidas correctivas para subsanarlas, privilegiando el establecimiento y la atención
+de acuerdos para la prevención o mitigación de situaciones críticas;
+IV. Identificar y analizar los riesgos y las acciones preventivas en la ejecución de los programas,
+presupuesto y procesos institucionales que puedan afectar el cumplimiento de metas y objetivos;
+V. Impulsar el establecimiento y actualización del SCII, con el seguimiento permanente a la
+implementación de sus componentes, principios y elementos de control, así como a las acciones
+de mejora comprometidas en el PTCI y acciones de control del PTAR;
+VI. Impulsar la aplicación de medidas preventivas para evitar materialización de riesgos y la
+recurrencia de observaciones de Órganos Internos de Control, atendiendo la causa raíz de las
+mismas;
+Fracción reformada DOF 05-09-2018
+VII. Revisar el cumplimiento de programas de la Institución y temas transversales de la Secretaría;
+VIII. Agregar valor a la gestión institucional, contribuyendo a la atención y solución de temas relevantes,
+con la aprobación de acuerdos que se traduzcan en compromisos de solución a los asuntos que
+se presenten. Cuando se trate de entidades, adoptar acuerdos que sirvan de apoyo al Órgano de
+Gobierno para la toma de decisiones o su equivalente en los órganos administrativos
+desconcentrados.
+CAPÍTULO II
+De la Integración del Comité
+33. DE LA INTEGRACIÓN DEL COMITÉ.
+Todas las Instituciones constituirán un Comité, que será encabezado por su Titular y el Titular del
+Órgano Interno de Control, el cual se integrará con los siguientes miembros propietarios que tendrán voz y
+voto:
+Párrafo reformado DOF 05-09-2018
+I. El Presidente: Titular de la Institución.
+II. El Vocal Ejecutivo: Titular del Órgano Interno de Control.
+Fracción reformada DOF 05-09-2018
+III. Vocales:
+a) En las dependencias:
+1. El Titular de la Dirección General de Programación y Presupuesto o equivalente.
+
+## Página 43
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+2. El Titular de la Dirección General de Programación y Presupuesto Sectorial de la
+Secretaría de Hacienda y Crédito Público.
+3. El Titular de la Unidad de Asuntos Jurídicos o equivalente.
+4. El Titular de la Dirección General de Tecnologías de Información o equivalente
+5. El Coordinador de Control Interno (cuando no participe como Presidente suplente).
+b) En las entidades:
+1. Entidades Sectorizadas:
+a) Un representante de la Coordinadora Sectorial.
+b) El Titular del Área Jurídica o equivalente, en caso de no contar con ésta, un
+representante del Área Jurídica o equivalente de la Coordinadora Sectorial.
+Inciso reformado DOF 05-09-2018
+c) El Titular del Área de Tecnologías de la Información de la entidad, en caso de no
+contar con esta figura, un representante de la Dirección General de Tecnologías
+de la Información o equivalente de la Coordinadora Sectorial.
+d) El Coordinador de Control Interno (cuando no participe como Presidente suplente).
+2. Entidades No Sectorizadas:
+a) El Titular del área responsable de programación y presupuesto o equivalente.
+b) El Titular del Área Jurídica o equivalente.
+c) El Titular del Área de Tecnologías de la Información de la entidad o equivalente.
+d) El Coordinador de Control Interno (cuando no participe como Presidente suplente).
+e) En el caso de entidades de control presupuestario directo, adicionalmente un
+representante de la Dirección General de Programación y Presupuesto Sectorial
+de la Secretaría de Hacienda y Crédito Público.
+c) En los órganos administrativos desconcentrados:
+1. El representante de la dependencia a la que estén adscritos.
+2. El Coordinador de Control Interno (cuando no participe como Presidente suplente).
+3. El Titular de la Dirección General de Programación y Presupuesto o equivalente.
+4. El Titular de la Dirección General de Programación y Presupuesto Sectorial de la
+Secretaría de Hacienda y Crédito Público.
+5. El Titular de la Unidad de Asuntos Jurídicos o equivalente, en caso de no contar con
+ésta, un representante del Área Jurídica o equivalente de la dependencia a la que se
+encuentran adscritos.
+6. El Titular de la Dirección General de Tecnologías de Información o equivalente, en caso
+de no contar con ésta, un representante de dicha unidad administrativa o equivalente de
+la dependencia a la que se encuentran adscritos.
+Inciso reformado DOF 05-09-2018
+Los representantes de la coordinadora sectorial en las entidades y de la dependencia a la que están
+adscritos los órganos administrativos desconcentrados, deberán corresponder a un nivel jerárquico mínimo
+de Director General Adjunto o equivalente y tener el conocimiento sobre los temas de la Institución, así
+como capacidad de decisión sobre los asuntos que se presenten en el Comité, condiciones que el
+Presidente y Vocal Ejecutivo del Comité deberán verificar su cumplimiento.
+Los órganos administrativos desconcentrados deberán instalar su propio COCODI para los efectos que
+establece el Titulo Cuarto de las Disposiciones, como excepción y en caso de no tener adscrito un Órgano
+Interno de Control dentro de su estructura orgánica, el Titular de la institución podrá formular solicitud al
+Presidente del COCODI de la dependencia a la que se encuentran jerárquicamente subordinados, para que
+determine por votación de la mayoría de sus miembros sí en sus sesiones, serán tratados los asuntos del
+órgano administrativo desconcentrado que corresponda o, en su caso, determinar la pertinencia de
+constituir un Comité propio, informando a la UCEGP lo acordado.
+Párrafo reformado DOF 05-09-2018
+
+## Página 44
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+34. DEL ÓRGANO DE VIGILANCIA.
+El Delegado y/o Subdelegado o, en su caso, el Comisario Público Propietario y/o Suplente del sector
+correspondiente participará en el Comité en calidad de Órgano de Vigilancia de la Institución, como sigue:
+a) En las dependencias y órganos administrativos desconcentrados: El Delegado y/o
+Subdelegado del sector correspondiente, y
+b) En las entidades sectorizadas y no sectorizadas: El Comisario Público Propietario y/o Suplente
+del sector correspondiente.
+35. DE LOS INVITADOS.
+Se podrán incorporar al Comité como invitados:
+a) Los responsables de las áreas de la Institución competentes de los asuntos a tratar en la sesión;
+b) Los servidores públicos de la APF, internos o externos a la Institución que por las funciones que
+realizan, están relacionados con los asuntos a tratar en la sesión respectiva para apoyar en su
+atención y solución;
+c) Personas externas a la APF, expertas en asuntos relativos a la Institución, cuando el caso lo
+amerite, a propuesta de los miembros del Comité con autorización del Presidente;
+d) El auditor externo;
+e) El Titular del órgano administrativo desconcentrado, en las sesiones del Comité de la dependencia
+a la que se encuentra jerárquicamente subordinado, en caso de que los temas a que se refieren
+las presentes Disposiciones, sean tratados en el COCODI de dicha dependencia.
+f) El representante de la UCEGP, designado por su Titular, y
+g) Los Enlaces del Sistema de Control Interno, de Administración de Riesgos y del Comité.
+Los invitados señalados en el presente numeral, participarán en el Comité con voz pero sin voto, quienes
+podrán proponer a consideración del Comité, riesgos de atención inmediata y/o de corrupción no reflejados
+en la Matriz de Administración Riesgos, a través de la Cédula de problemáticas o situaciones críticas, para
+su atención oportuna.
+El invitado representante de la UCEGP, deberá ser convocado invariablemente a las sesiones del
+Comité, su designación será comunicada por el Titular de la UCEGP por escrito al Vocal Ejecutivo.
+36. DE LOS SUPLENTES.
+Los miembros propietarios podrán nombrar a su respectivo suplente de nivel jerárquico inmediato
+inferior, quienes intervendrán en las ausencias de aquellos. Por excepción, las suplencias de los Vocales
+se podrán realizar hasta el nivel de subdirector o equivalente.
+Para fungir como suplentes, los servidores públicos deberán contar con acreditación por escrito del
+miembro propietario dirigida al Vocal Ejecutivo, de la que se dejará constancia en el acta y en la carpeta
+electrónica correspondiente. Los suplentes asumirán en las sesiones a las que asistan las funciones que
+corresponden a los propietarios.
+CAPÍTULO III
+Atribuciones del Comité y Funciones de los Miembros
+37. DE LAS ATRIBUCIONES DEL COMITÉ.
+El Comité tendrá las atribuciones siguientes:
+I. Aprobar el Orden del Día;
+II. Aprobar acuerdos para fortalecer el SCII, particularmente con respecto a:
+a) El Informe Anual;
+b) El cumplimiento en tiempo y forma de las acciones de mejora del PTCI, así como su
+reprogramación o replanteamiento;
+
+## Página 45
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+c) Las recomendaciones contenidas en el Informe de Resultados del Titular del Órgano Interno
+de Control derivado de la evaluación del Informe Anual, y
+Inciso reformado DOF 05-09-2018
+d) Atención en tiempo y forma de las recomendaciones y observaciones de instancias de
+fiscalización y vigilancia;
+III. Aprobar acuerdos y, en su caso, formular recomendaciones para fortalecer la Administración de
+Riesgos, derivados de:
+a) La revisión del PTAR, con base en la Matriz de Administración de Riesgos y el Mapa de
+Riesgos, así como de las actualizaciones;
+b) El Reporte de Avances Trimestral del PTAR;
+c) El análisis del resultado anual del comportamiento de los riesgos, y
+d) La recurrencia de las observaciones derivadas de las auditorías o revisiones practicadas por
+el Órgano Interno de Control o por otras instancias externas de fiscalización.
+Inciso reformado DOF 05-09-2018
+IV. Aprobar acuerdos para fortalecer el desempeño institucional, particularmente con respecto a:
+a) El análisis del cumplimiento de los programas presupuestarios y comportamiento financiero;
+b) La evaluación del cumplimiento de las metas y objetivos de los programas sectoriales,
+institucionales y/o especiales y de sus indicadores relacionados, y
+c) La revisión del cumplimiento de los programas y temas transversales de la Secretaría,
+mediante el análisis del avance en el logro de los indicadores relacionados a los mismos.
+V. Aprobar acuerdos para atender las debilidades de control detectadas, derivado del resultado de
+quejas, denuncias, inconformidades, procedimientos administrativos de responsabilidad,
+observaciones de instancias fiscalizadoras y de las sugerencias formuladas por el Comité de Ética
+y de Prevención de Conflictos de Interés por conductas contrarias al Código de Ética, las Reglas
+de Integridad y al Código de Conducta;
+VI. Tomar conocimiento del reporte del análisis del desempeño de la Institución, que elaboren los
+Delegados para las dependencias y órganos administrativos desconcentrados, así como de la MIR
+de los programas presupuestarios responsabilidad de la institución, aprobados para el ejercicio
+fiscal de que se trate, estableciendo los acuerdos que procedan;
+VII. Dar seguimiento a los acuerdos y recomendaciones aprobados e impulsar su cumplimiento en
+tiempo y forma;
+VIII. Aprobar el calendario de sesiones ordinarias;
+IX. Ratificar las actas de las sesiones, y
+X. Las demás necesarias para el logro de los objetivos del Comité.
+38. DE LAS FUNCIONES DEL PRESIDENTE DEL COMITÉ.
+El Presidente del Comité tendrá las funciones siguientes:
+I. Determinar conjuntamente con el Coordinador de Control Interno y el Vocal Ejecutivo, los asuntos
+del Orden del Día a tratar en las sesiones, considerando las propuestas de los Vocales y, cuando
+corresponda, la participación de los responsables de las áreas competentes de la Institución;
+II. Declarar el quórum legal y presidir las sesiones;
+III. Poner a consideración de los miembros del Comité el Orden del Día y las propuestas de acuerdos
+para su aprobación;
+IV. Autorizar la celebración de sesiones extraordinarias y la participación de invitados externos a la
+APF;
+Fracción reformada DOF 05-09-2018
+
+## Página 46
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+V. Presentar los acuerdos relevantes que el Comité determine e informar de su seguimiento hasta su
+conclusión, conforme a lo siguiente:
+a) Al Órgano de Gobierno de las entidades, cuando corresponda, en su siguiente sesión ordinaria
+a la celebración del Comité.
+b) En el caso de los órganos administrativos desconcentrados, al Titular de la dependencia a la
+que se encuentran jerárquicamente subordinados, dentro de los diez días hábiles siguientes
+al de la fecha de la sesión ordinaria del Comité.
+VI. Fomentar la actualización de conocimientos y capacidades de los miembros propietarios en temas
+de competencia del Comité, así como en materia de control interno y administración de riesgos.
+39. DE LAS FUNCIONES DE LOS MIEMBROS PROPIETARIOS.
+Corresponderá a cualquiera de los miembros propietarios del Comité:
+I. Proponer asuntos específicos a tratar en el Orden del Día del Comité;
+II. Vigilar, en el ámbito de su competencia, el cumplimiento en tiempo y forma de los acuerdos del
+Comité;
+III. Proponer la celebración de sesiones extraordinarias, cuando sea necesario por la importancia,
+urgencia y/o atención de asuntos específicos que sea atribución del Comité;
+IV. Proponer la participación de invitados externos a la APF;
+V. Proponer áreas de oportunidad para mejorar el funcionamiento del Comité;
+VI. Analizar la carpeta electrónica de la sesión, emitir comentarios respecto a la misma y proponer
+acuerdos;
+VII. Presentar riesgos de atención inmediata y/o de corrupción no reflejados en la Matriz de
+Administración Riesgos Institucional, a través de la Cédula de problemáticas o situaciones críticas,
+para su oportuna atención.
+40. DE LAS FUNCIONES DEL VOCAL EJECUTIVO.
+El Vocal Ejecutivo del Comité tendrá las funciones siguientes:
+I. Previo al inicio de la sesión, solicitar y revisar las acreditaciones de los miembros e invitados y
+verificar el quórum legal;
+II. Proponer el calendario anual de sesiones ordinarias del Comité;
+III. Convocar a las sesiones del Comité, anexando la propuesta de Orden del Día;
+IV. Revisar y validar, conjuntamente con el Coordinador de Control Interno y/o Enlace del Comité, que
+la información institucional fue integrada y capturada en la carpeta electrónica por el Enlace del
+Comité para su consulta por los convocados, con cinco días hábiles de anticipación a la fecha de
+convocatoria de la sesión;
+Fracción reformada DOF 05-09-2018
+V. Presentar por sí, o en coordinación con la Institución, riesgos de atención inmediata y/o de
+corrupción no reflejados en la Matriz de Administración de Riesgos;
+VI. Dar seguimiento y verificar que el cumplimiento de los acuerdos se realice en tiempo y forma por
+los responsables;
+VII. Elaborar las actas de las sesiones, enviarlas para revisión de los miembros y recabar las firmas
+del acta de la sesión del Comité, así como llevar su control y resguardo;
+VIII. Verificar la integración de la carpeta electrónica por parte del Enlace del Comité, respecto de la
+información que compete a las unidades administrativas de la Institución.
+41. DE LAS FUNCIONES DEL ÓRGANO DE VIGILANCIA.
+Son funciones del Delegado y/o Comisario Público:
+I. Participar con voz, pero sin voto, en las sesiones;
+II. Promover la atención de los acuerdos del Comité, ante las instancias que correspondan;
+
+## Página 47
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+III. Comunicar, en su caso, al Presidente y/o Vocal Ejecutivo las áreas de oportunidad para mejorar
+el funcionamiento del Comité, cuando en el desempeño de sus funciones así lo estime pertinente;
+IV. En cuanto a las dependencias y órganos administrativos desconcentrados, el Delegado,
+presentará en la segunda sesión ordinaria del Comité el reporte del análisis del desempeño de la
+Institución previsto en la fracción IV del artículo 77 del Reglamento Interior de la Secretaría, y
+V. Vigilar el cumplimiento de lo establecido en el Título Cuarto de las presentes Disposiciones.
+Las funciones enunciadas en este numeral, se entenderán conferidas al Comisario Público, en el marco
+de las presentes Disposiciones y serán complementarias a las señaladas en la Ley Federal de las Entidades
+Paraestatales y en el Reglamento Interior de la Secretaría, y sólo respecto a este último en el caso del
+Delegado.
+CAPÍTULO IV
+Políticas de Operación
+Sección I.
+De las sesiones.
+42. DEL TIPO DE SESIONES Y PERIODICIDAD.
+El Comité celebrará cuatro sesiones al año de manera ordinaria y en forma extraordinaria las veces que
+sea necesario, dependiendo de la importancia, urgencia o falta de atención de asuntos específicos relativos
+al desempeño institucional, debiendo celebrarse preferentemente al inicio de la jornada laboral, con objeto
+de no interrumpir la continuidad de las labores.
+Las sesiones ordinarias deberán celebrarse dentro del trimestre posterior al que se reporta, procurando
+se lleven a cabo durante el mes inmediato posterior a la conclusión de cada trimestre del ejercicio, a fin de
+permitir que la información relevante sea oportuna para la toma de decisiones; en el caso de los órganos
+administrativos desconcentrados y de las entidades, deberán celebrarse en fecha previa a las sesiones
+ordinarias del órgano de gobierno, Comisiones Internas de Administración o equivalente, según
+corresponda.
+43. DE LAS CONVOCATORIAS.
+La convocatoria y la propuesta del Orden del Día, deberá ser enviada por el Vocal Ejecutivo a los
+miembros e invitados, con cinco días hábiles de anticipación para sesiones ordinarias y de dos días hábiles,
+respecto de las extraordinarias; indicando el lugar, fecha y hora de celebración de la sesión, así como la
+disponibilidad de la carpeta electrónica en el Sistema Informático.
+Las convocatorias se podrán realizar por correo electrónico institucional, confirmando su recepción
+mediante acuse de recibo.
+44. DEL CALENDARIO DE SESIONES.
+El Calendario de sesiones ordinarias para el siguiente ejercicio fiscal se aprobará en la última sesión
+ordinaria del año inmediato anterior, en caso de modificación, el Vocal Ejecutivo previa autorización del
+Presidente, informará a los miembros e invitados la nueva fecha, debiendo cerciorarse de su recepción.
+Los órganos administrativos desconcentrados y las entidades deberán programar sus sesiones, cuando
+menos con 15 días hábiles de anticipación a la celebración de las correspondientes a su Órgano de
+Gobierno, Comisiones Internas de Administración o equivalente, según corresponda.
+Párrafo reformado DOF 05-09-2018
+45. DEL DESARROLLO DE LAS SESIONES Y REGISTRO DE ASISTENCIA.
+Las sesiones podrán llevarse a cabo de manera presencial, virtual o ambas a través de videoconferencia
+u otros medios similares que permitan analizar, plantear y discutir en tiempo real, los asuntos y sus
+alternativas de solución.
+En cada reunión se registrará la asistencia de los participantes, recabando las firmas correspondientes.
+En el caso de las sesiones virtuales bastará con su firma autógrafa en el acta.
+46. DEL QUÓRUM LEGAL.
+El quórum legal del Comité se integrará con la asistencia de la mayoría de sus miembros, siempre que
+participen el Presidente o el Presidente suplente y el Vocal Ejecutivo o el Vocal Ejecutivo suplente.
+
+## Página 48
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+Cuando no se reúna el quórum legal requerido, el Vocal Ejecutivo levantará constancia del hecho y a
+más tardar el siguiente día hábil, convocará a los miembros para realizar la sesión dentro de los 3 días
+hábiles siguientes a la fecha en que originalmente debió celebrarse.
+Sección II.
+De la Orden del Día
+47. DE LA ORDEN DEL DÍA.
+En el Comité se analizarán los temas, programas o procesos que presenten retrasos en relación con lo
+programado al trimestre que se informa, derivados de los resultados presupuestarios, financieros,
+operativos y administrativos; a efecto de determinar los acuerdos que consignen acciones, fechas y
+responsables de tomar decisiones para resolver las problemáticas y situaciones críticas para abatir el
+rezago informado, lo que conlleve a cumplir con las metas y objetivos de la institución, en particular sobre
+los aspectos relevantes vinculados con el desempeño institucional y lo relativo al cumplimiento de las
+principales acciones de mejora y de control comprometidas en los Programas de Trabajo de Control Interno
+y de Administración de Riesgos.
+La Orden del Día se integrará conforme a lo siguiente:
+I. Declaración de quórum legal e inicio de la sesión;
+II. Aprobación de la Orden del Día;
+III. Ratificación del acta de la sesión anterior;
+IV. Seguimiento de Acuerdos.- Verificar que se haya efectuado el cumplimiento de los acuerdos
+adoptados, conforme a los términos y plazos establecidos; en caso contrario y sólo con la debida
+justificación, el Comité podrá fijar por única vez una nueva fecha compromiso, la cual de no
+cumplirse el Vocal Ejecutivo determinará las acciones conducentes en el ámbito de sus
+atribuciones.
+Fracción reformada DOF 05-09-2018
+V. Cédula de problemáticas o situaciones críticas.- La cédula deberá ser elaborada por el Vocal
+Ejecutivo a sugerencia de los miembros o invitados del Comité, considerando, en su caso, la
+información que proporcionen las unidades normativas de la Secretaría, cuando existan o se
+anticipen posibles incumplimientos normativos y/o desviaciones negativas en programas
+presupuestarios o en cualquier otro tema vinculado al desempeño institucional, derivado de los
+cambios en el entorno interno o externo de la institución, con el fin de identificar riesgos que no
+estén incluidos en la Matriz de Administración de Riesgos Institucional o bien debilidades de control
+interno adicionales a las obtenidas en la evaluación del control interno, que deban ser incorporadas
+y atendidas con acciones de mejora en el PTCI o en el PTAR.
+VI. Presentación del Reporte Anual del Análisis del Desempeño de la dependencia y/o de los órganos
+administrativos desconcentrados que elabora el Delegado.
+VII. Desempeño Institucional.
+a) Programas Presupuestarios.- Se deberán identificar e informar los programas
+presupuestarios que representen el 80% del presupuesto original de la institución y muestren
+variaciones superiores a 10 puntos porcentuales al comparar: (1) el presupuesto ejercido
+contra el modificado y (2) el cumplimiento de las metas alcanzadas contra las programadas,
+señalando las causas, riesgos y acciones específicas a seguir para su regularización.
+b) Proyectos de Inversión Pública.- El tema aplicará sólo a las instituciones que cuenten con
+presupuesto autorizado en este concepto y deberán identificar e informar los proyectos de
+inversión pública que presenten variaciones superiores a 10 puntos porcentuales, al comparar
+el avance acumulado: (1) del presupuesto ejercido contra el programado, (2) del físico
+alcanzado contra el programado, y (3) del físico contra el financiero, señalando las causas,
+riesgos y acciones específicas a seguir para su regularización.
+c) Pasivos contingentes.- Es necesario que, en su caso, se informe al Comité sobre el impacto
+en el cumplimiento de metas y objetivos institucionales. Considerando que su materialización
+pudiera representar un riesgo financiero para la institución e incidir de manera importante en
+su flujo de efectivo y ejercicio presupuestal (incluir los pasivos laborales y los correspondientes
+a juicios jurídico-contenciosos). En su caso, señalar las estrategias procesales para su
+atención, su avance y los abogados externos que están contratados su trámite
+correspondiente.
+
+## Página 49
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+d) Plan Institucional de Tecnologías de Información.- Informar, en su caso, de manera
+ejecutiva las dificultades o situaciones que causan problemas para su cumplimiento y las
+acciones de solución emprendidas, en el marco de lo establecido en esa materia por la
+Secretaría.
+El Plan Institucional de Tecnologías de Información debe vincularse, en lo general a lo
+establecido en la Estrategia Digital Nacional, y de manera específica a la Cartera Ejecutiva de
+Proyectos de TIC, la cual determinan las instituciones conforme al proceso de planeación
+estratégica que se establece en el Manual Administrativo de Aplicación General en las
+Materias de Tecnologías de la Información y Comunicaciones y de Seguridad de la
+Información, e incluye los Proyectos Estratégicos de Tecnologías de Información y
+Comunicaciones (PETIC), conformado por un máximo de 7 proyectos estratégicos; por lo que
+será sobre este último que se informe sólo lo correspondiente a las dificultades o situaciones
+que causan problemas para su cumplimiento y las acciones de solución emprendidas.
+Párrafo adicionado DOF 05-09-2018
+Considerando la integración y objetivos del Comité, se deberá evitar la presentación en este
+apartado de estadísticas, aspectos y asuntos eminentemente informativos.
+VIII. Programas con Padrones de Beneficiarios.
+a) Listado de programas de beneficiarios a registrarse en el Sistema Integral de Información de
+Padrones de Programas Gubernamentales, SIIPP-G, indicando el periodo de integración
+(Presentación en la Primera Sesión Ordinaria).
+b) Informar el avance y, en su caso, los rezagos en la integración de los Padrones de
+Beneficiarios de los programas comprometidos al periodo, el número de beneficiarios y,
+cuando aplique, el monto total de los apoyos.
+IX. Seguimiento al Informe Anual de actividades del Comité de Ética y de Prevención de Conflictos de
+Interés.
+X. Seguimiento al establecimiento y actualización del Sistema de Control Interno Institucional:
+a) Informe Anual, PTCI e Informe de Resultados del Titular del Órgano Interno de Control
+derivado de la evaluación al Informe Anual (Presentación en la Primera Sesión Ordinaria).
+Inciso reformado DOF 05-09-2018
+b) Reporte de Avances Trimestral del PTCI.- Se deberá incluir el total de acciones de mejora
+concluidas y su contribución como valor agregado para corregir debilidades o insuficiencias
+de control interno o fortalecer el Sistema de Control Interno; así como las pendientes sin
+avance y el porcentaje de avance en cada una de las que se encuentran en proceso.
+c) Aspectos relevantes del Informe de verificación del Órgano Interno de Control al Reporte de
+Avances Trimestral del PTCI.
+Inciso reformado DOF 05-09-2018
+XI. Proceso de Administración de Riesgos Institucional.
+a) Matriz, Mapa y Programa de Trabajo de Administración de Riesgos, así como Reporte Anual
+del Comportamiento de los Riesgos (Presentación en la Primera Sesión Ordinaria).
+b) Reporte de Avance Trimestral del PTAR.- Se deberá incluir el total de acciones de control
+concluidas y su contribución como valor agregado para evitar que se materialicen los riesgos,
+indicando sus efectos en el Sistema de Control Interno y en el cumplimiento de metas y
+objetivos; así como la situación y porcentaje de avance en cada una de las que se encuentran
+en proceso y las pendientes sin avance.
+c) Aspectos relevantes del Informe de evaluación del Órgano Interno de Control al Reporte de
+Avances Trimestral del PTAR.
+Inciso reformado DOF 05-09-2018
+XII. Aspectos que inciden en el control interno o en la presentación de actos contrarios a la integridad.
+La presentación de quejas, denuncias, inconformidades y procedimientos administrativos de
+responsabilidades, así como de las observaciones determinadas por las instancias fiscalizadoras,
+puede significar que en la institución existen debilidades o insuficiencias de control interno o actos
+
+## Página 50
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+contrarios a la integridad, o bien situaciones que tienen repercusiones en la gestión de la
+institución, por lo que sólo deberá presentarse:
+a) Breve descripción de las quejas, denuncias e inconformidades recibidas que fueron
+procedentes, indicando, en su caso, su impacto económico, las repercusiones en la operación
+de la institución y su vinculación con actos contrarios a la integridad; y, en lo relativo a los
+procedimientos administrativos de responsabilidades, los que involucren a servidores públicos
+de los primeros tres niveles, los motivos y sanciones aplicadas.
+b) La descripción de las observaciones recurrentes determinadas por las diferentes instancias
+fiscalizadoras, identificando las causas que las originan y acciones para evitar que se
+continúen presentando; así como, aquellas pendientes de solventar con antigüedad mayor a
+seis meses, ya que su falta de atención y cumplimiento inciden mayormente en una eficiente
+gestión y adecuado desempeño institucional.
+XIII. Seguimiento al Programa para un Gobierno Cercano y Moderno.
+XIV. Asuntos Generales.
+En este apartado se presentarán las dificultades o situaciones que causan problemas para ser
+analizadas e identificar las debilidades de control interno o riesgos, mismos que deberán ser
+revisados y tratados en la siguiente sesión del Comité.
+XV. Revisión y ratificación de los acuerdos adoptados en la reunión.
+A petición expresa, antes o durante la sesión del Comité, cualquiera de sus miembros, invitados o el
+Órgano de Vigilancia, podrán solicitar se incorporen a la Orden del Día asuntos trascendentales para el
+desarrollo institucional.
+Sección III.
+De los Acuerdos.
+48. REQUISITOS DE LOS ACUERDOS.
+Las propuestas de acuerdos para opinión y voto de los miembros deberán contemplar, como mínimo,
+los siguientes requisitos:
+I. Establecer una acción concreta y dentro de la competencia de la Institución. Cuando la solución
+de la problemática de un acuerdo dependa de terceros ajenos a la Institución, las acciones se
+orientarán a la presentación de estudios o al planteamiento de alternativas ante las instancias
+correspondientes, sin perjuicio de que se efectúe su seguimiento hasta su total atención;
+II. Precisar a los responsables de su atención;
+III. Fecha perentoria para su cumplimiento, la cual no podrá ser mayor a seis meses, posteriores a la
+fecha de celebración de la sesión en que se apruebe a menos que por la complejidad del asunto
+se requiera de un plazo mayor, lo cual se justificará ante el Comité; y
+IV. Determinar el impacto negativo de no cumplir el acuerdo en tiempo y forma, respecto de aspectos
+y programas sustantivos de la institución.
+Los acuerdos se tomarán por mayoría de votos de los miembros asistentes, en caso de empate el
+Presidente del Comité contará con voto de calidad. Al final de la sesión, el Vocal Ejecutivo dará lectura a
+los acuerdos aprobados, a fin de ratificarlos.
+49. ENVÍO DE ACUERDOS PARA SU ATENCIÓN.
+El Vocal Ejecutivo remitirá los acuerdos a los responsables de su atención, a más tardar 5 días hábiles
+posteriores a la fecha de la celebración de la sesión, solicitando su cumplimiento oportuno, lo anterior de
+forma previa a la firma del acta de la sesión correspondiente.
+50. ACUERDOS RELEVANTES DEL CONOCIMIENTO DE INSTANCIAS SUPERIORES.
+El Comité determinará los acuerdos relevantes que el Presidente hará del conocimiento al Órgano de
+Gobierno de las entidades y en el caso de los órganos administrativos desconcentrados de la dependencia
+a la que se encuentren adscritos.
+
+## Página 51
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+51. REPROGRAMACIÓN DE ATENCIÓN DE ACUERDOS.
+Para los acuerdos que no fueron atendidos en la fecha establecida inicialmente, previa justificación ante
+el Comité y por única vez, éste podrá aprobar una nueva fecha que preferentemente, no exceda de 30 días
+hábiles contados a partir del día siguiente al de la sesión. Se conservará en el Sistema Informático la fecha
+inicial de atención.
+Sección IV.
+De las Actas.
+52. REQUISITOS DEL ACTA.
+Por cada sesión del Comité se levantará un acta que será foliada y contendrá al menos lo siguiente:
+I. Nombres y cargos de los asistentes;
+II. Asuntos tratados y síntesis de su deliberación;
+III. Acuerdos aprobados, y
+IV. Firma autógrafa de los miembros que asistan a la sesión, de los Delegados y/o Comisarios
+Públicos según corresponda, y del representante de la UCEGP. Los invitados de la Institución que
+participen en la sesión la firmarán sólo cuando sean responsables de atender acuerdos.
+53. ELABORACIÓN DEL ACTA Y DE SU REVISIÓN.
+El Vocal Ejecutivo elaborará y remitirá a los miembros del Comité y a los invitados correspondientes, el
+proyecto de acta a más tardar 10 días hábiles posteriores a la fecha de la celebración de la sesión.
+Los miembros del Comité y, en su caso, los invitados revisarán el proyecto de acta y enviarán sus
+comentarios al Vocal Ejecutivo dentro de los 5 días hábiles siguientes al de su recepción; de no recibirlos
+se tendrá por aceptado el proyecto y recabará las firmas a más tardar 20 días hábiles posteriores a la fecha
+de la celebración de la sesión, para su integración en el Sistema Informático previo a la siguiente sesión.
+Sección V.
+Del Sistema Informático.
+54. DE LA CARPETA ELECTRÓNICA DE LAS SESIONES.
+La carpeta electrónica deberá estar integrada y capturada en el Sistema Informático a más tardar en la
+fecha que se remita la convocatoria y contendrá la información del periodo trimestral acumulado al año que
+se reporta, relacionándola con los conceptos y asuntos de la Orden del Día.
+A fin de favorecer la toma de decisiones, se podrá incorporar información actualizada posterior al cierre
+trimestral, excepto cuando se trate de información programática, presupuestaria y financiera del cierre del
+ejercicio fiscal, la cual se presentará en la primera sesión ordinaria del Comité de cada ejercicio.
+55. DEL ACCESO AL SISTEMA INFORMÁTICO.
+Tendrán acceso al Sistema Informático, los miembros del Comité, el representante de la UCEGP, el
+Delegado y Comisario Público y sus Suplentes, el Coordinador de Control Interno, los enlaces del SCII, de
+Administración de Riesgos, del Comité y el auditor externo.
+Las cuentas de usuario y claves de acceso, así como sus actualizaciones, serán proporcionadas por la
+UCEGP, previa solicitud del Titular del Órgano Interno de Control, conforme a los procedimientos que la
+primera establezca.
+Párrafo reformado DOF 05-09-2018
+Las Secretarías de la Defensa Nacional y de Marina, así como el Centro de Investigación y Seguridad
+Nacional, podrán operar otro sistema informático para el registro, seguimiento, control y reporte de
+información de los procesos de Administración de Riesgos y funcionamiento del Comité, previa acreditación
+de dicho sistema ante la UCEGP, la información antes referida deberá ponerse a disposición de la
+Secretaría cuando ésta lo requiera.
+56. DE LAS BAJAS DE USUARIOS.
+El Coordinador de Control Interno informará al Vocal Ejecutivo las bajas de las cuentas de usuario y
+cambios requeridos en las claves de acceso, para que este último solicite mediante oficio la actualización a
+la UCEGP.
+57. RUTA DE ACCESO AL SISTEMA.
+El Sistema Informático se encuentra disponible en la dirección electrónica:
+https://sfpbpm01.funcionpublica.gob.mx/cocoa/index.asp, en caso de cambio la UCEGP comunicará a los
+Vocales Ejecutivos la nueva dirección electrónica.
+
+## Página 52
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+ARTÍCULO TERCERO.- Se establece el Manual Administrativo de Aplicación General en Materia de
+Control Interno, al tenor de lo siguiente:
+MANUAL ADMINISTRATIVO DE APLICACIÓN GENERAL EN MATERIA DE CONTROL INTERNO
+Procesos:
+I. Aplicación del Modelo Estándar de Control Interno.
+Objetivo. Implantar un sistema de Control Interno eficaz y eficiente en todos los ámbitos y
+niveles de las Instituciones de la APF.
+Descripción del proceso:
+Descripción del proceso reformada DOF 05-09-2018
+
+## Página 53
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+Descripción de los pasos del proceso y/o procedimiento:
+Descripción de los pasos del proceso y/o procedimiento reformada DOF 05-09-2018
+
+## Página 54
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+Actividades secuenciales por responsable:
+Disposiciones en
+Método, Materia de Control
+No. Responsable Actividad
+herramienta Interno (Artículo
+Segundo)
+Titular de la Designa por escrito al Coordinador de Control Oficio de
+1. Numeral 4
+Institución Interno. designación
+Recibe oficio de designación. Designa por
+Oficio de
+escrito a los Enlaces de los procesos. Acuerda
+designación /
+con el Titular de la Institución las acciones Numerales 4 y 10,
+Coordinador de Reunión de
+2. para la implementación y operación del SCII, fracción III,
+Control Interno Trabajo / Correo
+en términos de las Disposiciones, y solicita al incisos b) y c)
+electrónico
+Enlace del SCII la aplicación de la evaluación
+institucional
+del Sistema de Control Interno Institucional.
+Oficio de
+designación /
+Recibe oficio de designación. Inicia el proceso
+Correo Numeral 10,
+Enlace del de Evaluación, solicitando a los responsables
+3. electrónico fracción IV, incisos
+SClI de las unidades administrativas la realicen en
+institucional / a), b) y c)
+sus procesos prioritarios.
+Evaluación del
+SCII
+Responsables de Reciben requerimiento para realizar la
+las evaluación del SCII por procesos prioritarios, Evaluación por
+Numeral 10, fracción IV,
+4. Unidades aplican evaluación, revisan propuestas de procesos
+incisos c) y d)
+Administrativas / acciones de mejora y envían resultados al prioritarios
+Procesos Enlace del SCII.
+Evaluación
+Recibe evaluaciones y consolida por procesos
+Enlace del consolidada de Numeral 10, fracción IV,
+5. prioritarios la información de dichas
+SClI los procesos incisos c) y d)
+evaluaciones.
+prioritarios
+Elabora proyecto del Informe Anual y PTCI y Proyecto de
+Enlace del Numeral 10, fracción IV,
+6. envía al Coordinador de Control Interno para Informe Anual y
+SClI inciso e)
+revisión. PTCI
+Coordinador de Recibe proyecto de Informe Anual y PTCI, Propuesta de Numeral 10, fracciones
+7. Control Interno y revisa con el Enlace del SCII y acuerda con el Informe Anual y III, inciso d); y IV, inciso
+Enlace del SClI Titular de la Institución. PTCI e)
+Titular de la
+Analizan y seleccionan áreas de oportunidad Propuesta de Numeral 10, fracciones II,
+Institución y
+8. detectadas y acuerdan acciones de mejora a Informe Anual y inciso d) y e); y III, inciso
+Coordinador de
+comprometer en el PTCI. PTCI d)
+Control Interno
+Titular de la Informe Anual y Numeral 10, fracción II,
+9. Aprueba el Informe Anual y PTCI.
+Institución PTCI inciso e)
+Presenta al Secretario de la Función Pública,
+al Comité y, en su caso, al Órgano de
+Titular de la Gobierno, con copia al Órgano Interno de Informe Anual, y
+10. Numeral 13
+Institución Control, el Informe Anual y PTCI. PTCI
+Actividad reformada DOF 05-09-2018
+Enlace del Incorpora en el Sistema Informático el Informe Sistema Numeral 10, fracción IV,
+11.
+SClI Anual y PTCI. Informático inciso h)
+Titular del Órgano
+Informe Anual, y
+Interno de Control Conoce el Informe Anual y PTCI, y realiza su
+12. PTCI e Informe Numeral 20
+evaluación.
+Responsable reformado de Resultados
+DOF 05-09-2018
+
+## Página 55
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+Disposiciones en
+Método, Materia de Control
+No. Responsable Actividad
+herramienta Interno (Artículo
+Segundo)
+Titular del Órgano Remite el Informe de Resultados al Titular de
+Interno de Control la Institución, al Secretario de la Función Oficio con Informe
+13.
+Pública y al Comité, y, en su caso, al Órgano de Resultados
+Numeral 20
+Responsable reformado
+DOF 05-09-2018 de Gobierno.
+Recibe Informe de Resultados y opinión del
+Titular del Órgano Interno de Control, lo valora Oficio con
+Titular de la y, en su caso, instruye al Coordinador de
+14. Informe de Numerales 17 y 20
+Institución Control Interno la actualización del PTCI.
+Resultados
+Actividad reformada DOF 05-09-2018
+Recibe instrucción de actualizar el PTCI y Numerales 10, fracción
+Coordinador de Propuesta PTCI
+15. presenta la actualización para firma del Titular III, inciso d);
+Control Interno Actualizado
+de la Institución. y 17
+Recibe PTCI actualizado para su firma e
+Titular de la
+16. instruye al Coordinador su implementación y PTCI Actualizado Numeral 17
+Institución
+seguimiento.
+Realiza el seguimiento e informa Reporte de
+Coordinador de
+trimestralmente al Titular de la Institución por Avances Numeral 18,
+17. Control Interno y
+medio del Reporte de Avances Trimestral del Trimestral del fracciones I y II
+Enlace del SClI
+PTCI para su aprobación. PTCI
+Reporte de
+Titular de la Revisa y aprueba el Reporte de Avances Avances Numeral 10, fracción III,
+18.
+Institución Trimestral del PTCI. Trimestral del inciso d)
+PTCI
+Recibe y firma el Reporte de Avances
+Reporte de
+Trimestral del PTCI y lo presenta al Titular del Numeral 18, fracciones I,
+Coordinador de Órgano Interno de Control, al Comité y, en su Avances
+19. inciso d) y II, incisos a) y
+Control Interno caso, al Órgano de Gobierno. Trimestral del
+b)
+PTCI
+Actividad reformada DOF 05-09-2018
+Informe de
+evaluación del
+Órgano Interno de
+Titular del Órgano
+Interno de Control Recibe Reporte de Avances Trimestral del Control al Reporte Numerales 18, fracción II,
+20. PTCI, y resultados de las acciones de Avances inciso a);
+Responsable reformado comprometidas y efectúa su evaluación. Trimestral y 19
+DOF 05-09-2018
+Método, herramienta
+reformado DOF 05-09-
+2018
+Emite el Informe de Evaluación al Reporte de
+Titular del Órgano
+Avances Trimestral y lo presenta al Titular de
+Interno de Control Informe de
+21. la Institución, al Coordinador de Control
+Evaluación
+Numeral 19
+Responsable reformado Interno y al Comité y, en su caso, al Órgano
+DOF 05-09-2018 de Gobierno.
+Informe de
+Resultados /
+Recibe Informe de Resultados, Reporte de Reporte de Numerales 18, fracción II,
+22. Comité Avances Trimestral del PTCI e Informe de Avances inciso b); 19, fracción II; y
+Evaluación. Trimestral / 20, fracción II
+Informe de
+Evaluación
+Documentación Soporte del Proceso / Procedimiento:
+ Informe Anual (Informe Anual del Estado que Guarda el Sistema de Control Interno Institucional
+y PTCI).
+
+## Página 56
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+ Informe de Resultados (Informe de la Evaluación del Órgano Interno de Control al Informe
+Anual y PTCI).
+ Reporte de Avances Trimestral del PTCI.
+ Informe de Evaluación (Informe de Evaluación del Titular del Órgano Interno de Control al
+Reporte de Avances Trimestral del PTCI).
+Documentación Soporte del Proceso / Procedimiento reformada DOF 05/09/2018
+
+## Página 57
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+II. Administración de Riesgos Institucionales
+Objetivo.- Establecer las etapas de la metodología de administración de riesgos que observarán
+las Instituciones para identificar, evaluar, jerarquizar, controlar y dar seguimiento a sus
+riesgos, a efecto de asegurar en forma razonable el logro de sus metas y objetivos
+institucionales.
+Descripción del proceso:
+
+## Página 58
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+Descripción de los pasos y/o procedimiento:
+
+## Página 59
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+Actividades secuenciales por responsable:
+Disposiciones en
+Método,
+No. Responsable Actividad Materia de Control
+Herramienta Interno (Artículo
+Segundo)
+Instruye a las Unidades Administrativas,
+al Coordinador de Control Interno y al
+Titular de la Oficio/ Correo Numeral 10, fracción II,
+1 Enlace de Administración de Riesgos
+Institución electrónico inciso g)
+iniciar el proceso de administración de
+riesgos.
+Acuerda con el Titular de la Institución la
+metodología de administración de
+riesgos, las acciones para su aplicación y
+Oficio de Numeral 10, fracciones
+Coordinador de los objetivos y metas institucionales a los
+2 formalización/ II, inciso g), y III, inciso
+Control Interno que se alinea el proceso y riesgos, y los
+Correo electrónico e)
+comunica a las Unidades Administrativas
+por conducto del Enlace de
+Administración de Riesgos.
+Informa y orienta a las Unidades
+Administrativas sobre el establecimiento Oficio/ Correo
+de la metodología de administración de electrónico/
+Enlace de
+riesgos, las acciones para su aplicación, Reunión Numeral 10, fracción V,
+3 Administración de
+y los objetivos y metas institucionales, Formato de Matriz inciso b)
+Riesgos
+para que documenten su propuesta de de Administración
+riesgos en la Matriz de Administración de de Riesgos
+Riesgos.
+Documenta las propuestas de riesgos en
+Proyecto de Matriz
+Unidades la Matriz de Administración de Riesgos, Numeral 10, fracción I,
+4 de Administración
+Administrativas en función de las etapas mínimas inciso a)
+de Riesgos
+establecidas.
+Revisa y analiza la información
+proporcionada por las Unidades
+Administrativas en forma integral, define
+Proyectos de Mapa
+Enlace de con el Coordinador de Control Interno la
+y Matriz de Numeral 10, fracción V,
+5 Administración de propuesta de riesgos institucionales,
+Administración de inciso d)
+Riesgos elabora y presenta al mismo los
+Riesgos
+proyectos de Matriz de Administración de
+Riesgos y Mapa de Riesgos
+Institucionales.
+Proyectos de Mapa
+Revisa los proyectos de Matriz de
+Coordinador de y Matriz de Numeral 10, fracción III,
+6 Administración de Riesgos y Mapa de
+Control Interno Administración de inciso i)
+Riesgos Institucionales.
+Riesgos
+Acuerda con el Titular de la Institución los
+Proyectos de Mapa
+riesgos institucionales y los comunica a
+Coordinador de y Matriz de Numeral 10, fracción III,
+7 las Unidades Administrativas por
+Control Interno Administración de inciso e)
+conducto del Enlace de Administración
+Riesgos
+de Riesgos.
+Enlace de Elabora y presenta al Coordinador de
+Numeral 10, fracción V,
+8 Administración de Control Interno el proyecto del PTAR Proyecto del PTAR
+inciso d)
+Riesgos Institucional.
+Revisa el proyecto del PTAR
+Coordinador de Numeral 10, fracción III,
+9 Institucional, conjuntamente con el Proyecto del PTAR
+Control Interno inciso i)
+Enlace de Administración de Riesgos.
+
+## Página 60
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+Disposiciones en
+Método,
+No. Responsable Actividad Materia de Control
+Herramienta Interno (Artículo
+Segundo)
+Presenta anualmente para autorización
+del Titular de la Institución la Matriz de Matriz de Numeral 10, fracción III,
+Coordinador de Administración de Riesgos, el Mapa de Administración de inciso k)
+10
+Control Interno Riesgos y el PTAR, y firma de forma Riesgos, Mapa de
+Disposición reformada
+conjunta con el Enlace de Administración Riesgos y PTAR DOF 05-09-2018
+de Riesgos.
+Difunde la Matriz de Administración de
+Riesgos, el Mapa de Riesgos y el PTAR, Matriz de
+Coordinador de e instruye la implementación del PTAR a Administración de Numeral 10, fracción III,
+11
+Control Interno los responsables de las acciones de Riesgos, Mapa de inciso l)
+control comprometidas y al Enlace de Riesgos y PTAR
+Administración de Riesgos.
+Mapa y Matriz de
+Administración de
+Instrumentan y cumplen las acciones de Riesgos, PTAR,
+Unidades control del PTAR, e informan avances Reporte de
+12 Numeral 29
+Administrativas trimestrales y resguardan la evidencia Avances Trimestral
+documental. del PTAR y
+Evidencia
+documental
+Realiza conjuntamente con el
+Coordinador de Control Interno el Proyecto del
+seguimiento permanente al PTAR, Reporte de
+Enlace de elabora y presenta al Coordinador de Avances Trimestral
+Numerales 10, fracción
+13 Administración de Control Interno el proyecto del Reporte del PTAR y del
+V, inciso f); y 28
+Riesgos de Avances Trimestral del PTAR con la Reporte Anual de
+información proporcionada por las Comportamiento de
+Unidades Administrativas y el Reporte Riesgos
+Anual de Comportamiento de Riesgos.
+Revisa el proyecto del Reporte de
+Reporte de
+Avances Trimestral del PTAR y del
+Avances Trimestral
+Reporte Anual de Comportamiento de
+Coordinador de del PTAR Reporte Numeral 10, fracción III,
+14 Riesgos, los firma conjuntamente con el
+Control Interno Anual de incisos j y k)
+Enlace de Administración de Riesgos y
+Comportamiento de
+los presenta para autorización y firma del
+los Riesgos
+Titular de la Institución.
+Mapa y Matriz de
+Incorpora en el Sistema Informático Administración de
+Mapa y Matriz de Administración de Riesgos, PTAR,
+Enlace de Riesgos, PTAR, Reporte de Avances Reporte de
+Numeral 10, fracción V,
+15 Administración de Trimestral del PTAR y Reporte Anual de Avances Trimestral
+inciso h)
+Riesgos Comportamiento de los Riesgos; del PTAR y
+resguardando los documentos firmados y Reporte Anual de
+sus respectivas actualizaciones. Comportamiento de
+los Riesgos
+
+## Página 61
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+Disposiciones en
+Método,
+No. Responsable Actividad Materia de Control
+Herramienta Interno (Artículo
+Segundo)
+Presenta en la primera sesión del Comité Mapa y Matriz de
+o del Órgano de Gobierno, según Administración de
+Numerales 10,
+corresponda, el Mapa y Matriz de Riesgos y PTAR. fracción III, inciso o) y
+Administración de Riesgos, PTAR y el Reporte de 28, segundo párrafo,
+Coordinador de
+16 Reporte Anual de Comportamiento de los Avances Trimestral inciso b)
+Control Interno
+Riesgos, y sus actualizaciones en las del PTAR y
+sesiones subsecuentes; y el Reporte de Reporte Anual de
+Disposiciones reformadas
+Avances Trimestral del PTAR, en las Comportamiento de DOF 05-09-2018
+sesiones del Comité, según corresponda. los Riesgos
+Comunica al Enlace de Administración
+Oficio/ Correo
+de Riesgos los riesgos adicionales o
+electrónico Mapa y
+cualquier actualización a la Matriz de
+Coordinador de Matriz de Numeral 10, fracción III,
+17 Administración de Riesgos, el Mapa de
+Control Interno Administración de inciso m)
+Riesgos y el PTAR determinados por los
+Riesgos y PTAR
+servidores públicos, el Comité u Órgano
+actualizados
+de Gobierno, según corresponda.
+Agrega a la Matriz de Administración de
+Riesgos, al Mapa de Riesgos y al PTAR,
+Mapa y Matriz de
+Enlace de los riesgos adicionales determinados por Numeral 10, fracción V,
+18 Administración de el Comité u Órgano de Gobierno, según Administración de inciso g)
+Riesgos corresponda. Riesgos y PTAR
+Actividad reformada DOF 05-09-2018
+Documentación Soporte del Proceso /Procedimiento:
+ Formato de Matriz de Administración de Riesgos Institucional (Matriz).
+ Mapa de Administración de Riesgos Institucional (Mapa).
+ Programa de Trabajo de Administración de Riesgos (PTAR).
+ Reporte de Avances Trimestral del PTAR (RAT).
+ Reporte Anual de Comportamiento de los Riesgos (RAC).
+
+## Página 62
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+III. Funcionamiento del Comité de Control y Desempeño Institucional.
+Objetivo. Constituir un órgano colegiado al interior de las Instituciones de la APF, en apoyo a los
+Titulares de las mismas, que contribuya al cumplimiento de los objetivos y metas
+institucionales, a impulsar el establecimiento y actualización del Sistema de Control
+Interno, y al análisis y seguimiento de la detección y administración de riesgos.
+Descripción del proceso:
+
+## Página 63
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+Descripción de los pasos del proceso y/o procedimiento:
+Actividades secuenciales por responsable:
+Disposiciones en
+No. Responsable Actividad Método, Materia de Control
+Herramienta Interno (Artículo
+Segundo)
+Presidente del Numerales 10,
+Comité, Determinan los asuntos a tratar en la sesión fracción III, inciso p);
+38, fracción I; y 39,
+Coordinador del Comité que corresponda, a partir de lo
+1 Orden del Día fracción I.
+de Control establecido en la Orden del Día, numeral 47
+Interno y Vocal del Artículo Segundo de las Disposiciones.
+Ejecutivo Disposiciones reformadas
+DOF 05-09-2018
+Numeral 10,
+Coordinador Solicita al Enlace del Comité la integración de fracción III, inciso q).
+2 de Control la información soporte de los asuntos a tratar Orden del Día
+Interno en la sesión del Comité.
+Disposición reformada
+DOF 05-09-2018
+Solicita a las unidades administrativas
+responsables (incluido el Órgano Interno de Oficio/Correo
+3 Enlace del Control) la información para integrar la electrónico Numeral 10, fracción
+Comité carpeta electrónica. VI, inciso b).
+Información
+Actividad reformada DOF 05-09-2018
+Revisa y valida la información remitida por las
+Numeral 10,
+Coordinador áreas, 10 días hábiles previos a la sesión e
+Oficio/Correo fracción III, inciso q).
+4 de Control instruye al Enlace del Comité la
+electrónico
+Interno conformación de la carpeta electrónica en el Disposición reformada
+Sistema Informático. DOF 05-09-2018
+
+## Página 64
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+Disposiciones en
+No. Responsable Actividad Método, Materia de Control
+Herramienta Interno (Artículo
+Segundo)
+Integra y captura la información en la carpeta
+Enlace del electrónica del Sistema Informático con cinco Sistema Numeral 10, fracción
+5
+Comité días hábiles de anticipación a la celebración Informático. VI, inciso d).
+de la sesión del Comité.
+Valida y verifica en el Sistema Informático la
+integración de la información en la carpeta Carpeta electrónica
+Vocal electrónica y notifica con cinco días de Convocatoria Numeral 40, fracciones
+6
+Ejecutivo anticipación a la fecha de la convocatoria de (Oficio/Correo III y IV
+la sesión a los miembros e invitados del electrónico)
+Comité.
+Analizan la carpeta electrónica a más tardar
+24 horas previo a la sesión, presentar riesgos
+de atención inmediata y/o de corrupción a
+Miembros del
+través de la cédula de problemáticas o Sistema Numeral 39, fracciones
+7 Comité e
+situaciones críticas, proponer acuerdos Informático. I, II, VI, y VII
+invitados
+sobre los temas a tratar en la sesión, y
+aprueban acuerdos en sesión ordinaria y/o
+extraordinaria.
+Participan en la sesión para el desahogo de
+Miembros del los asuntos específicos de la Orden del Día,
+Reunión presencial
+8 Comité e proponen y aprueban acuerdos, y las demás Numeral 37
+o videoconferencia
+invitados necesarias para el logro de los objetivos del
+Comité.
+Elabora y envía proyecto de acuerdos a los
+responsables de su atención, así como el Grabación audio
+Vocal Acta a los Miembros del Comité y a los y/o video de la Numerales 40, fracción
+9
+Ejecutivo invitados que acudieron a la sesión, para su sesión / proyecto VII; y 53.
+revisión y/o comentarios o aceptación a de Acta.
+efecto de elaborar el acta definitiva.
+Formaliza el Acta de la sesión recabando las
+Vocal Acta firmada de la Numerales 40, fracción
+10 firmas de los miembros del Comité e
+Ejecutivo sesión. VII; y 53.
+invitados, e incorpora al Sistema Informático.
+Documentación Soporte del Proceso / Procedimiento:
+Sistema Informático.
+ARTÍCULO CUARTO.- La interpretación para efectos administrativos del presente Acuerdo, así como
+la resolución de los casos no previstos en el mismo, corresponderá a la Unidad de Control y Evaluación de
+la Gestión Pública.
+ARTÍCULO QUINTO.- Las Disposiciones y procedimientos contenidos en el Manual a que se refiere el
+presente Acuerdo deberán revisarse, cuando menos una vez al año por la Unidad de Control y Evaluación
+de la Gestión Pública, para efectos de su actualización de resultar procedente.
+ARTÍCULO SEXTO.- Los Órganos Internos de Control de las dependencias y entidades de la APF,
+vigilarán el cumplimiento de lo dispuesto en el presente Acuerdo y otorgarán la asesoría y apoyo que
+corresponda a los Titulares y demás servidores públicos de la Institución para mantener un SCII en
+operación, actualizado y en un proceso de mejora continua.
+Artículo reformado DOF 05-09-2018
+
+## Página 65
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+TRANSITORIOS
+PRIMERO.- El presente Acuerdo entrará en vigor al día siguiente de su publicación en el Diario Oficial
+de la Federación.
+SEGUNDO.- Se abroga el Acuerdo por el que se emiten las Disposiciones en Materia de Control Interno
+y se expide el Manual Administrativo de Aplicación General en Materia de Control Interno, publicado en el
+DOF el 12 de julio de 2010 y sus actualizaciones.
+TERCERO.- Todos aquellos procesos, trámites, autorizaciones y actos iniciados con base en el Acuerdo
+por el que se emiten las Disposiciones en Materia de Control Interno y se expide el Manual Administrativo
+de Aplicación General en Materia de Control Interno, deberán concluirse conforme a lo previsto en el citado
+documento normativo a más tardar el último día del mes de noviembre del año 2016.
+CUARTO.- Los acuerdos del Comité de Control y Desempeño Institucional que a la fecha de entrada
+en vigor de este ordenamiento se encuentren pendientes, se les dará seguimiento para su atención de
+conformidad con lo establecido en este ordenamiento.
+QUINTO.- La Unidad de Control y Evaluación de la Gestión Pública pondrá a disposición de las
+instituciones mencionadas las nuevas herramientas informáticas que se desarrollen para sistematizar el
+registro, seguimiento, control y reporte de información de los procesos de Modelo Estándar de Control
+Interno, de Administración de Riesgos y del Comité.
+SEXTO.- El cumplimiento a lo establecido en el presente Acuerdo se realizará con los recursos
+humanos, materiales y presupuestarios que tengan asignados las dependencias y entidades de la APF, por
+lo que no implicará la creación de estructuras ni la asignación de recursos adicionales.
+Sufragio Efectivo. No Reelección.
+Ciudad de México, a los veinticinco días del mes de octubre de dos mil dieciséis.- El Subsecretario de
+Responsabilidades Administrativas y Contrataciones Públicas, Javier Vargas Zempoaltécatl.- Rúbrica.
+ACUERDO QUE REFORMA EL DIVERSO POR EL QUE SE EMITEN LAS DISPOSICIONES Y EL
+MANUAL ADMINISTRATIVO DE APLICACIÓN GENERAL EN MATERIA DE CONTROL INTERNO.
+Publicado en el Diario Oficial de la Federación el 5 de septiembre de 2018
+ARTÍCULO PRIMERO.- SE REFORMAN en las disposiciones 2. DEFINICIONES, la fracción XV; 4.
+DESIGNACIÓN DE COORDINADOR DE CONTROL INTERNO Y ENLACES, el párrafo tercero; 5. DE SU
+VIGILANCIA Y ASESORÍA; 9. NORMAS GENERALES, PRINCIPIOS Y ELEMENTOS DE CONTROL
+INTERNO, en su norma QUINTA. SUPERVISIÓN Y MEJORA CONTINUA, el párrafo primero; 10.
+RESPONSABILIDADES Y FUNCIONES, en las fracciones III. DEL COORDINADOR DE CONTROL
+INTERNO, los incisos a) y g), V. DEL ENLACE DE ADMINISTRACIÓN DE RIESGOS, el inciso g), y VII.
+DEL ÓRGANO FISCALIZADOR, en su denominación; 11. DE LA EVALUACIÓN DEL SCII, el párrafo quinto,
+y en su norma QUINTA. SUPERVISIÓN Y MEJORA CONTINUA, el numeral 33; 12. EVALUACIÓN DE
+ELEMENTOS DE CONTROL ADICIONALES, el párrafo segundo; 13. DE SU PRESENTACIÓN, la fracción
+I; 16. INTEGRACIÓN DEL PTCI Y ACCIONES DE MEJORA, el párrafo segundo; 17. ACTUALIZACIÓN
+DEL PTCI, 18. REPORTE DE AVANCES TRIMESTRAL DEL PTCI., en las fracciones I, el inciso d) y II, el
+inciso a); 19. INFORME DE EVALUACIÓN DEL ÓRGANO FISCALIZADOR AL REPORTE DE AVANCES
+TRIMESTRAL DEL PTCI, en su denominación y el párrafo primero; la Sección IV. Evaluación del Órgano
+Fiscalizador al Informe Anual y PTCI, en su denominación; 20. INFORME DE RESULTADOS, el párrafo
+primero; 21. DE SU CONTENIDO Y CRITERIOS PARA SU ELABORACIÓN, los párrafos primero y
+segundo; 22. INICIO DEL PROCESO; 23. FORMALIZACIÓN Y ETAPAS DE LA METODOLOGÍA, en las
+fracciones III, en el inciso a), el párrafo segundo, y VII. DEFINICIÓN DE ESTRATEGIAS Y ACCIONES DE
+CONTROL PARA RESPONDER A LOS RIESGOS, el inciso a); 27. PROGRAMA DE TRABAJO DE
+ADMINISTRACIÓN DE RIESGOS, el párrafo primero; 28. REPORTE DE AVANCES TRIMESTRAL DEL
+PTAR, en el párrafo segundo, el inciso a); 29. EVIDENCIA DOCUMENTAL DEL PTAR; 30. INFORME DE
+EVALUACIÓN DEL ÓRGANO FISCALIZADOR AL REPORTE DE AVANCES TRIMESTRAL DEL PTAR, en
+su denominación y el párrafo primero; 32. DE LOS OBJETIVOS DEL COMITÉ, la fracción VI; 33. DE LA
+INTEGRACIÓN DEL COMITÉ, en el párrafo primero, las fracciones II y III. Vocales, en el inciso b) En las
+entidades, en el numeral 1. Entidades Sectorizadas el subinciso b), y el inciso c) En los órganos
+administrativos desconcentrados, y el tercer párrafo; 37 DE LAS ATRIBUCIONES DEL COMITÉ, en las
+fracciones II, el inciso c), y III, el inciso d); 38. DE LAS FUNCIONES DEL PRESIDENTE DEL COMITÉ, la
+fracción IV; 40. DE LAS FUNCIONES DEL VOCAL EJECUTIVO, la fracción IV; 44. DEL CALENDARIO DE
+
+## Página 66
+
+Acuerdo DOF 03-11-2016
+Última Reforma DOF 05-09-2018
+SESIONES, el párrafo segundo; y 47. DE LA ORDEN DEL DÍA, las fracciones IV, X, los incisos a) y c), y
+XI. Proceso de Administración de Riesgos Institucional, el inciso c); y 55. DEL ACCESO AL SISTEMA
+INFORMÁTICO, el párrafo segundo; SE ADICIONAN en las disposiciones 10. RESPONSABILIDADES Y
+FUNCIONES, en la fracción III. DEL COORDINADOR DE CONTROL INTERNO, el inciso o) y se recorren
+en su orden los actuales incisos o), p) y q), para pasar a ser los incisos p), q) y r), y la fracción VII. DEL
+ÓRGANO FISCALIZADOR, en su denominación y el inciso h); y 47. DE LA ORDEN DEL DÍA, en la fracción
+VII. Desempeño Institucional, en el inciso d), un párrafo segundo; y SE DEROGA en la disposición 2
+DEFINICIONES, la fracción XXXVII; de las Disposiciones en Materia de Control Interno, para quedar como
+sigue:
+...
+ARTÍCULO SEGUNDO.- SE REFORMAN en los Procesos I. Aplicación del Modelo Estándar de Control
+Interno, la Descripción del proceso, la Descripción de los pasos del proceso y/o procedimiento, en las
+Actividades secuenciales por responsable los números 12, 13, 20 y 21 de la columna Responsable, 10, 14
+y 19 de la columna Actividad, 20 de la columna Método, herramienta y en la Documentación Soporte del
+Proceso / Procedimiento las viñetas segunda y cuarta; II. Administración de Riesgos Institucionales, la
+Descripción de los pasos y/o procedimiento, y en las Actividades secuenciales por responsable los números
+18 de la columna Actividad, 10 y 16 de la columna Disposiciones en Materia de Control Interno (Artículo
+Segundo), III. Funcionamiento del Comité de Control y Desempeño Institucional, en las Actividades
+secuenciales por responsable, los números 3 de la columna Actividad, 1, 2 y 4 de la columna Disposiciones
+en Materia de Control Interno (Artículo Segundo); del Manual Administrativo de Aplicación General en
+Materia de Control Interno, para quedar como sigue:
+…
+ARTÍCULO TERCERO.- SE REFORMA el ARTÍCULO SEXTO del Acuerdo por el que se emiten las
+Disposiciones y el Manual Administrativo de Aplicación General en Materia de Control Interno, publicado
+en el Diario Oficial de la Federación el 3 de noviembre de 2016, para quedar como sigue:
+…
+TRANSITORIOS
+PRIMERO.- El presente Acuerdo entrará en vigor al día siguiente de su publicación en el Diario Oficial
+de la Federación.
+SUFRAGIO EFECTIVO. NO REELECCIÓN.
+Ciudad de México, a los 27 días del mes de agosto de dos mil dieciocho.
+LA SECRETARIA DE LA FUNCIÓN PÚBLICA
+ARELY GÓMEZ GONZÁLEZ
+

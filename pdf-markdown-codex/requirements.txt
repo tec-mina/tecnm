@@ -7,3 +7,5 @@ pillow
 tabulate
 python-dateutil
 chardet
+tqdm
+tabula-py

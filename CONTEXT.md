@@ -435,6 +435,64 @@ usar este orden de prioridad:
 3. este archivo;
 4. archivos adaptadores.
 
+## Procesamiento Documental: PDFs a Markdown
+### Batch de 80 documentos procesado exitosamente
+- Tipo: `HECHO_VERIFICADO`
+- Fecha: `2026-04-21`
+- Fuente: /sessions/trusting-vigilant-bardeen/mnt/tecnm/docs/
+- Nota: lote completo de documentación institucional convertido de PDF a Markdown con estructura organizacional `/raw` (originales) y `/processed` (markdown). Tamaño: 172.3 MB original → 3.0 MB markdown (98.3% compresión).
+
+### Contenido del lote
+- Tipo: `HECHO_VERIFICADO`
+- Fecha: `2026-04-21`
+- Fuente: análisis de nombres de archivos confirmados
+- Nota: 80 documentos incluyen legislación fiscal (ISR, IVA), normativa TecNM, manuales IT (SISAD, SICOP, POA, Viáticos, PTA), presupuesto (PEF 2026, FAM 2024-2025), consideraciones POA 2022-2026, regulaciones laborales (docentes, no-docentes), integridad pública y bases legales (CPEUM, Ley de Planeación, Leyes de Adquisiciones).
+
+### Ubicación canónica
+- Tipo: `DECISION`
+- Fecha: `2026-04-21`
+- Fuente: instrucción explícita del usuario
+- Nota: archivos organizados en `/sessions/trusting-vigilant-bardeen/mnt/tecnm/docs/` con subdirectorios `raw/` (PDFs sin procesar) y `processed/` (Markdown procesado). Incluye archivos de control: INDEX.md (listado), README.md (documentación del lote), STATS.json (estadísticas).
+
+### Estrategia de procesamiento
+- Tipo: `DECISION`
+- Fecha: `2026-04-21`
+- Fuente: ejecución batch mode, quiet mode
+- Nota: procesamiento automático por lotes usando skill `pdf-to-markdown-pro`, sin cargar contexto innecesario al modelo. Archivos pequeños/medianos (<5 MB) priorizados; grandes (>5 MB) procesados con gestión ligera de memoria.
+
+### Librerías actuales en uso
+- Tipo: `HECHO_VERIFICADO`
+- Fecha: `2026-04-21`
+- Fuente: verificación en sesión actual
+- Nota: `pdfplumber` (tablas + estructura) disponible; `pdfminer.six` (texto con estructura) disponible; `Pillow` (imágenes) disponible; `PyPDF2` no disponible en este entorno. Fallback a pdfplumber para extracción óptima.
+
+## Archivos Documentales Clave del Dominio ITM/TecNM
+
+### Documentos legislativos prioritarios
+- Tipo: `HECHO_VERIFICADO`
+- Fecha: `2026-04-21`
+- Fuente: verificación en lote procesado
+- Nota: Decreto de Creación TecNM (15-DC-TecNM.pdf), Decreto Tecnológico Nacional (64-decreto_tecnologico_nacional_mexico.pdf), Constitución (2-CPEUM_100715.pdf), Ley de Planeación (3-ley_planeacion.pdf), Ley Federal del Trabajo (20-ley_federal_trabajo.pdf).
+
+### Documentos de operación interna
+- Tipo: `HECHO_VERIFICADO`
+- Fecha: `2026-04-21`
+- Fuente: verificación en lote procesado
+- Nota: Manual de Organización TecNM (22-MO-TecNM.pdf), Manual de Procedimientos del TecNM (32.2 MB), Reglamento Interior de Trabajo Docente (28.4 MB), Reglamento No-Docente (1.0 MB).
+
+### Documentos de operación financiera y presupuestaria
+- Tipo: `HECHO_VERIFICADO`
+- Fecha: `2026-04-21`
+- Fuente: verificación en lote procesado
+- Nota: PEF 2026 (3.6 MB), FAM 2024-2025 (0.3-0.8 MB), Manuales IT (POA 12.2 MB, Viáticos 3.0 MB, Requisiciones 6.7 MB, PTA 1.3 MB, Capítulo 1000 4.1 MB, Partidas 5.8 MB, Compras 5.9 MB, SICOP 2025 4.8 MB, Proveedores 1.2 MB, Comprobación Viáticos 1.4 MB).
+
+### Consideraciones POA (Planes Operativos Anuales)
+- Tipo: `HECHO_VERIFICADO`
+- Fecha: `2026-04-21`
+- Fuente: verificación en lote procesado
+- Nota: Consideraciones POA 2022 (54-), 2023 (73-), 2024 (75-), 2025 (78-, 80-), 2026 (82-). Incluyen circulares de montos (72-Circular_M00-015-2023), indicadores (79-Indicadores2025_Responsables.pdf), módulos SISAD (81-77-Guía_Módulo_Otros_Ingresos_SISAD_V3.pdf).
+
 ## Changelog De Memoria
 - `2026-04-20`: inicializacion de la fuente unica de verdad y reglas de uso compartidas para Claude, Copilot y Codex.
 - `2026-04-20`: se agregaron reglas portables, formula operativa, contrato de revision, contexto institucional del ITM y estructura organizacional provista por el usuario.
+- `2026-04-21`: lote de 80 documentos procesados de PDF a Markdown. Estructura canónica establecida en `/docs/raw` y `/docs/processed`. Documentación de lote agregada (README.md, INDEX.md, STATS.json).

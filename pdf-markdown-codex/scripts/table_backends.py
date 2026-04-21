@@ -130,6 +130,50 @@ def extract_camelot(pdf_path: str, max_tables: int = 25) -> tuple[List[TableResu
     return lattice_results, lattice_warnings + stream_warnings
 
 
+def extract_tabula(pdf_path: str, max_tables: int = 25) -> tuple[List[TableResult], List[str]]:
+    warnings: List[str] = []
+    try:
+        import tabula  # type: ignore
+    except ImportError:
+        return [], ["tabula-py no esta instalado (requiere Java en el PATH)"]
+
+    results: List[TableResult] = []
+    try:
+        dfs = tabula.read_pdf(
+            pdf_path,
+            pages="all",
+            multiple_tables=True,
+            silent=True,
+            pandas_options={"dtype": str},
+        )
+        for index, df in enumerate(dfs, start=1):
+            if df is None or df.empty:
+                continue
+            # Use column names as first row for clean header
+            header = [str(c) for c in df.columns]
+            body = df.fillna("").values.tolist()
+            matrix = _normalize_matrix([header] + body)
+            if not matrix:
+                continue
+            results.append(
+                TableResult(
+                    page=None,
+                    index=index,
+                    backend="tabula",
+                    rows=len(matrix),
+                    cols=len(matrix[0]),
+                    markdown=_render_markdown(matrix),
+                )
+            )
+            if len(results) >= max_tables:
+                warnings.append(f"tabula truncado a {max_tables} tablas")
+                return results, warnings
+    except Exception as exc:
+        warnings.append(f"tabula fallo: {exc}")
+
+    return results, warnings
+
+
 def extract_tables(pdf_path: str, backend: str = "auto", max_tables: int = 25) -> tuple[List[TableResult], List[str], str | None]:
     if backend == "none":
         return [], [], None
@@ -143,11 +187,17 @@ def extract_tables(pdf_path: str, backend: str = "auto", max_tables: int = 25) -
         chosen = results[0].backend if results else None
         return results, warnings, chosen
 
+    if backend == "tabula":
+        results, warnings = extract_tabula(pdf_path, max_tables=max_tables)
+        return results, warnings, "tabula" if results else None
+
+    # auto: try all backends, pick the one with the best coverage
     candidates = []
     warnings: List[str] = []
 
     for name, extractor in (
         ("pdfplumber", extract_pdfplumber),
+        ("tabula", extract_tabula),
         ("camelot", extract_camelot),
     ):
         results, result_warnings = extractor(pdf_path, max_tables=max_tables)

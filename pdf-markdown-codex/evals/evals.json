@@ -1,0 +1,89 @@
+{
+  "skill_name": "pdf-markdown-codex",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Tengo un PDF del reglamento interior del TecNM que alguien me paso (docs/raw/reglamento.pdf). Necesito convertirlo a Markdown para subirlo al contexto de un chatbot. Que el Markdown quede estructurado con los articulos bien numerados y las tablas visibles.",
+      "expected_output": "Archivo .md generado con headings para cada Titulo/Capitulo/Articulo, tablas en formato Markdown, y un resumen del quality gate (PASS o ISSUES_FOUND con detalle). El modelo debe haber elegido el backend default (PyMuPDF) y reportado el numero de paginas procesadas.",
+      "assertions": [
+        {
+          "name": "genera_archivo_md",
+          "description": "El output incluye un archivo .md o el contenido Markdown del documento"
+        },
+        {
+          "name": "estructura_articulos",
+          "description": "Los articulos aparecen como headings o en lista estructurada, no como texto plano sin jerarquia"
+        },
+        {
+          "name": "quality_gate_reportado",
+          "description": "El modelo informa PASS, ISSUES_FOUND o BLOCKED_MISSING_CONTEXT con alguna justificacion"
+        },
+        {
+          "name": "no_inventa_contenido",
+          "description": "El modelo no rellena secciones faltantes ni alucina texto del reglamento"
+        }
+      ],
+      "files": ["docs/raw/reglamento.pdf"]
+    },
+    {
+      "id": 2,
+      "prompt": "Necesito extraer las tablas de presupuesto de este PDF del clasificador por objeto del gasto (docs/processed/48-Clasificador_por_Objeto_del_Gasto_para_la_Administracion_Publica_Federal.md ya existe pero las tablas quedaron mal). Vuelve a correr la extraccion con el mejor backend para tablas y compara con el .md existente.",
+      "expected_output": "El modelo debe identificar que hay tablas problematicas, usar --table-backend camelot o tabula, generar un nuevo .md con tablas mejor formateadas, y comparar con el existente usando el quality gate. Debe mencionar explicitamente el backend usado.",
+      "assertions": [
+        {
+          "name": "usa_backend_tablas_especializado",
+          "description": "El modelo selecciona camelot, tabula u otro backend no-default para tablas"
+        },
+        {
+          "name": "tablas_en_markdown",
+          "description": "El .md resultante contiene al menos una tabla en formato Markdown (| col | col |)"
+        },
+        {
+          "name": "menciona_comparacion",
+          "description": "El modelo referencia o compara con el .md existente"
+        }
+      ],
+      "files": ["docs/processed/48-Clasificador_por_Objeto_del_Gasto_para_la_Administracion_Publica_Federal.md"]
+    },
+    {
+      "id": 3,
+      "prompt": "me mandaron un PDF escaneado de un oficio oficial del gobierno, esta como imagen no tiene texto seleccionable. como lo convierto a markdown? el archivo se llama oficio_escaneado.pdf",
+      "expected_output": "El modelo debe reconocer que es un PDF escaneado (sin capa de texto), sugerir o ejecutar --ocr-easyocr, instalar los extras OCR si hace falta (bootstrap_env.py --extras ocr), y generar un .md con el texto reconocido. Debe advertir sobre posibles errores de OCR.",
+      "assertions": [
+        {
+          "name": "detecta_pdf_escaneado",
+          "description": "El modelo identifica explicitamente que el PDF no tiene texto seleccionable / es escaneado"
+        },
+        {
+          "name": "sugiere_ocr_easyocr",
+          "description": "Menciona o usa el flag --ocr-easyocr"
+        },
+        {
+          "name": "advierte_calidad_ocr",
+          "description": "El modelo avisa que OCR puede tener errores y el resultado requiere revision humana"
+        }
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Quiero pasar a markdown el PDF de la Ley del ISR que tenemos en docs (13-ley_impuesto_sobre_la_renta.md ya existe). El PDF original tiene como 300 paginas. Me preocupa que se congele. Como lo proceso sin que se trabe?",
+      "expected_output": "El modelo debe: (1) tranquilizar al usuario indicando que el chunked extraction con tqdm maneja PDFs grandes automaticamente, (2) mostrar el comando correcto, (3) mencionar que el progreso sera visible en tiempo real, (4) NO intentar hacer la conversion el mismo sino dar las instrucciones/ejecutar el script correctamente.",
+      "assertions": [
+        {
+          "name": "menciona_progreso_tqdm",
+          "description": "El modelo explica o usa el mecanismo de progreso (tqdm / chunked extraction)"
+        },
+        {
+          "name": "no_alerta_innecesaria",
+          "description": "El modelo NO dice que 300 paginas es imposible o que se necesita hardware especial sin evidencia"
+        },
+        {
+          "name": "comando_correcto",
+          "description": "El comando sugerido usa pdf_markdown_pipeline.py (no extractor.py directo)"
+        }
+      ],
+      "files": []
+    }
+  ]
+}

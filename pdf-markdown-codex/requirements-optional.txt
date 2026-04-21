@@ -8,3 +8,5 @@ rapidocr-onnxruntime
 pytesseract
 pdf2image
 pypdfium2
+easyocr
+markitdown[pdf]

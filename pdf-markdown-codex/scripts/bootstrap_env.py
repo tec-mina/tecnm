@@ -23,7 +23,9 @@ BASE_REQUIREMENTS = SKILL_ROOT / "requirements.txt"
 EXTRA_GROUPS = {
     "docling": ["docling", "docling-core", "huggingface_hub"],
     "camelot": ["camelot-py", "opencv-python"],
-    "ocr": ["img2table", "rapidocr-onnxruntime", "pytesseract", "pdf2image", "pypdfium2"],
+    "tabula": ["tabula-py"],
+    "ocr": ["img2table", "rapidocr-onnxruntime", "pytesseract", "pdf2image", "pypdfium2", "easyocr"],
+    "markitdown": ["markitdown[pdf]"],
 }
 
 

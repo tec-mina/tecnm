@@ -34,11 +34,19 @@ Extrae documentos PDF a Markdown limpio, estructurado y definitivo, con soporte 
 
 ## Descripción
 
-Skill unificada que combina:
-- **pdfplumber**: Mejor extracción de tablas y estructuras
-- **pymupdf**: Soporte de imágenes y metadatos
-- **pdfminer.six**: Extracción de texto precisa
-- **tabulate**: Conversión inteligente de tablas
+Skill unificada con **jerarquía inteligente de herramientas**:
+
+**NIVEL 1 - Extracción Semántica (Prioritario):**
+- **Docling**: Mejor para estructura semántica y tablas complejas
+- **MarkItDown**: Conversión directa a Markdown con jerarquía de títulos
+
+**NIVEL 2 - Extracción Híbrida (Fallback):**
+- **PyMuPDF**: Extracción de texto, bloques y metadatos
+- **pdfplumber**: Tablas con alineación visual perfecta
+- **tabulate**: Formateo estándar Markdown
+
+**NIVEL 3 - OCR (Escaneos):**
+- **EasyOCR**: Para PDFs escaneados/imágenes
 
 Con validación automática, corrección inteligente y soporte multiidioma.
 

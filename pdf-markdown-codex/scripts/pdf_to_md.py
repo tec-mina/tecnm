@@ -540,8 +540,23 @@ def check_dependencies(docling_mode: bool = False):
     return True
 
 
-def convert_pdf(pdf_path, image_dir, show_progress=False, docling=False, images_scale=4.0):
-    """Convert PDF to markdown."""
+def convert_pdf(
+    pdf_path,
+    image_dir,
+    show_progress=False,
+    docling=False,
+    images_scale=4.0,
+    markitdown=False,
+    easyocr_langs=None,
+):
+    """Convert PDF to markdown.
+
+    Backend priority:
+      --docling      -> Docling AI (best tables, slow)
+      --markitdown   -> Microsoft MarkItDown (good headings/tables, fast)
+      --ocr-easyocr  -> EasyOCR page-by-page (scanned PDFs only)
+      default        -> PyMuPDF + pymupdf4llm (fast, tqdm for large PDFs)
+    """
     if docling:
         from extractor import extract_pdf_docling
 
@@ -552,15 +567,20 @@ def convert_pdf(pdf_path, image_dir, show_progress=False, docling=False, images_
             show_progress=show_progress,
         )
         return markdown
-    else:
-        from extractor import extract_pdf_fast
 
-        markdown = extract_pdf_fast(
-            pdf_path,
-            image_dir=image_dir,
-            show_progress=show_progress,
-        )
-        return markdown
+    if markitdown:
+        from extractor import extract_pdf_markitdown
+
+        return extract_pdf_markitdown(pdf_path, show_progress=show_progress)
+
+    if easyocr_langs is not None:
+        from extractor import extract_pdf_easyocr
+
+        return extract_pdf_easyocr(pdf_path, lang=easyocr_langs, show_progress=show_progress)
+
+    from extractor import extract_pdf_fast
+
+    return extract_pdf_fast(pdf_path, image_dir=image_dir, show_progress=show_progress)
 
 
 def add_metadata_header(markdown, pdf_path, total_pages, image_dir=None, cached=False):
@@ -631,10 +651,26 @@ Caching:
         dest="docling",
         help="Use Docling AI for complex/borderless tables (slower, ~1 sec/page)",
     )
+    parser.add_argument(
+        "--markitdown",
+        action="store_true",
+        help="Use Microsoft MarkItDown for extraction (install: bootstrap_env.py --extras markitdown)",
+    )
+    parser.add_argument(
+        "--ocr-easyocr",
+        nargs="*",
+        metavar="LANG",
+        dest="ocr_easyocr",
+        help=(
+            "Use EasyOCR for scanned PDFs. Optionally pass language codes "
+            "(default: es en). Example: --ocr-easyocr es en fr. "
+            "Install: bootstrap_env.py --extras ocr"
+        ),
+    )
     parser.add_argument("--no-progress", action="store_true", help="Disable progress indicator")
     parser.add_argument(
         "--table-backend",
-        choices=["auto", "none", "pdfplumber", "camelot"],
+        choices=["auto", "none", "pdfplumber", "camelot", "tabula"],
         default="auto",
         help="Auxiliary table extraction backend used after main conversion",
     )
@@ -662,6 +698,11 @@ Caching:
         help="Clear entire cache directory and exit",
     )
     parser.add_argument("--cache-stats", action="store_true", help="Show cache statistics and exit")
+    parser.add_argument(
+        "--with-images",
+        action="store_true",
+        help="Extract and copy embedded images next to the Markdown output. Off by default to avoid cluttering the output directory.",
+    )
 
     args = parser.parse_args()
 
@@ -693,13 +734,25 @@ Caching:
         else:
             print(f"No cache found for: {args.input}", file=sys.stderr)
 
-    # Validate input exists
-    if not os.path.exists(args.input):
-        print(f"ERROR: File not found: {args.input}", file=sys.stderr)
+    # --- Pre-flight PDF validation (hard checks) ---
+    from extractor import validate_pdf
+
+    pdf_info = validate_pdf(args.input)
+
+    # Print any warnings even on cache hit
+    for w in pdf_info.warnings:
+        print(f"AVISO: {w}", file=sys.stderr)
+
+    if not pdf_info.is_valid:
+        for err in pdf_info.errors:
+            print(f"ERROR: {err}", file=sys.stderr)
         sys.exit(1)
 
-    if not args.input.lower().endswith(".pdf"):
-        print(f"WARNING: File may not be a PDF: {args.input}", file=sys.stderr)
+    if pdf_info.errors:
+        # Errors block processing (e.g. encrypted)
+        for err in pdf_info.errors:
+            print(f"ERROR: {err}", file=sys.stderr)
+        sys.exit(1)
 
     show_progress = sys.stderr.isatty() and not args.no_progress
 
@@ -714,7 +767,7 @@ Caching:
     if valid:
         if show_progress:
             mode = "docling" if args.docling else "fast"
-            print(f"Loading from cache ({mode} mode)...", file=sys.stderr)
+            print(f"Cargando desde cache (modo {mode})...", file=sys.stderr)
 
         cache_result = cache_mgr.load(cache_key)
         if cache_result:
@@ -722,8 +775,8 @@ Caching:
             total_pages = cache_result.total_pages
             cache_hit = True
 
-            # Copy images from cache to output location
-            if cache_result.image_dir:
+            # Copy images from cache to output location only if explicitly requested
+            if cache_result.image_dir and getattr(args, "with_images", False):
                 output_path = args.output or os.path.splitext(args.input)[0] + ".md"
                 img_mgr = ImageManager()
                 image_dir = img_mgr._copy_images_to_output(
@@ -735,38 +788,46 @@ Caching:
         if not check_dependencies(docling_mode=args.docling):
             sys.exit(1)
 
-        from extractor import get_page_count
-
-        total_pages = get_page_count(args.input)
+        # Use page_count from pre-flight validation (avoid double open)
+        total_pages = pdf_info.page_count
 
         if not cache_key:
             cache_key = cache_mgr.get_key(config)
 
         img_mgr = ImageManager()
-        temp_image_dir = img_mgr.create_temp_dir(args.input)
+        # Only allocate an image directory if the user explicitly asked for images.
+        # This prevents an `images/` directory from being created next to every .md output.
+        temp_image_dir = img_mgr.create_temp_dir(args.input) if getattr(args, "with_images", False) else None
 
         try:
             if show_progress:
                 if args.docling:
                     print(
-                        f"Extracting {total_pages} pages with Docling AI (~1 sec/page)...",
+                        f"Extrayendo {total_pages} paginas con Docling AI (~1 seg/pagina)...",
                         file=sys.stderr,
                     )
-                else:
-                    print(
-                        f"Extracting {total_pages} pages with PyMuPDF (fast mode)...",
-                        file=sys.stderr,
-                    )
+                elif getattr(args, "markitdown", False):
+                    print("Extrayendo con MarkItDown (Microsoft)...", file=sys.stderr)
+                elif getattr(args, "ocr_easyocr", None) is not None:
+                    langs = args.ocr_easyocr or ["es", "en"]
+                    print(f"OCR con EasyOCR ({langs})...", file=sys.stderr)
+                # Fast mode shows its own tqdm bar via extract_pdf_fast
+
+            easyocr_langs = None
+            if getattr(args, "ocr_easyocr", None) is not None:
+                easyocr_langs = args.ocr_easyocr if args.ocr_easyocr else ["es", "en"]
 
             result = convert_pdf(
                 args.input,
                 image_dir=temp_image_dir,
                 show_progress=show_progress,
                 docling=args.docling,
+                markitdown=getattr(args, "markitdown", False),
+                easyocr_langs=easyocr_langs,
             )
         except Exception as e:
             img_mgr.cleanup()
-            print(f"ERROR: Conversion failed: {e}", file=sys.stderr)
+            print(f"ERROR: La conversion fallo: {e}", file=sys.stderr)
             sys.exit(1)
 
         # Save to cache
@@ -777,7 +838,7 @@ Caching:
         )
         cache_mgr.save(cache_key, extraction_result, config)
         if show_progress:
-            print(f"Cached: {cache_mgr._get_dir(cache_key)}", file=sys.stderr)
+            print(f"Guardado en cache: {cache_mgr._get_dir(cache_key)}", file=sys.stderr)
 
         # Finalize images
         output_path = args.output or os.path.splitext(args.input)[0] + ".md"
@@ -804,6 +865,8 @@ Caching:
     table_warnings = []
     chosen_table_backend = None
     if args.table_backend != "none":
+        if show_progress:
+            print("Extrayendo tablas con backend auxiliar...", file=sys.stderr)
         table_results, table_warnings, chosen_table_backend = extract_auxiliary_tables(
             args.input,
             backend=args.table_backend,
