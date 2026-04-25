@@ -127,13 +127,18 @@ def _validate_upload(file: UploadFile) -> None:
         )
 
 
-def _check_size(content: bytes) -> None:
+def _save_upload_and_check_size(upload: UploadFile, dest: Path) -> None:
     limit = _MAX_UPLOAD_MB * 1024 * 1024
-    if len(content) > limit:
-        raise HTTPException(
-            status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE,
-            detail=f"File exceeds {_MAX_UPLOAD_MB} MB limit",
-        )
+    written = 0
+    with dest.open("wb") as f:
+        while chunk := upload.file.read(8192 * 1024):  # 8MB chunks
+            written += len(chunk)
+            if written > limit:
+                raise HTTPException(
+                    status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE,
+                    detail=f"File exceeds {_MAX_UPLOAD_MB} MB limit",
+                )
+            f.write(chunk)
 
 
 def _parse_range(s: str | None) -> tuple[int, int] | None:
@@ -248,16 +253,20 @@ async def inspect(
     file: UploadFile = File(...),
 ) -> dict:
     _validate_upload(file)
-    content = await file.read()
-    _check_size(content)
 
     work_dir = _TMP_DIR / str(uuid.uuid4())
     work_dir.mkdir(parents=True, exist_ok=True)
     pdf_path = work_dir / "input.pdf"
-    pdf_path.write_bytes(content)
+    
+    try:
+        _save_upload_and_check_size(file, pdf_path)
+    except Exception:
+        _cleanup(work_dir)
+        raise
+
     background_tasks.add_task(_cleanup, work_dir)
 
-    loop = asyncio.get_event_loop()
+    loop = asyncio.get_running_loop()
 
     def _run() -> Any:
         from ..app.ports import noop_emitter
@@ -294,15 +303,18 @@ async def extract(
     no_spell: bool = Form(False, description="Skip OCR spell correction"),
 ) -> StreamingResponse:
     _validate_upload(file)
-    content = await file.read()
-    _check_size(content)
 
     work_dir = _TMP_DIR / str(uuid.uuid4())
     out_dir = work_dir / "out"
     work_dir.mkdir(parents=True, exist_ok=True)
     out_dir.mkdir(parents=True, exist_ok=True)
     pdf_path = work_dir / "input.pdf"
-    pdf_path.write_bytes(content)
+    
+    try:
+        _save_upload_and_check_size(file, pdf_path)
+    except Exception:
+        _cleanup(work_dir)
+        raise
 
     original_stem = Path(file.filename or "output").stem
     options = {
@@ -313,7 +325,7 @@ async def extract(
         "no_spell": no_spell,
     }
 
-    loop = asyncio.get_event_loop()
+    loop = asyncio.get_running_loop()
     try:
         result = await loop.run_in_executor(
             None, _run_sync_extraction, pdf_path, out_dir, options
@@ -377,56 +389,62 @@ async def batch(
         "no_spell": no_spell,
     }
 
-    loop = asyncio.get_event_loop()
+    loop = asyncio.get_running_loop()
     summary: list[dict] = []
-    zip_buffer = io.BytesIO()
-
-    with zipfile.ZipFile(zip_buffer, mode="w", compression=zipfile.ZIP_DEFLATED) as zf:
-        for upload in files:
+    
+    sem = asyncio.Semaphore(int(os.environ.get("EXTRACTOR_WORKERS", "4")))
+    
+    async def _process_upload(upload: UploadFile) -> dict | tuple[str, str, dict]:
+        try:
             _validate_upload(upload)
-            content = await upload.read()
-            _check_size(content)
-
-            original_stem = Path(upload.filename or "output").stem
-            file_dir = work_dir / str(uuid.uuid4())
-            out_dir = file_dir / "out"
-            file_dir.mkdir(parents=True)
-            out_dir.mkdir(parents=True)
-            pdf_path = file_dir / "input.pdf"
-            pdf_path.write_bytes(content)
-
-            try:
+        except Exception as exc:
+            return {"file": upload.filename, "status": "error", "error": str(exc)}
+            
+        original_stem = Path(upload.filename or "output").stem
+        file_dir = work_dir / str(uuid.uuid4())
+        out_dir = file_dir / "out"
+        file_dir.mkdir(parents=True)
+        out_dir.mkdir(parents=True)
+        pdf_path = file_dir / "input.pdf"
+        
+        try:
+            _save_upload_and_check_size(upload, pdf_path)
+            async with sem:
                 result = await loop.run_in_executor(
                     None, _run_sync_extraction, pdf_path, out_dir, options
                 )
-                md_files = sorted(out_dir.rglob("*.md"))
-                if md_files:
-                    zf.writestr(
-                        f"{original_stem}.md",
-                        md_files[0].read_text("utf-8"),
-                    )
-                    summary.append({
-                        "file": upload.filename,
-                        "output": f"{original_stem}.md",
-                        "status": getattr(result, "status", "ok"),
-                        "quality_score": round(getattr(result, "quality_score", 0.0), 1),
-                        "pages": getattr(result, "pages", 0),
-                        "elapsed_sec": round(getattr(result, "elapsed_sec", 0.0), 2),
-                        "features_used": getattr(result, "features_used", []),
-                        "warnings": getattr(result, "warnings", []),
-                    })
-                else:
-                    summary.append({
-                        "file": upload.filename,
-                        "status": "error",
-                        "error": "extraction produced no output",
-                    })
-            except Exception as exc:
-                summary.append({
+            md_files = sorted(out_dir.rglob("*.md"))
+            if md_files:
+                md_content = md_files[0].read_text("utf-8")
+                item_summary = {
                     "file": upload.filename,
-                    "status": "error",
-                    "error": str(exc),
-                })
+                    "output": f"{original_stem}.md",
+                    "status": getattr(result, "status", "ok"),
+                    "quality_score": round(getattr(result, "quality_score", 0.0), 1),
+                    "pages": getattr(result, "pages", 0),
+                    "elapsed_sec": round(getattr(result, "elapsed_sec", 0.0), 2),
+                    "features_used": getattr(result, "features_used", []),
+                    "warnings": getattr(result, "warnings", []),
+                }
+                return (original_stem, md_content, item_summary)
+            else:
+                return {"file": upload.filename, "status": "error", "error": "extraction produced no output"}
+        except Exception as exc:
+            return {"file": upload.filename, "status": "error", "error": str(exc)}
+
+    results = await asyncio.gather(*[_process_upload(upload) for upload in files])
+    
+    zip_buffer = io.BytesIO()
+    with zipfile.ZipFile(zip_buffer, mode="w", compression=zipfile.ZIP_DEFLATED) as zf:
+        for res in results:
+            if isinstance(res, tuple):
+                stem, html, summ = res
+                zf.writestr(f"{stem}.md", html)
+                summary.append(summ)
+            else:
+                summary.append(res)
+        
+        zf.writestr("_summary.json", json.dumps(summary, ensure_ascii=False, indent=2))
 
         zf.writestr("_summary.json", json.dumps(summary, ensure_ascii=False, indent=2))
 
