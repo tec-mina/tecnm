@@ -99,10 +99,16 @@ RUN mkdir -p /app/input /app/output /root/.cache/pdf-extractor
 ENV EXTRACTOR_WORKERS=4
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONPATH=/app
+# Cloud Run injects $PORT at runtime (default 8080).
+# Pass it through so 'serve' picks it up via --port / $PORT.
+ENV PORT=8080
 
-# ── Healthcheck ───────────────────────────────────────────────────────────────
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=2 \
-    CMD python -m pdf_extractor --help > /dev/null 2>&1 || exit 1
+# ── Healthcheck (Cloud Run / Docker) ─────────────────────────────────────────
+# /healthz is a lightweight liveness probe — no PDF processing involved.
+HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=3 \
+    CMD curl -sf http://localhost:${PORT}/healthz || exit 1
 
+# ── Default: run the REST API (Cloud Run target) ──────────────────────────────
+# Override with `docker run ... python -m pdf_extractor extract ...` for CLI use.
 ENTRYPOINT ["python", "-m", "pdf_extractor"]
-CMD ["--help"]
+CMD ["serve", "--host", "0.0.0.0"]

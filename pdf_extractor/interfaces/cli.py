@@ -523,6 +523,32 @@ def strategies_info(name: str, json_output: bool) -> None:
             print(f"{k:20s}: {v}")
 
 
+# ── serve (FastAPI / uvicorn) ────────────────────────────────────────────────
+
+@main.command()
+@click.option("--host", default="0.0.0.0", show_default=True,
+              help="Bind address.")
+@click.option("--port", default=8080, show_default=True, type=int,
+              envvar="PORT",
+              help="Port to listen on. Also reads $PORT env var (Cloud Run).")
+@click.option("--reload", is_flag=True, default=False,
+              help="Enable hot-reload (development only).")
+def serve(host: str, port: int, reload: bool) -> None:
+    """Start the FastAPI REST + SSE server.
+
+    \b
+    Local:        python -m pdf_extractor serve
+    Custom port:  python -m pdf_extractor serve --port 9000
+    Dev reload:   python -m pdf_extractor serve --reload
+    Cloud Run:    PORT env var is read automatically.
+
+    API docs available at /docs once the server is running.
+    """
+    from .api import run_server
+    click.echo(f"PDF Extractor API → http://{host}:{port}/docs")
+    run_server(host=host, port=port, reload=reload)
+
+
 # ── web ──────────────────────────────────────────────────────────────────────
 
 @main.command()

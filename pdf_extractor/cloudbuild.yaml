@@ -1,0 +1,81 @@
+# cloudbuild.yaml — Cloud Build pipeline for PDF Extractor
+#
+# Deploys the FastAPI service to Cloud Run on every push to main.
+#
+# Required substitutions (set in the Cloud Build trigger):
+#   _REGION        — GCP region, e.g. us-central1
+#   _SERVICE       — Cloud Run service name, e.g. pdf-extractor
+#   _REPO          — Artifact Registry repo, e.g. us-central1-docker.pkg.dev/$PROJECT_ID/pdf-extractor
+#
+# Optional substitutions:
+#   _MAX_INSTANCES — Cloud Run max instances (default 10)
+#   _MEMORY        — Cloud Run memory per instance (default 2Gi)
+#   _CONCURRENCY   — max requests per instance (default 4)
+#
+# Usage:
+#   gcloud builds submit --config cloudbuild.yaml \
+#     --substitutions _REGION=us-central1,_SERVICE=pdf-extractor,\
+#       _REPO=us-central1-docker.pkg.dev/MY_PROJECT/pdf-extractor
+
+substitutions:
+  _REGION: us-central1
+  _SERVICE: pdf-extractor
+  _REPO: us-central1-docker.pkg.dev/${PROJECT_ID}/pdf-extractor
+  _MAX_INSTANCES: "10"
+  _MEMORY: 2Gi
+  _CONCURRENCY: "4"
+
+steps:
+  # ── 1. Build the container image ──────────────────────────────────────────
+  - name: gcr.io/cloud-builders/docker
+    id: build
+    args:
+      - build
+      - --file=pdf_extractor/docker/Dockerfile
+      - --tag=${_REPO}/${_SERVICE}:${SHORT_SHA}
+      - --tag=${_REPO}/${_SERVICE}:latest
+      - --cache-from=${_REPO}/${_SERVICE}:latest
+      - .
+
+  # ── 2. Push to Artifact Registry ─────────────────────────────────────────
+  - name: gcr.io/cloud-builders/docker
+    id: push
+    waitFor: [build]
+    args:
+      - push
+      - --all-tags
+      - ${_REPO}/${_SERVICE}
+
+  # ── 3. Deploy to Cloud Run ────────────────────────────────────────────────
+  - name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    id: deploy
+    waitFor: [push]
+    entrypoint: gcloud
+    args:
+      - run
+      - deploy
+      - ${_SERVICE}
+      - --image=${_REPO}/${_SERVICE}:${SHORT_SHA}
+      - --region=${_REGION}
+      - --platform=managed
+      - --allow-unauthenticated
+      - --memory=${_MEMORY}
+      - --cpu=2
+      - --concurrency=${_CONCURRENCY}
+      - --max-instances=${_MAX_INSTANCES}
+      - --timeout=300
+      # Upload/output dirs backed by in-memory tmpfs on Cloud Run.
+      # For persistence across instances use a GCS bucket mount instead.
+      - --set-env-vars=UPLOAD_DIR=/tmp/pdf-extractor/uploads,OUTPUT_DIR=/tmp/pdf-extractor/output
+      # Uncomment to require an API key:
+      # - --set-env-vars=API_KEY=$$API_KEY
+      # - --set-secrets=API_KEY=pdf-extractor-api-key:latest
+
+images:
+  - ${_REPO}/${_SERVICE}:${SHORT_SHA}
+  - ${_REPO}/${_SERVICE}:latest
+
+options:
+  # Use a machine with more RAM for the heavy system-dep build layer.
+  machineType: E2_HIGHCPU_8
+  logging: CLOUD_LOGGING_ONLY

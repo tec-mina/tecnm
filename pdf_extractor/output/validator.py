@@ -28,6 +28,8 @@ from dataclasses import dataclass, field
 _OVERLONG_LINE_CHARS = 180
 _REPEATED_LINE_MIN = 3
 _EMPTY_THRESHOLD = 50
+_SPARSE_PAGE_CHARS = 30      # pages below this word count are "empty"
+_SPARSE_PAGE_RATIO = 0.6     # if >60 % of pages are sparse → flag
 _PAGE_MARKER_RE = re.compile(r"<!-- Page \d+ -->")
 _HEADING_RE = re.compile(r"^(#{1,6})\s")
 _STANDALONE_NUM_RE = re.compile(r"^\s*\d{1,4}\s*$")
@@ -87,6 +89,11 @@ def run(markdown: str, overlong_threshold: int = _OVERLONG_LINE_CHARS) -> Valida
                     ),
                 )],
             )
+
+    # 0.5. Sparse-page detection (scanned PDFs where OCR produced almost nothing)
+    sparse_issue = _check_sparse_pages(markdown)
+    if sparse_issue:
+        issues.append(sparse_issue)
 
     # 1. Missing page markers
     if not _PAGE_MARKER_RE.search(markdown):
@@ -165,6 +172,34 @@ def _strip_frontmatter(lines: list[str]) -> list[str]:
         return lines[end + 1:]
     except ValueError:
         return lines
+
+
+def _check_sparse_pages(markdown: str) -> ValidationIssue | None:
+    """Flag documents where most pages produced almost no text.
+
+    This catches scanned PDFs that passed the global empty-check but whose
+    OCR returned only a handful of characters per page — a sign that the OCR
+    backend was unavailable or that the images were unreadable.
+    """
+    splits = _PAGE_MARKER_RE.split(markdown)
+    # First split segment is the content before the first page marker (frontmatter/empty)
+    page_bodies = [s.strip() for s in splits[1:]]
+    if not page_bodies:
+        return None
+
+    sparse = sum(1 for body in page_bodies if len(body) < _SPARSE_PAGE_CHARS)
+    ratio = sparse / len(page_bodies)
+    if ratio >= _SPARSE_PAGE_RATIO:
+        return ValidationIssue(
+            code="SPARSE_PAGE_CONTENT",
+            severity="high",
+            description=(
+                f"{sparse}/{len(page_bodies)} pages have <{_SPARSE_PAGE_CHARS} chars of text "
+                f"({ratio:.0%}). PDF may require a stronger OCR strategy "
+                f"(e.g. ocr:tesseract-advanced or ocr:easyocr)."
+            ),
+        )
+    return None
 
 
 def _check_headings(lines: list[str]) -> list[ValidationIssue]:
