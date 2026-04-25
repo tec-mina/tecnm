@@ -40,16 +40,16 @@ def detect() -> PlatformInfo:
     info = PlatformInfo(os=os_name, arch=arch, tesseract_path=tesseract_path)
 
     if os_name == "macos":
-        info.preferred_features = ["markdown_llm", "tables", "text_fast"]
+        info.preferred_features = ["text_fast", "tables"]
         info.notes.append("macOS: prefer pymupdf4llm + pdfplumber; Tesseract via Homebrew")
 
     elif os_name == "linux":
-        info.preferred_features = ["markdown_llm", "tables", "text_fast",
+        info.preferred_features = ["text_fast", "tables",
                                     "tables_camelot", "ocr_tesseract", "ocr_easy", "docling_feat"]
         info.notes.append("Linux: full stack supported; camelot requires ghostscript")
 
     elif os_name == "windows":
-        info.preferred_features = ["markitdown_feat", "tables", "text_fast", "markdown_llm"]
+        info.preferred_features = ["markitdown_feat", "tables", "text_fast"]
         # EasyOCR on Windows without CUDA is slow; skip by default
         try:
             import torch

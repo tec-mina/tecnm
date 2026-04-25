@@ -28,7 +28,7 @@ from ._base import FeatureResult, PageResult
 
 
 def extract(pdf_path: str, page_range: tuple[int, int] | None = None) -> FeatureResult:
-    result = FeatureResult(feature="tables_camelot")
+    result = FeatureResult(feature="tables_camelot", content_category="table")
 
     if camelot is None:
         result.warnings.append("camelot-py not installed; tables_camelot skipped")

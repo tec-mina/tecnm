@@ -38,7 +38,7 @@ from ._base import FeatureResult, PageResult
 
 
 def extract(pdf_path: str, page_range: tuple[int, int] | None = None) -> FeatureResult:
-    result = FeatureResult(feature="tables")
+    result = FeatureResult(feature="tables", content_category="table")
 
     if pdfplumber is None:
         result.warnings.append("pdfplumber not installed; tables skipped")

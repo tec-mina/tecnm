@@ -2,7 +2,7 @@
 core/pipeline.py — Orchestrator: auto-selects strategies, runs them, merges output.
 
 Decision tree:
-  text_native, no tables   → markdown_llm (if available), else text_fast
+  text_native, no tables   → text_fast
   text_native, has_tables  → text_fast + tables (pdfplumber → camelot → tabula fallback)
   scanned                  → ocr_tesseract → ocr_easy → ocr_img2table
   mixed                    → text_fast on text pages + ocr_tesseract on scanned pages
@@ -142,7 +142,7 @@ def _select_features(
         if has_tables:
             features = ["text_fast"] + _TABLE_CHAIN
         else:
-            features = ["markdown_llm", "text_fast"]  # markdown_llm attempted first; text_fast fallback
+            features = ["text_fast"]  # text_fast with pdfplumber
     else:
         # Unknown / default
         features = ["text_fast"] + _TABLE_CHAIN

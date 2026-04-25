@@ -48,7 +48,7 @@ def extract(
         sub-folder ``images/`` inside this directory.  When None, image bytes
         are not saved and references use placeholder paths.
     """
-    result = FeatureResult(feature="images_extract")
+    result = FeatureResult(feature="images_extract", content_category="image")
 
     try:
         try:

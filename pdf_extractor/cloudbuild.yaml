@@ -64,9 +64,8 @@ steps:
       - --concurrency=${_CONCURRENCY}
       - --max-instances=${_MAX_INSTANCES}
       - --timeout=300
-      # Upload/output dirs backed by in-memory tmpfs on Cloud Run.
-      # For persistence across instances use a GCS bucket mount instead.
-      - --set-env-vars=UPLOAD_DIR=/tmp/pdf-extractor/uploads,OUTPUT_DIR=/tmp/pdf-extractor/output
+      # Temp dir for in-flight extractions. Cleaned up automatically after each request.
+      - --set-env-vars=TMP_DIR=/tmp/pdf-extractor
       # Uncomment to require an API key:
       # - --set-env-vars=API_KEY=$$API_KEY
       # - --set-secrets=API_KEY=pdf-extractor-api-key:latest

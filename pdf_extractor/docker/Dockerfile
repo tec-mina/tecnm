@@ -84,11 +84,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 WORKDIR /app
 
 # ── Python dependencies (cached layer — rebuilt only when requirements change) ─
-COPY pdf_extractor/requirements/base.txt     requirements/base.txt
-COPY pdf_extractor/requirements/ocr.txt      requirements/ocr.txt
-COPY pdf_extractor/requirements/advanced.txt requirements/advanced.txt
-COPY pdf_extractor/requirements/all.txt      requirements/all.txt
-RUN pip install --no-cache-dir -r requirements/all.txt
+COPY pdf_extractor/requirements.txt requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 # ── Application source ────────────────────────────────────────────────────────
 COPY pdf_extractor/ pdf_extractor/

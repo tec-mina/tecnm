@@ -41,7 +41,7 @@ STRATEGY = StrategyMeta(
 
 
 def extract(pdf_path: str, page_range: tuple[int, int] | None = None) -> FeatureResult:
-    result = FeatureResult(feature="ocr_img2table")
+    result = FeatureResult(feature="ocr_img2table", content_category="table")
 
     if Img2TablePDF is None:
         result.warnings.append("img2table not installed; ocr_img2table skipped")

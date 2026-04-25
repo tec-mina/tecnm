@@ -22,6 +22,11 @@ class PageResult:
 @dataclass
 class FeatureResult:
     feature: str
+    # content_category drives assembly routing — set this in every feature module:
+    #   "text"  → text_pages  (best-wins per page by confidence)
+    #   "table" → table_pages (additive, all tables kept)
+    #   "image" → image_pages (additive)
+    content_category: str = "text"
     pages: list[PageResult] = field(default_factory=list)
     metadata: dict = field(default_factory=dict)
     markdown: str = ""

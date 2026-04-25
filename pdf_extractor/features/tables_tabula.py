@@ -28,7 +28,7 @@ from ._base import FeatureResult, PageResult
 
 
 def extract(pdf_path: str, page_range: tuple[int, int] | None = None) -> FeatureResult:
-    result = FeatureResult(feature="tables_tabula")
+    result = FeatureResult(feature="tables_tabula", content_category="table")
 
     if tabula is None:
         result.warnings.append("tabula-py not installed; tables_tabula skipped")

@@ -549,20 +549,6 @@ def serve(host: str, port: int, reload: bool) -> None:
     run_server(host=host, port=port, reload=reload)
 
 
-# ── web ──────────────────────────────────────────────────────────────────────
-
-@main.command()
-@click.option("--host", default="0.0.0.0", show_default=True)
-@click.option("--port", default=5000, show_default=True, type=int)
-@click.option("--no-debug", "debug", is_flag=True, default=True,
-              help="Disable Flask debug mode (use in production).")
-def web(host: str, port: int, debug: bool) -> None:
-    """Start the web interface (Flask + SSE)."""
-    from .web.app import run_dev
-    click.echo(f"PDF Extractor web UI → http://{host}:{port}")
-    run_dev(host=host, port=port, debug=debug)
-
-
 # ── cache ─────────────────────────────────────────────────────────────────────
 
 @main.group()

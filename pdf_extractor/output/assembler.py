@@ -38,18 +38,6 @@ _HEADING_RE = re.compile(r"^(#{1,6})\s+(.*)")
 _TABLE_HEADING_RE = re.compile(r"^### Tabla")
 
 
-_TEXT_FEATURE_SET = frozenset({
-    "markdown_llm", "text_fast", "ocr_tesseract",
-    "ocr_easy", "docling_feat", "markitdown_feat",
-    "fonts_analysis",
-})
-_TABLE_FEATURE_SET = frozenset({
-    "tables", "tables_camelot", "tables_tabula", "ocr_img2table",
-})
-_IMAGE_FEATURE_SET = frozenset({
-    "images_extract",
-})
-
 
 @dataclass
 class AssemblyPlan:
@@ -89,23 +77,13 @@ def merge_feature(plan: AssemblyPlan, fr: FeatureResult) -> None:
     if fr.confidence == 0.0:
         return
 
-    if fr.feature in _TEXT_FEATURE_SET:
-        _merge_text(plan, fr)
-    elif fr.feature in _TABLE_FEATURE_SET:
+    if fr.content_category == "table":
         _merge_tables(plan, fr)
-    elif fr.feature in _IMAGE_FEATURE_SET:
+    elif fr.content_category == "image":
         _merge_images(plan, fr)
     else:
-        # Unknown feature: treat text-like PageResults as text, image-type as images
-        for pr in fr.pages:
-            if pr.content_type == "image":
-                plan.image_pages.setdefault(pr.page, []).append(pr.content)
-            elif pr.content_type == "table":
-                plan.table_pages.setdefault(pr.page, []).append(pr.content)
-            elif pr.content.strip():
-                if fr.confidence > plan.text_confidence.get(pr.page, -1.0):
-                    plan.text_pages[pr.page] = pr.content
-                    plan.text_confidence[pr.page] = fr.confidence
+        # Default: "text" — best-wins per page by confidence
+        _merge_text(plan, fr)
 
 
 def _merge_text(plan: AssemblyPlan, fr: FeatureResult) -> None:
