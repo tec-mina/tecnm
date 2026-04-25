@@ -1,0 +1,1048 @@
+<!doctype html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PDF Extractor — Markdown extraction studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  /* ───────────────────────── theme tokens ───────────────────────── */
+  :root,
+  [data-theme="dark"] {
+    --bg-0: #08090c;
+    --bg-1: #0c0e13;
+    --bg-2: #11141b;
+    --bg-3: #161a23;
+    --line: rgba(255,255,255,0.06);
+    --line-strong: rgba(255,255,255,0.12);
+    --text: #f4f5f7;
+    --text-dim: #a8adb8;
+    --text-mute: #6b7280;
+    --accent: #7c5cff;
+    --accent-2: #5b8cff;
+    --accent-grad: linear-gradient(135deg, #7c5cff 0%, #5b8cff 100%);
+    --accent-glow: 0 0 0 1px rgba(124,92,255,.45), 0 8px 32px -8px rgba(124,92,255,.55);
+    --hero-grad: linear-gradient(180deg, #fff 0%, #aab1c5 100%);
+    --ok: #22c55e;     --ok-bg: rgba(34,197,94,.12);
+    --warn: #f59e0b;   --warn-bg: rgba(245,158,11,.12);
+    --err: #ef4444;    --err-bg: rgba(239,68,68,.12);
+    --info: #93b4ff;   --info-bg: rgba(91,140,255,.12);
+    --shadow-1: 0 1px 2px rgba(0,0,0,.4), 0 1px 0 rgba(255,255,255,.04) inset;
+    --shadow-2: 0 8px 24px -8px rgba(0,0,0,.6), 0 1px 0 rgba(255,255,255,.04) inset;
+    --shadow-3: 0 20px 60px -20px rgba(0,0,0,.7), 0 1px 0 rgba(255,255,255,.04) inset;
+    --tooltip-bg: #1c2030;
+    --tooltip-text: #f4f5f7;
+    --select-arrow: "%23a8adb8";
+    --bg-mesh-1: rgba(124,92,255,0.18);
+    --bg-mesh-2: rgba(91,140,255,0.14);
+    --bg-mesh-3: rgba(124,92,255,0.10);
+    --grid-color: rgba(255,255,255,0.025);
+  }
+  [data-theme="light"] {
+    --bg-0: #fafbfd;
+    --bg-1: #ffffff;
+    --bg-2: #f5f7fa;
+    --bg-3: #eef1f6;
+    --line: rgba(15,23,42,0.08);
+    --line-strong: rgba(15,23,42,0.14);
+    --text: #0f172a;
+    --text-dim: #475569;
+    --text-mute: #94a3b8;
+    --accent: #6c47ff;
+    --accent-2: #3b73ff;
+    --accent-grad: linear-gradient(135deg, #6c47ff 0%, #3b73ff 100%);
+    --accent-glow: 0 0 0 1px rgba(108,71,255,.35), 0 8px 24px -10px rgba(108,71,255,.45);
+    --hero-grad: linear-gradient(180deg, #0f172a 0%, #475569 100%);
+    --ok: #16a34a;     --ok-bg: rgba(22,163,74,.10);
+    --warn: #b45309;   --warn-bg: rgba(180,83,9,.10);
+    --err: #b91c1c;    --err-bg: rgba(185,28,28,.08);
+    --info: #2563eb;   --info-bg: rgba(37,99,235,.10);
+    --shadow-1: 0 1px 2px rgba(15,23,42,.06);
+    --shadow-2: 0 8px 24px -10px rgba(15,23,42,.18);
+    --shadow-3: 0 20px 60px -25px rgba(15,23,42,.30);
+    --tooltip-bg: #0f172a;
+    --tooltip-text: #f8fafc;
+    --select-arrow: "%23475569";
+    --bg-mesh-1: rgba(108,71,255,0.12);
+    --bg-mesh-2: rgba(59,115,255,0.10);
+    --bg-mesh-3: rgba(108,71,255,0.06);
+    --grid-color: rgba(15,23,42,0.04);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg-0);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-feature-settings: 'cv11','ss01','ss03';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    line-height: 1.5;
+    overflow-x: hidden;
+    transition: background .25s ease, color .25s ease;
+  }
+
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: -1;
+    background:
+      radial-gradient(ellipse 60% 50% at 15% 0%, var(--bg-mesh-1), transparent 60%),
+      radial-gradient(ellipse 70% 60% at 95% 10%, var(--bg-mesh-2), transparent 65%),
+      radial-gradient(ellipse 80% 60% at 50% 100%, var(--bg-mesh-3), transparent 70%);
+    pointer-events: none;
+    transition: opacity .25s ease;
+  }
+  body::after {
+    content: '';
+    position: fixed; inset: 0; z-index: -1;
+    background-image:
+      linear-gradient(var(--grid-color) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 80%);
+    pointer-events: none;
+  }
+
+  code, .mono { font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+  /* ───────────────────────── header ───────────────────────── */
+  header.top {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    background: color-mix(in srgb, var(--bg-0) 72%, transparent);
+    border-bottom: 1px solid var(--line);
+  }
+  .top .inner {
+    max-width: 1200px; margin: 0 auto;
+    padding: 14px 24px;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .logo {
+    width: 34px; height: 34px; border-radius: 10px;
+    background: var(--accent-grad);
+    display: grid; place-items: center;
+    box-shadow: var(--accent-glow);
+  }
+  .logo svg { width: 18px; height: 18px; color: white; }
+  .brand-text h1 { margin: 0; font-size: 15px; font-weight: 700; letter-spacing: -0.01em; }
+  .brand-text p { margin: 0; font-size: 12px; color: var(--text-mute); }
+
+  .theme-toggle {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: var(--bg-2); border: 1px solid var(--line-strong);
+    color: var(--text-dim); cursor: pointer;
+    display: grid; place-items: center;
+    transition: all .2s ease;
+  }
+  .theme-toggle:hover { color: var(--text); border-color: var(--accent); }
+  .theme-toggle svg { width: 16px; height: 16px; }
+  .theme-toggle .sun { display: none; }
+  [data-theme="light"] .theme-toggle .sun { display: block; }
+  [data-theme="light"] .theme-toggle .moon { display: none; }
+
+  main { max-width: 1200px; margin: 40px auto 80px; padding: 0 24px; }
+
+  /* ───────────────────────── hero ───────────────────────── */
+  .hero { text-align: center; margin-bottom: 36px; }
+  .hero .pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 12px; border-radius: 999px;
+    background: var(--info-bg);
+    border: 1px solid color-mix(in srgb, var(--info) 28%, transparent);
+    font-size: 12px; color: var(--info); font-weight: 500;
+    margin-bottom: 16px;
+  }
+  .hero .pill .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--info); box-shadow: 0 0 10px var(--info); }
+  .hero h2 {
+    margin: 0 0 12px; font-size: 44px; font-weight: 800; letter-spacing: -0.025em;
+    background: var(--hero-grad);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    line-height: 1.1;
+  }
+  .hero p { margin: 0 auto; max-width: 580px; color: var(--text-dim); font-size: 16px; }
+
+  /* ───────────────────────── dropzone ───────────────────────── */
+  .drop {
+    position: relative;
+    border-radius: 20px;
+    padding: 48px 24px;
+    text-align: center;
+    background: linear-gradient(180deg,
+      color-mix(in srgb, var(--bg-3) 60%, transparent) 0%,
+      color-mix(in srgb, var(--bg-2) 60%, transparent) 100%);
+    border: 1.5px dashed var(--line-strong);
+    cursor: pointer;
+    transition: all .25s cubic-bezier(.22,.61,.36,1);
+    overflow: hidden;
+  }
+  .drop:hover {
+    border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+    transform: translateY(-1px);
+  }
+  .drop.drag {
+    border-color: transparent;
+    background: linear-gradient(180deg,
+      color-mix(in srgb, var(--accent) 12%, transparent) 0%,
+      color-mix(in srgb, var(--accent-2) 8%, transparent) 100%);
+    box-shadow: var(--accent-glow);
+    transform: scale(1.005);
+  }
+  .drop .icon-stack {
+    width: 64px; height: 64px; border-radius: 18px;
+    margin: 0 auto 18px;
+    background: linear-gradient(180deg, var(--bg-3) 0%, var(--bg-2) 100%);
+    border: 1px solid var(--line-strong);
+    display: grid; place-items: center;
+    box-shadow: var(--shadow-2);
+    transition: all .25s cubic-bezier(.22,.61,.36,1);
+  }
+  .drop:hover .icon-stack, .drop.drag .icon-stack {
+    background: var(--accent-grad);
+    border-color: transparent;
+    box-shadow: var(--accent-glow);
+  }
+  .drop .icon-stack svg { width: 28px; height: 28px; color: var(--text-dim); transition: color .25s ease; }
+  .drop:hover .icon-stack svg, .drop.drag .icon-stack svg { color: white; }
+  .drop h3 { margin: 0 0 6px; font-size: 18px; font-weight: 600; letter-spacing: -0.01em; }
+  .drop p { margin: 0; color: var(--text-mute); font-size: 13px; }
+  .drop p .kbd {
+    display: inline-block; padding: 1px 6px; border-radius: 5px;
+    border: 1px solid var(--line-strong); background: var(--bg-2);
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-dim);
+  }
+  .drop input[type=file] { display: none; }
+
+  /* ───────────────────────── toolbar ───────────────────────── */
+  .toolbar { display: grid; grid-template-columns: 1.2fr 1fr; gap: 14px; margin-top: 20px; }
+  @media (max-width: 800px) { .toolbar { grid-template-columns: 1fr; } }
+
+  .card {
+    background: linear-gradient(180deg,
+      color-mix(in srgb, var(--bg-3) 65%, transparent) 0%,
+      color-mix(in srgb, var(--bg-2) 65%, transparent) 100%);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: var(--shadow-1);
+  }
+  .card-title {
+    display: flex; align-items: center; gap: 8px;
+    margin: 0 0 12px;
+    font-size: 11px; font-weight: 600; color: var(--text-mute);
+    text-transform: uppercase; letter-spacing: 0.08em;
+  }
+  .card-title svg { width: 13px; height: 13px; }
+
+  .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .field { display: inline-flex; align-items: center; gap: 8px; }
+  .field label { font-size: 13px; color: var(--text-dim); white-space: nowrap; }
+
+  /* form controls */
+  select, input[type=text] {
+    background: var(--bg-1); color: var(--text);
+    border: 1px solid var(--line-strong); border-radius: 8px;
+    padding: 9px 12px; font-size: 13px; font-family: inherit;
+    transition: border-color .15s ease, box-shadow .15s ease;
+    outline: none;
+  }
+  select { min-width: 240px; cursor: pointer; padding-right: 32px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 8px center; background-size: 16px;
+    appearance: none; -webkit-appearance: none;
+  }
+  input[type=text] { min-width: 110px; }
+  select:hover, input[type=text]:hover { border-color: color-mix(in srgb, var(--text-dim) 30%, transparent); }
+  select:focus, input[type=text]:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent);
+  }
+
+  /* checkbox */
+  .check {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 13px; color: var(--text); cursor: pointer; user-select: none;
+    padding: 4px 0;
+  }
+  .check input { display: none; }
+  .check .box {
+    width: 18px; height: 18px; border-radius: 5px;
+    background: var(--bg-1); border: 1px solid var(--line-strong);
+    display: grid; place-items: center;
+    transition: all .15s ease;
+    flex-shrink: 0;
+  }
+  .check input:checked + .box {
+    background: var(--accent-grad);
+    border-color: transparent;
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent);
+  }
+  .check .box svg { width: 12px; height: 12px; color: white; opacity: 0; transition: opacity .15s ease; }
+  .check input:checked + .box svg { opacity: 1; }
+
+  /* tooltip / info icon */
+  .info-icon {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 16px; height: 16px; border-radius: 50%;
+    background: var(--bg-3); border: 1px solid var(--line-strong);
+    color: var(--text-mute); cursor: help;
+    font-size: 10px; font-weight: 700; font-family: inherit;
+    margin-left: 2px;
+    position: relative;
+    transition: all .15s ease;
+    flex-shrink: 0;
+  }
+  .info-icon:hover { color: var(--accent); border-color: var(--accent); }
+  .info-icon[data-tip]::after {
+    content: attr(data-tip);
+    position: absolute; bottom: calc(100% + 8px); left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    background: var(--tooltip-bg); color: var(--tooltip-text);
+    padding: 8px 12px; border-radius: 8px;
+    font-size: 12px; font-weight: 400; line-height: 1.45;
+    width: max-content; max-width: 260px; text-align: left;
+    border: 1px solid var(--line-strong);
+    box-shadow: var(--shadow-3);
+    pointer-events: none; opacity: 0; z-index: 100;
+    transition: opacity .15s ease, transform .15s ease;
+    white-space: normal;
+  }
+  .info-icon[data-tip]::before {
+    content: ''; position: absolute; bottom: calc(100% + 3px); left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: var(--tooltip-bg);
+    pointer-events: none; opacity: 0; z-index: 101;
+    transition: opacity .15s ease;
+  }
+  .info-icon:hover::after, .info-icon:focus::after { opacity: 1; transform: translateX(-50%) translateY(0); }
+  .info-icon:hover::before, .info-icon:focus::before { opacity: 1; }
+
+  /* buttons */
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 0; border-radius: 8px;
+    padding: 10px 16px; font-size: 13px; font-weight: 600; font-family: inherit;
+    cursor: pointer;
+    transition: transform .12s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn svg { width: 14px; height: 14px; }
+  .btn-primary {
+    background: var(--accent-grad); color: white;
+    box-shadow: var(--accent-glow);
+  }
+  .btn-primary:hover { transform: translateY(-1px); }
+  .btn-primary:active { transform: translateY(0); }
+  .btn-secondary {
+    background: var(--bg-3); color: var(--text);
+    border: 1px solid var(--line-strong);
+  }
+  .btn-secondary:hover { background: var(--bg-2); border-color: color-mix(in srgb, var(--text-dim) 30%, transparent); }
+  .btn-ghost {
+    background: transparent; color: var(--text-dim);
+    border: 1px solid transparent;
+  }
+  .btn-ghost:hover { color: var(--text); background: var(--bg-2); }
+  .btn:disabled { opacity: .45; cursor: not-allowed; transform: none !important; }
+
+  .actions {
+    margin-top: 22px;
+    display: flex; gap: 10px; align-items: center; justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .actions-left { display: flex; gap: 10px; flex-wrap: wrap; }
+  .file-count {
+    color: var(--text-mute); font-size: 13px;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .file-count strong { color: var(--text); font-weight: 600; font-variant-numeric: tabular-nums; }
+
+  /* ───────────────────────── file cards ───────────────────────── */
+  .files { margin-top: 18px; display: grid; gap: 12px; }
+  .empty {
+    text-align: center; color: var(--text-mute); padding: 40px 0;
+    font-size: 13px; border: 1px dashed var(--line); border-radius: 16px;
+    background: color-mix(in srgb, var(--bg-2) 40%, transparent);
+  }
+
+  .file {
+    background: linear-gradient(180deg,
+      color-mix(in srgb, var(--bg-3) 65%, transparent) 0%,
+      color-mix(in srgb, var(--bg-2) 65%, transparent) 100%);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 16px 18px;
+    box-shadow: var(--shadow-1);
+    display: grid; grid-template-columns: 1fr auto; gap: 16px;
+    align-items: start;
+    transition: border-color .15s ease, transform .15s ease;
+    animation: slideIn .35s cubic-bezier(.22,.61,.36,1) backwards;
+  }
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .file:hover { border-color: var(--line-strong); }
+
+  .file-main { min-width: 0; }
+  .file-head { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+  .file-icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: linear-gradient(180deg, var(--bg-3) 0%, var(--bg-2) 100%);
+    border: 1px solid var(--line-strong);
+    display: grid; place-items: center; flex-shrink: 0;
+  }
+  .file-icon svg { width: 18px; height: 18px; color: var(--info); }
+  .file-name {
+    font-weight: 600; font-size: 14px; color: var(--text);
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    min-width: 0; flex: 1;
+  }
+  .file-size { font-size: 12px; color: var(--text-mute); white-space: nowrap; }
+
+  .chips { display: flex; gap: 6px; flex-wrap: wrap; margin: 8px 0; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 3px 9px; border-radius: 999px;
+    font-size: 11px; font-weight: 500;
+    background: var(--bg-3); color: var(--text-dim);
+    border: 1px solid var(--line);
+  }
+  .chip.ok { background: var(--ok-bg); color: var(--ok); border-color: color-mix(in srgb, var(--ok) 25%, transparent); }
+  .chip.warn { background: var(--warn-bg); color: var(--warn); border-color: color-mix(in srgb, var(--warn) 25%, transparent); }
+  .chip.err { background: var(--err-bg); color: var(--err); border-color: color-mix(in srgb, var(--err) 25%, transparent); }
+  .chip.info { background: var(--info-bg); color: var(--info); border-color: color-mix(in srgb, var(--info) 25%, transparent); }
+  .chip.accent {
+    background: linear-gradient(135deg,
+      color-mix(in srgb, var(--accent) 18%, transparent),
+      color-mix(in srgb, var(--accent-2) 18%, transparent));
+    color: var(--accent); border-color: color-mix(in srgb, var(--accent) 35%, transparent);
+  }
+
+  .file-meta { display: flex; flex-direction: column; gap: 8px; }
+  .meta-row { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-dim); flex-wrap: wrap; }
+  .meta-row .label { color: var(--text-mute); font-weight: 500; min-width: 92px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; }
+
+  .file-side {
+    display: flex; flex-direction: column; gap: 10px;
+    min-width: 280px;
+  }
+  @media (max-width: 800px) {
+    .file { grid-template-columns: 1fr; }
+    .file-side { min-width: 0; }
+  }
+  .file-side select { width: 100%; min-width: 0; }
+
+  .progress {
+    width: 100%; height: 4px; border-radius: 4px; overflow: hidden;
+    background: var(--bg-3);
+  }
+  .progress > div {
+    height: 100%; width: 0;
+    background: var(--accent-grad);
+    transition: width .25s ease;
+    box-shadow: 0 0 12px color-mix(in srgb, var(--accent) 50%, transparent);
+  }
+  .progress.indeterminate > div {
+    width: 30% !important;
+    animation: indet 1.4s ease-in-out infinite;
+  }
+  @keyframes indet {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(400%); }
+  }
+  .progress.error > div { background: var(--err); box-shadow: 0 0 12px color-mix(in srgb, var(--err) 50%, transparent); }
+  .progress.done > div { background: var(--ok); box-shadow: 0 0 12px color-mix(in srgb, var(--ok) 50%, transparent); }
+
+  .status { font-size: 12px; color: var(--text-dim); display: flex; align-items: center; gap: 6px; min-height: 18px; }
+  .status .spinner {
+    width: 12px; height: 12px;
+    border: 1.5px solid var(--line-strong);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin .8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .download {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 9px 14px; border-radius: 8px;
+    background: var(--ok-bg); color: var(--ok);
+    border: 1px solid color-mix(in srgb, var(--ok) 30%, transparent);
+    text-decoration: none; font-size: 13px; font-weight: 600;
+    transition: all .15s ease;
+  }
+  .download:hover { background: color-mix(in srgb, var(--ok) 18%, transparent); transform: translateY(-1px); }
+  .download svg { width: 14px; height: 14px; }
+
+  .file-remove {
+    background: transparent; border: 1px solid var(--line);
+    color: var(--text-mute); border-radius: 6px;
+    width: 26px; height: 26px; padding: 0;
+    display: grid; place-items: center; cursor: pointer;
+    transition: all .15s ease;
+  }
+  .file-remove:hover { color: var(--err); border-color: color-mix(in srgb, var(--err) 40%, transparent); background: var(--err-bg); }
+  .file-remove svg { width: 12px; height: 12px; }
+
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--bg-3); border-radius: 8px; border: 2px solid var(--bg-0); }
+  ::-webkit-scrollbar-thumb:hover { background: color-mix(in srgb, var(--text-mute) 30%, var(--bg-3)); }
+
+  .footer {
+    color: var(--text-mute); font-size: 12px; margin-top: 60px;
+    text-align: center;
+  }
+  .footer code { background: var(--bg-2); padding: 2px 6px; border-radius: 4px; border: 1px solid var(--line); }
+
+  #toast {
+    position: fixed; bottom: 24px; left: 50%;
+    background: var(--tooltip-bg); color: var(--tooltip-text);
+    padding: 10px 16px; border-radius: 8px;
+    border: 1px solid var(--line-strong); box-shadow: var(--shadow-3);
+    font-size: 13px;
+    opacity: 0; transition: opacity .2s ease, transform .2s ease;
+    pointer-events: none;
+    transform: translateX(-50%) translateY(8px);
+    z-index: 200;
+  }
+  #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="inner">
+    <div class="brand">
+      <div class="logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 3 14 8 19 8"/>
+          <path d="M9 13h6M9 17h4"/>
+        </svg>
+      </div>
+      <div class="brand-text">
+        <h1>PDF Extractor</h1>
+        <p>Markdown extraction studio</p>
+      </div>
+    </div>
+    <button class="theme-toggle" id="themeToggle" type="button" title="Cambiar tema">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="pill"><span class="dot"></span> Servicio listo · 100% local en tu contenedor</div>
+    <h2>De PDF a Markdown,<br/>con el método que tú elijas.</h2>
+    <p>Arrastra uno o varios PDFs, deja que el sistema te recomiende la mejor estrategia o anula la elección por archivo. Tablas, OCR, imágenes, layout — todo en un único pipeline.</p>
+  </section>
+
+  <div id="drop" class="drop">
+    <div class="icon-stack">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="17 8 12 3 7 8"/>
+        <line x1="12" y1="3" x2="12" y2="15"/>
+      </svg>
+    </div>
+    <h3>Suelta tus PDFs aquí</h3>
+    <p>o haz <span class="kbd">clic</span> para seleccionar archivos · solo <code>.pdf</code></p>
+    <input id="fileInput" type="file" accept="application/pdf" multiple />
+  </div>
+
+  <div class="toolbar">
+    <div class="card">
+      <div class="card-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+        </svg>
+        Aplicar a todos
+        <span class="info-icon" tabindex="0" data-tip="Aplica el método elegido a todos los archivos en cola. Si dejas “Auto”, el servidor decide por ti según el contenido del PDF (texto, escaneado, tablas…).">i</span>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="globalStrategy">Método:</label>
+          <select id="globalStrategy">
+            <option value="">Auto · recomendado por archivo</option>
+          </select>
+        </div>
+        <button class="btn btn-secondary" id="applyAll" type="button">Aplicar</button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+        </svg>
+        Opciones globales
+        <span class="info-icon" tabindex="0" data-tip="Estos toggles se envían junto con cada extracción. Aplican igual a todos los archivos seleccionados.">i</span>
+      </div>
+      <div class="row">
+        <label class="check">
+          <input type="checkbox" id="optImages" />
+          <span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          Imágenes
+          <span class="info-icon" tabindex="0" data-tip="Extrae las imágenes embebidas del PDF a una carpeta y las referencia desde el Markdown. Útil para conservar gráficas, sellos o firmas.">i</span>
+        </label>
+        <label class="check">
+          <input type="checkbox" id="optStructure" />
+          <span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          Estructura
+          <span class="info-icon" tabindex="0" data-tip="Añade marcadores, índice (ToC), anotaciones, hipervínculos y campos de formulario al Markdown final. Útil para PDFs largos o con formularios.">i</span>
+        </label>
+        <label class="check">
+          <input type="checkbox" id="optNoSpell" />
+          <span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          Sin spell-check
+          <span class="info-icon" tabindex="0" data-tip="Salta la corrección ortográfica posterior al OCR. Más rápido, pero pueden quedar artefactos típicos como “0”→“o” o “rn”→“m”. Actívalo si confías en el OCR o no aplica.">i</span>
+        </label>
+        <div class="field">
+          <label for="optPageRange">Páginas:</label>
+          <input type="text" id="optPageRange" placeholder="1-10" />
+          <span class="info-icon" tabindex="0" data-tip="Procesa solo el rango indicado, ej. 1-10. Útil para PDFs muy grandes o cuando solo te interesa una sección. Vacío = todas las páginas.">i</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <div class="actions-left">
+      <button class="btn btn-primary" id="processAll" type="button" disabled>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="5 3 19 12 5 21 5 3"/>
+        </svg>
+        Procesar todos
+      </button>
+      <button class="btn btn-ghost" id="clearAll" type="button" disabled>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="3 6 5 6 21 6"/>
+          <path d="M19 6l-2 14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L5 6"/>
+        </svg>
+        Limpiar
+      </button>
+    </div>
+    <div class="file-count"><strong id="fileCount">0</strong> archivo(s) en cola</div>
+  </div>
+
+  <div class="files" id="filesList"></div>
+  <div id="empty" class="empty">Aún no hay archivos. Suelta uno o varios PDFs arriba para empezar.</div>
+
+  <div class="footer">
+    UI servida por la propia API · usa <code>POST /api/v1/extract</code> por archivo
+  </div>
+</main>
+
+<div id="toast"></div>
+
+<script>
+(() => {
+  const $ = (s) => document.querySelector(s);
+  const drop = $('#drop');
+  const fileInput = $('#fileInput');
+  const filesList = $('#filesList');
+  const emptyMsg = $('#empty');
+  const fileCountEl = $('#fileCount');
+  const globalStrategy = $('#globalStrategy');
+  const applyAllBtn = $('#applyAll');
+  const processAllBtn = $('#processAll');
+  const clearAllBtn = $('#clearAll');
+  const optImages = $('#optImages');
+  const optStructure = $('#optStructure');
+  const optNoSpell = $('#optNoSpell');
+  const optPageRange = $('#optPageRange');
+  const toastEl = $('#toast');
+  const themeToggle = $('#themeToggle');
+
+  // ── theme persistence ─────────────────────────────────────────────
+  const savedTheme = localStorage.getItem('pdfx-theme')
+    || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  themeToggle.addEventListener('click', () => {
+    const cur = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', cur);
+    localStorage.setItem('pdfx-theme', cur);
+  });
+
+  // ── state ─────────────────────────────────────────────────────────
+  const items = new Map();
+  const strategiesByName = {};
+
+  // Presets siempre disponibles. El servidor valida los nombres reales.
+  // Cada preset incluye descripción que se usa como tooltip si se quiere.
+  const PRESETS = [
+    ['text:fast',                                            'Texto rápido (PyMuPDF)'],
+    ['text:pdfminer',                                        'Texto preciso (pdfminer.six)'],
+    ['text:tika-java',                                       'Texto con Apache Tika (Java)'],
+    ['text:markitdown',                                      'Texto con MarkItDown (Microsoft)'],
+    ['ocr:tesseract-basic',                                  'OCR básico (Tesseract)'],
+    ['ocr:tesseract-advanced',                               'OCR avanzado (Tesseract + preprocesado)'],
+    ['ocr:easyocr',                                          'OCR neuronal (EasyOCR)'],
+    ['tables:pdfplumber',                                    'Tablas (pdfplumber)'],
+    ['tables:camelot',                                       'Tablas alta precisión (Camelot)'],
+    ['tables:tabula',                                        'Tablas Java (Tabula)'],
+    ['tables:img2table',                                     'Tablas en escaneados (img2table+OCR)'],
+    ['images:extract',                                       'Solo extraer imágenes'],
+    ['layout:structure',                                     'Estructura del PDF (marcadores+forms)'],
+    ['fonts:analyze',                                        'Análisis de fuentes'],
+    ['text:fast,tables:pdfplumber',                          'Texto + tablas (pdfplumber)'],
+    ['text:fast,tables:camelot',                             'Texto + tablas (Camelot, alta precisión)'],
+    ['text:fast,tables:pdfplumber,images:extract',           'Texto + tablas + imágenes'],
+    ['text:fast,tables:pdfplumber,ocr:tesseract-basic',      'Mixto · texto + tablas + OCR fallback'],
+    ['text:fast,tables:pdfplumber,images:extract,layout:structure', 'Completo · texto + tablas + imágenes + estructura'],
+  ];
+
+  function showToast(msg, ms = 2200) {
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    clearTimeout(showToast._t);
+    showToast._t = setTimeout(() => toastEl.classList.remove('show'), ms);
+  }
+
+  function fmtBytes(b) {
+    if (b < 1024) return b + ' B';
+    if (b < 1024 * 1024) return (b / 1024).toFixed(1) + ' KB';
+    return (b / 1024 / 1024).toFixed(1) + ' MB';
+  }
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+
+  function populateSelect(sel, includeAuto, autoLabel) {
+    sel.innerHTML = '';
+    if (includeAuto) {
+      const o = document.createElement('option');
+      o.value = '__auto__';
+      o.textContent = autoLabel || 'Auto (servidor decide)';
+      sel.appendChild(o);
+    } else {
+      const o = document.createElement('option');
+      o.value = '';
+      o.textContent = 'Auto · recomendado por archivo';
+      sel.appendChild(o);
+    }
+
+    // Group: presets
+    const presetsGrp = document.createElement('optgroup');
+    presetsGrp.label = '— Métodos recomendados —';
+    PRESETS.forEach(([v, label]) => {
+      const o = document.createElement('option');
+      o.value = v; o.textContent = label;
+      presetsGrp.appendChild(o);
+    });
+    sel.appendChild(presetsGrp);
+
+    // Group: individual strategies (from server, when available)
+    const all = Object.values(strategiesByName);
+    if (all.length) {
+      const grp = document.createElement('optgroup');
+      grp.label = '— Estrategias individuales —';
+      all.sort((a, b) => (a.tier + a.name).localeCompare(b.tier + b.name))
+        .forEach(s => {
+          const o = document.createElement('option');
+          o.value = s.name;
+          o.textContent = `${s.name} · ${s.description || s.tier}`;
+          grp.appendChild(o);
+        });
+      sel.appendChild(grp);
+    }
+  }
+
+  // ── load strategies catalog (best-effort; UI works without it) ────
+  async function loadStrategies() {
+    populateSelect(globalStrategy, false);
+    try {
+      const resp = await fetch('/api/v1/strategies');
+      if (!resp.ok) throw new Error('HTTP ' + resp.status);
+      const list = await resp.json();
+      list.forEach(s => { strategiesByName[s.name] = s; });
+      // Repopulate global select with the full catalog now available.
+      populateSelect(globalStrategy, false);
+      // Also refresh per-file selects already on the page.
+      items.forEach(it => {
+        const prev = it.strategy;
+        populateSelect(it.strategyEl, true, autoLabelFor(it));
+        if (Array.from(it.strategyEl.options).some(o => o.value === prev)) {
+          it.strategyEl.value = prev;
+        }
+      });
+    } catch (err) {
+      console.error('No pude cargar /api/v1/strategies:', err);
+    }
+  }
+
+  function autoLabelFor(item) {
+    return item.recommended && item.recommended.length
+      ? `Auto · ${item.recommended.join(' + ')}`
+      : 'Auto (servidor decide)';
+  }
+
+  // ── intake ────────────────────────────────────────────────────────
+  function refreshUI() {
+    const n = items.size;
+    fileCountEl.textContent = n;
+    processAllBtn.disabled = n === 0;
+    clearAllBtn.disabled = n === 0;
+    emptyMsg.style.display = n === 0 ? 'block' : 'none';
+  }
+
+  function buildFileCard(item) {
+    const el = document.createElement('div');
+    el.className = 'file';
+    el.dataset.id = item.id;
+    el.innerHTML = `
+      <div class="file-main">
+        <div class="file-head">
+          <div class="file-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 3 14 8 19 8"/>
+            </svg>
+          </div>
+          <div class="file-name" title="${escapeHtml(item.file.name)}">${escapeHtml(item.file.name)}</div>
+          <div class="file-size">${fmtBytes(item.file.size)}</div>
+          <button class="file-remove" type="button" title="Quitar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+        <div class="chips" data-role="chips">
+          <span class="chip"><span class="spinner" style="width:10px;height:10px;border-width:1.5px;"></span> inspeccionando…</span>
+        </div>
+        <div class="file-meta">
+          <div class="meta-row">
+            <span class="label">Recomendado</span>
+            <div class="chips" data-role="recommended"><span class="chip">—</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="file-side">
+        <div data-role="strategy-slot"></div>
+        <div class="progress" data-role="progress"><div></div></div>
+        <div class="status" data-role="status">en espera</div>
+        <div data-role="result"></div>
+      </div>`;
+
+    const sel = document.createElement('select');
+    populateSelect(sel, true);
+    sel.value = '__auto__';
+    sel.addEventListener('change', () => { item.strategy = sel.value; });
+    el.querySelector('[data-role="strategy-slot"]').appendChild(sel);
+    item.strategyEl = sel;
+    item.chipsEl = el.querySelector('[data-role="chips"]');
+    item.recEl = el.querySelector('[data-role="recommended"]');
+    item.progressEl = el.querySelector('[data-role="progress"]');
+    item.progressBarEl = el.querySelector('[data-role="progress"] > div');
+    item.statusEl = el.querySelector('[data-role="status"]');
+    item.resultEl = el.querySelector('[data-role="result"]');
+
+    el.querySelector('.file-remove').addEventListener('click', () => removeItem(item.id));
+    return el;
+  }
+
+  function removeItem(id) {
+    const item = items.get(id);
+    if (!item) return;
+    if (item.downloadUrl) URL.revokeObjectURL(item.downloadUrl);
+    item.el.remove();
+    items.delete(id);
+    refreshUI();
+  }
+
+  function addFiles(fileList) {
+    let added = 0;
+    Array.from(fileList).forEach(f => {
+      if (!f.name.toLowerCase().endsWith('.pdf')) return;
+      const id = crypto.randomUUID();
+      const item = { id, file: f, strategy: '__auto__', recommended: [], processed: false };
+      const el = buildFileCard(item);
+      item.el = el;
+      filesList.appendChild(el);
+      items.set(id, item);
+      added++;
+      inspectFile(item);
+    });
+    if (added === 0) showToast('Solo se aceptan archivos .pdf');
+    refreshUI();
+  }
+
+  async function inspectFile(item) {
+    const fd = new FormData();
+    fd.append('file', item.file, item.file.name);
+    try {
+      const resp = await fetch('/api/v1/inspect', { method: 'POST', body: fd });
+      if (!resp.ok) throw new Error('HTTP ' + resp.status);
+      const data = await resp.json();
+      const chips = [];
+      chips.push(`<span class="chip info">${data.page_count} págs</span>`);
+      if (data.dominant_language) chips.push(`<span class="chip">${data.dominant_language.toUpperCase()}</span>`);
+      if (data.is_scanned) chips.push(`<span class="chip warn">escaneado</span>`);
+      if (data.has_images) chips.push(`<span class="chip">imágenes</span>`);
+      if (data.table_pages) chips.push(`<span class="chip">${data.table_pages} págs c/tabla</span>`);
+      if (data.is_encrypted) chips.push(`<span class="chip err">cifrado</span>`);
+      item.chipsEl.innerHTML = chips.join('');
+      item.recommended = data.suggested_strategies || [];
+      item.recEl.innerHTML = item.recommended.length
+        ? item.recommended.map(s => `<span class="chip accent">${s}</span>`).join('')
+        : '<span class="chip">—</span>';
+      const autoOpt = item.strategyEl.querySelector('option[value="__auto__"]');
+      if (autoOpt) autoOpt.textContent = autoLabelFor(item);
+    } catch (err) {
+      item.chipsEl.innerHTML = `<span class="chip err">inspect: ${escapeHtml(err.message)}</span>`;
+    }
+  }
+
+  // ── drag & drop ───────────────────────────────────────────────────
+  drop.addEventListener('click', () => fileInput.click());
+  fileInput.addEventListener('change', (e) => { addFiles(e.target.files); fileInput.value = ''; });
+  ['dragenter', 'dragover'].forEach(ev =>
+    drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.add('drag'); }));
+  ['dragleave', 'drop'].forEach(ev =>
+    drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.remove('drag'); }));
+  drop.addEventListener('drop', (e) => {
+    if (e.dataTransfer && e.dataTransfer.files) addFiles(e.dataTransfer.files);
+  });
+  window.addEventListener('dragover', (e) => e.preventDefault());
+  window.addEventListener('drop', (e) => {
+    e.preventDefault();
+    if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files.length) {
+      addFiles(e.dataTransfer.files);
+    }
+  });
+
+  // ── apply to all ──────────────────────────────────────────────────
+  applyAllBtn.addEventListener('click', () => {
+    const v = globalStrategy.value || '__auto__';
+    items.forEach(it => {
+      const opt = Array.from(it.strategyEl.options).find(o => o.value === v);
+      if (opt) {
+        it.strategyEl.value = v;
+        it.strategy = v;
+      }
+    });
+    showToast('Método aplicado a ' + items.size + ' archivo(s)');
+  });
+
+  clearAllBtn.addEventListener('click', () => {
+    items.forEach(it => { if (it.downloadUrl) URL.revokeObjectURL(it.downloadUrl); it.el.remove(); });
+    items.clear();
+    refreshUI();
+  });
+
+  // ── extraction ────────────────────────────────────────────────────
+  async function extractOne(item) {
+    if (item.processed) return;
+    const fd = new FormData();
+    fd.append('file', item.file, item.file.name);
+    if (item.strategy && item.strategy !== '__auto__') fd.append('strategies', item.strategy);
+    if (optImages.checked) fd.append('with_images', 'true');
+    if (optStructure.checked) fd.append('with_structure', 'true');
+    if (optNoSpell.checked) fd.append('no_spell', 'true');
+    if (optPageRange.value.trim()) fd.append('page_range', optPageRange.value.trim());
+
+    item.statusEl.innerHTML = '<span class="spinner"></span> procesando…';
+    item.progressEl.classList.remove('error', 'done');
+    item.progressBarEl.style.width = '8%';
+
+    try {
+      const result = await new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', '/api/v1/extract');
+        xhr.responseType = 'blob';
+        xhr.upload.onprogress = (e) => {
+          if (e.lengthComputable) {
+            const pct = Math.min(60, (e.loaded / e.total) * 60);
+            item.progressBarEl.style.width = pct + '%';
+          }
+        };
+        xhr.upload.onload = () => {
+          item.progressBarEl.style.width = '70%';
+          item.progressEl.classList.add('indeterminate');
+          item.statusEl.innerHTML = '<span class="spinner"></span> extrayendo en el servidor…';
+        };
+        xhr.onload = () => {
+          item.progressEl.classList.remove('indeterminate');
+          if (xhr.status >= 200 && xhr.status < 300) {
+            resolve({
+              blob: xhr.response,
+              headers: {
+                quality: xhr.getResponseHeader('X-Quality-Score'),
+                pages: xhr.getResponseHeader('X-Pages'),
+                elapsed: xhr.getResponseHeader('X-Elapsed-Sec'),
+                features: xhr.getResponseHeader('X-Features-Used'),
+              },
+            });
+          } else {
+            const reader = new FileReader();
+            reader.onload = () => {
+              let detail = reader.result;
+              try { detail = JSON.parse(reader.result).detail || detail; } catch {}
+              reject(new Error('HTTP ' + xhr.status + ' — ' + detail));
+            };
+            reader.onerror = () => reject(new Error('HTTP ' + xhr.status));
+            reader.readAsText(xhr.response);
+          }
+        };
+        xhr.onerror = () => reject(new Error('Network error'));
+        xhr.send(fd);
+      });
+
+      item.progressBarEl.style.width = '100%';
+      item.progressEl.classList.add('done');
+      const url = URL.createObjectURL(result.blob);
+      const downloadName = item.file.name.replace(/\.pdf$/i, '') + '.md';
+      item.downloadUrl = url;
+
+      const m = result.headers;
+      const meta = [];
+      if (m.quality) meta.push(`<span class="chip ok">Calidad ${m.quality}</span>`);
+      if (m.pages) meta.push(`<span class="chip">${m.pages} págs</span>`);
+      if (m.elapsed) meta.push(`<span class="chip">${m.elapsed}s</span>`);
+      if (m.features) m.features.split(',').forEach(f => meta.push(`<span class="chip accent">${f.trim()}</span>`));
+
+      item.resultEl.innerHTML = `
+        <a class="download" href="${url}" download="${downloadName}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          ${escapeHtml(downloadName)}
+        </a>
+        <div class="chips" style="margin-top:8px;">${meta.join('')}</div>`;
+      item.statusEl.innerHTML = '<span style="color:var(--ok);">✓ listo</span>';
+      item.processed = true;
+    } catch (err) {
+      item.progressEl.classList.remove('indeterminate');
+      item.progressBarEl.style.width = '100%';
+      item.progressEl.classList.add('error');
+      item.statusEl.innerHTML = `<span style="color:var(--err);">✕ ${escapeHtml(err.message)}</span>`;
+    }
+  }
+
+  processAllBtn.addEventListener('click', async () => {
+    processAllBtn.disabled = true;
+    clearAllBtn.disabled = true;
+    for (const it of items.values()) {
+      await extractOne(it);
+    }
+    processAllBtn.disabled = false;
+    clearAllBtn.disabled = false;
+    showToast('Procesamiento completo');
+  });
+
+  refreshUI();
+  loadStrategies();
+})();
+</script>
+</body>
+</html>

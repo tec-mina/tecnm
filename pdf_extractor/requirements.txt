@@ -46,9 +46,11 @@ pyspellchecker>=0.7.0            # OCR artifact spell correction
 # ── Progress ─────────────────────────────────────────────────────────────────
 tqdm>=4.65.0
 
-# ── Optional: heavy backends (uncomment for advanced extraction) ──────────────
-# docling>=2.0.0                 # IBM Docling — complex layout + LaTeX
-# markitdown>=0.0.1              # Microsoft MarkItDown — broad format support
-# camelot-py[cv]>=0.11.0         # Camelot — high-accuracy table extraction
-# tabula-py>=2.7.0               # Tabula — Java-based table extraction (needs JRE)
-# tika>=1.24                     # Apache Tika — 1000+ formats (downloads ~60MB JAR)
+# ── Advanced backends (system deps already present in Dockerfile) ────────────
+markitdown>=0.0.1                # Microsoft MarkItDown — broad format support
+camelot-py[cv]>=0.11.0           # Camelot — high-accuracy table extraction (uses ghostscript)
+tabula-py>=2.7.0                 # Tabula — Java-based table extraction (uses JRE)
+tika>=1.24                       # Apache Tika — 1000+ formats (downloads ~60MB JAR on first use)
+
+# ── Optional: extra-heavy ML backends (uncomment if you need them) ───────────
+# docling>=2.0.0                 # IBM Docling — pulls in PyTorch (~1GB image bloat)

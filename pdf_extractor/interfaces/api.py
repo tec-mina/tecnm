@@ -67,8 +67,10 @@ from typing import Any
 
 from fastapi import BackgroundTasks, Depends, FastAPI, File, Form, HTTPException, UploadFile, status
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import StreamingResponse
+from fastapi.responses import HTMLResponse, RedirectResponse, StreamingResponse
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
+
+_WEB_HTML_PATH = Path(__file__).with_name("web.html")
 
 # ── App factory ───────────────────────────────────────────────────────────────
 
@@ -181,6 +183,20 @@ def _run_sync_extraction(
 # ═══════════════════════════════════════════════════════════════════════════
 # Routes
 # ═══════════════════════════════════════════════════════════════════════════
+
+@app.get("/", include_in_schema=False)
+async def root() -> RedirectResponse:
+    return RedirectResponse(url="/web", status_code=307)
+
+
+@app.get("/web", include_in_schema=False, response_class=HTMLResponse)
+async def web_ui() -> HTMLResponse:
+    """Drag & drop SPA — talks to /api/v1/inspect, /strategies and /extract."""
+    try:
+        return HTMLResponse(_WEB_HTML_PATH.read_text(encoding="utf-8"))
+    except FileNotFoundError:
+        raise HTTPException(status_code=500, detail="web.html missing in image")
+
 
 @app.get("/healthz", tags=["ops"], summary="Liveness probe")
 async def healthz() -> dict:
