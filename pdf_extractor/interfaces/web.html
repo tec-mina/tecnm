@@ -940,7 +940,10 @@
   }
 
   // ── drag & drop ───────────────────────────────────────────────────
-  drop.addEventListener('click', () => fileInput.click());
+  drop.addEventListener('click', (e) => {
+    if (e.target === fileInput) return;
+    fileInput.click();
+  });
   fileInput.addEventListener('change', (e) => { addFiles(e.target.files); fileInput.value = ''; });
   ['dragenter', 'dragover'].forEach(ev =>
     drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.add('drag'); }));
