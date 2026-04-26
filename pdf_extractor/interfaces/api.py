@@ -104,12 +104,17 @@ _EXTRACTION_TIMEOUT_SEC = int(os.environ.get("EXTRACTION_TIMEOUT_SEC", "300"))
 # Global cap on concurrent extractions per process. Prevents a thundering herd
 # of /extract calls from pegging memory and exhausting the default ThreadPool.
 _MAX_CONCURRENT_EXTRACTIONS = int(os.environ.get("EXTRACTOR_WORKERS", "4"))
+# Inspect is lighter than extraction but still reads the entire PDF into RAM.
+# A separate, smaller semaphore keeps inspect calls from competing with extract.
+_MAX_CONCURRENT_INSPECTS = int(os.environ.get("INSPECT_WORKERS", "2"))
+_INSPECT_TIMEOUT_SEC = int(os.environ.get("INSPECT_TIMEOUT_SEC", "60"))
 
 _TMP_DIR.mkdir(parents=True, exist_ok=True)
 
 # Created lazily on first use so it binds to the running event loop, not to
 # import time (asyncio.Semaphore stores a reference to the current loop).
 _extraction_sem: asyncio.Semaphore | None = None
+_inspect_sem: asyncio.Semaphore | None = None
 
 
 def _get_extraction_sem() -> asyncio.Semaphore:
@@ -117,6 +122,58 @@ def _get_extraction_sem() -> asyncio.Semaphore:
     if _extraction_sem is None:
         _extraction_sem = asyncio.Semaphore(_MAX_CONCURRENT_EXTRACTIONS)
     return _extraction_sem
+
+
+def _get_inspect_sem() -> asyncio.Semaphore:
+    global _inspect_sem
+    if _inspect_sem is None:
+        _inspect_sem = asyncio.Semaphore(_MAX_CONCURRENT_INSPECTS)
+    return _inspect_sem
+
+
+def _get_memory_info() -> dict[str, int | None]:
+    """Best-effort memory stats from cgroup limits and /proc/meminfo.
+
+    Works inside Docker with both cgroup v1 and v2. Returns MB values or None
+    if the file isn't accessible (e.g. macOS dev environment).
+    """
+    limit_mb: int | None = None
+    available_mb: int | None = None
+
+    # cgroup v2 (Docker Desktop >= 4.x on Linux)
+    try:
+        raw = Path("/sys/fs/cgroup/memory.max").read_text().strip()
+        if raw != "max":
+            limit_mb = int(raw) // (1024 * 1024)
+    except Exception:
+        pass
+
+    # cgroup v1 fallback
+    if limit_mb is None:
+        try:
+            raw_v1 = int(Path("/sys/fs/cgroup/memory/memory.limit_in_bytes").read_text().strip())
+            if raw_v1 < (1 << 62):  # 0x4000… means "no limit" in cgroupv1
+                limit_mb = raw_v1 // (1024 * 1024)
+        except Exception:
+            pass
+
+    # /proc/meminfo → MemAvailable (Linux inside container)
+    try:
+        for line in Path("/proc/meminfo").read_text().splitlines():
+            if line.startswith("MemAvailable:"):
+                available_mb = int(line.split()[1]) // 1024
+                break
+    except Exception:
+        pass
+
+    # Fallback: sysconf total physical pages (macOS / non-Linux)
+    if limit_mb is None:
+        try:
+            limit_mb = (os.sysconf("SC_PHYS_PAGES") * os.sysconf("SC_PAGE_SIZE")) // (1024 * 1024)
+        except Exception:
+            pass
+
+    return {"limit_mb": limit_mb, "available_mb": available_mb}
 
 
 async def _run_extraction_guarded(
@@ -180,11 +237,45 @@ def _validate_upload(file: UploadFile) -> None:
         )
 
 
-def _save_upload_and_check_size(upload: UploadFile, dest: Path) -> None:
+def _content_disposition(filename: str) -> str:
+    """Build a Content-Disposition header that is safe for HTTP (latin-1 only).
+
+    HTTP headers must be latin-1 encoded. File names from user PDFs often contain
+    accented characters (tildes, eñes) that are not latin-1 encodable and cause
+    ``UnicodeEncodeError`` in Starlette's response builder.
+
+    We follow RFC 5987 / RFC 6266: emit a plain ASCII fallback *plus* a
+    percent-encoded UTF-8 value in the ``filename*`` parameter so modern browsers
+    use the correct name while old ones get the sanitized fallback.
+    """
+    from urllib.parse import quote
+    import unicodedata
+
+    # ASCII fallback: strip combining marks, then drop anything still non-ASCII
+    nfkd = unicodedata.normalize("NFKD", filename)
+    ascii_name = "".join(c for c in nfkd if ord(c) < 128).strip() or "output"
+    # percent-encode the original UTF-8 name for RFC 5987
+    utf8_encoded = quote(filename, safe="")
+    return (
+        f'attachment; filename="{ascii_name}"; '
+        f"filename*=UTF-8''{utf8_encoded}"
+    )
+
+
+async def _save_upload_and_check_size(upload: UploadFile, dest: Path) -> None:
+    """Stream the upload to *dest* without blocking the asyncio event loop.
+
+    Using ``await upload.read(n)`` instead of ``upload.file.read(n)`` delegates
+    the blocking SpooledTemporaryFile read to the default executor, so concurrent
+    uploads don't freeze uvicorn and cause 'Failed to fetch' in the browser.
+    """
     limit = _MAX_UPLOAD_MB * 1024 * 1024
     written = 0
     with dest.open("wb") as f:
-        while chunk := upload.file.read(8192 * 1024):  # 8MB chunks
+        while True:
+            chunk = await upload.read(8 * 1024 * 1024)  # 8 MB async read
+            if not chunk:
+                break
             written += len(chunk)
             if written > limit:
                 raise HTTPException(
@@ -405,6 +496,79 @@ async def strategies(tier: str | None = None) -> list[dict]:
     ]
 
 
+@app.get(
+    "/api/v1/capacity",
+    tags=["ops"],
+    summary="Server resource limits and active concurrency load",
+    description=(
+        "Returns the container’s memory limits, available RAM, CPU count, "
+        "current active jobs, and a recommended queue depth for the client. "
+        "The UI uses this to warn users before they overwhelm the server."
+    ),
+)
+async def capacity() -> dict:
+    ext_sem = _get_extraction_sem()
+    insp_sem = _get_inspect_sem()
+    mem = _get_memory_info()
+
+    # Semaphore._value decreases with each acquire() — reliable internal field.
+    active_extractions = _MAX_CONCURRENT_EXTRACTIONS - ext_sem._value
+    active_inspects = _MAX_CONCURRENT_INSPECTS - insp_sem._value
+
+    available_mb = mem["available_mb"] or 0
+    limit_mb = mem["limit_mb"]
+
+    # Heuristic: OCR on a scanned PDF peaks at ~350 MB per job.
+    # Reserve 600 MB for the OS + JVM/Tika + model-loading headroom.
+    MB_PER_EXTRACTION = 350
+    RESERVE_MB = 600
+    usable_mb = max(0, available_mb - RESERVE_MB)
+
+    # How many more concurrent extractions can safely start right now?
+    mem_concurrency = usable_mb // MB_PER_EXTRACTION if usable_mb else _MAX_CONCURRENT_EXTRACTIONS
+    recommended_concurrency = max(1, min(
+        _MAX_CONCURRENT_EXTRACTIONS - active_extractions,
+        mem_concurrency,
+    ))
+
+    # Safe queue depth: total files the user can enqueue without risking OOM.
+    # Files are processed through the semaphore one-at-a-time, but each inspect
+    # also loads the PDF — use 120 MB as the per-inspect estimate.
+    MB_PER_INSPECT = 120
+    inspect_headroom = (usable_mb // MB_PER_INSPECT) if usable_mb else 20
+    # Round down to a clean number; cap at 100 to avoid absurd suggestions.
+    recommended_queue_limit = min(max(1, inspect_headroom), 100)
+
+    return {
+        "max_concurrent_extractions": _MAX_CONCURRENT_EXTRACTIONS,
+        "max_concurrent_inspects": _MAX_CONCURRENT_INSPECTS,
+        "active_extractions": active_extractions,
+        "active_inspects": active_inspects,
+        "cpu_count": os.cpu_count() or 1,
+        "memory_limit_mb": limit_mb,
+        "memory_available_mb": available_mb or None,
+        "recommended_concurrency": recommended_concurrency,
+        "recommended_queue_limit": recommended_queue_limit,
+    }
+    from ..core.registry import registry
+
+    all_meta = registry.list_all()
+    if tier:
+        all_meta = [m for m in all_meta if m.tier == tier]
+    return [
+        {
+            "name": m.name,
+            "tier": m.tier,
+            "description": m.description,
+            "priority": m.priority,
+            "is_heavy": m.is_heavy,
+            "requires_python": m.requires_python,
+            "requires_system": m.requires_system,
+        }
+        for m in sorted(all_meta, key=lambda x: (x.tier, x.priority))
+    ]
+
+
 @app.post(
     "/api/v1/inspect",
     tags=["extract"],
@@ -425,9 +589,9 @@ async def inspect(
     work_dir = _TMP_DIR / str(uuid.uuid4())
     work_dir.mkdir(parents=True, exist_ok=True)
     pdf_path = work_dir / "input.pdf"
-    
+
     try:
-        _save_upload_and_check_size(file, pdf_path)
+        await _save_upload_and_check_size(file, pdf_path)
     except Exception:
         _cleanup(work_dir)
         raise
@@ -441,7 +605,23 @@ async def inspect(
         from ..app.use_cases import InspectUseCase
         return InspectUseCase(on_event=noop_emitter).execute(str(pdf_path))
 
-    result = await loop.run_in_executor(None, _run)
+    async with _get_inspect_sem():
+        try:
+            result = await asyncio.wait_for(
+                loop.run_in_executor(None, _run),
+                timeout=_INSPECT_TIMEOUT_SEC,
+            )
+        except asyncio.TimeoutError:
+            raise HTTPException(
+                status_code=504,
+                detail={
+                    "error": "inspect_timeout",
+                    "message": (
+                        f"El análisis superó {_INSPECT_TIMEOUT_SEC}s. "
+                        "El PDF puede estar dañado o ser demasiado complejo."
+                    ),
+                },
+            )
     return result.to_dict()
 
 
@@ -479,7 +659,7 @@ async def extract(
     pdf_path = work_dir / "input.pdf"
     
     try:
-        _save_upload_and_check_size(file, pdf_path)
+        await _save_upload_and_check_size(file, pdf_path)
     except Exception:
         _cleanup(work_dir)
         raise
@@ -550,7 +730,7 @@ async def extract(
         io.BytesIO(md_content),
         media_type="text/markdown; charset=utf-8",
         headers={
-            "Content-Disposition": f'attachment; filename="{original_stem}.md"',
+            "Content-Disposition": _content_disposition(f"{original_stem}.md"),
             "X-Quality-Score": str(round(getattr(result, "quality_score", 0.0), 1)),
             "X-Pages": str(getattr(result, "pages", 0)),
             "X-Elapsed-Sec": str(round(getattr(result, "elapsed_sec", 0.0), 2)),
@@ -609,7 +789,7 @@ async def batch(
         pdf_path = file_dir / "input.pdf"
 
         try:
-            _save_upload_and_check_size(upload, pdf_path)
+            await _save_upload_and_check_size(upload, pdf_path)
             # Use the same global semaphore + per-job timeout as /extract.
             result = await _run_extraction_guarded(pdf_path, out_dir, options)
             md_files = sorted(out_dir.rglob("*.md"))

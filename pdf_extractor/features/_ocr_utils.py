@@ -42,6 +42,11 @@ def preprocess_image(img_bytes: bytes, method: str = "auto") -> bytes:
         "unpaper" — force system unpaper binary
         "pil"     — force Pillow-only pipeline
     """
+    # Always normalize dark-background regions first (works on colour image,
+    # before any grayscale conversion).  This recovers white-on-dark text in
+    # shaded table rows that would otherwise vanish after binarization.
+    img_bytes = normalize_dark_backgrounds(img_bytes)
+
     if method == "opencv":
         return _preprocess_opencv(img_bytes)
     if method == "unpaper":
@@ -57,6 +62,76 @@ def preprocess_image(img_bytes: bytes, method: str = "auto") -> bytes:
     if result is not img_bytes:
         return result
     return _preprocess_pil(img_bytes)
+
+
+def normalize_dark_backgrounds(img_bytes: bytes) -> bytes:
+    """Invert text in dark-background regions so Tesseract can read it.
+
+    Shaded table rows (dark background + light text) become invisible after
+    grayscale conversion because the text and background map to similar dark tones.
+
+    Algorithm
+    ---------
+    1. Compute per-row mean luminance in the *colour* image.
+    2. Identify horizontal bands where mean luminance < *threshold* (dark rows).
+    3. Invert only those bands so light text becomes dark text on white.
+    4. Return the processed image (grayscale, contrast-enhanced).
+
+    Falls back to identity if Pillow is not available.
+    """
+    try:
+        from PIL import Image, ImageEnhance
+        import io as _io
+
+        img = Image.open(_io.BytesIO(img_bytes)).convert("RGB")
+        w, h = img.size
+
+        # Build a luminance (L) version for row analysis
+        lum = img.convert("L")
+        import struct
+
+        # Mean luminance per row of pixels
+        lum_bytes = lum.tobytes()
+        row_means: list[float] = []
+        for y in range(h):
+            row_start = y * w
+            row_vals = lum_bytes[row_start: row_start + w]
+            row_means.append(sum(row_vals) / w)
+
+        # Dark row = mean luminance < 110 (out of 255).
+        # Rows between 110-160 are mid-tone (coloured but readable) — we
+        # don't touch them to avoid inverting watermarks or logos.
+        DARK_THRESHOLD = 110
+
+        # Smooth: mark a row as "dark" only if it and at least one neighbour
+        # are both below threshold (avoids inverting hairline rules/borders).
+        dark: list[bool] = [False] * h
+        for y in range(h):
+            if row_means[y] < DARK_THRESHOLD:
+                # Check neighbours
+                prev_dark = y > 0 and row_means[y - 1] < DARK_THRESHOLD
+                next_dark = y < h - 1 and row_means[y + 1] < DARK_THRESHOLD
+                if prev_dark or next_dark:
+                    dark[y] = True
+
+        if not any(dark):
+            return img_bytes  # no dark bands → return unchanged
+
+        # Invert the dark rows in the RGB image
+        import numpy as np
+        arr = np.array(img, dtype=np.uint8)
+        for y in range(h):
+            if dark[y]:
+                arr[y] = 255 - arr[y]
+
+        result_img = Image.fromarray(arr).convert("L")
+        result_img = ImageEnhance.Contrast(result_img).enhance(1.5)
+        buf = _io.BytesIO()
+        result_img.save(buf, format="PNG")
+        return buf.getvalue()
+
+    except Exception:
+        return img_bytes
 
 
 def auto_rotate(pix, pytesseract_mod) -> object:

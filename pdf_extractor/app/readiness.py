@@ -291,17 +291,82 @@ def _probe_img2table() -> BackendStatus:
     )
 
 
+def _probe_tesseract_advanced() -> BackendStatus:
+    """ocr:tesseract-advanced — same binary deps as basic, but also uses numpy/cv2."""
+    py_ok, py_err = _python_available("pytesseract")
+    bin_ok = _binary_available("tesseract")
+    installed = py_ok and bin_ok
+    return BackendStatus(
+        name="ocr:tesseract-advanced",
+        label="OCR Tesseract avanzado (preprocesado + rotación automática)",
+        installed=installed,
+        initialized=installed,
+        install_hint=(
+            "pip install pytesseract  +  apt-get install tesseract-ocr "
+            "tesseract-ocr-spa tesseract-ocr-eng"
+        ),
+        last_error=py_err if not py_ok else (None if bin_ok else "tesseract binary not found on $PATH"),
+        can_warmup=False,
+    )
+
+
+def _probe_images_extract() -> BackendStatus:
+    """images:extract — depends only on PyMuPDF (fitz), always available."""
+    ok, err = _python_available("fitz")
+    return BackendStatus(
+        name="images:extract",
+        label="Extraer imágenes embebidas (PyMuPDF)",
+        installed=ok,
+        initialized=ok,
+        install_hint="pip install pymupdf",
+        last_error=err,
+        can_warmup=False,
+    )
+
+
+def _probe_layout_structure() -> BackendStatus:
+    """layout:structure — depends only on PyMuPDF (fitz), always available."""
+    ok, err = _python_available("fitz")
+    return BackendStatus(
+        name="layout:structure",
+        label="Estructura: marcadores, índice, formularios, vínculos (PyMuPDF)",
+        installed=ok,
+        initialized=ok,
+        install_hint="pip install pymupdf",
+        last_error=err,
+        can_warmup=False,
+    )
+
+
+def _probe_fonts_analyze() -> BackendStatus:
+    """fonts:analyze — depends only on PyMuPDF (fitz), always available."""
+    ok, err = _python_available("fitz")
+    return BackendStatus(
+        name="fonts:analyze",
+        label="Análisis de fuentes y detección de encabezados (PyMuPDF)",
+        installed=ok,
+        initialized=ok,
+        install_hint="pip install pymupdf",
+        last_error=err,
+        can_warmup=False,
+    )
+
+
 _PROBES: list[Callable[[], BackendStatus]] = [
     _probe_pymupdf,
     _probe_pdfminer,
     _probe_pdfplumber,
     _probe_markitdown,
     _probe_tesseract,
+    _probe_tesseract_advanced,
     _probe_easyocr,
     _probe_tika,
     _probe_camelot,
     _probe_tabula,
     _probe_img2table,
+    _probe_images_extract,
+    _probe_layout_structure,
+    _probe_fonts_analyze,
 ]
 
 
@@ -436,6 +501,42 @@ def warmup_img2table() -> tuple[bool, str | None]:
     return True, None
 
 
+def warmup_tesseract_advanced() -> tuple[bool, str | None]:
+    """Same binary as basic; additionally verify numpy is available for preprocessing."""
+    ok, err = warmup_tesseract()
+    if not ok:
+        return ok, err
+    try:
+        import numpy as np  # type: ignore  # noqa: F401
+    except ImportError as exc:
+        return False, f"numpy not installed (required for preprocessing): {exc}"
+    return True, None
+
+
+def warmup_images_extract() -> tuple[bool, str | None]:
+    try:
+        import fitz  # type: ignore  # noqa: F401
+    except ImportError as exc:
+        return False, f"pymupdf not installed: {exc}"
+    return True, None
+
+
+def warmup_layout_structure() -> tuple[bool, str | None]:
+    try:
+        import fitz  # type: ignore  # noqa: F401
+    except ImportError as exc:
+        return False, f"pymupdf not installed: {exc}"
+    return True, None
+
+
+def warmup_fonts_analyze() -> tuple[bool, str | None]:
+    try:
+        import fitz  # type: ignore  # noqa: F401
+    except ImportError as exc:
+        return False, f"pymupdf not installed: {exc}"
+    return True, None
+
+
 def warmup_easyocr(languages: tuple[str, ...] = ("es", "en")) -> tuple[bool, str | None]:
     try:
         import numpy as np  # type: ignore
@@ -493,17 +594,21 @@ def run_full_warmup(
         return ok
 
     overall = True
-    overall &= _step("registry",          lambda: warmup_registry())
-    overall &= _step("text:fast",          lambda: warmup_pymupdf())
-    overall &= _step("text:pdfminer",      lambda: warmup_pdfminer())
-    overall &= _step("tables:pdfplumber",  lambda: warmup_pdfplumber())
-    overall &= _step("text:markitdown",    lambda: warmup_markitdown())
-    overall &= _step("ocr:tesseract",      lambda: warmup_tesseract())
-    overall &= _step("ocr:easyocr",        lambda: warmup_easyocr(languages))
-    overall &= _step("text:tika",          lambda: warmup_tika())
-    overall &= _step("tables:camelot",     lambda: warmup_camelot())
-    overall &= _step("tables:tabula",      lambda: warmup_tabula())
-    overall &= _step("tables:img2table",   lambda: warmup_img2table())
+    overall &= _step("registry",                lambda: warmup_registry())
+    overall &= _step("text:fast",               lambda: warmup_pymupdf())
+    overall &= _step("text:pdfminer",           lambda: warmup_pdfminer())
+    overall &= _step("tables:pdfplumber",       lambda: warmup_pdfplumber())
+    overall &= _step("text:markitdown",         lambda: warmup_markitdown())
+    overall &= _step("ocr:tesseract-basic",     lambda: warmup_tesseract())
+    overall &= _step("ocr:tesseract-advanced",  lambda: warmup_tesseract_advanced())
+    overall &= _step("ocr:easyocr",             lambda: warmup_easyocr(languages))
+    overall &= _step("text:tika",               lambda: warmup_tika())
+    overall &= _step("tables:camelot",          lambda: warmup_camelot())
+    overall &= _step("tables:tabula",           lambda: warmup_tabula())
+    overall &= _step("tables:img2table",        lambda: warmup_img2table())
+    overall &= _step("images:extract",          lambda: warmup_images_extract())
+    overall &= _step("layout:structure",        lambda: warmup_layout_structure())
+    overall &= _step("fonts:analyze",           lambda: warmup_fonts_analyze())
 
     if not overall and not skip_on_error:
         return False

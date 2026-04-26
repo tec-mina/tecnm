@@ -136,7 +136,16 @@ def extract(
                 pix.save(tmp_path)
                 img_bytes = Path(tmp_path).read_bytes()
 
-                # Optional: preprocess image for better OCR quality
+                # Always normalize dark-background regions (e.g. shaded table rows
+                # with white text).  This is cheap (Pillow only) and safe to run
+                # even without the full preprocess pipeline.
+                try:
+                    from . import _ocr_utils
+                    img_bytes = _ocr_utils.normalize_dark_backgrounds(img_bytes)
+                except Exception:
+                    pass
+
+                # Full preprocessing (denoise, deskew, binarize) — advanced only
                 if preprocess:
                     try:
                         from . import _ocr_utils
@@ -144,12 +153,8 @@ def extract(
                     except Exception:
                         pass
 
-                img = Image.open(tmp_path)
-                # Reload from preprocessed bytes if they changed
-                if preprocess and img_bytes:
-                    import io
-                    img = Image.open(io.BytesIO(img_bytes))
-
+                import io
+                img = Image.open(io.BytesIO(img_bytes))
                 text = pytesseract.image_to_string(img, lang="spa+eng")
             finally:
                 try:
