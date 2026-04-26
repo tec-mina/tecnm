@@ -563,15 +563,23 @@ def serve(host: str, port: int, reload: bool) -> None:
                    "Docker build — missing egress shouldn't break the image).")
 @click.option("--quiet", "-q", is_flag=True, default=False,
               help="Print one line per step instead of a Rich panel.")
-def warmup(languages: str, skip_on_error: bool, quiet: bool) -> None:
+@click.option("--retry-missing", is_flag=True, default=False,
+              help="Skip backends already initialized; only retry the ones "
+                   "that report installed && !initialized. Cheap to run at "
+                   "every container startup as a self-heal pass.")
+def warmup(languages: str, skip_on_error: bool, quiet: bool, retry_missing: bool) -> None:
     """Pre-download models and JARs so the first request is fast.
 
-    Run at build time:
+    Build-time (lenient — survives missing egress):
         RUN python -m pdf_extractor warmup --skip-on-error --quiet
 
-    Or manually before serving:
+    Container startup (self-heal: only re-warms what is missing):
+        python -m pdf_extractor warmup --retry-missing --quiet
+
+    Strict (fail if any backend can't initialize):
         python -m pdf_extractor warmup
     """
+    from ..app.readiness import retry_missing as _retry_missing
     from ..app.readiness import run_full_warmup
 
     langs = tuple(s.strip() for s in languages.split(",") if s.strip())
@@ -582,6 +590,18 @@ def warmup(languages: str, skip_on_error: bool, quiet: bool) -> None:
         click.echo(f"  {marker} {label}" + (f"  — {err}" if err and not quiet else ""))
         if not ok:
             failed.append(label)
+
+    if retry_missing:
+        click.echo("Self-heal: retrying any backend that is installed but not initialized…")
+        all_ready, results = _retry_missing(on_step=_on_step)
+        if not results:
+            click.echo("Nothing to retry — all backends already initialized.")
+            sys.exit(0)
+        if all_ready or skip_on_error:
+            click.echo("Self-heal completed." + (f" Still missing: {failed}" if failed else ""))
+            sys.exit(0)
+        click.echo(f"Self-heal FAILED for: {failed}", err=True)
+        sys.exit(1)
 
     click.echo(f"Warming up backends (languages={','.join(langs)})…")
     ok = run_full_warmup(languages=langs, skip_on_error=skip_on_error, on_step=_on_step)

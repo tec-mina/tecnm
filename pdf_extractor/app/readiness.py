@@ -575,6 +575,72 @@ def warmup_registry() -> tuple[bool, list[dict]]:
     return (len(failures) == 0), failures
 
 
+# Map of backend.name → warmup function. Used by:
+#   - retry_missing()                 — runtime self-heal
+#   - /api/v1/readiness/download      — on-demand UI button
+# Add an entry here for every backend that supports warmup.
+WARMUP_BY_NAME: dict[str, Callable[[], tuple[bool, str | None]]] = {
+    "text:fast":               warmup_pymupdf,
+    "text:pdfminer":           warmup_pdfminer,
+    "tables:pdfplumber":       warmup_pdfplumber,
+    "text:markitdown":         warmup_markitdown,
+    "ocr:tesseract-basic":     warmup_tesseract,
+    "ocr:tesseract-advanced":  warmup_tesseract_advanced,
+    "ocr:easyocr":             lambda: warmup_easyocr(),
+    "text:tika-java":          warmup_tika,
+    "tables:camelot":          warmup_camelot,
+    "tables:tabula":           warmup_tabula,
+    "tables:img2table":        warmup_img2table,
+    "images:extract":          warmup_images_extract,
+    "layout:structure":        warmup_layout_structure,
+    "fonts:analyze":           warmup_fonts_analyze,
+}
+
+
+def retry_missing(
+    only: list[str] | None = None,
+    on_step: Callable[[str, bool, str | None], None] | None = None,
+) -> tuple[bool, list[dict]]:
+    """Re-warm only backends that report installed && !initialized.
+
+    Used at container startup so a build that ran with --skip-on-error (typical
+    when the build host had no egress) still self-heals on first boot.
+
+    Parameters
+    ----------
+    only :  optional list of backend names; restricts the retry to those.
+    on_step : per-backend progress callback (label, ok, error).
+
+    Returns (all_ready_after_retry, results) where each result is
+        {"name": str, "attempted": bool, "ok": bool, "error": str|None}.
+    """
+    report = collect_readiness()
+    pending = [
+        b for b in report.backends
+        if not b.ready and b.can_warmup and (only is None or b.name in only)
+    ]
+    results: list[dict] = []
+    for b in pending:
+        fn = WARMUP_BY_NAME.get(b.name)
+        if fn is None:
+            results.append({
+                "name": b.name, "attempted": False, "ok": False,
+                "error": "no warmup function registered",
+            })
+            if on_step:
+                on_step(b.name, False, "no warmup function registered")
+            continue
+        try:
+            ok, err = fn()
+        except Exception as exc:  # pragma: no cover — defensive
+            ok, err = False, f"{type(exc).__name__}: {exc}"
+        results.append({"name": b.name, "attempted": True, "ok": ok, "error": err})
+        if on_step:
+            on_step(b.name, ok, err)
+    final = collect_readiness()
+    return final.all_ready, results
+
+
 def run_full_warmup(
     *,
     languages: tuple[str, ...] = ("es", "en"),

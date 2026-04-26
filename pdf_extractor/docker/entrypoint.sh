@@ -22,7 +22,18 @@ python -m pdf_extractor warmup \
     --skip-on-error \
     --quiet \
     && echo "✅  Warmup completo — todos los backends listos." \
-    || echo "⚠️   Warmup terminó con errores en algunos backends (ver /api/v1/readiness)."
+    || echo "⚠️   Warmup terminó con errores en algunos backends."
+
+# Self-heal — re-warm anything that is installed but not initialized.
+# Catches the case where the build ran with --skip-on-error because the
+# build host had no egress; on first boot the container can talk to the
+# network and download the missing JAR / models without manual intervention.
+echo "🩺  Verificando backends y reintentando los que falten..."
+python -m pdf_extractor warmup \
+    --languages es,en \
+    --retry-missing \
+    --skip-on-error \
+    --quiet || true
 
 echo ""
 exec python -m pdf_extractor "$@"

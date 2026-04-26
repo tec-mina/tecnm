@@ -41,6 +41,10 @@ class PipelineResult:
     warnings: list[str] = field(default_factory=list)
     extraction_time_sec: float = 0.0
     used_ocr: bool = False              # True when any OCR feature ran successfully
+    # When a forced strategy fails or yields no content, the pipeline tries
+    # other strategies in the same tier. Each substitution is recorded as
+    # "<requested>->{<used>}" or "<requested>->skipped" if nothing worked.
+    fallbacks: list[str] = field(default_factory=list)
 
 
 def run(
@@ -64,8 +68,9 @@ def run(
     result = PipelineResult()
     result.plan = asm.make_plan(preflight.page_count)
 
+    is_forced = bool(forced_features)
     feature_names = (
-        forced_features if forced_features
+        forced_features if is_forced
         else _select_features(preflight, profile, platform)
     )
 
@@ -82,13 +87,37 @@ def run(
             on_event=on_event,
             output_dir=output_dir,
         )
+        produced = fr is not None and fr.confidence > 0
+
+        # Auto-fallback: if the user forced a strategy and it produced nothing,
+        # try other strategies in the same tier so the user still gets output
+        # instead of an empty "blocked" response.
+        if is_forced and not produced:
+            alt_fr, alt_name = _try_tier_fallback(
+                pdf_path, name, page_range,
+                on_event=on_event, output_dir=output_dir,
+            )
+            if alt_fr is not None and alt_fr.confidence > 0:
+                if fr is not None:
+                    result.warnings.extend(fr.warnings)
+                    del fr
+                fr = alt_fr
+                produced = True
+                result.fallbacks.append(f"{name}->{alt_name}")
+                _emit_event(on_event, "fallback", requested=name, used=alt_name)
+                # Promote the fallback name in features_used so downstream
+                # logging shows what actually ran.
+                name = alt_name
+            else:
+                result.fallbacks.append(f"{name}->skipped")
+
         if fr is None:
             continue
         result.warnings.extend(fr.warnings)
         # Only count a feature as "used" if it actually produced content.
         # A zero-confidence result means the backend was unavailable, errored,
         # or found nothing — agents downstream must not see it as contributing.
-        if fr.confidence > 0:
+        if produced:
             asm.merge_feature(result.plan, fr)
             result.features_used.append(name)
             if name in ("ocr_tesseract", "ocr_easy", "ocr:tesseract-basic",
@@ -160,6 +189,43 @@ def _select_features(
             features.remove("ocr_easy")
 
     return features
+
+
+# ---------------------------------------------------------------------------
+# Tier-level fallback (used when a forced strategy yields no content)
+# ---------------------------------------------------------------------------
+
+def _try_tier_fallback(
+    pdf_path: str,
+    failed_name: str,
+    page_range,
+    on_event: Callable[..., None] | None = None,
+    output_dir: str | None = None,
+):
+    """Try every other strategy in the same tier until one produces content.
+
+    Returns (FeatureResult|None, used_name|None). Strategies are tried in
+    priority order. Heavy backends are tried last to avoid surprising the user
+    with a long extraction when a lighter alternative might suffice.
+    """
+    meta = registry.get(failed_name)
+    if meta is None:
+        return None, None
+
+    candidates = [
+        m for m in registry.list_tier(meta.tier)
+        if m.name != failed_name and m.short_name != failed_name
+    ]
+    candidates.sort(key=lambda m: (m.is_heavy, m.priority, m.name))
+
+    for alt in candidates:
+        fr = _run_feature(
+            pdf_path, alt.name, page_range, pdf_path,
+            on_event=on_event, output_dir=output_dir,
+        )
+        if fr is not None and fr.confidence > 0:
+            return fr, alt.name
+    return None, None
 
 
 # ---------------------------------------------------------------------------
