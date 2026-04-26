@@ -98,8 +98,59 @@ app.add_middleware(
 _TMP_DIR = Path(os.environ.get("TMP_DIR", "/tmp/pdf-extractor"))
 _MAX_UPLOAD_MB = int(os.environ.get("MAX_UPLOAD_MB", "200"))
 _API_KEY: str | None = os.environ.get("API_KEY")
+# Cap a single extraction's wall-clock so a pathological PDF can't tie up an
+# instance for the full Cloud Run request timeout.
+_EXTRACTION_TIMEOUT_SEC = int(os.environ.get("EXTRACTION_TIMEOUT_SEC", "300"))
+# Global cap on concurrent extractions per process. Prevents a thundering herd
+# of /extract calls from pegging memory and exhausting the default ThreadPool.
+_MAX_CONCURRENT_EXTRACTIONS = int(os.environ.get("EXTRACTOR_WORKERS", "4"))
 
 _TMP_DIR.mkdir(parents=True, exist_ok=True)
+
+# Created lazily on first use so it binds to the running event loop, not to
+# import time (asyncio.Semaphore stores a reference to the current loop).
+_extraction_sem: asyncio.Semaphore | None = None
+
+
+def _get_extraction_sem() -> asyncio.Semaphore:
+    global _extraction_sem
+    if _extraction_sem is None:
+        _extraction_sem = asyncio.Semaphore(_MAX_CONCURRENT_EXTRACTIONS)
+    return _extraction_sem
+
+
+async def _run_extraction_guarded(
+    pdf_path: Path, out_dir: Path, options: dict[str, Any]
+) -> Any:
+    """Run extraction in the threadpool, guarded by the global semaphore and
+    a hard wall-clock timeout. Translates timeouts to HTTP 504.
+
+    Note: asyncio.wait_for cancels the *awaitable*, not the OS thread running
+    extract(). The thread continues until the underlying library yields. On
+    Cloud Run this is acceptable because the instance is recycled on request
+    timeout; for long-lived deployments consider switching to a process pool.
+    """
+    loop = asyncio.get_running_loop()
+    sem = _get_extraction_sem()
+    async with sem:
+        try:
+            return await asyncio.wait_for(
+                loop.run_in_executor(None, _run_sync_extraction, pdf_path, out_dir, options),
+                timeout=_EXTRACTION_TIMEOUT_SEC,
+            )
+        except asyncio.TimeoutError:
+            raise HTTPException(
+                status_code=504,
+                detail={
+                    "error": "extraction_timeout",
+                    "message": (
+                        f"La extracción superó {_EXTRACTION_TIMEOUT_SEC}s y fue abortada. "
+                        "Usa `page_range` para procesar el PDF por partes o sube "
+                        "EXTRACTION_TIMEOUT_SEC en el contenedor."
+                    ),
+                    "timeout_sec": _EXTRACTION_TIMEOUT_SEC,
+                },
+            )
 
 # ── Auth (optional) ───────────────────────────────────────────────────────────
 
@@ -144,13 +195,32 @@ def _save_upload_and_check_size(upload: UploadFile, dest: Path) -> None:
 
 
 def _parse_range(s: str | None) -> tuple[int, int] | None:
+    """Parse "X-Y" or "X" into a (start, end) tuple. Raises HTTP 400 on bad input
+    instead of silently returning None — otherwise the user thinks they processed
+    a range and actually got the whole PDF."""
+    if s is None:
+        return None
+    s = s.strip()
     if not s:
         return None
     try:
-        start, end = s.split("-")
-        return int(start), int(end)
-    except (ValueError, AttributeError):
-        return None
+        if "-" in s:
+            start_s, end_s = s.split("-", 1)
+            start, end = int(start_s.strip()), int(end_s.strip())
+        else:
+            start = end = int(s)
+        if start < 1 or end < start:
+            raise ValueError(f"invalid range: {s}")
+        return start, end
+    except (ValueError, AttributeError) as exc:
+        raise HTTPException(
+            status_code=400,
+            detail={
+                "error": "invalid_page_range",
+                "message": f"page_range must be 'N' or 'N-M' with N≥1 and M≥N. Got: {s!r}",
+                "parse_error": str(exc),
+            },
+        )
 
 
 def _cleanup(work_dir: Path) -> None:
@@ -198,11 +268,92 @@ async def web_ui() -> HTMLResponse:
         raise HTTPException(status_code=500, detail="web.html missing in image")
 
 
+@app.get(
+    "/api/v1/readiness",
+    tags=["ops"],
+    summary="Per-backend readiness (installed + initialized)",
+    description=(
+        "Reports for every supported backend whether its Python deps and system "
+        "binaries are present (`installed`) and whether its model files / JARs "
+        "have already been downloaded (`initialized`). The UI uses this to grey "
+        "out options that are not ready and to show a 'descargando…' banner."
+    ),
+)
+async def readiness() -> dict:
+    from ..app.readiness import collect_readiness
+    return collect_readiness().to_dict()
+
+
+@app.post(
+    "/api/v1/readiness/download",
+    tags=["ops"],
+    summary="Trigger on-demand warmup of one or more backends",
+    description=(
+        "Body: `{\"backends\": [\"easyocr\", \"tika\"]}`. Use \"all\" to warm "
+        "every backend that supports it. Returns the post-warmup readiness "
+        "report. This is a synchronous call — clients should expect long "
+        "responses (model downloads can take minutes)."
+    ),
+    dependencies=[Depends(_check_auth)],
+)
+async def readiness_download(payload: dict | None = None) -> dict:
+    from ..app.readiness import (
+        collect_readiness,
+        warmup_easyocr,
+        warmup_tika,
+    )
+    payload = payload or {}
+    requested = set(payload.get("backends") or ["all"])
+    do_all = "all" in requested
+    results: dict[str, dict] = {}
+
+    loop = asyncio.get_running_loop()
+
+    if do_all or "easyocr" in requested:
+        ok, err = await loop.run_in_executor(None, warmup_easyocr)
+        results["easyocr"] = {"ok": ok, "error": err}
+    if do_all or "tika" in requested:
+        ok, err = await loop.run_in_executor(None, warmup_tika)
+        results["tika"] = {"ok": ok, "error": err}
+
+    return {
+        "results": results,
+        "readiness": collect_readiness().to_dict(),
+    }
+
+
 @app.get("/healthz", tags=["ops"], summary="Liveness probe")
 async def healthz() -> dict:
     """Always returns 200 while the process is alive. Used by Cloud Run."""
     from datetime import datetime, timezone
     return {"status": "ok", "ts": datetime.now(timezone.utc).isoformat()}
+
+
+@app.get(
+    "/readyz",
+    tags=["ops"],
+    summary="Readiness probe — 200 only when all backends are usable",
+    description=(
+        "Distinct from /healthz. Returns 503 until every probed backend is "
+        "installed AND initialized (models/JARs on disk). Use this — not "
+        "/healthz — as the readiness probe in Kubernetes / load balancers, "
+        "so traffic isn't routed to an instance that is still warming up."
+    ),
+)
+async def readyz() -> dict:
+    from datetime import datetime, timezone
+    from ..app.readiness import collect_readiness
+
+    rep = collect_readiness()
+    payload = {
+        "status": "ready" if rep.all_ready else "not_ready",
+        "ts": datetime.now(timezone.utc).isoformat(),
+        "all_ready": rep.all_ready,
+        "not_ready": [b.name for b in rep.backends if not b.ready],
+    }
+    if not rep.all_ready:
+        raise HTTPException(status_code=503, detail=payload)
+    return payload
 
 
 @app.get(
@@ -214,7 +365,8 @@ async def healthz() -> dict:
         "and Python package used by the pipeline. Call once to know which "
         "strategies are usable in this environment."
     ),
-    dependencies=[Depends(_check_auth)],
+    # Intentionally NOT behind auth: the web UI calls this before the user has
+    # any chance to provide a token. Read-only, no PDFs involved.
 )
 async def capabilities() -> dict:
     from ..app.ports import noop_emitter
@@ -231,7 +383,7 @@ async def capabilities() -> dict:
         "Returns all registered strategies with tier, priority, and requirements. "
         "Filter with ?tier=ocr. Tiers: text | ocr | tables | images | fonts | layout | correct"
     ),
-    dependencies=[Depends(_check_auth)],
+    # Read-only, used by the web UI before auth — no PDF data exposed.
 )
 async def strategies(tier: str | None = None) -> list[dict]:
     from ..core.registry import registry
@@ -341,11 +493,11 @@ async def extract(
         "no_spell": no_spell,
     }
 
-    loop = asyncio.get_running_loop()
     try:
-        result = await loop.run_in_executor(
-            None, _run_sync_extraction, pdf_path, out_dir, options
-        )
+        result = await _run_extraction_guarded(pdf_path, out_dir, options)
+    except HTTPException:
+        background_tasks.add_task(_cleanup, work_dir)
+        raise
     except Exception as exc:
         background_tasks.add_task(_cleanup, work_dir)
         raise HTTPException(status_code=500, detail=str(exc))
@@ -353,7 +505,43 @@ async def extract(
     md_files = sorted(out_dir.rglob("*.md"))
     if not md_files:
         background_tasks.add_task(_cleanup, work_dir)
-        raise HTTPException(status_code=500, detail="Extraction produced no output")
+        status_str = getattr(result, "status", "error")
+        issues = getattr(result, "issues", []) or []
+        warnings = getattr(result, "warnings", []) or []
+        features_used = getattr(result, "features_used", []) or []
+        # "blocked" means the pipeline finished but produced empty output
+        # (typically: PDF needs OCR but no OCR backend is available, or every
+        # selected strategy was skipped). Surface the real reason instead of
+        # a generic 500.
+        if status_str == "blocked":
+            reason = (
+                "No se pudo extraer texto del PDF. "
+                "Probablemente es escaneado y no hay un motor OCR disponible "
+                "(pytesseract / easyocr) en este entorno, o todas las estrategias "
+                "elegidas se saltaron."
+            )
+            raise HTTPException(
+                status_code=422,
+                detail={
+                    "error": "extraction_blocked",
+                    "message": reason,
+                    "status": status_str,
+                    "features_used": features_used,
+                    "issues": issues,
+                    "warnings": warnings,
+                },
+            )
+        raise HTTPException(
+            status_code=500,
+            detail={
+                "error": "extraction_failed",
+                "message": "Extraction produced no output",
+                "status": status_str,
+                "features_used": features_used,
+                "issues": issues,
+                "warnings": warnings,
+            },
+        )
 
     md_content = md_files[0].read_bytes()
     background_tasks.add_task(_cleanup, work_dir)
@@ -405,30 +593,25 @@ async def batch(
         "no_spell": no_spell,
     }
 
-    loop = asyncio.get_running_loop()
     summary: list[dict] = []
-    
-    sem = asyncio.Semaphore(int(os.environ.get("EXTRACTOR_WORKERS", "4")))
-    
+
     async def _process_upload(upload: UploadFile) -> dict | tuple[str, str, dict]:
         try:
             _validate_upload(upload)
         except Exception as exc:
             return {"file": upload.filename, "status": "error", "error": str(exc)}
-            
+
         original_stem = Path(upload.filename or "output").stem
         file_dir = work_dir / str(uuid.uuid4())
         out_dir = file_dir / "out"
         file_dir.mkdir(parents=True)
         out_dir.mkdir(parents=True)
         pdf_path = file_dir / "input.pdf"
-        
+
         try:
             _save_upload_and_check_size(upload, pdf_path)
-            async with sem:
-                result = await loop.run_in_executor(
-                    None, _run_sync_extraction, pdf_path, out_dir, options
-                )
+            # Use the same global semaphore + per-job timeout as /extract.
+            result = await _run_extraction_guarded(pdf_path, out_dir, options)
             md_files = sorted(out_dir.rglob("*.md"))
             if md_files:
                 md_content = md_files[0].read_text("utf-8")
@@ -445,6 +628,12 @@ async def batch(
                 return (original_stem, md_content, item_summary)
             else:
                 return {"file": upload.filename, "status": "error", "error": "extraction produced no output"}
+        except HTTPException as exc:
+            # Per-file timeout / blocked → record in summary, don't fail the batch.
+            detail = exc.detail if isinstance(exc.detail, dict) else {"message": str(exc.detail)}
+            return {"file": upload.filename, "status": "error",
+                    "error": detail.get("message", str(detail)),
+                    "code": detail.get("error", f"http_{exc.status_code}")}
         except Exception as exc:
             return {"file": upload.filename, "status": "error", "error": str(exc)}
 
@@ -460,8 +649,6 @@ async def batch(
             else:
                 summary.append(res)
         
-        zf.writestr("_summary.json", json.dumps(summary, ensure_ascii=False, indent=2))
-
         zf.writestr("_summary.json", json.dumps(summary, ensure_ascii=False, indent=2))
 
     background_tasks.add_task(_cleanup, work_dir)

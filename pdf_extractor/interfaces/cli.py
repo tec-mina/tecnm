@@ -549,6 +549,66 @@ def serve(host: str, port: int, reload: bool) -> None:
     run_server(host=host, port=port, reload=reload)
 
 
+# ── warmup / readiness ───────────────────────────────────────────────────────
+
+@main.command()
+@click.option("--languages", "-l", default="es,en", show_default=True,
+              help="Comma-separated language codes for OCR model pre-download.")
+@click.option("--skip-on-error", is_flag=True, default=False,
+              help="Don't fail if a download step errors (recommended for "
+                   "Docker build — missing egress shouldn't break the image).")
+@click.option("--quiet", "-q", is_flag=True, default=False,
+              help="Print one line per step instead of a Rich panel.")
+def warmup(languages: str, skip_on_error: bool, quiet: bool) -> None:
+    """Pre-download models and JARs so the first request is fast.
+
+    Run at build time:
+        RUN python -m pdf_extractor warmup --skip-on-error --quiet
+
+    Or manually before serving:
+        python -m pdf_extractor warmup
+    """
+    from ..app.readiness import run_full_warmup
+
+    langs = tuple(s.strip() for s in languages.split(",") if s.strip())
+    failed: list[str] = []
+
+    def _on_step(label: str, ok: bool, err: str | None) -> None:
+        marker = "✓" if ok else "✕"
+        click.echo(f"  {marker} {label}" + (f"  — {err}" if err and not quiet else ""))
+        if not ok:
+            failed.append(label)
+
+    click.echo(f"Warming up backends (languages={','.join(langs)})…")
+    ok = run_full_warmup(languages=langs, skip_on_error=skip_on_error, on_step=_on_step)
+    if ok:
+        click.echo("Warmup OK." if not failed else f"Warmup completed with skipped: {failed}")
+        sys.exit(0)
+    click.echo(f"Warmup FAILED: {failed}", err=True)
+    sys.exit(1)
+
+
+@main.command()
+@click.option("--json", "as_json", is_flag=True, default=False,
+              help="Emit JSON instead of a human-readable table.")
+def readiness(as_json: bool) -> None:
+    """Show which backends are installed and initialized."""
+    from ..app.readiness import collect_readiness
+
+    report = collect_readiness()
+    if as_json:
+        click.echo(json.dumps(report.to_dict(), ensure_ascii=False, indent=2))
+        return
+
+    click.echo(f"All ready: {report.all_ready}")
+    click.echo("-" * 78)
+    click.echo(f"{'NAME':<28} {'INSTALLED':>10} {'INIT':>6}  HINT/ERROR")
+    click.echo("-" * 78)
+    for b in report.backends:
+        hint = b.last_error or b.init_hint or b.install_hint or ""
+        click.echo(f"{b.name:<28} {str(b.installed):>10} {str(b.initialized):>6}  {hint}")
+
+
 # ── cache ─────────────────────────────────────────────────────────────────────
 
 @main.group()

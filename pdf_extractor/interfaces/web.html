@@ -542,7 +542,9 @@
 
 <main>
   <section class="hero">
-    <div class="pill"><span class="dot"></span> Servicio listo · 100% local en tu contenedor</div>
+    <div class="pill" id="readinessPill" title="Estado de los backends">
+      <span class="dot"></span> <span id="readinessText">Comprobando backends…</span>
+    </div>
     <h2>De PDF a Markdown,<br/>con el método que tú elijas.</h2>
     <p>Arrastra uno o varios PDFs, deja que el sistema te recomiende la mejor estrategia o anula la elección por archivo. Tablas, OCR, imágenes, layout — todo en un único pipeline.</p>
   </section>
@@ -678,29 +680,61 @@
   const items = new Map();
   const strategiesByName = {};
 
-  // Presets siempre disponibles. El servidor valida los nombres reales.
-  // Cada preset incluye descripción que se usa como tooltip si se quiere.
-  const PRESETS = [
-    ['text:fast',                                            'Texto rápido (PyMuPDF)'],
-    ['text:pdfminer',                                        'Texto preciso (pdfminer.six)'],
-    ['text:tika-java',                                       'Texto con Apache Tika (Java)'],
-    ['text:markitdown',                                      'Texto con MarkItDown (Microsoft)'],
-    ['ocr:tesseract-basic',                                  'OCR básico (Tesseract)'],
-    ['ocr:tesseract-advanced',                               'OCR avanzado (Tesseract + preprocesado)'],
-    ['ocr:easyocr',                                          'OCR neuronal (EasyOCR)'],
-    ['tables:pdfplumber',                                    'Tablas (pdfplumber)'],
-    ['tables:camelot',                                       'Tablas alta precisión (Camelot)'],
-    ['tables:tabula',                                        'Tablas Java (Tabula)'],
-    ['tables:img2table',                                     'Tablas en escaneados (img2table+OCR)'],
-    ['images:extract',                                       'Solo extraer imágenes'],
-    ['layout:structure',                                     'Estructura del PDF (marcadores+forms)'],
-    ['fonts:analyze',                                        'Análisis de fuentes'],
-    ['text:fast,tables:pdfplumber',                          'Texto + tablas (pdfplumber)'],
-    ['text:fast,tables:camelot',                             'Texto + tablas (Camelot, alta precisión)'],
-    ['text:fast,tables:pdfplumber,images:extract',           'Texto + tablas + imágenes'],
-    ['text:fast,tables:pdfplumber,ocr:tesseract-basic',      'Mixto · texto + tablas + OCR fallback'],
-    ['text:fast,tables:pdfplumber,images:extract,layout:structure', 'Completo · texto + tablas + imágenes + estructura'],
+  // Catálogo curado: agrupado por intención del usuario, no por implementación.
+  // Cada grupo se renderiza como <optgroup>. El servidor valida los nombres.
+  // Los nombres ya listados aquí NO se vuelven a mostrar en "estrategias individuales"
+  // (evita duplicados visuales del tipo `text:fast` apareciendo dos veces).
+  const METHOD_GROUPS = [
+    {
+      label: 'Combinaciones recomendadas (varios pasos)',
+      items: [
+        ['text:fast,tables:pdfplumber',                                  'Texto + tablas'],
+        ['text:fast,tables:pdfplumber,images:extract',                   'Texto + tablas + imágenes'],
+        ['text:fast,tables:pdfplumber,images:extract,layout:structure',  'Completo (texto + tablas + imágenes + estructura)'],
+        ['text:fast,tables:camelot',                                     'Texto + tablas (alta precisión, Camelot)'],
+        ['text:fast,tables:pdfplumber,ocr:tesseract-basic',              'Texto + tablas + OCR de respaldo'],
+      ],
+    },
+    {
+      label: 'Solo texto',
+      items: [
+        ['text:fast',         'Rápido (PyMuPDF) — recomendado para PDFs nativos'],
+        ['text:pdfminer',     'Preciso, preserva layout (pdfminer.six)'],
+        ['text:tika-java',    'Apache Tika (Java, robusto en PDFs raros)'],
+        ['text:markitdown',   'MarkItDown (Microsoft, salida en Markdown directo)'],
+      ],
+    },
+    {
+      label: 'OCR — para PDFs escaneados o sin texto',
+      items: [
+        ['ocr:tesseract-basic',     'Tesseract básico'],
+        ['ocr:tesseract-advanced',  'Tesseract avanzado (preprocesado + auto-rotación)'],
+        ['ocr:easyocr',             'EasyOCR (neuronal, mejor con escritura irregular)'],
+      ],
+    },
+    {
+      label: 'Solo tablas',
+      items: [
+        ['tables:pdfplumber',  'pdfplumber — buen balance'],
+        ['tables:camelot',     'Camelot — alta precisión, requiere ghostscript'],
+        ['tables:tabula',      'Tabula (Java) — buena con tablas con bordes'],
+        ['tables:img2table',   'img2table — para tablas en páginas escaneadas'],
+      ],
+    },
+    {
+      label: 'Imágenes y estructura',
+      items: [
+        ['images:extract',    'Solo extraer imágenes embebidas'],
+        ['layout:structure',  'Marcadores, índice, formularios, hipervínculos'],
+        ['fonts:analyze',     'Análisis de fuentes (detecta encabezados por tamaño)'],
+      ],
+    },
   ];
+
+  // Set de nombres ya listados arriba — usado para no duplicarlos en "individuales".
+  const KNOWN_METHOD_NAMES = new Set(
+    METHOD_GROUPS.flatMap(g => g.items.map(([v]) => v))
+  );
 
   function showToast(msg, ms = 2200) {
     toastEl.textContent = msg;
@@ -732,22 +766,26 @@
       sel.appendChild(o);
     }
 
-    // Group: presets
-    const presetsGrp = document.createElement('optgroup');
-    presetsGrp.label = '— Métodos recomendados —';
-    PRESETS.forEach(([v, label]) => {
-      const o = document.createElement('option');
-      o.value = v; o.textContent = label;
-      presetsGrp.appendChild(o);
-    });
-    sel.appendChild(presetsGrp);
-
-    // Group: individual strategies (from server, when available)
-    const all = Object.values(strategiesByName);
-    if (all.length) {
+    // Curated groups (intent-first).
+    METHOD_GROUPS.forEach(group => {
       const grp = document.createElement('optgroup');
-      grp.label = '— Estrategias individuales —';
-      all.sort((a, b) => (a.tier + a.name).localeCompare(b.tier + b.name))
+      grp.label = group.label;
+      group.items.forEach(([v, label]) => {
+        const o = document.createElement('option');
+        o.value = v; o.textContent = label;
+        grp.appendChild(o);
+      });
+      sel.appendChild(grp);
+    });
+
+    // Extras: any server-registered strategy not already in the curated list.
+    // Avoids the "same name shown twice" problem.
+    const extras = Object.values(strategiesByName)
+      .filter(s => !KNOWN_METHOD_NAMES.has(s.name));
+    if (extras.length) {
+      const grp = document.createElement('optgroup');
+      grp.label = 'Otras estrategias disponibles';
+      extras.sort((a, b) => (a.tier + a.name).localeCompare(b.tier + b.name))
         .forEach(s => {
           const o = document.createElement('option');
           o.value = s.name;
@@ -909,8 +947,13 @@
   ['dragleave', 'drop'].forEach(ev =>
     drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.remove('drag'); }));
   drop.addEventListener('drop', (e) => {
+    e.stopPropagation();
     if (e.dataTransfer && e.dataTransfer.files) addFiles(e.dataTransfer.files);
   });
+  // Catch drops anywhere on the page (so the user can't accidentally open the PDF
+  // in the browser tab). Only adds files if the drop happened OUTSIDE the dropzone —
+  // drops on the dropzone are handled above and stop propagation, but this listener
+  // fires for the rest of the window.
   window.addEventListener('dragover', (e) => e.preventDefault());
   window.addEventListener('drop', (e) => {
     e.preventDefault();
@@ -1040,8 +1083,100 @@
     showToast('Procesamiento completo');
   });
 
+  // ── readiness banner ──────────────────────────────────────────────
+  // Fetches /api/v1/readiness on load and after a manual download.
+  // Disables dropdown options whose backend isn't ready, so the user
+  // doesn't pick something that will silently fail in the pipeline.
+  const readinessPill = $('#readinessPill');
+  const readinessText = $('#readinessText');
+  let readinessByName = {};
+
+  function applyReadinessToSelects() {
+    const disable = (sel) => {
+      Array.from(sel.options).forEach(o => {
+        if (!o.value || o.value === '__auto__') return;
+        // For composite values like "text:fast,tables:pdfplumber" — every part
+        // must be ready. If a name isn't in the map (e.g. "fonts:analyze")
+        // we default to enabled (probe doesn't cover everything).
+        const parts = o.value.split(',');
+        const blocked = parts.find(p => readinessByName[p] && !readinessByName[p].ready);
+        if (blocked) {
+          o.disabled = true;
+          if (!o.dataset.origLabel) o.dataset.origLabel = o.textContent;
+          o.textContent = o.dataset.origLabel + ' — no disponible';
+        } else if (o.dataset.origLabel) {
+          o.disabled = false;
+          o.textContent = o.dataset.origLabel;
+        }
+      });
+    };
+    disable(globalStrategy);
+    items.forEach(it => disable(it.strategyEl));
+  }
+
+  async function loadReadiness() {
+    try {
+      const resp = await fetch('/api/v1/readiness');
+      if (!resp.ok) throw new Error('HTTP ' + resp.status);
+      const data = await resp.json();
+      readinessByName = {};
+      data.backends.forEach(b => { readinessByName[b.name] = b; });
+      const ready = data.backends.filter(b => b.ready).length;
+      const total = data.backends.length;
+      const missing = data.backends
+        .filter(b => b.installed && !b.initialized)
+        .map(b => b.label);
+      const notInstalled = data.backends
+        .filter(b => !b.installed)
+        .map(b => b.label);
+
+      let label;
+      if (data.all_ready) {
+        label = `✓ Listo · ${ready}/${total} backends`;
+        readinessPill.style.background = 'var(--ok-bg)';
+        readinessPill.style.color = 'var(--ok)';
+      } else if (missing.length) {
+        label = `⏳ Faltan modelos por descargar (${missing.length}) — clic para descargar`;
+        readinessPill.style.background = 'var(--warn-bg)';
+        readinessPill.style.color = 'var(--warn)';
+        readinessPill.style.cursor = 'pointer';
+      } else {
+        label = `${ready}/${total} backends listos`;
+        readinessPill.style.background = 'var(--info-bg)';
+        readinessPill.style.color = 'var(--info)';
+      }
+      const tipParts = [];
+      data.backends.forEach(b => {
+        const flag = b.ready ? '✓' : (b.installed ? '⏳' : '✕');
+        tipParts.push(`${flag} ${b.name} — ${b.label}` + (b.last_error ? ` (${b.last_error})` : ''));
+      });
+      readinessPill.title = tipParts.join('\n');
+      readinessText.textContent = label;
+      applyReadinessToSelects();
+    } catch (err) {
+      readinessText.textContent = 'No pude leer /api/v1/readiness';
+    }
+  }
+
+  readinessPill.addEventListener('click', async () => {
+    const missing = Object.values(readinessByName)
+      .filter(b => b.installed && !b.initialized && b.can_warmup)
+      .map(b => b.name.split(':')[1] || b.name); // "easyocr", "tika"
+    if (!missing.length) return;
+    readinessText.textContent = `Descargando: ${missing.join(', ')}…`;
+    try {
+      await fetch('/api/v1/readiness/download', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ backends: missing }),
+      });
+    } catch (e) { /* fall through to reload */ }
+    loadReadiness();
+  });
+
   refreshUI();
   loadStrategies();
+  loadReadiness();
 })();
 </script>
 </body>

@@ -43,9 +43,15 @@ services:
       - type: bind
         source: ${CACHE_DIR:-~/.cache/pdf-extractor}
         target: /root/.cache/pdf-extractor
+      # Volúmenes nombrados para los modelos / JARs descargables.
+      # Se llenan en el build (warmup); estos volumes los preservan entre
+      # `docker compose down` para que un rebuild no obligue a descargar otra vez.
+      - easyocr-models:/root/.EasyOCR
+      - tika-cache:/opt/tika
     environment:
       - EXTRACTOR_WORKERS=${EXTRACTOR_WORKERS:-4}
       - PYTHONUNBUFFERED=1
+      - TIKA_PATH=/opt/tika
     # Comando por defecto — sobreescribe con `docker compose run extractor <cmd>`
     command: ["--help"]
 
@@ -65,4 +71,9 @@ services:
     environment:
       - EXTRACTOR_WORKERS=${EXTRACTOR_WORKERS:-4}
       - PYTHONUNBUFFERED=1
+      - TIKA_PATH=/opt/tika
       - CUDA_VISIBLE_DEVICES=0
+
+volumes:
+  easyocr-models:
+  tika-cache:

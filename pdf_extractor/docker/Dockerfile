@@ -91,7 +91,12 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY pdf_extractor/ pdf_extractor/
 
 # ── Runtime dirs ──────────────────────────────────────────────────────────────
-RUN mkdir -p /app/input /app/output /root/.cache/pdf-extractor
+RUN mkdir -p /app/input /app/output /root/.cache/pdf-extractor /root/.EasyOCR
+
+# Keep the Tika JAR in /opt so it survives /tmp wipes between Cloud Run revisions
+# (and survives `docker run --tmpfs /tmp` setups).
+ENV TIKA_PATH=/opt/tika
+RUN mkdir -p ${TIKA_PATH}
 
 ENV EXTRACTOR_WORKERS=4
 ENV PYTHONUNBUFFERED=1
@@ -99,6 +104,14 @@ ENV PYTHONPATH=/app
 # Cloud Run injects $PORT at runtime (default 8080).
 # Pass it through so 'serve' picks it up via --port / $PORT.
 ENV PORT=8080
+
+# ── Build-time warmup ─────────────────────────────────────────────────────────
+# - validates that every feature module imports cleanly (registry has zero failures)
+# - pre-downloads EasyOCR models for es+en (~64 MB)
+# - pre-downloads the Tika server JAR (~60 MB) into $TIKA_PATH
+# `--skip-on-error` keeps the build green if egress is blocked; the runtime
+# `/api/v1/readiness` endpoint will then report what is missing.
+RUN python -m pdf_extractor warmup --languages es,en --skip-on-error --quiet
 
 # ── Healthcheck (Cloud Run / Docker) ─────────────────────────────────────────
 # /healthz is a lightweight liveness probe — no PDF processing involved.
