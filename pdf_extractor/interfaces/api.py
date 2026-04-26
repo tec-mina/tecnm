@@ -285,6 +285,32 @@ async def _save_upload_and_check_size(upload: UploadFile, dest: Path) -> None:
             f.write(chunk)
 
 
+def _parse_strategies(s: str | None) -> list[str] | None:
+    """Parse the comma-separated `strategies` form field, validating each
+    name against the registry. Raises HTTP 400 with the list of valid names
+    when an unknown strategy is requested — silent fallthrough used to mask
+    typos like `ocr:tesseract` (missing `-basic`)."""
+    if not s:
+        return None
+    raw = [item.strip() for item in s.split(",") if item.strip()]
+    if not raw:
+        return None
+    from ..core.registry import registry
+    unknown = [n for n in raw if registry.get(n) is None]
+    if unknown:
+        valid = sorted({m.name for m in registry.list_all()})
+        raise HTTPException(
+            status_code=400,
+            detail={
+                "error": "unknown_strategy",
+                "message": f"Unknown strategy name(s): {unknown}",
+                "unknown": unknown,
+                "valid_strategies": valid,
+            },
+        )
+    return raw
+
+
 def _parse_range(s: str | None) -> tuple[int, int] | None:
     """Parse "X-Y" or "X" into a (start, end) tuple. Raises HTTP 400 on bad input
     instead of silently returning None — otherwise the user thinks they processed
@@ -388,27 +414,49 @@ async def readiness() -> dict:
     dependencies=[Depends(_check_auth)],
 )
 async def readiness_download(payload: dict | None = None) -> dict:
-    from ..app.readiness import (
-        collect_readiness,
-        warmup_easyocr,
-        warmup_tika,
-    )
+    """Body: ``{"backends": [<name>, …]}``  or  ``{"backends": ["all"]}``.
+
+    Backend names accept either the full strategy name (``ocr:easyocr``) or
+    the legacy short alias (``easyocr``, ``tika``). Unknown names return 400.
+    """
+    from ..app.readiness import WARMUP_BY_NAME, collect_readiness, retry_missing
+
     payload = payload or {}
-    requested = set(payload.get("backends") or ["all"])
-    do_all = "all" in requested
-    results: dict[str, dict] = {}
+    requested_raw = payload.get("backends") or ["all"]
+    if not isinstance(requested_raw, list):
+        raise HTTPException(status_code=400, detail="`backends` must be a list")
+
+    # Legacy aliases for the original two-button UI.
+    aliases = {
+        "easyocr": "ocr:easyocr",
+        "tika": "text:tika-java",
+        "tika-java": "text:tika-java",
+        "tesseract": "ocr:tesseract-basic",
+        "tesseract-basic": "ocr:tesseract-basic",
+        "tesseract-advanced": "ocr:tesseract-advanced",
+    }
+
+    if "all" in requested_raw:
+        only: list[str] | None = None
+    else:
+        only = [aliases.get(n, n) for n in requested_raw]
+        unknown = [n for n in only if n not in WARMUP_BY_NAME]
+        if unknown:
+            raise HTTPException(
+                status_code=400,
+                detail={
+                    "error": "unknown_backends",
+                    "unknown": unknown,
+                    "valid": sorted(WARMUP_BY_NAME.keys()),
+                },
+            )
 
     loop = asyncio.get_running_loop()
-
-    if do_all or "easyocr" in requested:
-        ok, err = await loop.run_in_executor(None, warmup_easyocr)
-        results["easyocr"] = {"ok": ok, "error": err}
-    if do_all or "tika" in requested:
-        ok, err = await loop.run_in_executor(None, warmup_tika)
-        results["tika"] = {"ok": ok, "error": err}
-
+    _, retried = await loop.run_in_executor(
+        None, lambda: retry_missing(only=only),
+    )
     return {
-        "results": results,
+        "results": {r["name"]: r for r in retried},
         "readiness": collect_readiness().to_dict(),
     }
 
@@ -550,23 +598,6 @@ async def capacity() -> dict:
         "recommended_concurrency": recommended_concurrency,
         "recommended_queue_limit": recommended_queue_limit,
     }
-    from ..core.registry import registry
-
-    all_meta = registry.list_all()
-    if tier:
-        all_meta = [m for m in all_meta if m.tier == tier]
-    return [
-        {
-            "name": m.name,
-            "tier": m.tier,
-            "description": m.description,
-            "priority": m.priority,
-            "is_heavy": m.is_heavy,
-            "requires_python": m.requires_python,
-            "requires_system": m.requires_system,
-        }
-        for m in sorted(all_meta, key=lambda x: (x.tier, x.priority))
-    ]
 
 
 @app.post(
@@ -666,7 +697,7 @@ async def extract(
 
     original_stem = Path(file.filename or "output").stem
     options = {
-        "strategies": [s.strip() for s in strategies.split(",")] if strategies else None,
+        "strategies": _parse_strategies(strategies),
         "page_range": _parse_range(page_range),
         "with_images": with_images,
         "with_structure": with_structure,
@@ -726,16 +757,28 @@ async def extract(
     md_content = md_files[0].read_bytes()
     background_tasks.add_task(_cleanup, work_dir)
 
+    headers = {
+        "Content-Disposition": _content_disposition(f"{original_stem}.md"),
+        "X-Quality-Score": str(round(getattr(result, "quality_score", 0.0), 1)),
+        "X-Pages": str(getattr(result, "pages", 0)),
+        "X-Elapsed-Sec": str(round(getattr(result, "elapsed_sec", 0.0), 2)),
+        "X-Features-Used": ",".join(getattr(result, "features_used", [])),
+    }
+    fallbacks = getattr(result, "fallbacks", []) or []
+    if fallbacks:
+        headers["X-Fallback-Used"] = ";".join(fallbacks)
+        headers["Access-Control-Expose-Headers"] = (
+            "X-Quality-Score,X-Pages,X-Elapsed-Sec,X-Features-Used,X-Fallback-Used"
+        )
+    else:
+        headers["Access-Control-Expose-Headers"] = (
+            "X-Quality-Score,X-Pages,X-Elapsed-Sec,X-Features-Used"
+        )
+
     return StreamingResponse(
         io.BytesIO(md_content),
         media_type="text/markdown; charset=utf-8",
-        headers={
-            "Content-Disposition": _content_disposition(f"{original_stem}.md"),
-            "X-Quality-Score": str(round(getattr(result, "quality_score", 0.0), 1)),
-            "X-Pages": str(getattr(result, "pages", 0)),
-            "X-Elapsed-Sec": str(round(getattr(result, "elapsed_sec", 0.0), 2)),
-            "X-Features-Used": ",".join(getattr(result, "features_used", [])),
-        },
+        headers=headers,
     )
 
 
@@ -766,7 +809,7 @@ async def batch(
     work_dir.mkdir(parents=True, exist_ok=True)
 
     options = {
-        "strategies": [s.strip() for s in strategies.split(",")] if strategies else None,
+        "strategies": _parse_strategies(strategies),
         "page_range": _parse_range(page_range),
         "with_images": with_images,
         "with_structure": with_structure,

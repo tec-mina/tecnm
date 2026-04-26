@@ -437,6 +437,63 @@
     .file-side { min-width: 0; }
   }
   .file-side select { width: 100%; min-width: 0; }
+  .file-side .strategy-row {
+    display: flex; gap: 6px; align-items: center;
+  }
+  .file-side .strategy-row select { flex: 1; }
+  .reextract-btn {
+    flex-shrink: 0;
+    padding: 6px 10px;
+    font-size: 11px;
+    border-radius: 8px;
+    border: 1px solid var(--accent);
+    background: linear-gradient(135deg,
+      color-mix(in srgb, var(--accent) 18%, transparent),
+      color-mix(in srgb, var(--accent-2) 18%, transparent));
+    color: var(--accent);
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform .12s ease;
+  }
+  .reextract-btn:hover { transform: translateY(-1px); }
+  .reextract-btn:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
+
+  .runs-history {
+    display: flex; flex-direction: column; gap: 4px;
+    margin-top: 4px;
+  }
+  .runs-history .run-row {
+    display: flex; align-items: center; gap: 6px;
+    padding: 6px 8px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--bg-3);
+    font-size: 11px;
+  }
+  .runs-history .run-row.active {
+    border-color: color-mix(in srgb, var(--accent) 50%, transparent);
+    background: color-mix(in srgb, var(--accent) 8%, var(--bg-3));
+  }
+  .runs-history .run-row .run-name {
+    flex: 1;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    color: var(--text-dim);
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .runs-history .run-row .run-quality {
+    color: var(--ok); font-weight: 600;
+  }
+  .runs-history .run-row a {
+    color: var(--accent); text-decoration: none; font-weight: 500;
+  }
+  .runs-history .run-row a:hover { text-decoration: underline; }
+
+  /* Greyed-out (not-ready) options stay clickable so the user can force them. */
+  select option.not-ready {
+    color: var(--warn);
+    font-style: italic;
+  }
 
   .progress {
     width: 100%; height: 4px; border-radius: 4px; overflow: hidden;
@@ -970,32 +1027,71 @@
         </div>
       </div>
       <div class="file-side">
-        <div data-role="strategy-slot"></div>
+        <div data-role="strategy-slot" class="strategy-row"></div>
         <div class="progress" data-role="progress"><div></div></div>
         <div class="status" data-role="status">en espera</div>
         <div data-role="result"></div>
+        <div class="runs-history" data-role="runs" hidden></div>
       </div>`;
 
+    const slot = el.querySelector('[data-role="strategy-slot"]');
     const sel = document.createElement('select');
     populateSelect(sel, true);
     sel.value = '__auto__';
-    sel.addEventListener('change', () => { item.strategy = sel.value; });
-    el.querySelector('[data-role="strategy-slot"]').appendChild(sel);
+
+    const reextractBtn = document.createElement('button');
+    reextractBtn.type = 'button';
+    reextractBtn.className = 'reextract-btn';
+    reextractBtn.textContent = '↻ Re-extraer';
+    reextractBtn.title = 'Re-extraer este archivo con el método elegido';
+    reextractBtn.hidden = true;
+    reextractBtn.addEventListener('click', () => extractOne(item, { force: true }));
+
+    sel.addEventListener('change', () => {
+      item.strategy = sel.value;
+      // If a run already exists with a different strategy, mark the card as
+      // ready for a re-extraction. We do NOT clear previous runs — the user
+      // can compare results across methods in the runs history below.
+      const lastRun = item.runs && item.runs[item.runs.length - 1];
+      const changed = !lastRun || lastRun.strategy !== sel.value;
+      reextractBtn.hidden = !(item.runs && item.runs.length && changed);
+      // Persist the user's choice so re-uploading the same file remembers it.
+      _saveStrategyPreference(item.file, sel.value);
+    });
+
+    slot.appendChild(sel);
+    slot.appendChild(reextractBtn);
+
     item.strategyEl = sel;
+    item.reextractBtn = reextractBtn;
     item.chipsEl = el.querySelector('[data-role="chips"]');
     item.recEl = el.querySelector('[data-role="recommended"]');
     item.progressEl = el.querySelector('[data-role="progress"]');
     item.progressBarEl = el.querySelector('[data-role="progress"] > div');
     item.statusEl = el.querySelector('[data-role="status"]');
     item.resultEl = el.querySelector('[data-role="result"]');
+    item.runsEl = el.querySelector('[data-role="runs"]');
 
     el.querySelector('.file-remove').addEventListener('click', () => removeItem(item.id));
     return el;
   }
 
+  // Persist last chosen strategy per (filename, size) — survives page reload.
+  function _prefKey(file) {
+    return `pdfx-strategy:${file.name}:${file.size}`;
+  }
+  function _saveStrategyPreference(file, value) {
+    try { localStorage.setItem(_prefKey(file), value || ''); } catch {}
+  }
+  function _loadStrategyPreference(file) {
+    try { return localStorage.getItem(_prefKey(file)) || ''; } catch { return ''; }
+  }
+
   function removeItem(id) {
     const item = items.get(id);
     if (!item) return;
+    // Release every blob URL we still hold, not just the latest run.
+    if (item.runs) item.runs.forEach(r => { try { URL.revokeObjectURL(r.downloadUrl); } catch {} });
     if (item.downloadUrl) URL.revokeObjectURL(item.downloadUrl);
     item.el.remove();
     items.delete(id);
@@ -1011,12 +1107,35 @@
     Array.from(fileList).forEach(f => {
       if (!f.name.toLowerCase().endsWith('.pdf')) return;
       const id = crypto.randomUUID();
-      const item = { id, file: f, strategy: '__auto__', recommended: [], processed: false };
+      const item = {
+        id, file: f,
+        strategy: '__auto__',
+        recommended: [],
+        processed: false,
+        runs: [],          // [{strategy, downloadUrl, downloadName, quality, pages, elapsed, features, fallback, ts, blob}]
+      };
       const el = buildFileCard(item);
       item.el = el;
       filesList.appendChild(el);
       items.set(id, item);
       added++;
+
+      // Restore previously-chosen strategy for this file (by name+size).
+      const remembered = _loadStrategyPreference(f);
+      if (remembered) {
+        // The dropdown may not yet have populated extras — defer until after
+        // any /strategies refresh repopulates options.
+        const apply = () => {
+          if (Array.from(item.strategyEl.options).some(o => o.value === remembered)) {
+            item.strategyEl.value = remembered;
+            item.strategy = remembered;
+          }
+        };
+        apply();
+        // Try again after strategies catalog loads, just in case.
+        setTimeout(apply, 600);
+      }
+
       scheduleInspect(item);
     });
     if (added === 0) showToast('Solo se aceptan archivos .pdf');
@@ -1138,14 +1257,63 @@
   });
 
   clearAllBtn.addEventListener('click', () => {
-    items.forEach(it => { if (it.downloadUrl) URL.revokeObjectURL(it.downloadUrl); it.el.remove(); });
+    items.forEach(it => {
+      if (it.runs) it.runs.forEach(r => { try { URL.revokeObjectURL(r.downloadUrl); } catch {} });
+      if (it.downloadUrl) URL.revokeObjectURL(it.downloadUrl);
+      it.el.remove();
+    });
     items.clear();
     refreshUI();
   });
 
   // ── extraction ────────────────────────────────────────────────────
-  async function extractOne(item) {
-    if (item.processed) return;
+  // Render the runs history list under a card. Highlights the run that matches
+  // the currently-selected strategy so the user knows which output is "current".
+  function renderRunsHistory(item) {
+    if (!item.runsEl) return;
+    if (!item.runs || !item.runs.length) {
+      item.runsEl.hidden = true;
+      item.runsEl.innerHTML = '';
+      return;
+    }
+    item.runsEl.hidden = false;
+    const current = item.strategy;
+    item.runsEl.innerHTML = item.runs.map((r, i) => {
+      const isActive = r.strategy === current;
+      const label = (r.strategy === '__auto__' || !r.strategy)
+        ? 'Auto' + (r.features ? ` · ${r.features}` : '')
+        : r.strategy;
+      const fallbackTag = r.fallback
+        ? ` <span class="chip warn" title="El servidor sustituyó la estrategia">↪ ${escapeHtml(r.fallback)}</span>`
+        : '';
+      const qtag = (r.quality != null) ? `<span class="run-quality">${r.quality}</span>` : '';
+      return `
+        <div class="run-row ${isActive ? 'active' : ''}">
+          <span class="run-name" title="${escapeHtml(label)}">#${i + 1} · ${escapeHtml(label)}</span>
+          ${qtag}
+          ${fallbackTag}
+          <a href="${r.downloadUrl}" download="${escapeHtml(r.downloadName)}">⬇ md</a>
+        </div>`;
+    }).join('');
+  }
+
+  async function extractOne(item, opts = {}) {
+    // We allow re-extracting the same item with a different strategy.
+    // - opts.force=true: explicit click on "Re-extraer". Always runs.
+    // - default: only runs if there is no run yet for the current strategy.
+    const lastRun = item.runs && item.runs[item.runs.length - 1];
+    const sameAsLast = lastRun && lastRun.strategy === item.strategy;
+    if (sameAsLast && !opts.force) return;
+
+    // If the chosen strategy isn't initialized yet, warm it up before the
+    // upload so the user doesn't get a confusing "blocked" response.
+    item.statusEl.innerHTML = '<span class="spinner"></span> verificando backend…';
+    const ready = await ensureReady(item.strategy);
+    if (!ready) {
+      item.statusEl.innerHTML = '<span style="color:var(--err);">✕ backend no disponible</span>';
+      return;
+    }
+
     const fd = new FormData();
     fd.append('file', item.file, item.file.name);
     if (item.strategy && item.strategy !== '__auto__') fd.append('strategies', item.strategy);
@@ -1154,6 +1322,7 @@
     if (optNoSpell.checked) fd.append('no_spell', 'true');
     if (optPageRange.value.trim()) fd.append('page_range', optPageRange.value.trim());
 
+    item.reextractBtn.disabled = true;
     item.statusEl.innerHTML = '<span class="spinner"></span> procesando…';
     item.progressEl.classList.remove('error', 'done');
     item.progressBarEl.style.width = '8%';
@@ -1184,6 +1353,7 @@
                 pages: xhr.getResponseHeader('X-Pages'),
                 elapsed: xhr.getResponseHeader('X-Elapsed-Sec'),
                 features: xhr.getResponseHeader('X-Features-Used'),
+                fallback: xhr.getResponseHeader('X-Fallback-Used'),
               },
             });
           } else {
@@ -1204,8 +1374,29 @@
       item.progressBarEl.style.width = '100%';
       item.progressEl.classList.add('done');
       const url = URL.createObjectURL(result.blob);
-      const downloadName = item.file.name.replace(/\.pdf$/i, '') + '.md';
+      const stem = item.file.name.replace(/\.pdf$/i, '');
+      // Tag the filename with the strategy when there are multiple runs, so
+      // bulk downloads don't overwrite each other.
+      const tag = (item.runs.length >= 1)
+        ? '__' + (item.strategy === '__auto__' ? 'auto' : item.strategy.replace(/[^\w-]+/g, '_'))
+        : '';
+      const downloadName = `${stem}${tag}.md`;
+
+      // Keep a runs[] history so the user can compare outputs across methods.
+      item.runs.push({
+        strategy: item.strategy,
+        downloadUrl: url,
+        downloadName,
+        quality: result.headers.quality,
+        pages: result.headers.pages,
+        elapsed: result.headers.elapsed,
+        features: result.headers.features,
+        fallback: result.headers.fallback,
+        ts: Date.now(),
+      });
+      // Latest run drives the prominent download link / chips.
       item.downloadUrl = url;
+      item.downloadName = downloadName;
 
       const m = result.headers;
       const meta = [];
@@ -1213,6 +1404,7 @@
       if (m.pages) meta.push(`<span class="chip">${m.pages} págs</span>`);
       if (m.elapsed) meta.push(`<span class="chip">${m.elapsed}s</span>`);
       if (m.features) m.features.split(',').forEach(f => meta.push(`<span class="chip accent">${f.trim()}</span>`));
+      if (m.fallback) meta.push(`<span class="chip warn" title="El servidor sustituyó la estrategia que pediste por una equivalente">↪ ${escapeHtml(m.fallback)}</span>`);
 
       item.resultEl.innerHTML = `
         <a class="download" href="${url}" download="${downloadName}">
@@ -1226,17 +1418,31 @@
         <div class="chips" style="margin-top:8px;">${meta.join('')}</div>`;
       item.statusEl.innerHTML = '<span style="color:var(--ok);">✓ listo</span>';
       item.processed = true;
+      renderRunsHistory(item);
+      // After a successful run for the current strategy, the re-extract button
+      // only makes sense again if the user changes the dropdown.
+      item.reextractBtn.hidden = true;
       updateDownloadAllBtn();
     } catch (err) {
       item.progressEl.classList.remove('indeterminate');
       item.progressBarEl.style.width = '100%';
       item.progressEl.classList.add('error');
       item.statusEl.innerHTML = `<span style="color:var(--err);">✕ ${escapeHtml(err.message)}</span>`;
+    } finally {
+      item.reextractBtn.disabled = false;
     }
   }
 
   processAllBtn.addEventListener('click', async () => {
-    const queue = Array.from(items.values()).filter(it => !it.processed);
+    // Include both never-processed items and items whose dropdown selection
+    // doesn't match their last run yet — that's the "I changed my mind, redo
+    // it with this method" case the user expects from the global "Procesar
+    // todos" button.
+    const queue = Array.from(items.values()).filter(it => {
+      const lastRun = it.runs && it.runs[it.runs.length - 1];
+      if (!it.processed) return true;
+      return !lastRun || lastRun.strategy !== it.strategy;
+    });
     if (!queue.length) return;
     processAllBtn.disabled = true;
     clearAllBtn.disabled = true;
@@ -1289,19 +1495,31 @@
   });
 
   downloadAllBtn.addEventListener('click', () => {
-    const done = Array.from(items.values()).filter(it => it.downloadUrl);
-    if (!done.length) return;
-    done.forEach((it, i) => {
+    // Download every run of every file (one .md per method tried), so the
+    // user keeps the comparison set the UI just built.
+    const all = [];
+    items.forEach(it => {
+      if (it.runs && it.runs.length) {
+        it.runs.forEach(r => all.push({ url: r.downloadUrl, name: r.downloadName }));
+      } else if (it.downloadUrl) {
+        all.push({
+          url: it.downloadUrl,
+          name: it.downloadName || it.file.name.replace(/\.pdf$/i, '') + '.md',
+        });
+      }
+    });
+    if (!all.length) return;
+    all.forEach((d, i) => {
       setTimeout(() => {
         const a = document.createElement('a');
-        a.href = it.downloadUrl;
-        a.download = it.file.name.replace(/\.pdf$/i, '') + '.md';
+        a.href = d.url;
+        a.download = d.name;
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
       }, i * 400);
     });
-    showToast(`Descargando ${done.length} archivo(s)…`);
+    showToast(`Descargando ${all.length} archivo(s)…`);
   });
 
   downloadZipBtn.addEventListener('click', async () => {
@@ -1318,9 +1536,20 @@
     try {
       const zip = new JSZip();
       for (const it of done) {
-        const resp = await fetch(it.downloadUrl);
-        const buf = await resp.arrayBuffer();
-        zip.file(it.file.name.replace(/\.pdf$/i, '') + '.md', buf);
+        // Every run goes into the ZIP — one folder per source file when
+        // multiple runs exist, otherwise a flat layout.
+        const runs = (it.runs && it.runs.length) ? it.runs : null;
+        if (runs && runs.length > 1) {
+          const folder = it.file.name.replace(/\.pdf$/i, '');
+          for (const r of runs) {
+            const resp = await fetch(r.downloadUrl);
+            zip.file(`${folder}/${r.downloadName}`, await resp.arrayBuffer());
+          }
+        } else {
+          const r = runs ? runs[0] : { downloadUrl: it.downloadUrl, downloadName: it.file.name.replace(/\.pdf$/i, '') + '.md' };
+          const resp = await fetch(r.downloadUrl);
+          zip.file(r.downloadName, await resp.arrayBuffer());
+        }
       }
       const zipBlob = await zip.generateAsync({
         type: 'blob',
@@ -1353,26 +1582,59 @@
   let readinessByName = {};
 
   function applyReadinessToSelects() {
-    const disable = (sel) => {
+    // Tag (do NOT disable) any option whose backend isn't ready yet. The user
+    // can still pick it — selecting it triggers an on-demand warmup before
+    // the extraction so they're never blocked from trying a method.
+    const annotate = (sel) => {
       Array.from(sel.options).forEach(o => {
         if (!o.value || o.value === '__auto__') return;
-        // For composite values like "text:fast,tables:pdfplumber" — every part
-        // must be ready. If a name isn't in the map (e.g. "fonts:analyze")
-        // we default to enabled (probe doesn't cover everything).
         const parts = o.value.split(',');
         const blocked = parts.find(p => readinessByName[p] && !readinessByName[p].ready);
         if (blocked) {
-          o.disabled = true;
+          o.disabled = false;
+          o.classList.add('not-ready');
           if (!o.dataset.origLabel) o.dataset.origLabel = o.textContent;
-          o.textContent = o.dataset.origLabel + ' — no disponible';
+          o.textContent = o.dataset.origLabel + ' — no listo (se descarga al usar)';
         } else if (o.dataset.origLabel) {
           o.disabled = false;
+          o.classList.remove('not-ready');
           o.textContent = o.dataset.origLabel;
         }
       });
     };
-    disable(globalStrategy);
-    items.forEach(it => disable(it.strategyEl));
+    annotate(globalStrategy);
+    items.forEach(it => annotate(it.strategyEl));
+  }
+
+  // If the user selects a not-ready strategy, kick off a background warmup
+  // for the missing pieces so the extraction works on the first try.
+  async function ensureReady(strategyValue) {
+    if (!strategyValue || strategyValue === '__auto__') return true;
+    const parts = strategyValue.split(',');
+    const missing = parts.filter(p => readinessByName[p] && !readinessByName[p].ready);
+    if (!missing.length) return true;
+    showToast(`Inicializando ${missing.join(', ')}…`, 4000);
+    try {
+      const resp = await fetch('/api/v1/readiness/download', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ backends: missing }),
+      });
+      if (!resp.ok) throw new Error('HTTP ' + resp.status);
+      const data = await resp.json();
+      // Refresh local readiness map from the response — saves a roundtrip.
+      data.readiness.backends.forEach(b => { readinessByName[b.name] = b; });
+      applyReadinessToSelects();
+      const stillMissing = missing.filter(p => readinessByName[p] && !readinessByName[p].ready);
+      if (stillMissing.length) {
+        showToast(`No se pudo inicializar ${stillMissing.join(', ')}`, 4000);
+        return false;
+      }
+      return true;
+    } catch (err) {
+      showToast(`Error al inicializar backend: ${err.message}`, 4000);
+      return false;
+    }
   }
 
   async function loadReadiness() {

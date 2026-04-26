@@ -97,6 +97,9 @@ class ExtractionResult:
     file_size_mb: float = 0.0
     dry_run_plan: dict | None = None
     error_message: str | None = None
+    # When the pipeline substituted a failing forced strategy with a same-tier
+    # alternative, each substitution is recorded as "<requested>->{<used>}".
+    fallbacks: list[str] = field(default_factory=list)
 
     def to_dict(self) -> dict:
         return {
@@ -112,6 +115,7 @@ class ExtractionResult:
             "elapsed_sec": round(self.elapsed_sec, 2),
             "pages": self.pages,
             "file_size_mb": round(self.file_size_mb, 2),
+            "fallbacks": self.fallbacks,
         }
 
 
@@ -312,6 +316,7 @@ class ExtractUseCase:
             output_dir=str(out_dir) if req.with_images else None,
         )
         result.features_used = pipeline_result.features_used
+        result.fallbacks = list(pipeline_result.fallbacks)
 
         # ── 6. Assemble raw Markdown ──────────────────────────────────────
         from ..output import assembler as _asm
