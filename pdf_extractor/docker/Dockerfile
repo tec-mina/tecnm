@@ -106,9 +106,13 @@ ENV PYTHONPATH=/app
 ENV PORT=8080
 
 # ── Build-time warmup ─────────────────────────────────────────────────────────
-# - validates that every feature module imports cleanly (registry has zero failures)
-# - pre-downloads EasyOCR models for es+en (~64 MB)
-# - pre-downloads the Tika server JAR (~60 MB) into $TIKA_PATH
+# Runs the full warmup suite — every backend is imported, binaries verified,
+# and model files downloaded and baked into the image layer:
+#   - EasyOCR: downloads craft_mlt_25k.pth (detection) + latin_g2.pth (recognition)
+#     and runs a readtext() inference pass to confirm both models work.
+#   - Tika: downloads the JAR into $TIKA_PATH
+#   - Tesseract: verifies spa+eng tessdata loads correctly
+#   - All other backends: import check + binary availability
 # `--skip-on-error` keeps the build green if egress is blocked; the runtime
 # `/api/v1/readiness` endpoint will then report what is missing.
 RUN python -m pdf_extractor warmup --languages es,en --skip-on-error --quiet

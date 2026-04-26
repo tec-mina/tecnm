@@ -42,15 +42,26 @@ docker ps --filter "publish=5001" -q | xargs -r docker stop
 ```
 
 ```bash
-  docker run --rm -d --name pdf-extractor-dev \
+docker run --rm \
   --platform linux/arm64 \
   -p 5001:5000 \
   --memory=6g --memory-swap=6g \
-  -v "$(pwd)/pdf_extractor:/app/pdf_extractor" \
-  -v "$(pwd)/input:/app/input" \
-  -v "$(pwd)/output:/app/output" \
-  pdf-extractor:latest serve --port 5000 
+  -v $(pwd)/input:/app/input \
+  -v $(pwd)/output:/app/output \
+  pdf-extractor:latest serve --port 5000
 ```
+
+> **Modo dev** (monta código fuente para cambios en caliente):
+> ```bash
+> docker run --rm -d --name pdf-extractor-dev \
+>   --platform linux/arm64 \
+>   -p 5001:5000 \
+>   --memory=6g --memory-swap=6g \
+>   -v "$(pwd)/pdf_extractor:/app/pdf_extractor" \
+>   -v $(pwd)/input:/app/input \
+>   -v $(pwd)/output:/app/output \
+>   pdf-extractor:latest serve --port 5000
+> ```
 
 > **Reglas de oro:**
 > - NO montes `-v easyocr-models:/root/.EasyOCR` — los modelos ya están en la imagen; montarlo los sobreescribe con un directorio vacío.
@@ -68,8 +79,9 @@ docker ps --filter "publish=5001" -q | xargs -r docker stop
 INFO:     Uvicorn running on http://0.0.0.0:5000
 ```
 
-> El warmup tarda **60–90 segundos** (carga modelos en RAM + levanta JVM Tika).
-> **El servidor solo acepta requests DESPUÉS de ese mensaje.** Si intentas usarlo antes verás "Network error".
+> El warmup tarda **10–20 segundos** cuando la imagen fue construida correctamente (todos los modelos ya están en la imagen — solo los carga en RAM).
+> Si ves "Downloading recognition model", la imagen fue construida sin acceso a red — reconstruye con `§0` + `§1`.
+> **El servidor solo acepta requests DESPUÉS del mensaje `✅ Warmup completo`.** Si intentas usarlo antes verás "Network error".
 
 Abre en el navegador: **http://localhost:5001**
 

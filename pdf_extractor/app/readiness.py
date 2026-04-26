@@ -178,14 +178,24 @@ def _probe_easyocr() -> BackendStatus:
             last_error=err,
         )
     model_dir = _easyocr_model_dir() / "model"
-    has_models = model_dir.exists() and any(model_dir.iterdir())
+    # Both detection (craft_mlt_25k.pth) AND recognition (latin_g2.pth) must be present.
+    # Checking only `any(iterdir())` was returning True when only craft was downloaded.
+    detection_ok = (model_dir / "craft_mlt_25k.pth").exists()
+    recognition_ok = (model_dir / "latin_g2.pth").exists()
+    has_models = detection_ok and recognition_ok
     return BackendStatus(
         name="ocr:easyocr",
         label="OCR neuronal (EasyOCR)",
         installed=True,
         initialized=has_models,
         install_hint="pip install easyocr",
-        init_hint="Descarga modelos (~64 MB) la primera vez",
+        init_hint="Requiere craft_mlt_25k.pth + latin_g2.pth en ~/.EasyOCR/model/",
+        last_error=(
+            None if has_models
+            else "Faltan modelos: " + (
+                "craft_mlt_25k.pth" if not detection_ok else "latin_g2.pth"
+            )
+        ),
     )
 
 
@@ -318,15 +328,126 @@ def collect_readiness() -> ReadinessReport:
 # ─────────────────────────────────────────────────────────────────────────────
 
 
+def warmup_pymupdf() -> tuple[bool, str | None]:
+    try:
+        import fitz  # type: ignore  # noqa: F401
+    except ImportError as exc:
+        return False, f"pymupdf not installed: {exc}"
+    try:
+        doc = fitz.Document()
+        doc.new_page(width=100, height=100)
+        buf = doc.tobytes()
+        doc2 = fitz.open(stream=buf, filetype="pdf")
+        _ = doc2[0].get_text()
+        _ = doc2[0].get_pixmap(dpi=72)
+        doc2.close()
+        return True, None
+    except Exception as exc:
+        return False, f"{type(exc).__name__}: {exc}"
+
+
+def warmup_pdfminer() -> tuple[bool, str | None]:
+    try:
+        import io
+        import fitz  # type: ignore
+        from pdfminer.high_level import extract_text  # type: ignore
+    except ImportError as exc:
+        return False, f"dependency not installed: {exc}"
+    try:
+        doc = fitz.Document()
+        doc.new_page(width=100, height=100)
+        buf = io.BytesIO(doc.tobytes())
+        _ = extract_text(buf)
+        return True, None
+    except Exception as exc:
+        return False, f"{type(exc).__name__}: {exc}"
+
+
+def warmup_pdfplumber() -> tuple[bool, str | None]:
+    try:
+        import io
+        import fitz  # type: ignore
+        import pdfplumber  # type: ignore
+    except ImportError as exc:
+        return False, f"dependency not installed: {exc}"
+    try:
+        doc = fitz.Document()
+        doc.new_page(width=100, height=100)
+        buf = io.BytesIO(doc.tobytes())
+        with pdfplumber.open(buf) as pdf:
+            _ = pdf.pages[0].extract_text()
+        return True, None
+    except Exception as exc:
+        return False, f"{type(exc).__name__}: {exc}"
+
+
+def warmup_markitdown() -> tuple[bool, str | None]:
+    try:
+        from markitdown import MarkItDown  # type: ignore
+    except ImportError as exc:
+        return False, f"markitdown not installed: {exc}"
+    try:
+        _ = MarkItDown()
+        return True, None
+    except Exception as exc:
+        return False, f"{type(exc).__name__}: {exc}"
+
+
+def warmup_tesseract() -> tuple[bool, str | None]:
+    try:
+        import numpy as np
+        import pytesseract  # type: ignore
+    except ImportError as exc:
+        return False, f"dependency not installed: {exc}"
+    try:
+        # Blank white image — verifies tessdata (spa+eng) loads correctly.
+        img = np.ones((50, 200, 3), dtype=np.uint8) * 255
+        pytesseract.image_to_string(img, lang="spa+eng")
+        return True, None
+    except Exception as exc:
+        return False, f"{type(exc).__name__}: {exc}"
+
+
+def warmup_camelot() -> tuple[bool, str | None]:
+    try:
+        import camelot  # type: ignore  # noqa: F401
+    except ImportError as exc:
+        return False, f"camelot not installed: {exc}"
+    if not _binary_available("gs") and not _binary_available("ghostscript"):
+        return False, "ghostscript not found on $PATH"
+    return True, None
+
+
+def warmup_tabula() -> tuple[bool, str | None]:
+    try:
+        import tabula  # type: ignore  # noqa: F401
+    except ImportError as exc:
+        return False, f"tabula not installed: {exc}"
+    if not _binary_available("java"):
+        return False, "java not found on $PATH"
+    return True, None
+
+
+def warmup_img2table() -> tuple[bool, str | None]:
+    try:
+        import img2table  # type: ignore  # noqa: F401
+    except ImportError as exc:
+        return False, f"img2table not installed: {exc}"
+    return True, None
+
+
 def warmup_easyocr(languages: tuple[str, ...] = ("es", "en")) -> tuple[bool, str | None]:
     try:
+        import numpy as np  # type: ignore
         import easyocr  # type: ignore
     except ImportError as exc:
         return False, f"easyocr not installed: {exc}"
     try:
-        # Constructing a Reader downloads model files to ~/.EasyOCR/model/.
-        # gpu=False is intentional: build-time should not assume CUDA.
-        easyocr.Reader(list(languages), gpu=False, download_enabled=True, verbose=False)
+        # Constructing a Reader downloads the detection model (craft_mlt_25k.pth).
+        # Calling readtext() triggers the recognition model download (latin_g2.pth).
+        # Both must succeed for easyocr to actually work on real PDFs.
+        reader = easyocr.Reader(list(languages), gpu=False, download_enabled=True, verbose=False)
+        reader.readtext(np.zeros((32, 200, 3), dtype=np.uint8))
         return True, None
     except Exception as exc:
         return False, f"{type(exc).__name__}: {exc}"
@@ -372,9 +493,17 @@ def run_full_warmup(
         return ok
 
     overall = True
-    overall &= _step("registry", lambda: warmup_registry())
-    overall &= _step("easyocr", lambda: warmup_easyocr(languages))
-    overall &= _step("tika", lambda: warmup_tika())
+    overall &= _step("registry",          lambda: warmup_registry())
+    overall &= _step("text:fast",          lambda: warmup_pymupdf())
+    overall &= _step("text:pdfminer",      lambda: warmup_pdfminer())
+    overall &= _step("tables:pdfplumber",  lambda: warmup_pdfplumber())
+    overall &= _step("text:markitdown",    lambda: warmup_markitdown())
+    overall &= _step("ocr:tesseract",      lambda: warmup_tesseract())
+    overall &= _step("ocr:easyocr",        lambda: warmup_easyocr(languages))
+    overall &= _step("text:tika",          lambda: warmup_tika())
+    overall &= _step("tables:camelot",     lambda: warmup_camelot())
+    overall &= _step("tables:tabula",      lambda: warmup_tabula())
+    overall &= _step("tables:img2table",   lambda: warmup_img2table())
 
     if not overall and not skip_on_error:
         return False

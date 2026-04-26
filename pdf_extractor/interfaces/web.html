@@ -639,10 +639,21 @@
           <polyline points="7 10 12 15 17 10"/>
           <line x1="12" y1="15" x2="12" y2="3"/>
         </svg>
-        Descargar todos
+        Individuales
+      </button>
+      <button class="btn btn-secondary" id="downloadZip" type="button" disabled>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="21 8 21 21 3 21 3 8"/>
+          <rect x="1" y="3" width="22" height="5"/>
+          <line x1="10" y1="12" x2="14" y2="12"/>
+        </svg>
+        Descargar ZIP
       </button>
     </div>
-    <div class="file-count"><strong id="fileCount">0</strong> archivo(s) en cola</div>
+    <div class="file-count">
+      <strong id="fileCount">0</strong> archivo(s) en cola
+      <span id="inspectBadge" hidden></span>
+    </div>
   </div>
 
   <div class="files" id="filesList"></div>
@@ -655,6 +666,8 @@
 
 <div id="toast"></div>
 
+<!-- JSZip: used by "Descargar ZIP" button -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script>
 (() => {
   const $ = (s) => document.querySelector(s);
@@ -668,6 +681,8 @@
   const processAllBtn = $('#processAll');
   const clearAllBtn = $('#clearAll');
   const downloadAllBtn = $('#downloadAll');
+  const downloadZipBtn = $('#downloadZip');
+  const inspectBadge = $('#inspectBadge');
   const optImages = $('#optImages');
   const optStructure = $('#optStructure');
   const optNoSpell = $('#optNoSpell');
@@ -838,14 +853,26 @@
   function updateDownloadAllBtn() {
     const doneCount = Array.from(items.values()).filter(it => it.downloadUrl).length;
     downloadAllBtn.disabled = doneCount === 0;
+    downloadZipBtn.disabled = doneCount === 0;
   }
 
   function refreshUI() {
     const n = items.size;
     fileCountEl.textContent = n;
-    processAllBtn.disabled = n === 0;
+    // Count items that haven't finished the /inspect call yet.
+    const uninspected = Array.from(items.values()).filter(it => !it.inspected).length;
+    const inspecting = n > 0 && uninspected > 0;
+    // Block "Procesar todos" until every file has been analyzed.
+    processAllBtn.disabled = n === 0 || inspecting;
     clearAllBtn.disabled = n === 0;
     emptyMsg.style.display = n === 0 ? 'block' : 'none';
+    if (inspecting) {
+      inspectBadge.hidden = false;
+      inspectBadge.innerHTML =
+        `<span style="color:var(--warn);">&#8987;&nbsp;analizando&nbsp;${uninspected}&nbsp;de&nbsp;${n}…</span>`;
+    } else {
+      inspectBadge.hidden = true;
+    }
     updateDownloadAllBtn();
   }
 
@@ -908,6 +935,10 @@
     if (item.downloadUrl) URL.revokeObjectURL(item.downloadUrl);
     item.el.remove();
     items.delete(id);
+    // Also remove from inspect queue if the /inspect hasn't started yet,
+    // so the item isn't counted as "uninspected" after removal.
+    const qi = _inspectQueue.indexOf(item);
+    if (qi !== -1) _inspectQueue.splice(qi, 1);
     refreshUI();
   }
 
@@ -922,10 +953,30 @@
       filesList.appendChild(el);
       items.set(id, item);
       added++;
-      inspectFile(item);
+      scheduleInspect(item);
     });
     if (added === 0) showToast('Solo se aceptan archivos .pdf');
     refreshUI();
+  }
+
+  // ── inspect throttle ──────────────────────────────────────────────
+  // Cap concurrent inspect uploads at 5. Dropping 80 PDFs at once
+  // would otherwise fire 80 simultaneous multipart uploads.
+  const _inspectQueue = [];
+  let _activeInspects = 0;
+  const MAX_INSPECT = 5;
+
+  function scheduleInspect(item) {
+    _inspectQueue.push(item);
+    _drainInspects();
+  }
+
+  function _drainInspects() {
+    while (_activeInspects < MAX_INSPECT && _inspectQueue.length) {
+      const it = _inspectQueue.shift();
+      _activeInspects++;
+      inspectFile(it).finally(() => { _activeInspects--; _drainInspects(); });
+    }
   }
 
   async function inspectFile(item) {
@@ -951,6 +1002,10 @@
       if (autoOpt) autoOpt.textContent = autoLabelFor(item);
     } catch (err) {
       item.chipsEl.innerHTML = `<span class="chip err">inspect: ${escapeHtml(err.message)}</span>`;
+    } finally {
+      // Mark as inspected (success or failure) so refreshUI unblocks the button.
+      item.inspected = true;
+      refreshUI();
     }
   }
 
@@ -1092,26 +1147,49 @@
   }
 
   processAllBtn.addEventListener('click', async () => {
+    const queue = Array.from(items.values()).filter(it => !it.processed);
+    if (!queue.length) return;
     processAllBtn.disabled = true;
     clearAllBtn.disabled = true;
-    const queue = Array.from(items.values()).filter(it => !it.processed);
-    const CONCURRENCY = 3;
+    const total = queue.length;
+
+    // Show every file's position in the queue so the user can see the full
+    // batch is staged — not just the first 3 items.
+    queue.forEach((it, i) => {
+      it.statusEl.innerHTML =
+        `<span style="color:var(--muted);">&#8987; en cola (${i + 1}/${total})</span>`;
+    });
+
+    // Live counter inserted below the button.
+    let doneCount = 0;
+    const batchBanner = document.createElement('div');
+    batchBanner.style.cssText = 'margin:6px 0 0;font-size:.82rem;color:var(--muted);';
+    batchBanner.textContent = `0 / ${total} completados`;
+    processAllBtn.insertAdjacentElement('afterend', batchBanner);
+
+    // 4 workers matches the server's default _MAX_CONCURRENT_EXTRACTIONS.
+    const CONCURRENCY = 4;
+
     try {
       const workers = Array.from(
-        { length: Math.min(CONCURRENCY, queue.length) },
+        { length: Math.min(CONCURRENCY, total) },
         () => (async () => {
           while (queue.length) {
             const it = queue.shift();
-            if (it) await extractOne(it);
+            if (!it) continue;
+            await extractOne(it);
+            doneCount++;
+            batchBanner.textContent = doneCount < total
+              ? `${doneCount} / ${total} completados`
+              : `\u2713 ${total} / ${total} completados`;
           }
         })()
       );
       await Promise.all(workers);
     } finally {
-      processAllBtn.disabled = items.size === 0;
-      clearAllBtn.disabled = items.size === 0;
-      updateDownloadAllBtn();
+      refreshUI();
       showToast('Procesamiento completo');
+      setTimeout(() => batchBanner.remove(), 5000);
     }
   });
 
@@ -1129,6 +1207,46 @@
       }, i * 400);
     });
     showToast(`Descargando ${done.length} archivo(s)…`);
+  });
+
+  downloadZipBtn.addEventListener('click', async () => {
+    const done = Array.from(items.values()).filter(it => it.downloadUrl);
+    if (!done.length) return;
+    if (typeof JSZip === 'undefined') {
+      showToast('JSZip no disponible — recarga la página con conexión a internet');
+      return;
+    }
+    const origHTML = downloadZipBtn.innerHTML;
+    downloadZipBtn.disabled = true;
+    downloadZipBtn.innerHTML =
+      '<span class="spinner" style="width:13px;height:13px;border-width:2px;"></span> Generando…';
+    try {
+      const zip = new JSZip();
+      for (const it of done) {
+        const resp = await fetch(it.downloadUrl);
+        const buf = await resp.arrayBuffer();
+        zip.file(it.file.name.replace(/\.pdf$/i, '') + '.md', buf);
+      }
+      const zipBlob = await zip.generateAsync({
+        type: 'blob',
+        compression: 'DEFLATE',
+        compressionOptions: { level: 6 },
+      });
+      const url = URL.createObjectURL(zipBlob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'extracciones.zip';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(() => URL.revokeObjectURL(url), 60_000);
+      showToast(`ZIP con ${done.length} archivo(s) listo`);
+    } catch (err) {
+      showToast('Error al generar ZIP: ' + err.message);
+    } finally {
+      downloadZipBtn.innerHTML = origHTML;
+      updateDownloadAllBtn();
+    }
   });
 
   // ── readiness banner ──────────────────────────────────────────────
