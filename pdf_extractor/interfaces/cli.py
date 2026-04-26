@@ -545,7 +545,11 @@ def serve(host: str, port: int, reload: bool) -> None:
     API docs available at /docs once the server is running.
     """
     from .api import run_server
-    click.echo(f"PDF Extractor API → http://{host}:{port}/docs")
+    # Display user-friendly URL (localhost if listening on 0.0.0.0)
+    display_host = "localhost" if host == "0.0.0.0" else host
+    click.echo(f"🚀 PDF Extractor API started")
+    click.echo(f"   Web: http://{display_host}:{port}")
+    click.echo(f"   Docs: http://{display_host}:{port}/docs")
     run_server(host=host, port=port, reload=reload)
 
 
