@@ -113,12 +113,20 @@ ENV PORT=8080
 # `/api/v1/readiness` endpoint will then report what is missing.
 RUN python -m pdf_extractor warmup --languages es,en --skip-on-error --quiet
 
+# ── Entrypoint — warmup then serve ───────────────────────────────────────────
+# entrypoint.sh runs `warmup` to fully initialize EasyOCR and Tika before
+# uvicorn starts accepting requests.  Without this, the first OCR request
+# arrives while the backends are still initializing → OOM kill / Network error.
+COPY pdf_extractor/docker/entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
 # ── Healthcheck (Cloud Run / Docker) ─────────────────────────────────────────
 # /healthz is a lightweight liveness probe — no PDF processing involved.
-HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=3 \
+# start-period is raised to 120s to cover the runtime warmup (EasyOCR + Tika).
+HEALTHCHECK --interval=30s --timeout=10s --start-period=120s --retries=3 \
     CMD curl -sf http://localhost:${PORT}/healthz || exit 1
 
 # ── Default: run the REST API (Cloud Run target) ──────────────────────────────
 # Override with `docker run ... python -m pdf_extractor extract ...` for CLI use.
-ENTRYPOINT ["python", "-m", "pdf_extractor"]
+ENTRYPOINT ["/entrypoint.sh"]
 CMD ["serve", "--host", "0.0.0.0"]

@@ -633,6 +633,14 @@
         </svg>
         Limpiar
       </button>
+      <button class="btn btn-secondary" id="downloadAll" type="button" disabled>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        Descargar todos
+      </button>
     </div>
     <div class="file-count"><strong id="fileCount">0</strong> archivo(s) en cola</div>
   </div>
@@ -659,6 +667,7 @@
   const applyAllBtn = $('#applyAll');
   const processAllBtn = $('#processAll');
   const clearAllBtn = $('#clearAll');
+  const downloadAllBtn = $('#downloadAll');
   const optImages = $('#optImages');
   const optStructure = $('#optStructure');
   const optNoSpell = $('#optNoSpell');
@@ -826,12 +835,18 @@
   }
 
   // ── intake ────────────────────────────────────────────────────────
+  function updateDownloadAllBtn() {
+    const doneCount = Array.from(items.values()).filter(it => it.downloadUrl).length;
+    downloadAllBtn.disabled = doneCount === 0;
+  }
+
   function refreshUI() {
     const n = items.size;
     fileCountEl.textContent = n;
     processAllBtn.disabled = n === 0;
     clearAllBtn.disabled = n === 0;
     emptyMsg.style.display = n === 0 ? 'block' : 'none';
+    updateDownloadAllBtn();
   }
 
   function buildFileCard(item) {
@@ -1067,6 +1082,7 @@
         <div class="chips" style="margin-top:8px;">${meta.join('')}</div>`;
       item.statusEl.innerHTML = '<span style="color:var(--ok);">✓ listo</span>';
       item.processed = true;
+      updateDownloadAllBtn();
     } catch (err) {
       item.progressEl.classList.remove('indeterminate');
       item.progressBarEl.style.width = '100%';
@@ -1078,12 +1094,41 @@
   processAllBtn.addEventListener('click', async () => {
     processAllBtn.disabled = true;
     clearAllBtn.disabled = true;
-    for (const it of items.values()) {
-      await extractOne(it);
+    const queue = Array.from(items.values()).filter(it => !it.processed);
+    const CONCURRENCY = 3;
+    try {
+      const workers = Array.from(
+        { length: Math.min(CONCURRENCY, queue.length) },
+        () => (async () => {
+          while (queue.length) {
+            const it = queue.shift();
+            if (it) await extractOne(it);
+          }
+        })()
+      );
+      await Promise.all(workers);
+    } finally {
+      processAllBtn.disabled = items.size === 0;
+      clearAllBtn.disabled = items.size === 0;
+      updateDownloadAllBtn();
+      showToast('Procesamiento completo');
     }
-    processAllBtn.disabled = false;
-    clearAllBtn.disabled = false;
-    showToast('Procesamiento completo');
+  });
+
+  downloadAllBtn.addEventListener('click', () => {
+    const done = Array.from(items.values()).filter(it => it.downloadUrl);
+    if (!done.length) return;
+    done.forEach((it, i) => {
+      setTimeout(() => {
+        const a = document.createElement('a');
+        a.href = it.downloadUrl;
+        a.download = it.file.name.replace(/\.pdf$/i, '') + '.md';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      }, i * 400);
+    });
+    showToast(`Descargando ${done.length} archivo(s)…`);
   });
 
   // ── readiness banner ──────────────────────────────────────────────

@@ -129,7 +129,7 @@ def _select_features(
     features: list[str] = []
 
     if all_scanned:
-        features = ["ocr_tesseract", "ocr_easy"]
+        features = ["ocr_tesseract"]  # easyocr sólo si el usuario lo pide explícitamente
         if has_tables:
             features.append("ocr_img2table")
 
