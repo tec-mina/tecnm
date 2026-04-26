@@ -352,11 +352,27 @@ def _probe_fonts_analyze() -> BackendStatus:
     )
 
 
+def _probe_docling() -> BackendStatus:
+    """text:docling — IBM Docling with AI layout analysis + OCR."""
+    ok, err = _python_available("docling")
+    return BackendStatus(
+        name="text:docling",
+        label="Docling AI (IBM) — análisis de layout + OCR integrado, ~93% tablas",
+        installed=ok,
+        initialized=ok,
+        install_hint="pip install docling",
+        init_hint="Descarga modelos PyTorch (~500MB) en la primera ejecución",
+        last_error=err,
+        can_warmup=True,
+    )
+
+
 _PROBES: list[Callable[[], BackendStatus]] = [
     _probe_pymupdf,
     _probe_pdfminer,
     _probe_pdfplumber,
     _probe_markitdown,
+    _probe_docling,
     _probe_tesseract,
     _probe_tesseract_advanced,
     _probe_easyocr,
@@ -554,6 +570,19 @@ def warmup_easyocr(languages: tuple[str, ...] = ("es", "en")) -> tuple[bool, str
         return False, f"{type(exc).__name__}: {exc}"
 
 
+def warmup_docling() -> tuple[bool, str | None]:
+    try:
+        from docling.document_converter import DocumentConverter  # type: ignore
+    except ImportError as exc:
+        return False, f"docling not installed: {exc}"
+    try:
+        # Docling downloads models on first use; a simple instantiation triggers it.
+        converter = DocumentConverter()
+        return True, None
+    except Exception as exc:
+        return False, f"{type(exc).__name__}: {exc}"
+
+
 def warmup_tika() -> tuple[bool, str | None]:
     try:
         from tika import parser as _tika_parser  # type: ignore
@@ -584,6 +613,7 @@ WARMUP_BY_NAME: dict[str, Callable[[], tuple[bool, str | None]]] = {
     "text:pdfminer":           warmup_pdfminer,
     "tables:pdfplumber":       warmup_pdfplumber,
     "text:markitdown":         warmup_markitdown,
+    "text:docling":            warmup_docling,
     "ocr:tesseract-basic":     warmup_tesseract,
     "ocr:tesseract-advanced":  warmup_tesseract_advanced,
     "ocr:easyocr":             lambda: warmup_easyocr(),
@@ -665,6 +695,7 @@ def run_full_warmup(
     overall &= _step("text:pdfminer",           lambda: warmup_pdfminer())
     overall &= _step("tables:pdfplumber",       lambda: warmup_pdfplumber())
     overall &= _step("text:markitdown",         lambda: warmup_markitdown())
+    overall &= _step("text:docling",            lambda: warmup_docling())
     overall &= _step("ocr:tesseract-basic",     lambda: warmup_tesseract())
     overall &= _step("ocr:tesseract-advanced",  lambda: warmup_tesseract_advanced())
     overall &= _step("ocr:easyocr",             lambda: warmup_easyocr(languages))

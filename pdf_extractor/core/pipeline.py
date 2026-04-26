@@ -109,7 +109,28 @@ def run(
                 # logging shows what actually ran.
                 name = alt_name
             else:
-                result.fallbacks.append(f"{name}->skipped")
+                # Cross-tier fallback: if the user forced a text strategy on a scanned PDF
+                # and same-tier fallback failed, try OCR strategies instead of giving up.
+                if profile.scanned_pages and not profile.text_native_pages:
+                    meta = registry.get(name)
+                    if meta and meta.tier == "text":
+                        alt_fr, alt_name = _try_cross_tier_fallback(
+                            pdf_path, "ocr", page_range,
+                            on_event=on_event, output_dir=output_dir,
+                        )
+                        if alt_fr is not None and alt_fr.confidence > 0:
+                            if fr is not None:
+                                result.warnings.extend(fr.warnings)
+                                del fr
+                            fr = alt_fr
+                            produced = True
+                            result.fallbacks.append(f"{name}->{alt_name} [OCR]")
+                            _emit_event(on_event, "fallback", requested=name, used=alt_name)
+                            name = alt_name
+                        else:
+                            result.fallbacks.append(f"{name}->skipped [text on scanned, no OCR fallback]")
+                else:
+                    result.fallbacks.append(f"{name}->skipped")
 
         if fr is None:
             continue
@@ -216,6 +237,31 @@ def _try_tier_fallback(
         m for m in registry.list_tier(meta.tier)
         if m.name != failed_name and m.short_name != failed_name
     ]
+    candidates.sort(key=lambda m: (m.is_heavy, m.priority, m.name))
+
+    for alt in candidates:
+        fr = _run_feature(
+            pdf_path, alt.name, page_range, pdf_path,
+            on_event=on_event, output_dir=output_dir,
+        )
+        if fr is not None and fr.confidence > 0:
+            return fr, alt.name
+    return None, None
+
+
+def _try_cross_tier_fallback(
+    pdf_path: str,
+    target_tier: str,
+    page_range,
+    on_event: Callable[..., None] | None = None,
+    output_dir: str | None = None,
+):
+    """Try every strategy in a different tier (e.g., text→ocr fallback).
+
+    Returns (FeatureResult|None, used_name|None). Strategies are tried in
+    priority order.
+    """
+    candidates = registry.list_tier(target_tier)
     candidates.sort(key=lambda m: (m.is_heavy, m.priority, m.name))
 
     for alt in candidates:

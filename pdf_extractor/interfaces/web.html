@@ -909,14 +909,28 @@
       sel.appendChild(o);
     }
 
-    // Curated groups (intent-first) — shown unconditionally: all strategies
-    // are installed in the image, every PDF can be processed by any method.
+    // Curated groups (intent-first) — show with installation status when available
     METHOD_GROUPS.forEach(group => {
       const grp = document.createElement('optgroup');
       grp.label = group.label;
       group.items.forEach(([v, label]) => {
         const o = document.createElement('option');
-        o.value = v; o.textContent = label;
+        o.value = v;
+
+        // Check if any strategy in the composite is not installed
+        const parts = v.split(',');
+        const allInstalled = parts.every(p => {
+          const strat = strategiesByName[p];
+          return !strat || strat.installed !== false;
+        });
+
+        if (!allInstalled) {
+          o.textContent = `❌ ${label} (falta instalar)`;
+          o.disabled = true;
+          o.style.color = '#999';
+        } else {
+          o.textContent = label;
+        }
         grp.appendChild(o);
       });
       sel.appendChild(grp);
@@ -933,7 +947,14 @@
         .forEach(s => {
           const o = document.createElement('option');
           o.value = s.name;
-          o.textContent = `${s.name} · ${s.description || s.tier}`;
+          const label = `${s.name} · ${s.description || s.tier}`;
+          if (!s.installed) {
+            o.textContent = `❌ ${label} (no disponible)`;
+            o.disabled = true;
+            o.style.color = '#999';
+          } else {
+            o.textContent = label;
+          }
           grp.appendChild(o);
         });
       sel.appendChild(grp);
@@ -1360,10 +1381,28 @@
             const reader = new FileReader();
             reader.onload = () => {
               let detail = reader.result;
-              try { detail = JSON.parse(reader.result).detail || detail; } catch {}
-              reject(new Error('HTTP ' + xhr.status + ' — ' + detail));
+              try {
+                const parsed = JSON.parse(reader.result);
+                if (parsed.detail) {
+                  if (typeof parsed.detail === 'string') {
+                    detail = parsed.detail;
+                  } else if (parsed.detail.message) {
+                    detail = parsed.detail.message;
+                  } else if (parsed.detail.error) {
+                    detail = `${parsed.detail.error}: ${parsed.detail.message || ''}`;
+                  } else {
+                    detail = JSON.stringify(parsed.detail);
+                  }
+                }
+              } catch (e) {
+                // detail remains the raw text
+              }
+              const msg = detail.includes('\n')
+                ? `HTTP ${xhr.status}\n${detail}`
+                : `HTTP ${xhr.status} — ${detail}`;
+              reject(new Error(msg));
             };
-            reader.onerror = () => reject(new Error('HTTP ' + xhr.status));
+            reader.onerror = () => reject(new Error(`HTTP ${xhr.status}`));
             reader.readAsText(xhr.response);
           }
         };

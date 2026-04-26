@@ -526,10 +526,16 @@ async def capabilities() -> dict:
 )
 async def strategies(tier: str | None = None) -> list[dict]:
     from ..core.registry import registry
+    from ..app.readiness import collect_readiness
 
     all_meta = registry.list_all()
     if tier:
         all_meta = [m for m in all_meta if m.tier == tier]
+
+    # Collect readiness for installed status
+    readiness = collect_readiness()
+    readiness_map = {b.name: b for b in readiness.backends}
+
     return [
         {
             "name": m.name,
@@ -539,6 +545,7 @@ async def strategies(tier: str | None = None) -> list[dict]:
             "is_heavy": m.is_heavy,
             "requires_python": m.requires_python,
             "requires_system": m.requires_system,
+            "installed": readiness_map.get(m.name, type('obj', (object,), {'installed': False})()).installed,
         }
         for m in sorted(all_meta, key=lambda x: (x.tier, x.priority))
     ]
@@ -725,11 +732,19 @@ async def extract(
         # selected strategy was skipped). Surface the real reason instead of
         # a generic 500.
         if status_str == "blocked":
+            fallbacks_info = getattr(result, "fallbacks", []) or []
+            fallback_msg = ""
+            if fallbacks_info:
+                fallback_msg = f"\n\nIntentó usar: {', '.join(fallbacks_info)}"
+
             reason = (
-                "No se pudo extraer texto del PDF. "
-                "Probablemente es escaneado y no hay un motor OCR disponible "
-                "(pytesseract / easyocr) en este entorno, o todas las estrategias "
-                "elegidas se saltaron."
+                f"❌ No se extrajo contenido del PDF.\n\n"
+                f"Posibles causas:\n"
+                f"• El PDF está escaneado (imágenes) y OCR no está disponible o falló\n"
+                f"• Todas las estrategias elegidas fueron omitidas o fallaron\n"
+                f"• El PDF está vacío o corrupto\n"
+                f"• El contenido está en formato no soportado (solo imágenes, binarios)"
+                f"{fallback_msg}"
             )
             raise HTTPException(
                 status_code=422,

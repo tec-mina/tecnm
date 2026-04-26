@@ -41,7 +41,7 @@ def extract(pdf_path: str, page_range: tuple[int, int] | None = None) -> Feature
 
     try:
         pipeline_options = PdfPipelineOptions()
-        pipeline_options.do_ocr = False       # Only for scanned; text PDFs use native
+        pipeline_options.do_ocr = True        # Enable OCR for scanned + native PDFs
         pipeline_options.do_table_structure = True
 
         converter = DocumentConverter()

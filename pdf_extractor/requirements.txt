@@ -53,4 +53,4 @@ tabula-py>=2.7.0                 # Tabula — Java-based table extraction (uses 
 tika>=1.24                       # Apache Tika — 1000+ formats (downloads ~60MB JAR on first use)
 
 # ── Optional: extra-heavy ML backends (uncomment if you need them) ───────────
-# docling>=2.0.0                 # IBM Docling — pulls in PyTorch (~1GB image bloat)
+docling>=2.0.0                 # IBM Docling — pulls in PyTorch (~1GB image bloat)
