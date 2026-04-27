@@ -353,7 +353,7 @@ def _probe_fonts_analyze() -> BackendStatus:
 
 
 def _probe_docling() -> BackendStatus:
-    """text:docling — IBM Docling with AI layout analysis + OCR."""
+    """text:docling — IBM Doclin with AI layout analysis + OCR."""
     ok, err = _python_available("docling")
     return BackendStatus(
         name="text:docling",
@@ -367,7 +367,26 @@ def _probe_docling() -> BackendStatus:
     )
 
 
+def _probe_adaptive_intelligent() -> BackendStatus:
+    """auto:intelligent — meta-strategy that orchestrates installed backends.
+
+    Requires only fitz (PyMuPDF) for page profiling. Uses whatever other
+    strategies are installed at runtime — no models to download, no warmup needed.
+    """
+    ok, err = _python_available("fitz")
+    return BackendStatus(
+        name="auto:intelligent",
+        label="Extracción inteligente (adaptativa por página)",
+        installed=ok,
+        initialized=ok,
+        install_hint="pip install pymupdf",
+        last_error=err,
+        can_warmup=False,
+    )
+
+
 _PROBES: list[Callable[[], BackendStatus]] = [
+    _probe_adaptive_intelligent,   # first: the meta-strategy
     _probe_pymupdf,
     _probe_pdfminer,
     _probe_pdfplumber,
@@ -609,6 +628,7 @@ def warmup_registry() -> tuple[bool, list[dict]]:
 #   - /api/v1/readiness/download      — on-demand UI button
 # Add an entry here for every backend that supports warmup.
 WARMUP_BY_NAME: dict[str, Callable[[], tuple[bool, str | None]]] = {
+    "auto:intelligent":        warmup_pymupdf,   # only needs fitz; no model download
     "text:fast":               warmup_pymupdf,
     "text:pdfminer":           warmup_pdfminer,
     "tables:pdfplumber":       warmup_pdfplumber,
