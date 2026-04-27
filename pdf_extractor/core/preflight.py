@@ -2,7 +2,7 @@
 core/preflight.py — Pre-flight PDF validation before extraction.
 
 Checks (in order):
-  1. File exists and is readable
+  1. Input validation (PDFValidator) — file exists, not corrupt, readable
   2. Magic bytes start with %PDF-
   3. Not encrypted / password-protected
   4. Page count > 0
@@ -11,13 +11,18 @@ Checks (in order):
 
 Returns PreflightResult used by pipeline.py to gate which features run.
 If encryption is detected the pipeline should emit an error event and exit.
+
+Phase 2.1: Integrated PDFValidator for comprehensive input validation.
 """
 
 from __future__ import annotations
 
 import sys
+import logging
 from dataclasses import dataclass, field
 from pathlib import Path
+
+logger = logging.getLogger(__name__)
 
 
 _SAMPLE_PAGES = 5          # pages to sample for scanned detection
@@ -42,18 +47,28 @@ def run(pdf_path: str) -> PreflightResult:
     result = PreflightResult(path=pdf_path)
     p = Path(pdf_path)
 
-    # 1. File exists and readable
-    if not p.exists():
-        result.errors.append(f"File not found: {pdf_path}")
+    # Phase 2.1: Input validation with PDFValidator
+    from .pdf_validator import PDFValidator
+
+    validator = PDFValidator()
+    validation = validator.validate(pdf_path)
+
+    if not validation.is_valid:
+        # Detailed error handling based on validation status
+        result.errors.extend(validation.errors)
+        result.warnings.extend(validation.warnings)
+
+        # Specific handling for encryption
+        if validation.is_encrypted:
+            result.is_encrypted = True
+
+        logger.error(
+            f"PDF validation failed: {pdf_path} "
+            f"(status={validation.status.value}, errors={len(validation.errors)})"
+        )
         return result
-    if not p.is_file():
-        result.errors.append(f"Path is not a file: {pdf_path}")
-        return result
-    try:
-        result.file_size_mb = round(p.stat().st_size / (1024 * 1024), 2)
-    except OSError as exc:
-        result.errors.append(f"Cannot stat file: {exc}")
-        return result
+
+    result.file_size_mb = validation.file_size_kb / 1024.0
 
     if result.file_size_mb > _LARGE_FILE_MB:
         result.warnings.append(
@@ -61,18 +76,18 @@ def run(pdf_path: str) -> PreflightResult:
             "Consider --workers and chunked mode for best performance."
         )
 
-    # 2. Magic bytes
-    try:
-        with open(p, "rb") as f:
-            header = f.read(8)
-        if not header.startswith(b"%PDF-"):
-            result.errors.append(
-                f"Not a valid PDF (bad magic bytes). Got: {header[:8]!r}"
-            )
-            return result
-    except OSError as exc:
-        result.errors.append(f"Cannot read file header: {exc}")
+    # Early exit if validation caught corruption or truncation issues
+    if validation.is_corrupted and validation.is_truncated:
+        result.errors.append(
+            "PDF is corrupt and truncated. Cannot safely process."
+        )
         return result
+
+    if validation.is_truncated:
+        result.warnings.append(
+            "PDF appears truncated (missing proper footer). "
+            "Extraction may be incomplete."
+        )
 
     # 3-5. Open with PyMuPDF for deep checks
     try:
