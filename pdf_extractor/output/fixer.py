@@ -123,8 +123,14 @@ def run(
 
     # OCR-specific correction (optional, only for OCR-sourced text)
     if apply_ocr_correction:
-        # Reconstruct implicit two-column tables BEFORE spell correction so the
-        # corrector doesn't mangle column-alignment spaces inside table cells.
+        # 1. Append orphaned OCR rows that are continuation of an existing GFM table.
+        #    Run FIRST because it consumes the orphaned lines; reconstruction then
+        #    handles any remaining free-standing table blocks.
+        result.content, count = _fix_ocr_table_continuation(result.content)
+        if count:
+            result.fixes_applied["ocr_table_continuation"] = count
+
+        # 2. Reconstruct implicit two-column tables from raw OCR text (no preceding table).
         result.content, count = _fix_ocr_table_reconstruction(result.content)
         if count:
             result.fixes_applied["ocr_table_reconstruction"] = count
@@ -145,6 +151,145 @@ def run(
 # ---------------------------------------------------------------------------
 # Individual fixers
 # ---------------------------------------------------------------------------
+
+# Noise lines tolerated in the gap between a GFM table and its continuation.
+# A "noise" line is blank OR very short AND contains no decimal values.
+_CONT_NOISE_MAX_LEN = 6   # chars; lines shorter than this are treated as noise
+_CONT_SCAN_WINDOW = 8     # max lines to scan past the table before giving up
+_CONT_MIN_ROWS = 2        # minimum continuation rows to justify merging
+
+
+def _fix_ocr_table_continuation(text: str) -> tuple[str, int]:
+    """Append orphaned OCR data rows that immediately follow a GFM table.
+
+    Tesseract often captures the first rows of a shaded table correctly (high
+    contrast rows) but outputs the remaining rows as plain text (low contrast /
+    dark background loses value alignment).  This produces::
+
+        | Entidad Federativa | Cobertura |   ← partial GFM table
+        | Nacional           | 45.1      |
+        | 7 Chiapas          | —         |   ← shaded row: value lost
+
+        00                                   ← OCR noise artefact
+
+        Chihuahua                            ← orphaned row, no value
+        9 Ciudad de México  136.2            ← orphaned row with value
+        Durango                              ← orphaned row, no value
+        ...
+
+    This function detects such continuation blocks and appends them to the
+    preceding GFM table.  Unlike ``_fix_ocr_table_reconstruction``, it does
+    NOT enforce a minimum valued-cell ratio — rows with missing values are
+    shown as "—" because the data was genuinely lost to OCR.
+
+    Noise between the table end and the continuation block (blank lines,
+    artefacts ≤ ``_CONT_NOISE_MAX_LEN`` chars with no decimal) are silently
+    discarded.
+    """
+    lines = text.split("\n")
+    n = len(lines)
+    result: list[str] = []
+    converted = 0
+    i = 0
+
+    def _is_noise(line: str) -> bool:
+        s = line.strip()
+        if not s:
+            return True
+        if len(s) <= _CONT_NOISE_MAX_LEN and not _OCR_DECIMAL_RE.search(s):
+            return True
+        return False
+
+    def _is_table_row(line: str) -> bool:
+        s = line.strip()
+        return bool(s) and s.startswith("|")
+
+    while i < n:
+        if not _is_table_row(lines[i]):
+            result.append(lines[i])
+            i += 1
+            continue
+
+        # ── Collect the full GFM table ──────────────────────────────────────
+        table_lines: list[str] = []
+        while i < n and _is_table_row(lines[i]):
+            table_lines.append(lines[i])
+            i += 1
+
+        # ── Scan past noise to find continuation ────────────────────────────
+        k = i
+        while k < n and (k - i) < _CONT_SCAN_WINDOW and _is_noise(lines[k]):
+            k += 1
+
+        # ── Collect continuation rows ────────────────────────────────────────
+        cont_raw: list[str] = []
+        j = k
+        gap = 0
+        while j < n:
+            lj = lines[j].strip()
+            if not lj:
+                gap += 1
+                if gap > _OCR_MAX_GAP:
+                    break
+                j += 1
+                continue
+            if _is_noise(lines[j]) and not _OCR_ROW_RE.match(lj):
+                # Short noise mid-continuation: skip as gap
+                gap += 1
+                if gap > _OCR_MAX_GAP:
+                    break
+                j += 1
+                continue
+            m = _OCR_ROW_RE.match(lj)
+            if m:
+                gap = 0
+                cont_raw.append(lj)
+                j += 1
+            else:
+                break
+
+        if len(cont_raw) < _CONT_MIN_ROWS:
+            # Not enough continuation — emit table unchanged
+            result.extend(table_lines)
+            i = i   # remain at i (noise will be handled normally)
+            continue
+
+        # ── Parse continuation rows ─────────────────────────────────────────
+        new_rows: list[tuple[str, str]] = []
+        for raw in cont_raw:
+            m = _OCR_ROW_RE.match(raw)
+            if not m:
+                continue
+            rownum = (m.group(1) or "").strip()
+            label  = m.group(2).strip()
+            value  = (m.group(4) or "").strip() or "—"
+            full_label = f"{rownum} {label}".strip() if rownum else label
+            new_rows.append((full_label, value))
+
+        if not new_rows:
+            result.extend(table_lines)
+            continue
+
+        # ── Determine column widths from existing table ─────────────────────
+        col1_w = col2_w = 0
+        for tl in table_lines:
+            cells = [c.strip() for c in tl.strip().strip("|").split("|")]
+            if len(cells) >= 2:
+                col1_w = max(col1_w, len(cells[0]))
+                col2_w = max(col2_w, len(cells[1]))
+        col1_w = max(col1_w, max(len(r[0]) for r in new_rows))
+        col2_w = max(col2_w, max(len(r[1]) for r in new_rows))
+
+        # ── Emit table + continuation ───────────────────────────────────────
+        result.extend(table_lines)
+        for lbl, val in new_rows:
+            result.append(f"| {lbl:<{col1_w}} | {val:<{col2_w}} |")
+
+        converted += 1
+        i = j   # skip past continuation rows (noise lines in [i..k) are discarded)
+
+    return "\n".join(result), converted
+
 
 def _fix_ocr_table_reconstruction(text: str) -> tuple[str, int]:
     """Detect implicit two-column tables in OCR text and reformat as Markdown.
