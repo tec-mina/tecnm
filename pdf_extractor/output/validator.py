@@ -24,6 +24,8 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass, field
 
+from .config import OutputConfig
+
 
 _OVERLONG_LINE_CHARS = 180
 _REPEATED_LINE_MIN = 3
@@ -51,12 +53,23 @@ class ValidatorResult:
     warnings: list[str] = field(default_factory=list)
 
 
-def run(markdown: str, overlong_threshold: int = _OVERLONG_LINE_CHARS) -> ValidatorResult:
+def run(
+    markdown: str,
+    overlong_threshold: int = _OVERLONG_LINE_CHARS,
+    config: OutputConfig | None = None,
+) -> ValidatorResult:
+    cfg = config.validator if config else None
+    _empty = cfg.empty_threshold if cfg else _EMPTY_THRESHOLD
+    _sparse_chars = cfg.sparse_page_chars if cfg else _SPARSE_PAGE_CHARS
+    _sparse_ratio = cfg.sparse_page_ratio if cfg else _SPARSE_PAGE_RATIO
+    _repeated_min = cfg.repeated_line_min if cfg else _REPEATED_LINE_MIN
+    _overlong = cfg.overlong_line_chars if cfg else overlong_threshold
+
     issues: list[ValidationIssue] = []
     warnings: list[str] = []
 
     # BLOCKED: empty output
-    if not markdown or len(markdown.strip()) < _EMPTY_THRESHOLD:
+    if not markdown or len(markdown.strip()) < _empty:
         return ValidatorResult(
             status="BLOCKED",
             quality_score=0.0,
@@ -76,7 +89,7 @@ def run(markdown: str, overlong_threshold: int = _OVERLONG_LINE_CHARS) -> Valida
     # (happens when all OCR features are unavailable for scanned PDFs)
     if _PAGE_MARKER_RE.search(markdown):
         text_only = _PAGE_MARKER_RE.sub("", "\n".join(content_lines))
-        if len(text_only.strip()) < _EMPTY_THRESHOLD:
+        if len(text_only.strip()) < _empty:
             return ValidatorResult(
                 status="BLOCKED",
                 quality_score=0.0,
@@ -91,7 +104,7 @@ def run(markdown: str, overlong_threshold: int = _OVERLONG_LINE_CHARS) -> Valida
             )
 
     # 0.5. Sparse-page detection (scanned PDFs where OCR produced almost nothing)
-    sparse_issue = _check_sparse_pages(markdown)
+    sparse_issue = _check_sparse_pages(markdown, sparse_chars=_sparse_chars, sparse_ratio=_sparse_ratio)
     if sparse_issue:
         issues.append(sparse_issue)
 
@@ -108,22 +121,22 @@ def run(markdown: str, overlong_threshold: int = _OVERLONG_LINE_CHARS) -> Valida
     issues.extend(heading_issues)
 
     # 3. Repeated lines (artifact detection)
-    repeated = _find_repeated_lines(content_lines)
+    repeated = _find_repeated_lines(content_lines, min_count=_repeated_min)
     if repeated:
         issues.append(ValidationIssue(
             code="REPEATED_LINES",
             severity="medium",
-            description=f"{len(repeated)} short lines repeated {_REPEATED_LINE_MIN}+ times (possible extraction artifact)",
+            description=f"{len(repeated)} short lines repeated {_repeated_min}+ times (possible extraction artifact)",
         ))
 
     # 4. Overlong lines
     overlong = [i + 1 for i, l in enumerate(content_lines)
-                if len(l) > overlong_threshold and not l.startswith("|")]
+                if len(l) > _overlong and not l.startswith("|")]
     if overlong:
         issues.append(ValidationIssue(
             code="OVERLONG_LINES",
             severity="low",
-            description=f"{len(overlong)} lines exceed {overlong_threshold} chars",
+            description=f"{len(overlong)} lines exceed {_overlong} chars",
             line=overlong[0],
         ))
 
@@ -174,7 +187,11 @@ def _strip_frontmatter(lines: list[str]) -> list[str]:
         return lines
 
 
-def _check_sparse_pages(markdown: str) -> ValidationIssue | None:
+def _check_sparse_pages(
+    markdown: str,
+    sparse_chars: int = _SPARSE_PAGE_CHARS,
+    sparse_ratio: float = _SPARSE_PAGE_RATIO,
+) -> ValidationIssue | None:
     """Flag documents where most pages produced almost no text.
 
     This catches scanned PDFs that passed the global empty-check but whose
@@ -187,14 +204,14 @@ def _check_sparse_pages(markdown: str) -> ValidationIssue | None:
     if not page_bodies:
         return None
 
-    sparse = sum(1 for body in page_bodies if len(body) < _SPARSE_PAGE_CHARS)
+    sparse = sum(1 for body in page_bodies if len(body) < sparse_chars)
     ratio = sparse / len(page_bodies)
-    if ratio >= _SPARSE_PAGE_RATIO:
+    if ratio >= sparse_ratio:
         return ValidationIssue(
             code="SPARSE_PAGE_CONTENT",
             severity="high",
             description=(
-                f"{sparse}/{len(page_bodies)} pages have <{_SPARSE_PAGE_CHARS} chars of text "
+                f"{sparse}/{len(page_bodies)} pages have <{sparse_chars} chars of text "
                 f"({ratio:.0%}). PDF may require a stronger OCR strategy "
                 f"(e.g. ocr:tesseract-advanced or ocr:easyocr)."
             ),
@@ -234,12 +251,12 @@ def _check_headings(lines: list[str]) -> list[ValidationIssue]:
     return issues
 
 
-def _find_repeated_lines(lines: list[str]) -> list[str]:
+def _find_repeated_lines(lines: list[str], min_count: int = _REPEATED_LINE_MIN) -> list[str]:
     from collections import Counter
     short_lines = [l.strip() for l in lines
                    if 3 <= len(l.strip()) <= 60 and not l.strip().startswith("#")]
     counts = Counter(short_lines)
-    return [l for l, c in counts.items() if c >= _REPEATED_LINE_MIN]
+    return [l for l, c in counts.items() if c >= min_count]
 
 
 def _check_tables(lines: list[str]) -> list[ValidationIssue]:

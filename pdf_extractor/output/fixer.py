@@ -26,6 +26,8 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass, field
 
+from .config import OutputConfig
+
 
 _LIGATURES = {
     "\uFB00": "ff",
@@ -37,7 +39,7 @@ _LIGATURES = {
     "\uFB06": "st",
 }
 
-# Words that should NOT be rejoined after hyphen (abbreviations, proper nouns heuristic)
+# Default — overridden by OutputConfig when provided
 _REJOIN_MIN_WORD_LEN = 3
 
 # ---------------------------------------------------------------------------
@@ -81,6 +83,7 @@ def run(
     skip_fixes: bool = False,
     apply_ocr_correction: bool = False,
     ocr_language: str = "es",
+    config: OutputConfig | None = None,
 ) -> FixerResult:
     """Apply all safe mechanical fixes and return FixerResult.
 
@@ -91,10 +94,13 @@ def run(
         Should be True only when the source is known to be OCR-extracted.
     ocr_language : str
         Language passed to the spell corrector ("es" or "en").
+    config : OutputConfig | None
+        Output configuration.  Uses safe defaults when None.
     """
     if skip_fixes:
         return FixerResult(content=markdown)
 
+    cfg = config or OutputConfig.default()
     result = FixerResult(content=markdown)
 
     result.content, count = _fix_crlf(result.content)
@@ -105,21 +111,36 @@ def run(
     if count:
         result.fixes_applied["control_chars"] = count
 
-    result.content, count = _fix_ligatures(result.content)
+    ligatures = cfg.symbols.ligatures if cfg.symbols.ligatures else _LIGATURES
+    result.content, count = _fix_ligatures(result.content, ligatures)
     if count:
         result.fixes_applied["ligatures"] = count
 
-    result.content, count = _fix_spaces(result.content)
-    if count:
-        result.fixes_applied["spaces"] = count
+    for src, dst in cfg.symbols.replacements.items():
+        occurrences = result.content.count(src)
+        if occurrences:
+            result.content = result.content.replace(src, dst)
+            result.fixes_applied["symbol_replacements"] = (
+                result.fixes_applied.get("symbol_replacements", 0) + occurrences
+            )
 
-    result.content, count = _fix_list_markers(result.content)
-    if count:
-        result.fixes_applied["list_markers"] = count
+    if cfg.output.normalize_spaces:
+        result.content, count = _fix_spaces(result.content)
+        if count:
+            result.fixes_applied["spaces"] = count
 
-    result.content, count = _fix_broken_hyphenation(result.content)
-    if count:
-        result.fixes_applied["hyphenation"] = count
+    if cfg.output.normalize_lists:
+        result.content, count = _fix_list_markers(result.content)
+        if count:
+            result.fixes_applied["list_markers"] = count
+
+    if cfg.output.rejoin_hyphenated_words:
+        result.content, count = _fix_broken_hyphenation(
+            result.content,
+            min_word_len=cfg.output.min_word_length_for_rejoin,
+        )
+        if count:
+            result.fixes_applied["hyphenation"] = count
 
     # OCR-specific correction (optional, only for OCR-sourced text)
     if apply_ocr_correction:
@@ -134,6 +155,19 @@ def run(
         result.content, count = _fix_ocr_table_reconstruction(result.content)
         if count:
             result.fixes_applied["ocr_table_reconstruction"] = count
+
+        # 3. Extra OCR patterns from config
+        for pat in cfg.symbols.ocr_patterns:
+            try:
+                compiled = pat.compiled()
+                new_content, n = compiled.subn(pat.replacement, result.content)
+                if n:
+                    result.content = new_content
+                    result.fixes_applied["ocr_patterns"] = (
+                        result.fixes_applied.get("ocr_patterns", 0) + n
+                    )
+            except re.error:
+                pass
 
         try:
             from . import spell_corrector
@@ -464,9 +498,10 @@ def _fix_control_chars(text: str) -> tuple[str, int]:
     return "".join(out), count
 
 
-def _fix_ligatures(text: str) -> tuple[str, int]:
+def _fix_ligatures(text: str, ligatures: dict[str, str] | None = None) -> tuple[str, int]:
     count = 0
-    for lig, replacement in _LIGATURES.items():
+    table = ligatures if ligatures is not None else _LIGATURES
+    for lig, replacement in table.items():
         occurrences = text.count(lig)
         if occurrences:
             text = text.replace(lig, replacement)
@@ -520,7 +555,7 @@ def _fix_list_markers(text: str) -> tuple[str, int]:
     return "\n".join(fixed), count
 
 
-def _fix_broken_hyphenation(text: str) -> tuple[str, int]:
+def _fix_broken_hyphenation(text: str, min_word_len: int = _REJOIN_MIN_WORD_LEN) -> tuple[str, int]:
     """
     Rejoin words broken across lines with a trailing hyphen.
     Only when both parts look like real words (length >= min, no digits or caps).
@@ -540,8 +575,8 @@ def _fix_broken_hyphenation(text: str) -> tuple[str, int]:
             word_start = re.match(r"^([a-záéíóúüñ]+)", next_line, re.IGNORECASE)
 
             if (word_end and word_start
-                    and len(word_end.group(1)) >= _REJOIN_MIN_WORD_LEN
-                    and len(word_start.group(1)) >= _REJOIN_MIN_WORD_LEN
+                    and len(word_end.group(1)) >= min_word_len
+                    and len(word_start.group(1)) >= min_word_len
                     and word_end.group(1)[0].islower()
                     and word_start.group(1)[0].islower()):
                 # Rejoin: remove hyphen, merge next line

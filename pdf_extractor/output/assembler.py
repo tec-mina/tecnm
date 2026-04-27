@@ -32,6 +32,7 @@ from pathlib import Path
 from typing import Any
 
 from ..features._base import FeatureResult, PageResult
+from .config import OutputConfig
 
 
 _HEADING_RE = re.compile(r"^(#{1,6})\s+(.*)")
@@ -124,8 +125,10 @@ def assemble_from_plan(
     with_images: bool = False,
     images_dir: Path | None = None,
     with_toc: bool = True,
+    config: OutputConfig | None = None,
 ) -> str:
     """Render an already-built AssemblyPlan into a single Markdown string."""
+    cfg = config or OutputConfig.default()
     parts: list[str] = [frontmatter_str]
     all_tables: list[str] = []
     body_parts: list[str] = []
@@ -142,7 +145,10 @@ def assemble_from_plan(
         body_parts.append(f"<!-- Page {page_num} -->")
 
         if page_text:
-            body_parts.append(_fix_heading_hierarchy(page_text))
+            body_parts.append(_fix_heading_hierarchy(
+                page_text,
+                placeholder=cfg.structure.heading_placeholder,
+            ))
 
         for table_md in page_tables:
             body_parts.append(table_md)
@@ -156,14 +162,20 @@ def assemble_from_plan(
 
     # Table of Contents — inserted after frontmatter, before body
     if with_toc:
-        toc = _generate_toc(body)
+        toc = _generate_toc(
+            body,
+            label=cfg.structure.toc_label,
+            heading_level=cfg.structure.toc_heading_level,
+            min_headings=cfg.structure.min_headings_for_toc,
+        )
         if toc:
             parts.append(toc)
 
     parts.append(body)
 
-    if table_appendix and all_tables:
-        parts.append("\n## Tablas Auxiliares\n")
+    use_appendix = table_appendix if table_appendix is not None else cfg.tables.appendix
+    if use_appendix and all_tables:
+        parts.append(f"\n## {cfg.tables.appendix_label}\n")
         parts.extend(all_tables)
 
     return "\n\n".join(p for p in parts if p.strip())
@@ -177,6 +189,7 @@ def assemble(
     with_images: bool = False,
     images_dir: Path | None = None,
     with_toc: bool = True,
+    config: OutputConfig | None = None,
 ) -> str:
     """Backward-compatible wrapper: build plan from a list, then render.
 
@@ -187,7 +200,8 @@ def assemble(
     for fr in feature_results:
         merge_feature(plan, fr)
     return assemble_from_plan(
-        plan, frontmatter_str, table_appendix, with_images, images_dir, with_toc
+        plan, frontmatter_str, table_appendix, with_images, images_dir, with_toc,
+        config=config,
     )
 
 
@@ -213,7 +227,7 @@ def _split_by_markers(markdown: str) -> dict[int, str]:
 # Heading hierarchy fixer
 # ---------------------------------------------------------------------------
 
-def _fix_heading_hierarchy(text: str) -> str:
+def _fix_heading_hierarchy(text: str, placeholder: str = "—") -> str:
     """
     Ensure first heading is H1 and no level jumps > 1.
     Inserts placeholder headings where needed.
@@ -240,7 +254,7 @@ def _fix_heading_hierarchy(text: str) -> str:
         # Insert missing intermediate headings
         if prev_level is not None and level - prev_level > 1:
             for mid_level in range(prev_level + 1, level):
-                out.append(f"{'#' * mid_level} —")
+                out.append(f"{'#' * mid_level} {placeholder}")
 
         out.append(line)
         prev_level = level
@@ -252,11 +266,15 @@ def _fix_heading_hierarchy(text: str) -> str:
 # Table of Contents generator
 # ---------------------------------------------------------------------------
 
-def _generate_toc(body: str) -> str:
+def _generate_toc(
+    body: str,
+    label: str = "Contenido",
+    heading_level: int = 2,
+    min_headings: int = 3,
+) -> str:
     """Build a Markdown Table of Contents from headings in *body*.
 
-    Returns an empty string when fewer than 3 headings are found
-    (not worth having a ToC for very short docs).
+    Returns an empty string when fewer than *min_headings* are found.
     """
     entries: list[str] = []
     in_code = False
@@ -284,7 +302,8 @@ def _generate_toc(body: str) -> str:
         indent = "  " * (level - 1)
         entries.append(f"{indent}- [{title}](#{anchor})")
 
-    if len(entries) < 3:
+    if len(entries) < min_headings:
         return ""
 
-    return "## Contenido\n\n" + "\n".join(entries)
+    prefix = "#" * heading_level
+    return f"{prefix} {label}\n\n" + "\n".join(entries)

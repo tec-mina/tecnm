@@ -200,6 +200,12 @@ class ExtractUseCase:
         images_dir = out_dir / "images"
         primary_out = _primary_output_path(req.output_format, md_out, json_out)
 
+        # ── 0. Output rules config ────────────────────────────────────────
+        from ..output.config import OutputConfig as _OutputConfig
+        _out_cfg = _OutputConfig.load(
+            getattr(req, "output_rules_path", None) or "output_rules.yaml"
+        )
+
         # ── 1. Preflight ──────────────────────────────────────────────────
         from ..core import preflight as _pf
         pf = _pf.run(req.pdf_path)
@@ -325,11 +331,12 @@ class ExtractUseCase:
             frontmatter_str="",
             with_images=req.with_images,
             with_toc=req.with_toc,
+            config=_out_cfg,
         )
 
         # ── 7. Validate ───────────────────────────────────────────────────
         from ..output import validator as _val
-        val = _val.run(raw_md)
+        val = _val.run(raw_md, config=_out_cfg)
         result.quality_score = val.quality_score
         result.quality_label = _quality_label(val.quality_score)
         result.issues = [{"code": i.code, "severity": i.severity,
@@ -354,6 +361,7 @@ class ExtractUseCase:
             skip_fixes=req.no_fix,
             apply_ocr_correction=(req.apply_spell and pipeline_result.used_ocr),
             ocr_language=profile.dominant_language or "es",
+            config=_out_cfg,
         )
         if fix_result.fixes_applied:
             _emit(self._emit, "fix", fixes=fix_result.fixes_applied)

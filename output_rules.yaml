@@ -1,0 +1,121 @@
+# output_rules.yaml — Reglas de ensamblaje del Markdown final
+# Edita este archivo para cambiar el comportamiento sin tocar código Python.
+# Si no existe, el sistema usa los valores por defecto indicados aquí.
+
+structure:
+  # Corrige jerarquía de headings (sin saltos de nivel)
+  heading_normalize: true
+  # Texto del heading de relleno cuando hay un salto de nivel
+  heading_placeholder: "—"
+  # Mínimo de headings para generar índice de contenidos
+  min_headings_for_toc: 3
+  # Título del índice de contenidos
+  toc_label: "Contenido"
+  # Nivel del heading del índice (2 = ##)
+  toc_heading_level: 2
+  # Incluir marcadores <!-- Page N --> en el output
+  page_markers: true
+  # Formato del marcador de página (usa {n} para el número)
+  page_marker_format: "<!-- Page {n} -->"
+
+tables:
+  # Texto para celdas vacías/nulas
+  null_replacement: "—"
+  # Ignorar tablas con menos columnas que esto
+  min_columns: 2
+  # Ignorar tablas con menos filas que esto
+  min_rows: 2
+  # Limpiar espacios en celdas
+  trim_whitespace: true
+  # Mover todas las tablas al final como apéndice
+  appendix: true
+  # Título de la sección apéndice de tablas
+  appendix_label: "Tablas Auxiliares"
+
+images:
+  # Incluir referencias a imágenes extraídas
+  enabled: false
+  # Prefijo de directorio en las referencias de imagen
+  dir: "images"
+  # Texto alternativo cuando no hay descripción disponible
+  alt_text_fallback: "Imagen extraída"
+
+frontmatter:
+  enabled: true
+  # Campos que aparecen en el YAML frontmatter (en este orden)
+  fields:
+    - source
+    - pages
+    - file_size_mb
+    - extraction_date
+    - language
+    - tables_found
+    - has_images
+    - has_scanned_pages
+    - features_used
+    - extraction_time_sec
+    - quality_score
+    - quality_label
+    - is_valid
+    - from_cache
+    - warnings
+  # Campos adicionales que tú defines (clave: valor)
+  custom_fields: {}
+
+symbols:
+  # Ligaduras tipográficas → ASCII
+  ligatures:
+    "ﬀ": "ff"
+    "ﬁ": "fi"
+    "ﬂ": "fl"
+    "ﬃ": "ffi"
+    "ﬄ": "ffl"
+    "ﬅ": "st"
+    "ﬆ": "st"
+  # Sustituciones globales (símbolo → texto)
+  replacements:
+    " ": " "    # espacio non-breaking → espacio normal
+  # Patrones OCR adicionales (regex → reemplazo)
+  # Solo se aplican cuando apply_ocr_correction=True
+  ocr_patterns: []
+  # Ejemplo:
+  # ocr_patterns:
+  #   - pattern: "(?<=[aeiouáéíóú])rn(?=[aeiouáéíóú])"
+  #     replacement: "m"
+  #   - pattern: "(?<=[a-zA-Z])0(?=[a-zA-Z])"
+  #     replacement: "o"
+
+spell:
+  # Corrección ortográfica (requiere: pip install pyspellchecker)
+  enabled: false
+  language: "es"          # "es" o "en"
+  min_word_length: 4
+  skip_headings: true
+  skip_tables: true
+  skip_code_blocks: true
+  # Palabras que nunca se corrigen (nombres propios, acrónimos, etc.)
+  custom_dictionary: []
+
+output:
+  # Finales de línea: "lf" (Unix) o "crlf" (Windows)
+  line_endings: "lf"
+  # Normalizar múltiples espacios a uno solo (fuera de código y tablas)
+  normalize_spaces: true
+  # Normalizar marcadores de lista (* y +) a -
+  normalize_lists: true
+  # Reunir palabras partidas al final de línea con guión
+  rejoin_hyphenated_words: true
+  # Longitud mínima de cada fragmento para reunir palabras
+  min_word_length_for_rejoin: 3
+
+validator:
+  # Líneas más largas que este número se marcan como OVERLONG_LINES
+  overlong_line_chars: 180
+  # Veces que debe repetirse una línea corta para marcarla como artefacto
+  repeated_line_min: 3
+  # Markdown con menos caracteres que esto → BLOCKED (salida vacía)
+  empty_threshold: 50
+  # Páginas con menos caracteres que esto se consideran "sparse"
+  sparse_page_chars: 30
+  # Si más del X% de páginas son sparse → flag SPARSE_PAGE_CONTENT
+  sparse_page_ratio: 0.6
