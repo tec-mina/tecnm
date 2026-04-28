@@ -129,6 +129,7 @@ def assemble_from_plan(
 ) -> str:
     """Render an already-built AssemblyPlan into a single Markdown string."""
     cfg = config or OutputConfig.default()
+    use_appendix = table_appendix if table_appendix is not None else cfg.tables.appendix
     parts: list[str] = [frontmatter_str]
     all_tables: list[str] = []
     body_parts: list[str] = []
@@ -151,7 +152,8 @@ def assemble_from_plan(
             ))
 
         for table_md in page_tables:
-            body_parts.append(table_md)
+            if not use_appendix:
+                body_parts.append(table_md)
             all_tables.append(table_md)
 
         if with_images:
@@ -173,7 +175,6 @@ def assemble_from_plan(
 
     parts.append(body)
 
-    use_appendix = table_appendix if table_appendix is not None else cfg.tables.appendix
     if use_appendix and all_tables:
         parts.append(f"\n## {cfg.tables.appendix_label}\n")
         parts.extend(all_tables)

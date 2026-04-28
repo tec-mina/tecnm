@@ -142,6 +142,10 @@ def run(
         if count:
             result.fixes_applied["hyphenation"] = count
 
+    result.content, count = _promote_allcaps_headings(result.content)
+    if count:
+        result.fixes_applied["headings_promoted"] = count
+
     # OCR-specific correction (optional, only for OCR-sourced text)
     if apply_ocr_correction:
         # 1. Append orphaned OCR rows that are continuation of an existing GFM table.
@@ -590,3 +594,100 @@ def _fix_broken_hyphenation(text: str, min_word_len: int = _REJOIN_MIN_WORD_LEN)
         i += 1
 
     return "\n".join(fixed), count
+
+
+# ---------------------------------------------------------------------------
+# ALL-CAPS heading promotion
+# ---------------------------------------------------------------------------
+
+_ALLCAPS_MIN_WORDS = 2
+_ALLCAPS_MAX_LEN = 100
+_ALLCAPS_MIN_LEN = 4
+_ALLCAPS_UPPERCASE_RATIO = 0.70
+# Short stop-words that look like articles but aren't section titles alone
+_ALLCAPS_STOPWORDS = frozenset({"DE", "DEL", "LA", "LAS", "LOS", "EL", "Y", "A", "EN", "CON"})
+
+
+def _promote_allcaps_headings(text: str) -> tuple[str, int]:
+    """Promote isolated ALL-CAPS lines to ## headings.
+
+    Criteria for promotion:
+    - Line is surrounded by blank lines (or is first/last non-blank)
+    - 4–100 chars, ≥2 words
+    - ≥70% of letter characters are uppercase
+    - Not already a Markdown heading, table row, or inside a code block
+    - Not a pure stopword phrase
+    - Not a title already promoted in this document (deduplication)
+    """
+    lines = text.split("\n")
+    out: list[str] = []
+    in_code = False
+    count = 0
+    seen_titles: set[str] = set()
+
+    for idx, line in enumerate(lines):
+        stripped = line.strip()
+
+        # Track fenced code blocks
+        if stripped.startswith("```"):
+            in_code = not in_code
+            out.append(line)
+            continue
+        if in_code:
+            out.append(line)
+            continue
+
+        # Already a heading, table row, HTML comment, or empty
+        if (not stripped
+                or stripped.startswith("#")
+                or stripped.startswith("|")
+                or stripped.startswith("<!--")):
+            out.append(line)
+            continue
+
+        # Length guard
+        if not (_ALLCAPS_MIN_LEN <= len(stripped) <= _ALLCAPS_MAX_LEN):
+            out.append(line)
+            continue
+
+        # Word count guard
+        words = stripped.split()
+        if len(words) < _ALLCAPS_MIN_WORDS:
+            out.append(line)
+            continue
+
+        # All stopwords — not a real title
+        if all(w in _ALLCAPS_STOPWORDS for w in words):
+            out.append(line)
+            continue
+
+        # Uppercase ratio check
+        letters = [c for c in stripped if c.isalpha()]
+        if not letters:
+            out.append(line)
+            continue
+        upper_ratio = sum(1 for c in letters if c.isupper()) / len(letters)
+        if upper_ratio < _ALLCAPS_UPPERCASE_RATIO:
+            out.append(line)
+            continue
+
+        # Surrounded by blank lines (or document boundaries)
+        prev_blank = (idx == 0 or not lines[idx - 1].strip())
+        next_blank = (idx == len(lines) - 1 or not lines[idx + 1].strip())
+        if not (prev_blank and next_blank):
+            out.append(line)
+            continue
+
+        # Title-case the text for the heading
+        titled = stripped.title()
+
+        # Deduplication: skip if we've promoted this exact title already
+        if titled in seen_titles:
+            out.append(line)
+            continue
+
+        seen_titles.add(titled)
+        out.append(f"## {titled}")
+        count += 1
+
+    return "\n".join(out), count
